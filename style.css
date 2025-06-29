@@ -34,15 +34,40 @@
 }
 
 .header {
-    background-image: linear-gradient(rgba(2, 6, 25, 0.2), rgba(2, 6, 25, 0.2)), url(Images/1.jpg);
+    background-image: url(Images/1.jpg);
     height: 100vh;
     width: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 
+}
+
+.navbar {
+    position: relative;          /* create a new containing block   */
+    background: transparent;     /* let the pseudo-element show     */
+}
+
+/* the frosted-glass layer */
+.navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;                    /* cover the entire navbar         * */
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);     /* Safari                 */
+    pointer-events: none;        /* clicks pass through             */
+    z-index: -1;                 /* sits *behind* the real content  */
+}
+
+
+.nav-item .something {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.35);        /* translucent dark tint  */
+    border: 0.5px solid rgba(200, 200, 200, 0.2);
+    border-radius: 20px;
 }
 
 .navbar-nav .dropdown-toggle::after {
@@ -50,10 +75,11 @@
     content: "" !important;
 }
 
+
 .nav-item .something {
-        backdrop-filter:blur(4px);
-        -webkit-backdrop-filter: blur(4px);
-        border:0.5px solid rgba(200, 200, 200, 0.2) ;
+        backdrop-filter:blur(2px);
+        -webkit-backdrop-filter: blur(3px);
+        border:1px solid rgba(200, 200, 200, 0.2) ;
         border-radius:20px;
 }
 .dropdown-header{
@@ -88,15 +114,19 @@
     position: relative;               /* context for absolutely‑positioned children (if any) */
 }
 
+
 .intro {
     text-align: left;
     max-width: 680px;
-    margin: 0;
+    margin-top: 10%;
     color: rgba(200, 200, 200,0.7);
     letter-spacing: 0.1px;
     font-size: 14.8px !important;
     animation: h1-custom 2s ease forwards;
+    padding-bottom: 1rem;
+    padding-top: 5rem;
 }
+
 
 /* utility */
 .intro {
@@ -104,168 +134,144 @@
     text-align: justify !important;
 }
 
-@media (max-width: 1000px) {
-
+@media (max-width: 1200px) { 
     html,
     body {
         width: 100%;
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         overflow-x: hidden;
     }
-
-    .pg-2 {
-        height: fit-content;
-    }
-
-    .pg-2 .row {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .trp {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -36%);
-    }
-}
-
-@media (max-width: 1398px) {
-
-    html,
-    body {
+    .intro {
         width: 100%;
-        margin: 0px;
-        padding: 0px;
-        overflow-x: hidden;
-    }
-    .pg-2, .pg-3, .pg-4, .pg-5, .header{
-        overflow-y: hidden;
-    }
-    .pg-3 .txt h3 {
-        font-size: 25px;
+        margin-top: 20%;
+        padding-bottom: 5rem;
+        padding-top: 5rem;
     }
 
-    .pg-3 .txt p1 {
-        font-size: 12px;
+    .header {
+        padding-top: 10rem;
     }
 
-    .pg-4 .txt h3 {
-        font-size: 25px;
-    }
-
-    .pg-4 .txt h4 {
-        font-size: 14px;
-    }
-
-    .pg-4 .txt p1 {
-        font-size: 12px;
-    }
-    .pg-5 .txt h3 {
-        font-size: 25px;
-    }
-
-    .pg-5 .txt p1 {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 767px) {
-
-    html,
-    body {
+    .navbar {
+        position: fixed;
+        z-index: 1050;
         width: 100%;
-        margin: 0px;
-        padding: 0px;
-        overflow-x: hidden;
     }
-
-    .trp {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
-    .pg-3 .txt h3 {
-        font-size: 25px;
-    }
-
-    .pg-3 .txt p1 {
-        font-size: 12px;
-    }
-
 }
+
 
 @media (max-width: 991px) {
 
     html,
     body {
         width: 100%;
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         overflow-x: hidden;
     }
 
-    .sidebar {
-        background-color: rgba(255, 255, 255, 0.01) !important;
-        backdrop-filter: blur(20px);
-
+    .intro {
+        width: 400px;
+        position: static; 
+        margin-top: 20rem;  
+        padding-bottom: 5rem;
+        padding-top: 5rem;
     }
 
-
-
-
-    .sn {
-        margin: auto;
+    .header {
+        padding-top: 8rem;         /* space for the fixed navbar */
     }
 
-    .row {
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-top: -10px !important;
-    }
-
-    .pg-3 .row {
-        position: relative;
-        top: 300px;
-    }
-    .abo, .ser, .mem, .con{
-        position: relative;
-        right: 30px;
-    }
-
-    /* Center hero text on tablets & phones */
-    .main {
-        justify-content: center;
+    .navbar-nav .nav-link {
+        margin: 1rem;
     }
 }
 
 @media (max-width:575px) {
-
     body{
         background-color: black !important;
 
     }
     .header{
-    background-image: linear-gradient(rgba(2, 6, 25, 0.2), rgba(2, 6, 25, 0.2)), url(Images/1.jpg);
+    background-image: url(Images/1.jpg);
     height: 100vh;
     width: 100%;
     background-position-y:10%;
     background-position-x:10%;
-    background-size:150vh;
+    background-size:100vh;
     background-repeat: no-repeat;
     overflow: visible;
     }
 
     .intro {
       position: relative;
-      top: 50rem;
+      top: 30rem;
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 5rem;
     }
     .nav-item{
-        position: relative;
-        bottom: 10rem;
+        position: static;
     }
+    .phone-nav {
+        position: static;
+    }
+
+
+@media (max-width: 575px) {
+
+    .offcanvas.show .dropdown-menu {
+        display: block ;
+        transform: none !important;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding-left: 0;
+        position: relative;
+        bottom: 100px !important;
+    }
+
+    /* 2 — Section headers (“Social Entrepreneurship”, …) */
+    .offcanvas .dropdown-header {
+        font-size: 1.35rem !important;
+        font-weight: 700 !important;
+        color: #9b9b9b !important;
+        margin-top: 2rem !important;
+        
+    }
+
+    /* 3 — All individual links (children + top-level) */
+    .offcanvas .dropdown-item,
+    .offcanvas .nav-link {
+        font-size: 1.15rem !important;
+        color: #9b9b9b !important;
+        padding-left: 1.5rem !important;   /* indent */
+        margin: 0 !important;  
+                    /* eliminate centred spacing */
+    }
+
+    /* 4 — Hide the parent “Leadership” toggle AND “Home” */
+    .offcanvas .nav-item.dropdown > .nav-link,
+    .offcanvas .nav-link[href="index.html"] {
+        display: none;
+    }
+
+    /* 5 — Remove the thin <hr> grey dividers */
+    .offcanvas hr.dropdown-divider {
+        display: none !important;
+    }
+
+    /* 6 — Make the whole list flush-left (not centred) */
+    .offcanvas .navbar-nav {
+        align-items: flex-start !important;
+    }
+    .navbar .phone-nav span{
+       position: relative;
+       left: 1rem;
+    }
+}
+
 
 }
