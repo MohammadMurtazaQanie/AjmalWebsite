@@ -21,19 +21,19 @@
 <body>
     <section class="header" id="Pg1">
         <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-expand-md navbar-dark fixed-top align-items-center">
-            <div class="container-fluid justify-content-end pe-5">
+        <nav class="navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top">
+            <div class="d-flex justify-content-end pe-5">
                 <!--Phone Navbar-->
-                <button class="phone-nav navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas"
+                <button class="phone-nav navbar-toggler shadow-none border-0 ms-auto" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon justify-content-end"></span>
                 </button>
                 <!--sidebar-->
                 <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                     aria-labelledby="offcanvasNavbarLabel">
                     <!--s head-->
                     <div class="offcanvas-header">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                        <button type="button" class="btn-close btn-close-white mt-4 ms-auto ps-5" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
                     <!--s body-->
@@ -43,7 +43,7 @@
                                 <a class="nav-link font-size-5" href="index.html">Home</a>
                             </li>
 
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown d-none d-lg-block">
                                 <a class="nav-link dropdown-toggle" href="page2.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Leadership <i class="fas fa-chevron-down ms-1"></i>
                                 </a>
@@ -66,12 +66,46 @@
                                 </ul>
                             </li>
 
+                            <!-- Phone‑only collapsible sections -->
+                            <li class="nav-item d-lg-none mt-2">
+                              <button
+                                class="nav-link btn w-100 text-start d-flex justify-content-between align-items-center"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseSocial"
+                                aria-expanded="false"
+                              >
+                                Social Entrepreneurship
+                                <i class="bi bi-chevron-down small"></i>
+                              </button>
+                              <div class="collapse ps-3" id="collapseSocial">
+                                <a class="nav-link" href="page2.html">UN Association of Afghanistan</a>
+                                <a class="nav-link" href="page2.html">Kabul Model United Nations</a>
+                              </div>
+                            </li>
+
+                            <li class="nav-item d-lg-none mt-2">
+                              <button
+                                class="nav-link btn w-100 text-start d-flex justify-content-between align-items-center"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapsePolicy"
+                                aria-expanded="false"
+                              >
+                                Policy Advocacy
+                                <i class="bi bi-chevron-down small"></i>
+                              </button>
+                              <div class="collapse ps-3" id="collapsePolicy">
+                                <a class="nav-link" href="page2.html">Youth Consensus for Peace</a>
+                                <a class="nav-link" href="page2.html">Youth, Peace, and Security</a>
+                              </div>
+                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="index-price.html">Mentions</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="index-projects.html">Connect</a>
                             </li>
+                            </ul>
                     </div>
                 </div>
             </div>
@@ -83,7 +117,7 @@
         <div class="d-flex align-items-center h-100">
             <div class="container">
               <div class="row g-0 align-items-center">
-                <div class="col-12 col-lg-6 col-md-6 offset-lg-6 offset-md-6  mt-5">
+                <div class="col-12 col-lg-6 col-md-6  offset-lg-6 offset-md-6  mt-5">
                     <p class="intro">
           
     Yahya Qanie is an Afghan-born social entrepreneur, policy advocate, and New York University graduate with over a decade of experience in the intersection of international security, peacebuilding, and inclusive governance. He is the Founder and former Acting President of the United Nations Association of Afghanistan, and the founder of Kabul Model United Nations—the country’s first MUN initiative. He also co-founded the National Youth Consensus for Peace, served as a global advocate for youth inclusion in decision-making, and held roles as an Advocacy Fellow at Search for Common Ground, Research Associate at The Soufan Center, and Advisor to the NYU School of Professional Studies Dean. 
