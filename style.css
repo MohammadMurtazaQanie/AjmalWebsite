@@ -319,7 +319,7 @@ margin-top: 5rem !important;
     }
     .header {
         background-image: url(Images/1.jpg);
-        height: 94vh;
+        height: 93vh;
         width: 100%;
         background-position-y: 10%;
         background-position-x: 10%;
@@ -340,7 +340,7 @@ margin-top: 5rem !important;
       }
       .nav-item{
         position: relative;
-        top: 15rem;
+        top: 12rem;
         left: 10%;
       }
 
@@ -368,7 +368,7 @@ margin-top: 5rem !important;
 
     .all_text{
         position: relative;
-        top: 8rem !important;
+        top: 7rem !important;
         padding-bottom: 1rem;
        
     }
