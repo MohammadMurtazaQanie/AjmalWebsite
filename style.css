@@ -3,6 +3,7 @@
 .all_text{
     position: relative;
     top: 2rem !important;
+    font-size: 16px;
 }
 @property --gradient-angle {
     syntax: "<angle>";
@@ -19,7 +20,7 @@
 /*--Page1--*/
 
 .navbar-nav .nav-link {
-    font-size: 1.2rem;
+    font-size: 16px;
 }
 
 /* underline on nav links */
@@ -103,7 +104,7 @@
 }
 
 .nav-item .nav-link {
-    font-size: 1rem;
+    font-size: 16px;;
     letter-spacing: 0.5px;
     margin: 1.5rem;
     position: relative;
@@ -123,7 +124,7 @@
 .intro {
     text-align: justify !important;
     color: rgba(200, 200, 200, 0.7);
-    font-size: 15px !important;
+    font-size: 16px !important;
     animation: h1-custom 2s ease forwards;
     width: 100%;
     max-width: 800px;
@@ -310,7 +311,7 @@ margin-top: 5rem !important;
         background-image: url(Images/1.jpg);
         height: 85vh;
         width: 100%;
-        background-position-y: 0%;
+        background-position-y: 10%;
         background-position-x: 10%;
         background-size: 100vh;
         background-repeat: no-repeat;
@@ -324,9 +325,13 @@ margin-top: 5rem !important;
         backdrop-filter: blur(1);
     }
 
-      .offcanvas .nav-item.social {
+      .offcanvas .nav-item .nav-link {
+        font-size: 20px !important;
+      }
+      .nav-item{
         position: relative;
-        top: 0;       /* no upward offset */
+        top: 15rem;
+        left: 10%;
       }
 
 
@@ -393,6 +398,7 @@ margin-top: 5rem !important;
     /* Let the list start flush; we'll push everything down via padding instead */
     .offcanvas .navbar-nav {
         margin-top: 0;
+        
     }
 
     /* Push all items down a bit for breathing room */
