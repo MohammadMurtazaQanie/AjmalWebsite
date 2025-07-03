@@ -340,8 +340,9 @@ margin-top: 5rem !important;
       }
       .nav-item{
         position: relative;
-        top: 12rem;
+        top: 10rem;
         left: 10%;
+
       }
 
 
@@ -369,7 +370,8 @@ margin-top: 5rem !important;
     .all_text{
         position: relative;
         top: 7rem !important;
-        padding-bottom: 1rem;
+        padding-bottom: 2rem;
+
        
     }
     
