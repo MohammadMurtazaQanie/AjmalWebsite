@@ -1,0 +1,426 @@
+
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Avenir'
+}
+
+/*--Page1--*/
+
+.navbar-nav .nav-link {
+    font-size: 15px;
+}
+
+/* underline on nav links */
+.navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: rgb(100, 100, 100);
+    margin: 0.25rem auto 0;
+    transition: width 0.4s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after {
+  
+    width: 100%;
+}
+
+.header {
+    background-image: url(Images/4\ Connect.png);
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow-x: hidden;
+
+}
+
+.navbar{
+    min-height:56px; 
+    transition:opacity 0.5s ease;    
+  }
+.navbar::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      z-index:0;                  /* sits *above* the links but keeps clicks working */
+      opacity:0;                  /* hidden until scrolled */
+      backdrop-filter: blur(0px);         /* start with no blur */
+      -webkit-backdrop-filter: blur(0px); /* Safari */
+      background: rgba(0,0,0,0);          /* start fully transparent */
+      transition: opacity 0.5s ease,
+                  backdrop-filter 0.5s ease,
+                  -webkit-backdrop-filter 0.5s ease,
+                  background 0.5s ease;
+  }
+  
+  .navs.scrolled::before{
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    background:rgba(0,0,0,.35);
+    opacity:1;
+   
+  }
+
+
+
+.nav-item .something {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.35);
+    /* translucent dark tint  */
+    border: 0.5px solid rgba(200, 200, 200, 0.2);
+    border-radius: 30px;
+}
+
+.navbar-nav .dropdown-toggle::after {
+    border: none !important;
+    content: "" !important;
+}
+
+.dropdown-header {
+    font-size: 15px !important;
+}
+
+.dropdown-item {
+    font-weight: 1500 !important;
+    color: rgba(0, 0, 0, 0.477) !important;
+}
+
+.nav-item .nav-link {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    margin: 1.5rem;
+    position: relative;
+    top: 10px;
+    color: rgb(84, 84, 84);
+}
+
+.nav-item .nav-link:hover {
+    color: black;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5vw;
+    position: relative;
+}
+.social-links {
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.social-links a {
+    display: block;
+    color: black; 
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: rgb(121, 121, 121);
+    transition: all 0.5s ease;
+}
+
+.social-links a:hover {
+    color: rgb(0, 0, 0); 
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 1200px) {
+
+    html,
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+
+    .header {
+        padding-top: 10rem;
+    }
+
+    .navbar {
+        position: fixed;
+        z-index: 1050;
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 991px) {
+
+    html,
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+
+
+    .header {
+        padding-top: 0rem;
+        /* space for the fixed navbar */
+    }
+
+
+}
+
+@media (max-width:881px) {
+    body {
+        background-color: black !important;
+
+
+    }
+
+
+
+    .nav-item {
+        position: relative;
+        top: 0px;
+
+    }
+
+    .phone-nav {
+        position: static;
+    }
+
+
+}
+@media (max-width:767px ){
+    body {
+        background-color: black !important;
+    }
+
+
+    .offcanvas .nav-item .nav-link {
+        font-size: 20px !important;
+      }
+
+
+  .nav-item{
+    position: relative;
+    top: 10rem;
+    left: 10%;
+
+  }
+
+    .offcanvas.show .dropdown-menu {
+        display: block;
+        transform: none !important;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding-left: 0;
+        position: relative;
+    }
+
+    .offcanvas .nav-item.dropdown>.nav-link,
+.offcanvas .nav-link[href="index.html"] {
+    display: none;
+}
+
+.offcanvas hr.dropdown-divider {
+    display: none !important;
+}
+
+
+.navs .phone-nav span {
+    position: relative;
+    left: 1rem;
+
+}
+
+.offcanvas .nav-item + .nav-item {
+    margin-top: 0.25rem !important;  /* tighter vertical gap */
+}
+
+.navbar-nav .nav-link::after {
+    display: none;
+}
+
+/* Frosted‑glass effect for the phone off‑canvas menu */
+.offcanvas.sidebar {
+    background: rgba(255, 255, 255, 0.73) !important;
+    /* translucent dark */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.offcanvas-header {
+    background: transparent !important;
+    border-bottom: 0;
+}
+/* Let the list start flush; we'll push everything down via padding instead */
+.offcanvas .navbar-nav {
+    margin-top: 0;
+    
+}
+
+/* Push all items down a bit for breathing room */
+.offcanvas-body {
+    padding-top: 2rem;   /* adjust as desired */
+}
+
+.offcanvas .navbar-nav .nav-link {
+    top: 100;              /* prevents jitter when the off‑canvas opens */
+}
+
+/* Decrease vertical padding/margin on individual links */
+.offcanvas .nav-link {
+    margin: 0.25rem 0;        /* was inheriting larger margins */
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+.social-links a{
+    font-size: 0.9rem;
+}
+}
+
+
+@media (max-width:575px) {
+    p {
+        margin-bottom: 0;
+    }
+    body {
+        background-color: black !important;
+
+    }
+
+
+
+    .intro {
+        position: relative;
+        top: 40rem !important;
+        width: 100%;
+        text-align: left !important;
+        backdrop-filter: blur(1);
+    }
+
+      .offcanvas .nav-item .nav-link {
+        font-size: 20px !important;
+      }
+      .nav-item{
+        position: relative;
+        top: 10rem;
+        left: 10%;
+
+      }
+
+
+
+    .offset-md-6,
+    .offset-lg-6 {
+        margin-left: 0 !important;
+    }
+
+
+    .offcanvas.show .dropdown-menu {
+        display: block;
+        transform: none !important;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding-left: 0;
+        position: relative;
+    }
+
+
+
+    .all_text{
+        position: relative;
+        top: 7rem !important;
+        padding-bottom: 2rem;
+
+       
+    }
+    
+    .offcanvas .nav-item.dropdown>.nav-link,
+    .offcanvas .nav-link[href="index.html"] {
+        display: none;
+    }
+
+    .offcanvas hr.dropdown-divider {
+        display: none !important;
+    }
+
+
+    .navs .phone-nav span {
+        position: relative;
+        left: 1rem;
+
+    }
+
+    /* Reduce vertical gaps between nav items in off‑canvas */
+    .offcanvas .nav-item + .nav-item {
+        margin-top: 0.25rem !important;   /* tighter vertical gap */
+    }
+
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+
+    /* Frosted‑glass effect for the phone off‑canvas menu */
+    .offcanvas.sidebar {
+        background: rgba(255, 255, 255, 0.73) !important;
+        /* translucent dark */
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .offcanvas-header {
+        background: transparent !important;
+        border-bottom: 0;
+    }
+    /* Let the list start flush; we'll push everything down via padding instead */
+    .offcanvas .navbar-nav {
+        margin-top: 0;
+        
+    }
+
+    /* Push all items down a bit for breathing room */
+    .offcanvas-body {
+        padding-top: 2rem;   /* adjust as desired */
+    }
+
+    .offcanvas .navbar-nav .nav-link {
+        top: 100;              /* prevents jitter when the off‑canvas opens */
+    }
+
+    /* Decrease vertical padding/margin on individual links */
+    .offcanvas .nav-link {
+        margin: 0.25rem 0;        /* was inheriting larger margins */
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    
+
+}
+
+
+
+
