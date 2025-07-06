@@ -11,7 +11,7 @@
 }
 
 .left-image {
-    background: url('images/2.jpg') center/cover no-repeat;
+    background: url('Images/2.jpg') center/cover no-repeat;
     height: 100vh;
     margin: 0;
     padding: 0; 
@@ -394,9 +394,16 @@ margin-bottom: 1rem;
 
     .all_text{
         padding-bottom: 2rem;
+        padding-left:0;
+        margin-left: 0;
+        
         text-align: left !important;
 
        
+    }
+    .paragaph{
+        padding:0;
+        margin-left: -5px;
     }
 
     .row.align-items-start.align-items-sm-center {
