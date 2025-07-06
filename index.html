@@ -22,10 +22,10 @@
   <section class="header" id="Pg1">
     <!--Navbar-->
     <nav class="navbar navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top justify-content-end">
-      <div class="d-flex justify-content-end pe-5 ">
+      <div class="d-flex justify-content-end pe-lg-5">
         <!--Phone Navbar-->
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" style="border: none;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list" viewBox="0 0 14 14">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list" viewBox="0 0 13 13">
             <path fill-rule="evenodd"
               d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z" />
           </svg>
@@ -177,6 +177,28 @@
   scrollBox.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', scrollBox.scrollTop > 0);
   });
+</script>
+<script>
+  const collapseSocial = document.getElementById('collapseSocial');
+  const collapsePolicy = document.getElementById('collapsePolicy');
+  const navItems = document.querySelectorAll('.offcanvas .nav-item');
+
+  function toggleShiftClass() {
+    const isAnyOpen = collapseSocial.classList.contains('show') || collapsePolicy.classList.contains('show');
+
+    navItems.forEach(item => {
+      if (isAnyOpen) {
+        item.classList.add('nav-shifted');
+      } else {
+        item.classList.remove('nav-shifted');
+      }
+    });
+  }
+
+  collapseSocial.addEventListener('shown.bs.collapse', toggleShiftClass);
+  collapsePolicy.addEventListener('shown.bs.collapse', toggleShiftClass);
+  collapseSocial.addEventListener('hidden.bs.collapse', toggleShiftClass);
+  collapsePolicy.addEventListener('hidden.bs.collapse', toggleShiftClass);
 </script>
 
 </body>

@@ -22,10 +22,10 @@
   <section class="header" id="Pg1">
     <!--Navbar-->
     <nav class="navbar navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top justify-content-end">
-      <div class="d-flex justify-content-end pe-5 ">
+      <div class="d-flex justify-content-end pe-lg-5 ">
         <!--Phone Navbar-->
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" style="border: none;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-list" viewBox="0 0 14 14">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-list" viewBox="0 0 13 13">
             <path fill-rule="evenodd"
               d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z" />
           </svg>
@@ -53,7 +53,7 @@
                 </a>
                 <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-3">
                   <li>
-                    <strong class="dropdown-header text-black">Social Entrepreneurship</strong>
+                    <strong class="dropdown-header">Social Entrepreneurship</strong>
                     <a class="dropdown-item ps-4" href="page2.html">UN Association of Afghanistan</a>
                     <a class="dropdown-item ps-4" href="page2.html">Kabul Model United Nations</a>
                   </li>
@@ -61,7 +61,7 @@
                     <hr class="dropdown-divider border-secondary">
                   </li>
                   <li>
-                    <strong class="dropdown-header text-black">Policy Advocacy</strong>
+                    <strong class="dropdown-header">Policy Advocacy</strong>
                     <a class="dropdown-item ps-4" href="page2.html">Youth Consensus for Peace</a>
                     <a class="dropdown-item ps-4" href="page2.html">Youth, Peace, and Security</a>
                   </li>
@@ -69,9 +69,9 @@
                     <hr class="dropdown-divider border-dark">
                   </li>
                   <li>
-                    <strong class="dropdown-header text-black"> <a
+                    <strong class="dropdown-header"> <a
                         href="https://www.google.com/?zx=1751155489489&no_sw_cr=1"
-                        style="text-decoration: none; color: rgb(0, 0, 0);">Published Work</a></strong>
+                        style="text-decoration: none; color: rgb(125, 125, 125);">Published Work</a></strong>
                   </li>
                 </ul>
               </li>
@@ -117,6 +117,13 @@
     </nav>
 
 
+  <!-- Social Links at the bottom center -->
+  <div class="social-links">
+    <a href=" https://x.com/YahyaQanie" target="_blank" rel="noopener" aria-label="X (Twitter)">X</a>
+    <a href="https://linkedin.com/in/yqanie" target="_blank" rel="noopener" aria-label="LinkedIn">
+      
+    LinkedIn</a>
+  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -133,15 +140,28 @@
     navbar.classList.toggle('scrolled', scrollBox.scrollTop > 0);
   });
 </script>
+<script>
+  const collapseSocial = document.getElementById('collapseSocial');
+  const collapsePolicy = document.getElementById('collapsePolicy');
+  const navItems = document.querySelectorAll('.offcanvas .nav-item');
 
+  function toggleShiftClass() {
+    const isAnyOpen = collapseSocial.classList.contains('show') || collapsePolicy.classList.contains('show');
 
-  <!-- Social Links at the bottom center -->
-  <div class="social-links">
-    <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)">X</a>
-    <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
-      
-    LinkedIn</a>
-  </div>
+    navItems.forEach(item => {
+      if (isAnyOpen) {
+        item.classList.add('nav-shifted');
+      } else {
+        item.classList.remove('nav-shifted');
+      }
+    });
+  }
+
+  collapseSocial.addEventListener('shown.bs.collapse', toggleShiftClass);
+  collapsePolicy.addEventListener('shown.bs.collapse', toggleShiftClass);
+  collapseSocial.addEventListener('hidden.bs.collapse', toggleShiftClass);
+  collapsePolicy.addEventListener('hidden.bs.collapse', toggleShiftClass);
+</script>
 
 </body>
 
