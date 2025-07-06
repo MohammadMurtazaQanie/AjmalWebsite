@@ -325,13 +325,13 @@
 }
 .d-flex .navbar-toggler {
     padding-right: 2.1rem !important;
-    padding-top: 2rem !important;
+    padding-top: 1.5rem !important;
     color:  rgb(125, 125, 125) !important;
 }
 
 .social-links{
     position: absolute;
-    bottom: 5rem;
+    bottom: 3rem;
     left: 50%;
     transform: translateX(-45%);
     text-align: center;
