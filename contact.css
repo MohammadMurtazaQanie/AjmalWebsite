@@ -331,7 +331,7 @@
 
 .social-links{
     position: absolute;
-    bottom: 7rem;
+    bottom: 5rem;
     left: 50%;
     transform: translateX(-45%);
     text-align: center;
