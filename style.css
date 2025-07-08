@@ -394,10 +394,7 @@ margin-top: 5rem !important;
     padding-bottom: 0.25rem;
 }
 
-.d-flex .navbar-toggler {
-    padding-right: 2.1rem !important;
-    padding-top: 1.5rem !important;
-}
+
 }
 
 
@@ -411,7 +408,8 @@ margin-top: 5rem !important;
     }
    
 body {                       
-    min-height: 235vh;}
+    min-height: 230vh;
+overflow-x: hidden;}
 
 body.menu-open {
     min-height: auto;            /* while the off-canvas menu is open */
