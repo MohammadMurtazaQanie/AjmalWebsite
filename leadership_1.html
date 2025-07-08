@@ -273,19 +273,15 @@ window.addEventListener('resize', wireScroll);
             collapsePolicy.addEventListener('hidden.bs.collapse', toggleShiftClass);
         </script>
         <script>
-            /* grab the off-canvas element */
             const offcanvas = document.getElementById('offcanvasNavbar');
-          
-            /* when it OPENS → add the class */
             offcanvas.addEventListener('show.bs.offcanvas', () => {
-                document.body.classList.add('menu-open');
+              document.body.classList.add('menu-open');
             });
-          
-            /* when it CLOSES → remove the class */
             offcanvas.addEventListener('hidden.bs.offcanvas', () => {
-                document.body.classList.remove('menu-open');
+              document.body.classList.remove('menu-open');
             });
           </script>
+
 
 
 

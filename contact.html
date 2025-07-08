@@ -164,6 +164,16 @@
   collapsePolicy.addEventListener('hidden.bs.collapse', toggleShiftClass);
 </script>
 
+<script>
+  const offcanvas = document.getElementById('offcanvasNavbar');
+  offcanvas.addEventListener('show.bs.offcanvas', () => {
+    document.body.classList.add('menu-open');
+  });
+  offcanvas.addEventListener('hidden.bs.offcanvas', () => {
+    document.body.classList.remove('menu-open');
+  });
+</script>
+
 </body>
 
 </html>
