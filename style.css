@@ -408,7 +408,7 @@ margin-top: 5rem !important;
     }
    
 body {                       
-    min-height: 230vh;
+    min-height: 240vh;
 overflow-x: hidden;}
 
 body.menu-open {
@@ -532,8 +532,10 @@ body.menu-open {
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
     }
-
-
+    .navbar-toggler {
+        position: absolute;
+        bottom: 0.5rem;
+    }
     
 
 }

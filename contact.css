@@ -114,7 +114,6 @@
 }
 .social-links p{
     font-size: 0.7rem !important;
-    padding-right: 1.8rem !important;
     font-style: italic;
     color: rgb(125, 125, 125);
 }
@@ -414,7 +413,6 @@
     }
     .social-links p{
         font-size: 0.5rem !important;
-        width: 100% !important;
     }   
     
     .offcanvas .nav-item.dropdown>.nav-link,
