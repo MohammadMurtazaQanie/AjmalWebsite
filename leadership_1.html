@@ -136,7 +136,7 @@
                                 <div class="row align-items-start align-items-sm-center mb-2">
                                     <!-- Logo Column -->
                                     <div class="col-12 col-sm-auto">
-                                        <img src="Images/upscalemedia-transformed-2.png"
+                                        <img src="Images/UNA Logo & Text - Copy (3)-2.png" loading="lazy"
                                             alt="United Nations Association of Afghanistan logo" class="img-fluid"
                                             style="max-width: 220px;">
                                     </div>
@@ -204,9 +204,22 @@
             const scrollTarget = document.querySelector('.page-content');
             const navbar = document.querySelector('.navs');
 
-            scrollTarget.addEventListener('scroll', () => {
-                navbar.classList.toggle('scrolled', scrollTarget.scrollTop > 0);
-            });
+            // Handle scroll for both desktop (scrolling inside .page-content)
+            // and mobile (scrolling the whole window)
+            function handleScroll() {
+                if (window.innerWidth < 768) {
+                    // Mobile: use window scroll position
+                    const pos = window.scrollY || document.documentElement.scrollTop;
+                    navbar.classList.toggle('scrolled', pos > 0);
+                } else {
+                    // Desktop: use the inner scrollable div
+                    navbar.classList.toggle('scrolled', scrollTarget.scrollTop > 0);
+                }
+            }
+
+            // Attach listeners
+            scrollTarget.addEventListener('scroll', handleScroll);
+            window.addEventListener('scroll', handleScroll);
         </script>
         <script>
             const collapseSocial = document.getElementById('collapseSocial');
@@ -230,6 +243,21 @@
             collapseSocial.addEventListener('hidden.bs.collapse', toggleShiftClass);
             collapsePolicy.addEventListener('hidden.bs.collapse', toggleShiftClass);
         </script>
+        <script>
+            /* grab the off-canvas element */
+            const offcanvas = document.getElementById('offcanvasNavbar');
+          
+            /* when it OPENS → add the class */
+            offcanvas.addEventListener('show.bs.offcanvas', () => {
+                document.body.classList.add('menu-open');
+            });
+          
+            /* when it CLOSES → remove the class */
+            offcanvas.addEventListener('hidden.bs.offcanvas', () => {
+                document.body.classList.remove('menu-open');
+            });
+          </script>
+        
 
 </body>
 

@@ -61,13 +61,14 @@
 .navbar{
     min-height:56px; 
     transition:opacity 0.5s ease;    
+    z-index: 0;
   }
 .navbar::before{
       content:"";
       position:absolute;
       inset:0;
       pointer-events:none;
-      z-index:0;                  /* sits *above* the links but keeps clicks working */
+      z-index: -1;                /* sits behind everything */
       opacity:0;                  /* hidden until scrolled */
       backdrop-filter: blur(0px);         /* start with no blur */
       -webkit-backdrop-filter: blur(0px); /* Safari */
@@ -95,6 +96,8 @@
     /* translucent dark tint  */
     border: 0.5px solid rgba(200, 200, 200, 0.2);
     border-radius: 30px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .navbar-nav .dropdown-toggle::after {
@@ -108,6 +111,13 @@
 
 .dropdown-item {
     font-weight: 1500 !important;
+    border-radius: 12px !important;
+    transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.199) !important;
+    border-radius: 12px !important;
 }
 
 .nav-item .nav-link {
@@ -257,6 +267,7 @@ margin-top: 5rem !important;
         margin-left: 0 !important;
     }
 }
+
 @media (max-width:767px ){
     body {
         background-color: black !important;
@@ -398,6 +409,15 @@ margin-top: 5rem !important;
         background-color: black !important;
 
     }
+    /* --- Scroll backdrop support --- */
+body {                       /* plenty of page to scroll / blur behind the nav */
+    min-height: 219vh;
+}
+
+body.menu-open {             /* while the off-canvas menu is open */
+    min-height: auto !important;
+    overflow: hidden;        /* stop background scrolling */
+}
 
     .header {
         background-image: url(Images/1\ Home\ New.jpg);

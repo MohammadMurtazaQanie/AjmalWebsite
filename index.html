@@ -169,13 +169,37 @@
     <script>
       AOS.init();
     </script>
+    
+    <script>
+      /* grab the elements once */
+      const navbar    = document.querySelector('.navs');
+      const scrollBox = document.querySelector('.header');   /* may or may not scroll */
+    
+      /* one function that checks both scroll positions */
+      function toggleBlur() {
+        const fromPage   = (window.scrollY || document.documentElement.scrollTop) > 0;
+        const fromHeader = scrollBox ? scrollBox.scrollTop > 0 : false;
+        navbar.classList.toggle('scrolled', fromPage || fromHeader);
+      }
+    
+      /* listen to both sources of scrolling */
+      window.addEventListener('scroll', toggleBlur);
+      if (scrollBox) {
+        scrollBox.addEventListener('scroll', toggleBlur);
+      }
+    
+      /* call once on load in case the page is already scrolled */
+      toggleBlur();
+    </script>
 <script>
-  const scrollBox = document.querySelector('.header');  // 👈 the thing that really scrolls
-  const navbar    = document.querySelector('.navs');
+  const offcanvas = document.getElementById('offcanvasNavbar');
 
-  /* toggle the blur when that element is scrolled */
-  scrollBox.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', scrollBox.scrollTop > 0);
+  offcanvas.addEventListener('show.bs.offcanvas', () => {
+    document.body.classList.add('menu-open');
+  });
+
+  offcanvas.addEventListener('hidden.bs.offcanvas', () => {
+    document.body.classList.remove('menu-open');
   });
 </script>
 <script>
@@ -200,6 +224,8 @@
   collapseSocial.addEventListener('hidden.bs.collapse', toggleShiftClass);
   collapsePolicy.addEventListener('hidden.bs.collapse', toggleShiftClass);
 </script>
+
+
 
 </body>
 

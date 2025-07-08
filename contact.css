@@ -104,6 +104,19 @@
 .dropdown-item {
     font-weight: 1500 !important;
     color: rgba(0, 0, 0, 0.477) !important;
+    border-radius: 12px !important;
+    transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(166, 166, 166, 0.199) !important;
+    border-radius: 12px !important;
+}
+.social-links p{
+    font-size: 0.7rem !important;
+    padding-right: 1.8rem !important;
+    font-style: italic;
+    color: rgb(125, 125, 125);
 }
 
 .nav-item .nav-link {
@@ -323,6 +336,10 @@
 .social-links a{
     font-size: 0.9rem;
 }
+.social-links p{
+    font-size: 0.5rem !important;
+}
+
 .d-flex .navbar-toggler {
     padding-right: 2.1rem !important;
     padding-top: 1.5rem !important;
@@ -395,6 +412,10 @@
 
        
     }
+    .social-links p{
+        font-size: 0.5rem !important;
+        width: 100% !important;
+    }   
     
     .offcanvas .nav-item.dropdown>.nav-link,
     .offcanvas .nav-link[href="index.html"] {
