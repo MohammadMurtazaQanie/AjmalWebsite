@@ -421,7 +421,7 @@ body.menu-open {
 @media (max-width: 575px) {
 
     body{
-        min-height: 235vh !important;
+        min-height: 240vh;
     }
     body.menu-open {
         min-height: auto !important;   /* collapse back to normal when menu is open */
@@ -559,13 +559,6 @@ body.menu-open {
     .social_media a {
         font-size: 11px !important;
     }
-
-
-      .header{
-        height: 90vh;
-      }
-
-    
 }
 @media (max-width: 397px) {
     .page-content img {
