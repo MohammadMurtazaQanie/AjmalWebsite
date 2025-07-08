@@ -422,7 +422,7 @@ body.menu-open {
         position: relative;
     }
     body{
-        min-height: 219.5vh !important;
+        min-height: 235vh !important;
     }
     body.menu-open {
         min-height: auto !important;   /* collapse back to normal when menu is open */
