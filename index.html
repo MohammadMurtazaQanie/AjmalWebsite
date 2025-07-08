@@ -171,24 +171,21 @@
     </script>
     
     <script>
-      /* grab the elements once */
-      const navbar    = document.querySelector('.navs');
-      const scrollBox = document.querySelector('.header');   /* may or may not scroll */
-    
-      /* one function that checks both scroll positions */
+      const navbar = document.querySelector('.navs');
+      const scrollBox = document.querySelector('.header');
+
       function toggleBlur() {
-        const fromPage   = (window.scrollY || document.documentElement.scrollTop) > 0;
+        const pos = window.scrollY || document.documentElement.scrollTop;
+        const fromPage = pos > 0;
         const fromHeader = scrollBox ? scrollBox.scrollTop > 0 : false;
         navbar.classList.toggle('scrolled', fromPage || fromHeader);
       }
-    
-      /* listen to both sources of scrolling */
+
       window.addEventListener('scroll', toggleBlur);
       if (scrollBox) {
         scrollBox.addEventListener('scroll', toggleBlur);
       }
-    
-      /* call once on load in case the page is already scrolled */
+
       toggleBlur();
     </script>
 <script>

@@ -411,16 +411,17 @@ margin-top: 5rem !important;
     }
    
 body {                       
-    height: 225vh;}
+    min-height: 230vh;}
 
-body.menu-open {             /* while the off-canvas menu is open */
-    min-height: auto !important;
+body.menu-open {
+    min-height: auto;            /* while the off-canvas menu is open */
     overflow: hidden;        /* stop background scrolling */
 }
 
     .header {
         background-image: url(Images/1\ Home\ New.jpg);
         width: 100%;
+        min-height: 90vh;
         background-position-y: 10%;
         background-position-x: 10%;
         background-size: 100vh;
@@ -470,6 +471,7 @@ body.menu-open {             /* while the off-canvas menu is open */
         position: relative;
         top: 7rem !important;
         padding-bottom: 2rem;
+        min-height: auto;
 
        
     }
