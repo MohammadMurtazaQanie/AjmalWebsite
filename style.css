@@ -471,11 +471,9 @@ body.menu-open {
         position: relative;
         top: 7rem !important;
         padding-bottom: 2rem;
-        overflow: auto;
-
        
     }
-    
+.intro{        overflow: auto;}    
     .offcanvas .nav-item.dropdown>.nav-link,
     .offcanvas .nav-link[href="index.html"] {
         display: none;
