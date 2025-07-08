@@ -474,7 +474,10 @@
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
     }
-
+    .navbar-toggler {
+        position: absolute;
+        bottom: 0.7rem;
+    }
     
 
 }

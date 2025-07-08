@@ -121,6 +121,8 @@
     /* translucent dark tint  */
     border: 0.5x solid rgba(0, 0, 0, 0.2);
     border-radius: 30px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .navbar-nav .dropdown-toggle::after {
@@ -265,7 +267,7 @@
     .first_page,
     .page-content {
         height: auto !important;
-        overflow-y: unset !important;
+        overflow-y: auto !important;
     }
     main{
         margin: 0 !important;
@@ -412,6 +414,32 @@ body.menu-open {
 
 
 @media (max-width: 575px) {
+
+    body{
+        min-height: 235vh !important;
+    }
+    body.menu-open {
+        min-height: auto !important;   /* collapse back to normal when menu is open */
+        overflow: hidden;              /* stop background scrolling */
+    }
+    .offcanvas .nav-item .nav-link {
+        font-size: 20px !important;
+      }
+      .nav-item{
+        position: relative;
+        top: 10rem;
+        left: 10%;
+
+      }
+
+
+
+    .offset-md-6,
+    .offset-lg-6 {
+        margin-left: 0 !important;
+    }
+
+
     .offcanvas.show .dropdown-menu {
         display: block;
         transform: none !important;
@@ -421,55 +449,8 @@ body.menu-open {
         padding-left: 0;
         position: relative;
     }
-    body{
-        min-height: 235vh !important;
-    }
-    body.menu-open {
-        min-height: auto !important;   /* collapse back to normal when menu is open */
-        overflow: hidden;              /* stop background scrolling */
-    }
 
 
-    .all_text{
-        padding-bottom: 2rem;
-        padding-left:0;
-        margin-left: 0;
-        
-        text-align: left !important;
-
-       
-    }
-    .paragaph{
-        padding:0;
-        margin-left: -5px;
-        margin-right: -10px;
-    }
-
-    .row.align-items-start.align-items-sm-center {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-      }
-    
-      .row.align-items-start.align-items-sm-center > .col-12,
-      .row.align-items-start.align-items-sm-center > .social_media {
-        flex: 0 0 auto !important;
-        width: auto !important;
-      }
-    
-      .social_media {
-        margin-top: 0 !important;
-        text-align: right !important;
-
-      }
-      .social_media p {
-        padding-right: 0 !important;
-        font-size: 11px !important;
-      }
-    .social_media a {
-        font-size: 11px !important;
-    }
-    
     .offcanvas .nav-item.dropdown>.nav-link,
     .offcanvas .nav-link[href="index.html"] {
         display: none;
@@ -529,28 +510,55 @@ body.menu-open {
         padding-top: 0.25rem;
         padding-bottom: 0.25rem;
     }
+    .navbar-toggler {
+        position: absolute;
+        bottom: 0.7rem;
+    }
+    
 
+    .all_text{
+        padding-bottom: 2rem;
+        padding-left:0;
+        margin-left: 0;
+        text-align: left !important;
 
-      .offcanvas .nav-item .nav-link {
-        font-size: 20px !important;
+       
+    }
+    .paragaph{
+        padding:0;
+        margin-left: -5px;
+        margin-right: -10px;
+    }
+
+    .row.align-items-start.align-items-sm-center {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
       }
-      .nav-item{
-        position: relative;
-        top: 10rem;
-        left: 10%;
+    
+      .row.align-items-start.align-items-sm-center > .col-12,
+      .row.align-items-start.align-items-sm-center > .social_media {
+        flex: 0 0 auto !important;
+        width: auto !important;
+      }
+    
+      .social_media {
+        margin-top: 0 !important;
+        text-align: right !important;
 
       }
+      .social_media p {
+        padding-right: 0 !important;
+        font-size: 11px !important;
+      }
+    .social_media a {
+        font-size: 11px !important;
+    }
+
+
       .header{
         height: 90vh;
       }
-
-
-
-    .offset-md-6,
-    .offset-lg-6 {
-        margin-left: 0 !important;
-    }
-
 
     
 }
@@ -568,13 +576,15 @@ body.menu-open {
     }
 
     .social_media a {
-        font-size: 1px !important;
+        font-size: 11px !important;
        
     }
 
     .row.align-items-start.align-items-sm-center {
         margin-bottom: 1rem !important;
     }
+
+    
 }
 
 
