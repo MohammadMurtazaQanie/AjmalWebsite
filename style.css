@@ -409,10 +409,9 @@ margin-top: 5rem !important;
         background-color: black !important;
 
     }
-    /* --- Scroll backdrop support --- */
-body {                       /* plenty of page to scroll / blur behind the nav */
-    min-height: 219vh;
-}
+   
+body {                       
+    height: 225vh;}
 
 body.menu-open {             /* while the off-canvas menu is open */
     min-height: auto !important;
@@ -421,9 +420,8 @@ body.menu-open {             /* while the off-canvas menu is open */
 
     .header {
         background-image: url(Images/1\ Home\ New.jpg);
-        height: 90vh;
         width: 100%;
-        background-position-y: 12%;
+        background-position-y: 10%;
         background-position-x: 10%;
         background-size: 100vh;
         background-repeat: no-repeat;
