@@ -421,7 +421,7 @@ body.menu-open {
     .header {
         background-image: url(Images/1\ Home\ New.jpg);
         width: 100%;
-        min-height: 90vh;
+        height: 90vh;
         background-position-y: 10%;
         background-position-x: 10%;
         background-size: 100vh;
