@@ -411,7 +411,7 @@ margin-top: 5rem !important;
     }
    
 body {                       
-    min-height: 230vh;}
+    min-height: 235vh;}
 
 body.menu-open {
     min-height: auto;            /* while the off-canvas menu is open */
@@ -471,7 +471,6 @@ body.menu-open {
         position: relative;
         top: 7rem !important;
         padding-bottom: 2rem;
-        min-height: auto;
 
        
     }
