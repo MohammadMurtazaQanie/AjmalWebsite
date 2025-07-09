@@ -399,8 +399,8 @@
     font-size: 0.9rem;
 }
 .d-flex .navbar-toggler {
-    padding-right: 2.1rem !important;
-    padding-top: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    padding-top: 1.4rem !important;
     color:  black !important;
 }
 
@@ -523,7 +523,7 @@ body {
     }
     .navbar-toggler {
         position: absolute;
-        bottom: 0.7rem;
+        bottom: 1rem;
     }
     
 

@@ -405,6 +405,7 @@ margin-top: 5rem !important;
     body {
         background-color: black !important;
 
+
     }
    
 body {                       
@@ -412,7 +413,6 @@ body {
 overflow-x: hidden;}
 
 body.menu-open {
-    min-height: auto;            /* while the off-canvas menu is open */
     overflow: hidden;   
     position: fixed !important;
     width: 100%;     /* stop background scrolling */
@@ -430,7 +430,7 @@ body.menu-open {
 
     .intro {
         position: relative;
-        top: 43rem !important;
+        top: 40rem !important;
         width: 100%;
         text-align: left !important;
         backdrop-filter: blur(1);
