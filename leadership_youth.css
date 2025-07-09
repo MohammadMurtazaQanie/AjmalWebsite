@@ -11,7 +11,7 @@
 }
 
 .left-image {
-    background: url('Images/4.jpg') center/cover no-repeat;
+    background: url('Images/9-min.jpg') center/cover no-repeat;
     height: 100vh;
     margin: 0;
     padding: 0; 
@@ -33,6 +33,13 @@
     -ms-overflow-style: none;       /* IE and Edge */
 }
 
+.youth{
+font-size: 1.8rem;
+color: rgb(125, 125,125);
+padding-left: 1.9rem !important;
+padding-top: 3rem;;
+padding-bottom: 1.5rem;
+}
 .page-content::-webkit-scrollbar {
     display: none;                  /* Chrome, Safari, Opera */
 }
@@ -71,6 +78,7 @@
 
     margin-top: -2rem;
     text-align: justify;
+    margin-bottom: 1rem;
 }
 
 .navbar-nav .nav-link:focus,
@@ -420,6 +428,12 @@ body {
     min-height: auto;
   }
 
+  .youth{
+    font-size: 1.5rem;
+    padding-left: 1.9rem !important;
+    padding-top: 2rem;;
+    padding-bottom: 0.5rem;
+    }
 
 }
 
