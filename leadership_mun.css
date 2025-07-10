@@ -576,6 +576,10 @@ body {
     .social_media a {
         font-size: 11px !important;
     }
+    .page-content img {
+        max-width: 140px !important;
+        padding: 10px !important;
+    }
 }
 @media (max-width: 397px) {
     .page-content img {
