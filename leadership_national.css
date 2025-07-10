@@ -22,7 +22,6 @@
 .first_page {
     width: 100%;
     overflow: hidden;
-
 }
 .page-content {
     max-width: 680px;
@@ -31,8 +30,8 @@
     overflow-y: auto;
     scrollbar-width: none;          /* Firefox */
     -ms-overflow-style: none; 
-    position: relative;
-    top: -30px;      /* IE and Edge */
+    top: 0px;
+
 }
 
 .page-content::-webkit-scrollbar {
@@ -431,8 +430,12 @@ body {
 
 @media (max-width: 575px) {
 
+    .page-content{
+        position: relative;
+        top: -50px;
+    }
     body{
-        min-height: 240vh;
+        min-height: 220vh;
     }
     body.menu-open {
         min-height: auto !important;
@@ -535,7 +538,7 @@ body {
     
 
     .all_text{
-        padding-bottom: 2rem;
+
         padding-left:0;
         margin-left: 0;
         text-align: left !important;
@@ -546,12 +549,13 @@ body {
         padding:0;
         margin-left: -5px;
         margin-right: -10px;
+        margin-bottom: 0;
     }
 
     .row.align-items-start.align-items-sm-center {
         flex-direction: row !important;
         justify-content: space-between !important;
-        align-items: center !important;
+        padding: 10px;
       }
     
       .row.align-items-start.align-items-sm-center > .col-12,
