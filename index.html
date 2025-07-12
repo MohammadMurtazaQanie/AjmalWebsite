@@ -184,10 +184,10 @@
         navbar.classList.toggle('scrolled', fromPage || fromHeader);
       }
 
-      window.addEventListener('scroll', toggleBlur);
-      if (scrollBox) {
-        scrollBox.addEventListener('scroll', toggleBlur);
-      }
+       window.addEventListener('scroll', toggleBlur, { passive: true });
+ if (scrollBox) {
+  scrollBox.addEventListener('scroll', toggleBlur, { passive: true });
+ }
 
       toggleBlur();
     </script>

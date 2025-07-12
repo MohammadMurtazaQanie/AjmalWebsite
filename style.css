@@ -426,7 +426,7 @@ margin-top: 5rem !important;
     }
    
 body {                       
-    min-height: 240vh;
+    min-height: 245vh;
 overflow-x: hidden;}
 
 body.menu-open {
@@ -471,6 +471,9 @@ body.menu-open {
         margin-left: 0 !important;
     }
 
+    html, body {
+        -webkit-overflow-scrolling: touch;   /* smooth inertial scroll on iOS */
+    }
 
     .offcanvas.show .dropdown-menu {
         display: block;
