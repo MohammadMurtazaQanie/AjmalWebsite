@@ -24,21 +24,37 @@
     overflow: hidden;
 
 }
+.nav-item.published-work {
+    display: none !important;
+}
 .page-content {
     max-width: 680px;
     margin-inline: auto;
     height: 100vh;
     overflow-y: auto;
     scrollbar-width: none;          /* Firefox */
-    -ms-overflow-style: none;       /* IE and Edge */
+    -ms-overflow-style: none;
+    position: relative;
+    top: 60px;       /* IE and Edge */
 }
-
+.pub a{
+    color:rgb(228, 228, 228) !important;
+     text-decoration: none;
+ }
+ .pub {
+     transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+ }
+ .pub:hover{
+     background-color: rgba(255, 252, 252, 0.206)!important;
+     border-radius: 12px !important;
+     transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+ }
 .youth{
 font-size: 1.8rem;
 color: rgb(125, 125,125);
 padding-left: 1.9rem !important;
 padding-top: 3rem;;
-padding-bottom: 1.5rem;
+padding-bottom: 3rem;
 }
 .page-content::-webkit-scrollbar {
     display: none;                  /* Chrome, Safari, Opera */
@@ -320,6 +336,9 @@ padding-bottom: 1.5rem;
     left: 10%;
 
   }
+  .nav-item.published-work {
+    display: block !important;
+}
   .offcanvas .nav-item {
     transition: transform 0.3s ease;
   }
@@ -344,11 +363,6 @@ padding-bottom: 1.5rem;
         padding-left: 0;
         position: relative;
     }
-
-    .offcanvas .nav-item.dropdown>.nav-link,
-.offcanvas .nav-link[href="index.html"] {
-    display: none;
-}
 
 .offcanvas hr.dropdown-divider {
     display: none !important;
@@ -459,6 +473,9 @@ body {
 
       }
 
+      .youth{
+        margin-bottom: 1rem;
+      }
 
 
     .offset-md-6,
@@ -478,10 +495,7 @@ body {
     }
 
 
-    .offcanvas .nav-item.dropdown>.nav-link,
-    .offcanvas .nav-link[href="index.html"] {
-        display: none;
-    }
+
 
     .offcanvas hr.dropdown-divider {
         display: none !important;
@@ -550,6 +564,10 @@ body {
         text-align: left !important;
 
        
+    }
+    .page-content {
+        position: relative;
+        top: 0px;
     }
     .paragaph{
         padding:0;

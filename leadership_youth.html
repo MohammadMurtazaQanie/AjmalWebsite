@@ -73,9 +73,8 @@
                                         <hr class="dropdown-divider border-light">
                                     </li>
                                     <li>
-                                        <strong class="dropdown-header text-white"> <a
-                                                href="https://www.google.com/?zx=1751155489489&no_sw_cr=1"
-                                                style="text-decoration: none;     color: rgb(221, 221, 221) !important;">Published
+                                        <strong class="pub dropdown-header"> <a
+                                                href="#">Published
                                                 Work</a></strong>
                                     </li>
                                 </ul>
@@ -107,6 +106,9 @@
                                     <a class="nav-link" href="leadership_youth.html">Youth, Peace, and Security</a>
                                 </div>
                             </li>
+                            <li class="nav-item published-work">
+                                <a class="nav-link mentions" href="index-price.html">Published Works</a>
+                              </li>
 
                             <li class="nav-item">
                                 <a class="nav-link mentions" href="index-price.html">Mentions</a>
@@ -251,28 +253,51 @@
             scrollTarget.addEventListener('scroll', handleScroll);
             window.addEventListener('scroll', handleScroll);
         </script>
-        <script>
-            const collapseSocial = document.getElementById('collapseSocial');
-            const collapsePolicy = document.getElementById('collapsePolicy');
-            const navItems = document.querySelectorAll('.offcanvas .nav-item');
+<script>
+    const collapseSocial = document.getElementById('collapseSocial');
+    const collapsePolicy = document.getElementById('collapsePolicy');
+    const navItems       = document.querySelectorAll('.offcanvas .nav-item');
+  
+  
+    function updateShift() {
+      const openCount =
+        (collapseSocial.classList.contains('show') ? 1 : 0) +
+        (collapsePolicy.classList.contains('show') ? 1 : 0);
+  
+      navItems.forEach(item => {
+        item.style.transform = openCount
+          ? `translateY(-${openCount * 40}px)`
+          : '';
+      });
+    }
+  
+    // Keep the shift in sync whenever either section toggles
+    ['shown.bs.collapse', 'hidden.bs.collapse'].forEach(evt => {
+      collapseSocial.addEventListener(evt, updateShift);
+      collapsePolicy.addEventListener(evt, updateShift);
+    });
+  
+    // Initialise on page load
+    updateShift();
+  </script>
+<script>
+/* Forward wheel scrolling from the left image to the text column (desktop only) */
+(function () {
+  const image      = document.querySelector('.left-image');
+  const pageScroll = document.querySelector('.page-content');
 
-            function toggleShiftClass() {
-                const isAnyOpen = collapseSocial.classList.contains('show') || collapsePolicy.classList.contains('show');
+  function redirectWheel(e) {
+    if (window.innerWidth >= 768) {            // Only on large screens
+      pageScroll.scrollBy({ top: e.deltaY, behavior: 'auto' });
+      e.preventDefault();                      // Prevent default page scroll
+    }
+  }
 
-                navItems.forEach(item => {
-                    if (isAnyOpen) {
-                        item.classList.add('nav-shifted');
-                    } else {
-                        item.classList.remove('nav-shifted');
-                    }
-                });
-            }
-
-            collapseSocial.addEventListener('shown.bs.collapse', toggleShiftClass);
-            collapsePolicy.addEventListener('shown.bs.collapse', toggleShiftClass);
-            collapseSocial.addEventListener('hidden.bs.collapse', toggleShiftClass);
-            collapsePolicy.addEventListener('hidden.bs.collapse', toggleShiftClass);
-        </script>
+  /* Non‑passive because we call preventDefault() */
+  image.addEventListener('wheel', redirectWheel, { passive: false });
+})();
+</script>
+  
         <script>
             const offcanvas = document.getElementById('offcanvasNavbar');
             offcanvas.addEventListener('show.bs.offcanvas', () => {

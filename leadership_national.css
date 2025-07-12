@@ -115,7 +115,22 @@
     opacity:1;
    
   }
+  .nav-item.published-work {
+    display: none !important;
+}
 
+.pub a{
+    color:rgb(228, 228, 228) !important;
+     text-decoration: none;
+ }
+ .pub {
+     transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+ }
+ .pub:hover{
+     background-color: rgba(255, 252, 252, 0.206)!important;
+     border-radius: 12px !important;
+     transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+ }
 
 
 .nav-item .something {
@@ -145,7 +160,7 @@
 }
 
 .dropdown-item:hover {
-    background-color: rgba(166, 166, 166, 0.199) !important;
+    background-color: rgba(255, 252, 252, 0.206) !important;
     border-radius: 12px !important;
 }
 
@@ -341,10 +356,7 @@
         position: relative;
     }
 
-    .offcanvas .nav-item.dropdown>.nav-link,
-.offcanvas .nav-link[href="index.html"] {
-    display: none;
-}
+
 
 .offcanvas hr.dropdown-divider {
     display: none !important;
@@ -363,6 +375,9 @@
 
 .navbar-nav .nav-link::after {
     display: none;
+}
+.nav-item.published-work {
+    display: block !important;
 }
 
 /* Frosted‑glass effect for the phone off‑canvas menu */
@@ -471,11 +486,6 @@ body {
         position: relative;
     }
 
-
-    .offcanvas .nav-item.dropdown>.nav-link,
-    .offcanvas .nav-link[href="index.html"] {
-        display: none;
-    }
 
     .offcanvas hr.dropdown-divider {
         display: none !important;
@@ -597,7 +607,7 @@ body {
 }
 @media (max-width: 397px) {
     .page-content img {
-        max-width: 180px !important;
+        max-width: 200px !important;
         margin: 0;
         padding: 10px !important;
     }
@@ -610,7 +620,7 @@ body {
     }
 
     .social_media a {
-        font-size: 10px !important;
+        font-size: 8.5px !important;
        
     }
 

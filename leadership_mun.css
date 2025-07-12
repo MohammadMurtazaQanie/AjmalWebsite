@@ -18,7 +18,9 @@
     overflow: hidden;         
 }
 
-
+.nav-item.published-work {
+    display: none !important;
+}
 .first_page {
     width: 100%;
     overflow: hidden;
@@ -30,7 +32,9 @@
     height: 100vh;
     overflow-y: auto;
     scrollbar-width: none;          /* Firefox */
-    -ms-overflow-style: none;       /* IE and Edge */
+    -ms-overflow-style: none; 
+    position: relative;
+    top: 30px;     /* IE and Edge */
 }
 
 .page-content::-webkit-scrollbar {
@@ -119,7 +123,7 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
-    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
     border-radius: 30px;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -133,7 +137,18 @@
 .dropdown-header {
     font-size: 15px !important;
 }
-
+.pub a{
+    color:rgb(228, 228, 228) !important;
+     text-decoration: none;
+ }
+ .pub {
+     transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+ }
+ .pub:hover{
+     background-color: rgba(166, 166, 166, 0.199) !important;
+     border-radius: 12px !important;
+     transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+ }
 .dropdown-item {
     font-weight: 1500 !important;
     color: rgba(255, 255, 255, 0.8) !important;
@@ -336,12 +351,6 @@
         padding-left: 0;
         position: relative;
     }
-
-    .offcanvas .nav-item.dropdown>.nav-link,
-.offcanvas .nav-link[href="index.html"] {
-    display: none;
-}
-
 .offcanvas hr.dropdown-divider {
     display: none !important;
 }
@@ -405,6 +414,9 @@
     padding-top: 1.4rem !important;
     color:  black !important;
 }
+.nav-item.published-work {
+    display: block !important;
+}
 
 .paragaph{
 margin-bottom: 1rem;
@@ -464,10 +476,7 @@ body {
     }
 
 
-    .offcanvas .nav-item.dropdown>.nav-link,
-    .offcanvas .nav-link[href="index.html"] {
-        display: none;
-    }
+
 
     .offcanvas hr.dropdown-divider {
         display: none !important;
@@ -542,7 +551,7 @@ body {
         margin-left: -5px;
         margin-right: -10px;
         position: relative;
-        top: -30px;
+        top: -40px;
     }
 
 
@@ -583,7 +592,7 @@ body {
 }
 @media (max-width: 397px) {
     .page-content img {
-        max-width: 140px !important;
+        max-width: 160px !important;
         padding: 10px !important;
     }
 
@@ -596,13 +605,11 @@ body {
     }
 
     .social_media a {
-        font-size: 11px !important;
+        font-size: 1opx !important;
        
-    }
 
 
 
     
 }
-
-
+}
