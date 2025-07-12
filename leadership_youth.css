@@ -35,7 +35,7 @@
     scrollbar-width: none;          /* Firefox */
     -ms-overflow-style: none;
     position: relative;
-    top: 60px;       /* IE and Edge */
+    top: 60px;  
 }
 .pub a{
     color:rgb(228, 228, 228) !important;
@@ -626,3 +626,22 @@ body {
 }
 
 
+
+
+@media (min-width: 768px) {
+    .first_page {
+        height: 100vh;                
+    }
+
+    .page-content {
+        top: 0;                       
+        padding-top: 60px;          
+        margin-bottom: 1rem;  
+        height: calc(100vh - 0px);  
+        overflow-y: auto;
+        
+    }
+    .all_text{
+        padding-bottom: 2rem !important;
+    }
+}
