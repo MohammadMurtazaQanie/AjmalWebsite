@@ -247,10 +247,10 @@ h3{
     font-size: 1.3em !important;
     text-align: center;
     margin-bottom: 1rem !important;
+    margin-top: 1rem !important;
 }
 .second p{
     font-size: 9px !important;
-    margin-bottom: 1rem;
    color:rgb(125, 125, 125, 0.8);
    padding-right: 20px;
    padding-left:20px;
@@ -285,7 +285,7 @@ h3{
 }
 
 .fifth a {
-    margin-top: 1rem;
+    margin-top: 3.8rem;
     text-decoration: none;
     color: rgb(125, 125, 125);
     font-size: 9px !important;
@@ -308,7 +308,7 @@ h3{
 .header2 {
   background-color: rgb(233, 233, 233, 0.5);
 padding-top: 70px;
-padding-bottom: 70px;
+padding-bottom: 40px;
 padding-left: 50px;
 padding-right: 70px;
 
@@ -336,7 +336,7 @@ padding-right: 70px;
 }
 
 .sixth a {
-    margin-top: 2rem;
+    margin-top: 4rem;
     text-decoration: none;
     color: rgb(125, 125, 125);
     font-size: 9px !important;
@@ -355,6 +355,16 @@ padding-right: 70px;
     background-color: rgb(198, 198, 198);
     transition: background-color 0.5s ease !important;
 }
+
+.seventh h3{
+    margin-top: 0.7rem !important;
+}
+.seventh .display {
+    font-size: 3rem !important;
+    margin: 0;
+    padding: 0;
+}
+
 
 .stat-card {
   background: #ffffff;
@@ -411,12 +421,7 @@ padding-right: 70px;
     transition: background-color 0.5s ease !important;
 }
 
-.seventh h3{
-    font-size: 1.3em !important;
-    text-align: center;
-    padding-right: 20px;
-    padding-left: 20px;
-}
+/* moved .seventh h3 rule into media query below */
 .eighth h3{
     font-size: 1.3em !important;
     text-align: center;
@@ -429,6 +434,15 @@ padding-right: 70px;
     margin-left: auto;
     margin-right: auto;
 
+}
+
+.tenth h3{
+    margin-top: 0.1rem !important;
+}
+.tenth .display {
+    font-size: 3rem !important;
+    margin: 0;
+    padding: 0;
 }
 
 .ninth h3{
@@ -477,7 +491,7 @@ padding-right: 70px;
 .eleven img{
     max-width: 50px;
     display: block;
-    margin-left: auto;
+    margin-left: 1.5rem;
     margin-right: auto;
 }
 .eleven{
@@ -487,6 +501,8 @@ padding-right: 70px;
 .stats-grid2{
     display:grid;
     gap:1.5rem;
+    position: relative;
+    top: 1rem;
    
     grid-template-columns:repeat(12,1fr);
     grid-auto-rows:minmax(20px,auto);        /* equal row height */
@@ -525,6 +541,43 @@ padding-right: 70px;
 
 
 
+@media (max-width: 1220px) {
+    .first h3, .second h3, .third h3, .fifth h3, .sixth h3, .eighth h3, .ninth h3,.tenth h3 {
+        font-size: 1rem !important;
+    }
+    .seventh h3 {
+        font-size: 1rem !important;
+        text-align: center;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: 0.3rem !important;
+    }
+
+    
+
+    .first img{
+        max-width: 70% !important;
+    }
+    .third img{
+        max-width: 90% !important;
+    }
+    .fifth img{
+        max-width: 80% !important;
+    }
+    .sixth img{
+        max-width: 100% !important;
+    }
+    .eighth img{
+        max-width: 80% !important;
+    }
+
+    .ninth img{
+        max-width: 95% !important;
+    }
+    .item-x img{
+        max-width: 35% !important;
+    }
+}
 
 
 
@@ -755,6 +808,66 @@ margin-bottom: 1rem;
 body {
     min-height: auto;
   }
+
+
+
+
+
+
+
+  /* 1. Compress the section’s outer padding */
+  .header2 {
+    padding: 2.5rem 1rem;      /* was 70/50/70 px */
+  }
+
+  /* 2. Reflow the 12-column grid into a simple vertical list */
+  .stats-grid2 {
+    display: flex;             /* ditch the custom grid */
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* 3. Make every card full-width with consistent spacing */
+  .stat-card {
+    width: 100%;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  /* 4. Center-align text (looks better when stacked) */
+  .stat-card h3,
+  .stat-card p,
+  .stat-card a {
+    text-align: center;
+  }
+
+  /* 5. Constrain big images so they don’t overflow */
+  .stat-card img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* 6. Give the “X-logo” horizontal card its own vertical look */
+  .item-x {
+    flex-direction: column;
+    align-items: center;
+  }
+  .item-x img {
+    margin: 0.5rem 0 0 0;      /* logo beneath button */
+  }
+
+  /* 7. Tighten tiny font-sizes to remain readable on phone */
+  .stat-card p,
+  .stat-card a {
+    font-size: 12px;           /* was 9px */
+  }
+
+
+
+
+
+
+
 
 
 }

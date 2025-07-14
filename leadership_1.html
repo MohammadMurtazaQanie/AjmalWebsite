@@ -126,7 +126,7 @@
 
 
         <!---- MAIN GRID -->
-        <section class="first_page">
+        <section class="first_page" id="firstPage">
             <div class="h-100">
                 <div class="row g-0 h-100 flex-md-row flex-column">
                     <!---- LEFT HALF : PHOTO -->
@@ -196,7 +196,7 @@
             </div>
         </section>
 
-        <section class="header2" id="Pg2">
+        <section class="header2" id="secondPage">
             <div class="stats-grid2">
           
               <!-- left column – two stacked cards -->
@@ -242,7 +242,7 @@
           
               <article class="seventh stat-card item-established">
                 <h3>Originally&nbsp;Established</h3>
-                <div class="display-5 fw-bold">1986</div>
+                <div class="display fw-bold">1986</div>
                 
               </article>
 
@@ -262,7 +262,7 @@
           
               <article class="tenth stat-card item-reestablished">
                 <h3>Re-Established</h3>
-                <div class="display-5 fw-bold">2017</div>
+                <div class="display fw-bold">2017</div>
               </article>
 
               <article class="eleven stat-card item-x">
@@ -367,29 +367,104 @@ window.addEventListener('resize', wireScroll);
     // Initialise on page load
     updateShift();
   </script>
+  
+</body>
 <script>
-/* Forward wheel scrolling from the left image to the text column (desktop only) */
-(function () {
-  const image      = document.querySelector('.left-image');
-  const pageScroll = document.querySelector('.page-content');
+/* ----------  FULL‑PAGE SNAP SCROLL (desktop ≥ 768 px)  ---------- */
+const pageContent = document.querySelector('.page-content');
+const leftImage   = document.querySelector('.left-image');
+const firstPage   = document.getElementById('firstPage');
+const secondPage  = document.getElementById('secondPage');
+let   isAuto      = false;        // guard against re‑entry
 
-  function redirectWheel(e) {
-    if (window.innerWidth >= 768) {            // Only on large screens
-      pageScroll.scrollBy({ top: e.deltaY, behavior: 'auto' });
-      e.preventDefault();                      // Prevent default page scroll
+function snapTo(y) {
+  isAuto = true;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+  setTimeout(() => (isAuto = false), 600);   // allow next snap after 0.6 s
+}
+
+/* 1 — wheel inside the TEXT column */
+function onWheelContent(e) {
+  if (window.innerWidth < 768 || isAuto) return;
+
+  const max  = pageContent.scrollHeight - pageContent.clientHeight;
+  const next = pageContent.scrollTop + e.deltaY;
+
+  if (e.deltaY > 0 && next >= max) {         // down → page 2
+    e.preventDefault();
+    snapTo(secondPage.offsetTop);
+    pageContent.scrollTop = 0;
+  } else if (e.deltaY < 0 && next <= 0 && window.scrollY > 0) { // up → page 1
+    e.preventDefault();
+    snapTo(firstPage.offsetTop);
+    pageContent.scrollTop = max;
+  }
+}
+
+/* 2 — wheel over the PHOTO */
+function onWheelImage(e) {
+  if (window.innerWidth < 768 || isAuto) return;
+
+  e.preventDefault();                         // we handle everything
+  pageContent.scrollBy({ top: e.deltaY, behavior: 'auto' });
+
+  const max  = pageContent.scrollHeight - pageContent.clientHeight;
+  const next = pageContent.scrollTop + e.deltaY;
+
+  if (e.deltaY > 0 && next >= max) snapTo(secondPage.offsetTop);
+  if (e.deltaY < 0 && next <= 0 && window.scrollY > 0) snapTo(firstPage.offsetTop);
+}
+
+/* 3 — wheel anywhere on the second page */
+function onWheelSecondPage(e) {
+  if (window.innerWidth >= 768 && !isAuto && e.deltaY < 0) {
+    e.preventDefault();
+    snapTo(firstPage.offsetTop);
+  }
+}
+
+/* register listeners */
+pageContent.addEventListener('wheel',  onWheelContent,   { passive: false });
+leftImage  .addEventListener('wheel',  onWheelImage,     { passive: false });
+secondPage .addEventListener('wheel',  onWheelSecondPage,{ passive: false });
+</script>
+<script>
+  window.addEventListener('scroll', () => {
+    const firstPage = document.getElementById('firstPage');
+    const secondPage = document.getElementById('secondPage');
+    const scrollY = window.scrollY;
+
+    if (window.innerWidth >= 768) {
+      firstPage.style.opacity = 1 - scrollY / window.innerHeight;
+      secondPage.style.opacity = scrollY / window.innerHeight;
+    }
+  });
+</script>
+<script>
+  function parallaxFadeEffect() {
+    const firstPage = document.getElementById('firstPage');
+    const secondPage = document.getElementById('secondPage');
+    const scrollY = window.scrollY;
+
+    firstPage.style.opacity = 1 - scrollY / window.innerHeight;
+    secondPage.style.opacity = scrollY / window.innerHeight;
+  }
+
+  function updateParallaxEffect() {
+    window.removeEventListener('scroll', parallaxFadeEffect);
+    if (window.innerWidth >= 768) {
+      window.addEventListener('scroll', parallaxFadeEffect);
+    } else {
+      document.getElementById('firstPage').style.opacity = '';
+      document.getElementById('secondPage').style.opacity = '';
+      document.getElementById('firstPage').style.transform = '';
+      document.getElementById('secondPage').style.transform = '';
     }
   }
 
-  /* Non‑passive because we call preventDefault() */
-  image.addEventListener('wheel', redirectWheel, { passive: false });
-})();
+  window.addEventListener('resize', updateParallaxEffect);
+  updateParallaxEffect();
 </script>
-  
-
-
-        
-
-</body>
 
 </html>
 </body>

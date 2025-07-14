@@ -106,6 +106,8 @@
     /* translucent dark tint  */
     border: 0.5x solid rgba(0, 0, 0, 0.2);
     border-radius: 30px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .navbar-nav .dropdown-toggle::after {
