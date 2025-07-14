@@ -201,7 +201,332 @@
 .navbar-nav .nav-link:hover::after {
     width: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
 /*--Page2--*/
+
+
+/* --- Stats grid cards --- */
+.stats-grid   { --bs-gutter-y: 2rem; }    
+
+h3{
+    font-weight: 1000;
+}
+
+.first {
+    text-align: center;
+    height: auto;
+}
+
+.first img{
+    max-width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.first h3{
+    font-size: 1.3em !important;
+}
+.first p {
+    font-size: 9px !important;
+    margin-bottom: 1rem;
+    color:rgb(125, 125, 125, 0.8);
+}
+
+.second h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    margin-bottom: 1rem !important;
+}
+.second p{
+    font-size: 9px !important;
+    margin-bottom: 1rem;
+   color:rgb(125, 125, 125, 0.8);
+   padding-right: 20px;
+   padding-left:20px;
+}
+
+.third h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    padding-right: 20px;
+    padding-left:20px;
+
+}
+.third img{
+    max-width: 230px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fifth p{
+    font-size: 9px !important;
+    margin-bottom: 1rem;
+    color:rgb(125, 125, 125, 0.8);
+    padding-right: 20px;
+    padding-left:20px;
+}
+.fifth img{
+    max-width: 240px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fifth a {
+    margin-top: 1rem;
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+}
+.fifth a:hover {
+    color: black;
+    background-color: rgb(198, 198, 198);
+    transition: background-color 0.5s ease !important;
+}
+
+.header2 {
+  background-color: rgb(233, 233, 233, 0.5);
+padding-top: 70px;
+padding-bottom: 70px;
+padding-left: 50px;
+padding-right: 70px;
+
+}
+
+.sixth h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    margin-bottom: 0.5rem !important;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.sixth p{
+    font-size: 9px !important;
+    margin-bottom: 1rem;
+    color:rgb(125, 125, 125, 0.8);
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.sixth img{
+    max-width: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sixth a {
+    margin-top: 2rem;
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+}
+.sixth a:hover {
+    color: black;
+    background-color: rgb(198, 198, 198);
+    transition: background-color 0.5s ease !important;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.01);
+  padding: 0.75rem 0.75rem;
+ height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+
+/* --- Make the “Learn More / X logo” card horizontal --- */
+.item-x{
+    flex-direction: row;       /* reverses order so image ends up on the right */
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;                      /* space between link and image */
+    padding: 0.75rem 1rem;             /* a bit wider horizontally */
+}
+
+.item-x img{
+    max-width: 60px;                   /* keep the logo compact */
+    height: auto;
+}
+
+.item-x a{
+    margin-top: 1rem;
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+}
+
+.item-x a:hover {
+    color: black;
+    background-color: rgb(198, 198, 198);
+    transition: background-color 0.5s ease !important;
+}
+
+.seventh h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.eighth h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.eight img{
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.ninth h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.ninth p{
+    font-size: 9px !important;
+    margin-bottom: 1rem;
+    color:rgb(125, 125, 125, 0.8);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.ninth img{
+    max-width: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ninth a {
+    margin-top: 1rem;
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+}
+.ninth a:hover {
+    color: black;
+    background-color: rgb(198, 198, 198);
+    transition: background-color 0.5s ease !important;
+}
+
+
+.eleven img{
+    max-width: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.eleven{
+    background-color: black;
+}
+/* ------- NEW CSS-GRID LAYOUT FOR “STATS” ------- */
+.stats-grid2{
+    display:grid;
+    gap:1.5rem;
+   
+    grid-template-columns:repeat(12,1fr);
+    grid-auto-rows:minmax(20px,auto);        /* equal row height */
+  }
+  
+  /* top block */
+  .item-endorsed      {grid-column:1 / span 3;  grid-row:1;}
+  .item-projects      {grid-column:1 / span 3;  grid-row:2;}
+  .item-sdg           {grid-column:4 / span 3;  grid-row:1 / span 2;}
+  .item-photo         {grid-column:7 / span 6;  grid-row:1 / span 2;}
+  
+  /* bottom row – 3rd grid row */
+  .item-parent        {grid-column:1  / span 3; grid-row:3/span 2;}
+  .item-legal         {grid-column:4  / span 2; grid-row:3 /span 2;}
+  .item-established   {grid-column:6  / span 3; grid-row:3;}
+  .item-member         {grid-column:6  / span 3; grid-row:4 ;}
+  .item-represent     {grid-column:9  / span 2; grid-row:3 /span 2;}
+  .item-reestablished {grid-column:11 / span 2; grid-row:3;}
+  .item-x {grid-column:11 / span 2; grid-row:4;}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1075px) {
     .page-content .paragaph {
