@@ -964,6 +964,10 @@ body {
     margin-top: 0.3rem !important;
 }
 
+.first h3{
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
 .first img{
     max-width: 70% !important;
     margin-bottom: 0.8rem;}
@@ -996,19 +1000,25 @@ body {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
 }
+.sixth h3{
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 15px !important;
+    padding-left: 0px !important;
+}
 
 
 .seventh h3{
     margin-top: 1rem;
     margin-bottom: 0;
-    font-size: 15px !important;
+    font-size: 13px !important;
     padding-left: 0px !important;
 
 }
 .tenth h3{
     margin-top: 1rem;
     margin-bottom: 0;
-    font-size: 15px !important;
+    font-size: 13px !important;
     padding-left: 0px !important;}
 
   .item-x {
