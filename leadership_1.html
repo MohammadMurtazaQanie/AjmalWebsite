@@ -189,6 +189,52 @@
 
                                 </p>
                             </div>
+
+                            <!-- desktop‑only inline “Next” button -->
+                            <button class="cta-scroll d-none d-md-inline-flex align-items-center mx-auto mt-4"
+                                    aria-label="Next section">
+                              Next&nbsp;<i class="bi bi-chevron-double-down"></i>
+                            </button>
+
+                            <script>
+/* jump to the second page when the button is clicked (desktop only) */
+document.addEventListener('DOMContentLoaded', () => {
+  const ctaScrollBtn = document.querySelector('.cta-scroll');
+  const secondPage   = document.getElementById('secondPage');
+
+  if (ctaScrollBtn && secondPage) {
+    ctaScrollBtn.addEventListener('click', () =>
+      secondPage.scrollIntoView({ behavior: 'smooth' })
+    );
+  }
+});
+                            </script>
+<script>
+/* Lock desktop users to page 1 unless they click the “Next” button */
+document.addEventListener('DOMContentLoaded', () => {
+
+  if (window.innerWidth < 768) return;          // mobile stays unchanged
+
+  const pageContent = document.querySelector('.page-content');
+  const leftImage   = document.querySelector('.left-image');
+
+  /* Override wheel so the outer page never scrolls on desktop.
+     We always consume the event, then manually scroll the text column. */
+  function handleWheel(e) {
+    if (window.innerWidth < 768) return;   // let phones behave normally
+
+    e.preventDefault();                    // stop window scrolling
+    e.stopPropagation();
+
+    /* Always route the delta to the text column */
+    pageContent.scrollBy({ top: e.deltaY, behavior: 'auto' });
+  }
+
+  /* Attach the guard */
+  pageContent.addEventListener('wheel', handleWheel, { passive: false });
+  leftImage  .addEventListener('wheel', handleWheel, { passive: false });
+});
+</script>
                                 <!-- add the rest of your text here -->
                         </main>
                     </div>
@@ -197,6 +243,8 @@
         </section>
 
         <section class="header2" id="secondPage">
+
+
             <div class="stats-grid2">
           
               <!-- left column – two stacked cards -->
@@ -269,11 +317,16 @@
                 <img src="Images/7.png" class="img-fluid" alt="X logo">
                 <a href="#">Learn More</a>
               </article>
+              <button class="cta-back d-none d-md-inline-flex align-items-center mx-auto"
+              aria-label="Back to first section">
+        <i class="bi bi-chevron-double-up"></i>&nbsp;Back
+      </button>
           
+             
+
             </div>
           </section>
 
-        <!---- Bootstrap 5 JS bundle (popper + bootstrap) -->
 
 
         <script>
@@ -302,7 +355,7 @@ function wireScroll() {
 }
 wireScroll();
 window.addEventListener('resize', wireScroll);
-          </script>
+                            </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
@@ -370,65 +423,6 @@ window.addEventListener('resize', wireScroll);
   
 </body>
 <script>
-/* ----------  FULL‑PAGE SNAP SCROLL (desktop ≥ 768 px)  ---------- */
-const pageContent = document.querySelector('.page-content');
-const leftImage   = document.querySelector('.left-image');
-const firstPage   = document.getElementById('firstPage');
-const secondPage  = document.getElementById('secondPage');
-let   isAuto      = false;        // guard against re‑entry
-
-function snapTo(y) {
-  isAuto = true;
-  window.scrollTo({ top: y, behavior: 'smooth' });
-  setTimeout(() => (isAuto = false), 600);   // allow next snap after 0.6 s
-}
-
-/* 1 — wheel inside the TEXT column */
-function onWheelContent(e) {
-  if (window.innerWidth < 768 || isAuto) return;
-
-  const max  = pageContent.scrollHeight - pageContent.clientHeight;
-  const next = pageContent.scrollTop + e.deltaY;
-
-  if (e.deltaY > 0 && next >= max) {         // down → page 2
-    e.preventDefault();
-    snapTo(secondPage.offsetTop);
-    pageContent.scrollTop = 0;
-  } else if (e.deltaY < 0 && next <= 0 && window.scrollY > 0) { // up → page 1
-    e.preventDefault();
-    snapTo(firstPage.offsetTop);
-    pageContent.scrollTop = max;
-  }
-}
-
-/* 2 — wheel over the PHOTO */
-function onWheelImage(e) {
-  if (window.innerWidth < 768 || isAuto) return;
-
-  e.preventDefault();                         // we handle everything
-  pageContent.scrollBy({ top: e.deltaY, behavior: 'auto' });
-
-  const max  = pageContent.scrollHeight - pageContent.clientHeight;
-  const next = pageContent.scrollTop + e.deltaY;
-
-  if (e.deltaY > 0 && next >= max) snapTo(secondPage.offsetTop);
-  if (e.deltaY < 0 && next <= 0 && window.scrollY > 0) snapTo(firstPage.offsetTop);
-}
-
-/* 3 — wheel anywhere on the second page */
-function onWheelSecondPage(e) {
-  if (window.innerWidth >= 768 && !isAuto && e.deltaY < 0) {
-    e.preventDefault();
-    snapTo(firstPage.offsetTop);
-  }
-}
-
-/* register listeners */
-pageContent.addEventListener('wheel',  onWheelContent,   { passive: false });
-leftImage  .addEventListener('wheel',  onWheelImage,     { passive: false });
-secondPage .addEventListener('wheel',  onWheelSecondPage,{ passive: false });
-</script>
-<script>
   window.addEventListener('scroll', () => {
     const firstPage = document.getElementById('firstPage');
     const secondPage = document.getElementById('secondPage');
@@ -470,3 +464,97 @@ secondPage .addEventListener('wheel',  onWheelSecondPage,{ passive: false });
 </body>
 
 </html>
+<script>
+/* jump back to the first page when the “Back” button is clicked (desktop only) */
+document.addEventListener('DOMContentLoaded', () => {
+  const backBtn   = document.querySelector('.cta-back');
+  const firstPage = document.getElementById('firstPage');
+  if (backBtn && firstPage) {
+    backBtn.addEventListener('click', () =>
+      firstPage.scrollIntoView({ behavior: 'smooth' })
+    );
+  }
+});
+</script>
+<script>
+/*  📱  Mobile guard — lock navigation between full‑page sections
+    Users can scroll *within* each page, but cannot swipe from
+    Page 1 → Page 2 or vice‑versa; only the “Next” / “Back” buttons
+    may trigger that jump. */
+document.addEventListener('DOMContentLoaded', () => {
+  /* Disable guard on smaller phones (≤ 764 px) */
+  if (window.innerWidth >= 768 || window.innerWidth <= 764) return;
+
+  const firstPage  = document.getElementById('firstPage');
+  const secondPage = document.getElementById('secondPage');
+  const nextBtn    = document.querySelector('.cta-scroll');
+  const backBtn    = document.querySelector('.cta-back');
+
+  /* Track which page the user is *allowed* to see */
+  let active = 'first';
+
+  nextBtn?.addEventListener('click', () => { active = 'second'; });
+  backBtn?.addEventListener('click', () => { active = 'first'; });
+
+  window.addEventListener('scroll', () => {
+    const secondTop = secondPage.offsetTop;   // recalc in case layout shifts
+    const y = window.scrollY;
+
+    if (active === 'first' && y >= secondTop) {
+      /* Tried to scroll onto Page 2 — snap back to Page 1 */
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    } else if (active === 'second' && y < secondTop) {
+      /* Tried to scroll back up onto Page 1 — snap to Page 2 */
+      window.scrollTo({ top: secondTop, behavior: 'auto' });
+    }
+  }, { passive: true });
+});
+</script>
+<!-- keep this as the very last <script> in the file -->
+<!-- keep this as the very last <script> in the file -->
+  <script>
+    /* 🖥️  Desktop guard — users may scroll *within* each page, but never jump
+       between Page 1 ⇄ Page 2 except via the “Next” / “Back” buttons. */
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.innerWidth < 768) return;          // mobiles handled elsewhere
+    
+      const firstPage  = document.getElementById('firstPage');
+      const secondPage = document.getElementById('secondPage');
+      const nextBtn    = document.querySelector('.cta-scroll');
+      const backBtn    = document.querySelector('.cta-back');
+    
+      /* Track which page is allowed */
+      let active = 'first';
+      nextBtn?.addEventListener('click', () => { active = 'second'; });
+      backBtn?.addEventListener('click', () => { active = 'first'; });
+    
+      /* 1️⃣  Clamp *any* window scroll (keys, scrollbar, etc.) */
+      function clampWindowScroll() {
+        const secondTop = secondPage.offsetTop;
+        const y         = window.scrollY;
+        if (active === 'first' && y >= secondTop) {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        } else if (active === 'second' && y < secondTop) {
+          window.scrollTo({ top: secondTop, behavior: 'auto' });
+        }
+      }
+      window.addEventListener('scroll', clampWindowScroll, { passive: true });
+    
+      /* 2️⃣  Intercept wheel / track-pad gestures so they never cross pages */
+      function routeWheel(e) {
+        if (e.defaultPrevented) return;
+    
+        const atPage2 = window.scrollY >= secondPage.offsetTop;
+    
+        e.preventDefault();
+        e.stopPropagation();
+    
+        if (atPage2) {
+          /* Scroll only inside Page 2 */
+          secondPage.scrollBy({ top: e.deltaY, behavior: 'auto' });
+        }
+        /* On Page 1, swallow the event and do nothing */
+      }
+      window.addEventListener('wheel', routeWheel, { passive: false });
+    });
+    </script>
