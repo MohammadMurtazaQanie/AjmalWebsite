@@ -25,7 +25,10 @@
 
 }
 .page-content {
-    padding: 3rem 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 0;
     max-width: 680px;
     margin-inline: auto;
     height: 100vh;
@@ -273,7 +276,7 @@ h3{
 
 .fifth p{
     font-size: 9px !important;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color:rgb(125, 125, 125, 0.8);
     padding-right: 20px;
     padding-left:20px;
@@ -286,7 +289,7 @@ h3{
 }
 
 .fifth a {
-    margin-top: 3.8rem;
+    margin-top: 2.5rem;
     text-decoration: none;
     color: rgb(125, 125, 125);
     font-size: 9px !important;
@@ -338,7 +341,7 @@ h3{
 }
 .sixth p{
     font-size: 9px !important;
-    margin-bottom: 1rem;
+    margin-bottom: 2.6rem;
     color:rgb(125, 125, 125, 0.8);
     padding-right: 20px;
     padding-left: 20px;
@@ -351,7 +354,7 @@ h3{
 }
 
 .sixth a {
-    margin-top: 4rem;
+    margin-top: 2.5rem;
     text-decoration: none;
     color: rgb(125, 125, 125);
     font-size: 9px !important;
@@ -480,10 +483,10 @@ h3{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1.3rem !important;
 }
 
 .ninth a {
-    margin-top: 1rem;
     text-decoration: none;
     color: rgb(125, 125, 125);
     font-size: 9px !important;
@@ -520,7 +523,7 @@ h3{
     gap:1rem; /* standardize gap between cards */
     position: relative;
     top: 2rem;
-   
+    padding-bottom: 1rem;
     grid-template-columns:repeat(12,1fr);
     grid-auto-rows:minmax(20px,auto);        /* equal row height */
   }
@@ -546,56 +549,50 @@ h3{
 
 
 
-
-
-
-
-
-  @media (min-width: 768px) {
+@media (min-width: 768px) {
     .cta-scroll{
         display:inline-flex;
+        flex-direction: column;     /* ⬅️  stack icon + label  */
+        row-gap:0.25rem;            /* vertical spacing        */
         align-items:center;
-        padding:0.75rem 1.5rem;
-        font-size:15px;
-        font-weight:600;
+        font-size:30px;
         color:rgb(125, 125, 125);
-        border:0.5px solid rgb(125, 125, 125);
-        border-radius:20px;
-        background:white;
+        background-color: transparent;
+        border:none;
         cursor:pointer;
-        transition:color 0.5s ease, background 0.5s ease;
         position: relative;
-        left: 18px;
+        margin-bottom: 0;
+        top: -5px;               /* lift up to overlap the bottom of the header */
+        left: 45%;
+        transform: translateY(0);
+        transition: color 0.5s ease,
+                    background 0.5s ease,
+                    transform 0.4s ease;
     }
     .cta-scroll:hover{
-        background-color: rgb(236, 236, 236);
         color: black;
+        transform: translateY(8px);                          /* slide down on hover */
     }
-/* place Back button directly under the X-item, rightmost column */
-.cta-back{
-    display:inline-flex;
-    align-items:center;
-    padding:0.75rem 1.5rem;
-    font-size:1rem;
-    font-weight:600;
-    color:rgb(125, 125, 125);
-    border:0.5px solid rgb(125, 125, 125);
-    border-radius:20px;
-    background:white;
-    cursor:pointer;
-    transition:color 0.5s ease, background 0.5s ease;
-  
-    /* grid placement — same columns as .item-x, next row down */
-    grid-column:12 / span 1;       /* right-hand 2 columns */
-    grid-row:5;                    /* row directly below .item-x (row 4) */
-  
-    justify-self:end;              /* hug the right edge */
-  }
-  .cta-back:hover{
-    background-color: rgb(230, 230, 230);
-    color: black;
+.cta-scroll::after{
+    content: "Scroll down";
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgb(125, 125, 125);
+    opacity: 0;
+    transform: translateY(-2px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    position: relative;
+    bottom: 15px;
+}
     
-  }
+.cta-scroll:hover::after{
+    opacity: 1;
+    transform: translateY(0px);  /* was translateY(0) – lifts the text ~2 px */
+}
+
+
   .header2 {
     padding-top: 80px !important;   /* was 70px */
   }
@@ -709,34 +706,7 @@ h3{
 
 
 
-@media (min-width: 768px) {
-    .nav-btn{
-      position: fixed;
-      right: 2rem;
-      width: 3rem;
-      height: 3rem;
-      border: none;
-      border-radius: 50%;
-      z-index: 1000;
-      color: #fff;
-      background: rgba(0,0,0,0.45);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-    .nav-btn:hover{
-      background: rgba(0,0,0,0.7);
-      transform: translateY(-2px);
-    }
-    /* “next” sits bottom-right; “prev” top-right */
-    .nav-btn.next{ bottom: 2rem; }
-    .nav-btn.prev{ top:    2rem; }
-  }
+
 
 @media (max-width: 767px) {
     .left-image {
@@ -1004,7 +974,7 @@ body {
     margin-top: 1rem;
     margin-bottom: 0;
     font-size: 15px !important;
-    padding-left: 0px !important;
+    padding-left: 20px !important;
 }
 
 

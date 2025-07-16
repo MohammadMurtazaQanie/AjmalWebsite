@@ -192,8 +192,7 @@
 
                             <!-- desktop‑only inline “Next” button -->
                             <button class="cta-scroll d-none d-md-inline-flex align-items-center mx-auto mt-4"
-                                    aria-label="Next section">
-                              Next&nbsp;<i class="bi bi-chevron-double-down"></i>
+                                    aria-label="Next section"><i class="bi bi-chevron-compact-down"></i>
                             </button>
 
                             <script>
@@ -304,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>Represented Afghanistan</h3>
                 <p>At the Global Coalition on Youth,
                     Peace, and Security</p>
-                <img src="Images/6.png" class="img-fluid my-3" alt="Youth Peace &amp; Security">
+                <img src="Images/6.png" class="img-fluid" alt="Youth Peace &amp; Security">
                 <a href="#">Learn More</a>
               </article>
           
@@ -317,13 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="Images/7.png" class="img-fluid" alt="X logo">
                 <a href="#">Learn More</a>
               </article>
-              <button class="cta-back d-none d-md-inline-flex align-items-center mx-auto"
-              aria-label="Back to first section">
-        <i class="bi bi-chevron-double-up"></i>&nbsp;Back
-      </button>
-          
-             
-
+            
             </div>
           </section>
 
@@ -510,51 +503,66 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { passive: true });
 });
 </script>
-<!-- keep this as the very last <script> in the file -->
-<!-- keep this as the very last <script> in the file -->
-  <script>
-    /* 🖥️  Desktop guard — users may scroll *within* each page, but never jump
-       between Page 1 ⇄ Page 2 except via the “Next” / “Back” buttons. */
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.innerWidth < 768) return;          // mobiles handled elsewhere
-    
-      const firstPage  = document.getElementById('firstPage');
-      const secondPage = document.getElementById('secondPage');
-      const nextBtn    = document.querySelector('.cta-scroll');
-      const backBtn    = document.querySelector('.cta-back');
-    
-      /* Track which page is allowed */
-      let active = 'first';
-      nextBtn?.addEventListener('click', () => { active = 'second'; });
-      backBtn?.addEventListener('click', () => { active = 'first'; });
-    
-      /* 1️⃣  Clamp *any* window scroll (keys, scrollbar, etc.) */
-      function clampWindowScroll() {
-        const secondTop = secondPage.offsetTop;
-        const y         = window.scrollY;
-        if (active === 'first' && y >= secondTop) {
-          window.scrollTo({ top: 0, behavior: 'auto' });
-        } else if (active === 'second' && y < secondTop) {
-          window.scrollTo({ top: secondTop, behavior: 'auto' });
-        }
-      }
-      window.addEventListener('scroll', clampWindowScroll, { passive: true });
-    
-      /* 2️⃣  Intercept wheel / track-pad gestures so they never cross pages */
-      function routeWheel(e) {
-        if (e.defaultPrevented) return;
-    
-        const atPage2 = window.scrollY >= secondPage.offsetTop;
-    
+
+<script>
+/* 🖥️  Desktop guard — Page 1 → Page 2 requires the button;
+   Page 2 → Page 1 is allowed via normal upward scrolling. */
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth < 768) return;       // mobiles handled elsewhere
+
+  const firstPage  = document.getElementById('firstPage');
+  const secondPage = document.getElementById('secondPage');
+  const nextBtn    = document.querySelector('.cta-scroll');
+
+  /* 1. Prevent any downward window scroll from drifting onto Page 2 */
+  function clampDownScroll() {
+    const hold = secondPage.offsetTop;
+    if (window.scrollY >= hold) {
+      window.scrollTo({ top: hold, behavior: 'auto' });
+    }
+  }
+  window.addEventListener('scroll', clampDownScroll, { passive: true });
+
+  /* 2. Intercept wheel / track‑pad gestures
+        – On Page 1: swallow every downward delta so the window never reaches Page 2
+        – On Page 2: route deltas to the inner scroller —
+          unless we’re at the top and scrolling up, in which case let it bubble
+          so the window can move back to Page 1. */
+  /* 2. Intercept wheel / track-pad gestures
+       – On Page 1: swallow every downward delta so the window never reaches Page 2
+       – On Page 2:   · if we’re at the very top *and* scrolling up ⇒ snap to Page 1
+                      · otherwise keep the scroll inside Page 2                     */
+                      function routeWheel(e) {
+    const hold = secondPage.offsetTop;
+
+    /* ── Page 1 ─────────────────────────────────────────────────── */
+    if (window.scrollY < hold) {
+      if (e.deltaY > 0) {          // scrolling Down on Page 1   → block
         e.preventDefault();
         e.stopPropagation();
-    
-        if (atPage2) {
-          /* Scroll only inside Page 2 */
-          secondPage.scrollBy({ top: e.deltaY, behavior: 'auto' });
-        }
-        /* On Page 1, swallow the event and do nothing */
       }
-      window.addEventListener('wheel', routeWheel, { passive: false });
-    });
-    </script>
+      return;                      // Up on Page 1 is fine (does nothing)
+    }
+
+    /* ── Page 2 ─────────────────────────────────────────────────── */
+    if (secondPage.scrollTop === 0 && e.deltaY < 0) {
+      /* At top of Page 2 and scrolling Up  → snap to Page 1 */
+      e.preventDefault();
+      e.stopPropagation();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    /* Otherwise: keep the scroll inside Page 2 */
+    e.preventDefault();
+    e.stopPropagation();
+    secondPage.scrollBy({ top: e.deltaY, behavior: 'auto' });
+  }
+  window.addEventListener('wheel', routeWheel, { passive: false });
+
+  /* 3. “Next” button still jumps to Page 2 */
+  nextBtn?.addEventListener('click', () =>
+    secondPage.scrollIntoView({ behavior: 'smooth' })
+  );
+});
+</script>
