@@ -769,6 +769,7 @@ margin-bottom: 5px;
     }
     .page-content img {
         max-width: 150px !important;
+        padding-left: 0;
     }
 
     
