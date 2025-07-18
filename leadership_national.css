@@ -1076,6 +1076,8 @@ body {
 .tenth h3{
     font-size: 1.1rem !important;
     padding: 0;
+    position: relative;
+    right: 7px;
 }
 
   .item-x {
@@ -1260,7 +1262,7 @@ margin: 0;
 @media (max-width: 397px) {
     .page-content img {
         max-width: 170px !important;
-        padding-left: 10px;
+        padding-left: 0px;
     }
 
     .social_media p {
