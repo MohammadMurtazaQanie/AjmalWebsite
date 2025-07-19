@@ -126,7 +126,7 @@
 
 
         <!---- MAIN GRID -->
-        <section class="first_page">
+        <section class="first_page" id="firstPage">
             <div class="h-100">
                 <div class="row g-0 h-100 flex-md-row flex-column">
                     <!---- LEFT HALF : PHOTO -->
@@ -191,43 +191,201 @@
                                         MUN remains a powerful example of youth-led innovation.
                                     </p>
                                 </div>
-                                <!-- add the rest of your text here -->
+                                 <!-- desktop‑only inline “Next” button -->
+                            <button class="cta-scroll d-none d-md-inline-flex align-items-center mx-auto mt-4"
+                            aria-label="Next section"><i class="bi bi-chevron-compact-down"></i>
+                    </button>
+
+                    <script>
+                      /* jump to the second page when the button is clicked (desktop only) */
+                      document.addEventListener('DOMContentLoaded', () => {
+                        const ctaScrollBtn = document.querySelector('.cta-scroll');
+                        const secondPage   = document.getElementById('secondPage');
+                      
+                        if (ctaScrollBtn && secondPage) {
+                          ctaScrollBtn.addEventListener('click', () =>
+                            secondPage.scrollIntoView({ behavior: 'smooth' })
+                          );
+                        }
+                      });
+                                                  </script>
+                      <script>
+                      /* Lock desktop users to page 1 unless they click the “Next” button */
+                      document.addEventListener('DOMContentLoaded', () => {
+                      
+                        if (window.innerWidth < 768) return;          // mobile stays unchanged
+                      
+                        const pageContent = document.querySelector('.page-content');
+                        const leftImage   = document.querySelector('.left-image');
+                      
+                        /* Override wheel so the outer page never scrolls on desktop.
+                           We always consume the event, then manually scroll the text column. */
+                        function handleWheel(e) {
+                          if (window.innerWidth < 768) return;   // let phones behave normally
+                      
+                          e.preventDefault();                    // stop window scrolling
+                          e.stopPropagation();
+                      
+                          /* Always route the delta to the text column */
+                          pageContent.scrollBy({ top: e.deltaY, behavior: 'auto' });
+                        }
+                      
+                        /* Attach the guard */
+                        pageContent.addEventListener('wheel', handleWheel, { passive: false });
+                        leftImage  .addEventListener('wheel', handleWheel, { passive: false });
+                      });
+                      </script>
+
                         </main>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!---- Bootstrap 5 JS bundle (popper + bootstrap) -->
+        <section class="header2" id="secondPage">
 
 
-        <script>
+            <div class="stats-grid2">
+          
+              <!-- left column – two stacked cards -->
+              <article class="first stat-card item-endorsed">
+                <h3>Five Local MUN Clubs</h3>
+                <p>Kandahar, Nangarhar, Bamyan, Balkh, and Herat</p>
+                <img src="Images/234.png" class="img-fluid" alt="Afghan logo">
+                <a href="#">Learn More</a>
+              </article>
+          
+              <article class="second stat-card item-projects">
+                <h3>TWENTY SEVEN Committees Simulated</h3>
+                <p>Security Council, General Assembly, Human Rights Council, UN
+                    Commission on Status of Women, High Commissioner for Refugees, Industrial Development Organization, UNDP, UNICEF, ECOSOC, G20, Crisis Committee, and Afghan National Assembly.</p>
+              </article>
+          
+              <!-- centre column – tall SDG card -->
+              <article class="third stat-card item-sdg">
+                <img src="Images/12.png" class="img-fluid" alt="SDG wheel">
+                <h3>Applicant Portal</h3>
+                <a href="#">Learn More</a>
+               
+              </article>
+              <article class="forth stat-card item-sdg2">
+                <h3>Universal Model UN Guide</h3>
+                <a href="#">Learn More</a>
+               
+              </article>
+          
+              <!-- right column – tall photo -->
+              <div class="stat-card p-0 item-photo overflow-hidden">
+                <img src="Images/5-min-2.jpg" class="w-100 h-100 object-fit-cover" alt="Diplomatic round-table">
+              </div>
+          
+              <!-- bottom row (five cards) -->
+              <article class="fifth stat-card item-parent">
+                <img src="Images/10.png" class="leaf" alt="Leaf accent-left">
+                <h3>150+ Volunteers</h3>
+                <img src="Images/9.png"  class="leaf" alt="Leaf accent-right">
+              </article>
+          
+              <article class="sixth stat-card item-legal">
+                <img src="Images/11.png" class="img-fluid" style="max-height:90px" alt="UN logo">
+                <a href="#">Learn More</a>
+              </article>
+          
+              <article class="seventh stat-card item-established">
+                <div class="display fw-bold">3500+</div>
+                <h3>Participants</h3>
+                <p>66.1% Kabul, 8% Balkh, 5.2% Nangarhar, 6.1% Bamyan, 4% Kandahar, 3% Herat, and 7.6% Pakistan, India, and other
+                    provinces.</p>
+                
+              </article>
+
+              <article class="eight stat-card item-member">
+                <h3>Exchange Partners</h3>
+                <p>Rome Model United Nations</p>
+                <p>New Silk Way International Model United Nations</p>
+                <p>Delhi International Model United Nations</p>
+                
+              </article>
+          
+              <article class="ninth stat-card item-represent">
+                <h3>Established</h3>
+                <div class="display fw-bold">2016</div>
+              </article>
+          
+              <article class="tenth stat-card item-reestablished">
+                <ul class="age-table">
+                  <li><span class="percent">63%</span>
+                      <span class="age-range">20 – 25</span>
+                      <span class="years">Years Old</span></li>
+
+                  <li><span class="percent">35%</span>
+                      <span class="age-range">20 – 30</span>
+                      <span class="years">Years Old</span></li>
+
+                  <li><span class="percent">2%</span>
+                      <span class="age-range">30+</span>
+                      <span class="years">Years Old</span></li>
+                </ul>
+              </article>
+
+              <article class="eleven stat-card item-x">
+      <ul class="gender-table">
+        <li>
+          <div class="icons">
+            <img src="Images/14.png" class="person" alt="Female icon">
+            <img src="Images/14.png" class="person" alt="" aria-hidden="true">
+            <img src="Images/14.png" class="person" alt="" aria-hidden="true">
+            <img src="Images/14.png" class="person" alt="" aria-hidden="true">
+          </div>
+          <span class="label"><strong>41%</strong>&nbsp;Female</span>
+        </li>
+
+        <li>
+          <div class="icons mt-2 px-1">
+            <img src="Images/13.png" class="person" alt="Male icon">
+            <img src="Images/13.png" class="person" alt="" aria-hidden="true">
+            <img src="Images/13.png" class="person" alt="" aria-hidden="true">
+            <img src="Images/13.png" class="person" alt="" aria-hidden="true">
+            <img src="Images/13.png" class="person" alt="" aria-hidden="true">
+            <img src="Images/13.png" class="person" alt="" aria-hidden="true">
+          </div>
+          <span class="label"><strong>59%</strong>&nbsp;Male</span>
+        </li>
+      </ul>
+              </article>
+            
+            </div>
+          </section>
+
+
+
+          <script>
             /* scroll.js */
-            const page = document.querySelector('.page-content');
-            const nav = document.querySelector('.navs');
+const page = document.querySelector('.page-content');
+const nav  = document.querySelector('.navs');
 
-            function handleScroll() {
-                if (window.innerWidth < 768) {
-                    nav.classList.toggle('scrolled', window.scrollY > 0);
-                } else {
-                    nav.classList.toggle('scrolled', page.scrollTop > 0);
-                }
-            }
+function handleScroll() {
+  if (window.innerWidth < 768) {
+    nav.classList.toggle('scrolled', window.scrollY > 0);
+  } else {
+    nav.classList.toggle('scrolled', page.scrollTop > 0);
+  }
+}
 
-            /* make sure the right element owns the listener */
-            function wireScroll() {
-                page.removeEventListener('scroll', handleScroll);
-                window.removeEventListener('scroll', handleScroll);
+/* make sure the right element owns the listener */
+function wireScroll() {
+  page.removeEventListener('scroll', handleScroll);
+  window.removeEventListener('scroll', handleScroll);
 
-                if (window.innerWidth < 768) {
-                    window.addEventListener('scroll', handleScroll, { passive: true });
-                } else {
-                    page.addEventListener('scroll', handleScroll, { passive: true });
-                }
-            }
-            wireScroll();
-            window.addEventListener('resize', wireScroll);
-        </script>
+  if (window.innerWidth < 768) {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+  } else {
+    page.addEventListener('scroll', handleScroll, { passive: true });
+  }
+}
+wireScroll();
+window.addEventListener('resize', wireScroll);
+                            </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
@@ -255,6 +413,16 @@
             scrollTarget.addEventListener('scroll', handleScroll);
             window.addEventListener('scroll', handleScroll);
         </script>
+        <script>
+            const offcanvas = document.getElementById('offcanvasNavbar');
+            offcanvas.addEventListener('show.bs.offcanvas', () => {
+              document.body.classList.add('menu-open');
+            });
+            offcanvas.addEventListener('hidden.bs.offcanvas', () => {
+              document.body.classList.remove('menu-open');
+            });
+          </script>
+
 <script>
     const collapseSocial = document.getElementById('collapseSocial');
     const collapsePolicy = document.getElementById('collapsePolicy');
@@ -282,42 +450,176 @@
     // Initialise on page load
     updateShift();
   </script>
+  
+</body>
 <script>
-/* Forward wheel scrolling from the left image to the text column (desktop only) */
-(function () {
-  const image      = document.querySelector('.left-image');
-  const pageScroll = document.querySelector('.page-content');
+    /* Toggle a solid‑black navbar when the desktop scroll reaches Page 2 */
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav        = document.querySelector('.navs');
+      const secondPage = document.getElementById('secondPage');
+    
+      function setNavColor() {
+        if (window.innerWidth >= 768) {
+          const threshold = secondPage.offsetTop;
+          nav.classList.toggle('black-nav', window.scrollY >= threshold);
+        } else {
+          nav.classList.remove('black-nav');
+        }
+      }
+    
+      window.addEventListener('scroll', setNavColor, { passive: true });
+      window.addEventListener('resize', setNavColor, { passive: true });
+      setNavColor();             /* run once on load */
+    });
+    </script>
+<script>
+  window.addEventListener('scroll', () => {
+    const firstPage = document.getElementById('firstPage');
+    const secondPage = document.getElementById('secondPage');
+    const scrollY = window.scrollY;
 
-  function redirectWheel(e) {
-    if (window.innerWidth >= 768) {            // Only on large screens
-      pageScroll.scrollBy({ top: e.deltaY, behavior: 'auto' });
-      e.preventDefault();                      // Prevent default page scroll
+    if (window.innerWidth >= 768) {
+      firstPage.style.opacity = 1 - scrollY / window.innerHeight;
+      secondPage.style.opacity = scrollY / window.innerHeight;
+    }
+  });
+</script>
+<script>
+  function parallaxFadeEffect() {
+    const firstPage = document.getElementById('firstPage');
+    const secondPage = document.getElementById('secondPage');
+    const scrollY = window.scrollY;
+
+    firstPage.style.opacity = 1 - scrollY / window.innerHeight;
+    secondPage.style.opacity = scrollY / window.innerHeight;
+  }
+
+  function updateParallaxEffect() {
+    window.removeEventListener('scroll', parallaxFadeEffect);
+    if (window.innerWidth >= 768) {
+      window.addEventListener('scroll', parallaxFadeEffect);
+    } else {
+      document.getElementById('firstPage').style.opacity = '';
+      document.getElementById('secondPage').style.opacity = '';
+      document.getElementById('firstPage').style.transform = '';
+      document.getElementById('secondPage').style.transform = '';
     }
   }
 
-  /* Non‑passive because we call preventDefault() */
-  image.addEventListener('wheel', redirectWheel, { passive: false });
-})();
+  window.addEventListener('resize', updateParallaxEffect);
+  updateParallaxEffect();
 </script>
-  
-        <script>
-            const offcanvas = document.getElementById('offcanvasNavbar');
-            offcanvas.addEventListener('show.bs.offcanvas', () => {
-                document.body.classList.add('menu-open');
-            });
-            offcanvas.addEventListener('hidden.bs.offcanvas', () => {
-                document.body.classList.remove('menu-open');
-            });
-        </script>
-
-
-
-
-
-
-</body>
 
 </html>
 </body>
 
 </html>
+<script>
+/* jump back to the first page when the “Back” button is clicked (desktop only) */
+document.addEventListener('DOMContentLoaded', () => {
+  const backBtn   = document.querySelector('.cta-back');
+  const firstPage = document.getElementById('firstPage');
+  if (backBtn && firstPage) {
+    backBtn.addEventListener('click', () =>
+      firstPage.scrollIntoView({ behavior: 'smooth' })
+    );
+  }
+});
+</script>
+<script>
+/*  📱  Mobile guard — lock navigation between full‑page sections
+    Users can scroll *within* each page, but cannot swipe from
+    Page 1 → Page 2 or vice‑versa; only the “Next” / “Back” buttons
+    may trigger that jump. */
+document.addEventListener('DOMContentLoaded', () => {
+  /* Disable guard on smaller phones (≤ 764 px) */
+  if (window.innerWidth >= 768 || window.innerWidth <= 764) return;
+
+  const firstPage  = document.getElementById('firstPage');
+  const secondPage = document.getElementById('secondPage');
+  const nextBtn    = document.querySelector('.cta-scroll');
+  const backBtn    = document.querySelector('.cta-back');
+
+  /* Track which page the user is *allowed* to see */
+  let active = 'first';
+
+  nextBtn?.addEventListener('click', () => { active = 'second'; });
+  backBtn?.addEventListener('click', () => { active = 'first'; });
+
+  window.addEventListener('scroll', () => {
+    const secondTop = secondPage.offsetTop;   // recalc in case layout shifts
+    const y = window.scrollY;
+
+    if (active === 'first' && y >= secondTop) {
+      /* Tried to scroll onto Page 2 — snap back to Page 1 */
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    } else if (active === 'second' && y < secondTop) {
+      /* Tried to scroll back up onto Page 1 — snap to Page 2 */
+      window.scrollTo({ top: secondTop, behavior: 'auto' });
+    }
+  }, { passive: true });
+});
+</script>
+
+<script>
+/* 🖥️  Desktop guard — Page 1 → Page 2 requires the button;
+   Page 2 → Page 1 is allowed via normal upward scrolling. */
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth < 768) return;       // mobiles handled elsewhere
+
+  const firstPage  = document.getElementById('firstPage');
+  const secondPage = document.getElementById('secondPage');
+  const nextBtn    = document.querySelector('.cta-scroll');
+
+  /* 1. Prevent any downward window scroll from drifting onto Page 2 */
+  function clampDownScroll() {
+    const hold = secondPage.offsetTop;
+    if (window.scrollY >= hold) {
+      window.scrollTo({ top: hold, behavior: 'auto' });
+    }
+  }
+  window.addEventListener('scroll', clampDownScroll, { passive: true });
+
+  /* 2. Intercept wheel / track‑pad gestures
+        – On Page 1: swallow every downward delta so the window never reaches Page 2
+        – On Page 2: route deltas to the inner scroller —
+          unless we’re at the top and scrolling up, in which case let it bubble
+          so the window can move back to Page 1. */
+  /* 2. Intercept wheel / track-pad gestures
+       – On Page 1: swallow every downward delta so the window never reaches Page 2
+       – On Page 2:   · if we’re at the very top *and* scrolling up ⇒ snap to Page 1
+                      · otherwise keep the scroll inside Page 2                     */
+                      function routeWheel(e) {
+    const hold = secondPage.offsetTop;
+
+    /* ── Page 1 ─────────────────────────────────────────────────── */
+    if (window.scrollY < hold) {
+      if (e.deltaY > 0) {          // scrolling Down on Page 1   → block
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      return;                      // Up on Page 1 is fine (does nothing)
+    }
+
+    /* ── Page 2 ─────────────────────────────────────────────────── */
+    if (secondPage.scrollTop === 0 && e.deltaY < 0) {
+      /* At top of Page 2 and scrolling Up  → snap to Page 1 */
+      e.preventDefault();
+      e.stopPropagation();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    /* Otherwise: keep the scroll inside Page 2 */
+    e.preventDefault();
+    e.stopPropagation();
+    secondPage.scrollBy({ top: e.deltaY, behavior: 'auto' });
+  }
+  window.addEventListener('wheel', routeWheel, { passive: false });
+
+  /* 3. “Next” button still jumps to Page 2 */
+  nextBtn?.addEventListener('click', () =>
+    secondPage.scrollIntoView({ behavior: 'smooth' })
+  );
+});
+</script>

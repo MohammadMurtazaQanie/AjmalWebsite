@@ -87,6 +87,14 @@
     box-shadow: none;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
+
+
+.navs.black-nav .nav-link,
+.navs.black-nav .nav-link:hover,
+.navs.black-nav .nav-link:focus{
+    color:#000 !important;
+}
+
 .nav-item .something .dropdown-header{
     color: rgb(221, 221, 221) !important;
 }
@@ -202,6 +210,537 @@
     width: 100%;
 }
 /*--Page2--*/
+
+
+
+
+
+
+/* --- Stats grid cards --- */
+.stats-grid   { --bs-gutter-y: 2rem; }    
+
+h3{
+    font-weight: 1000;
+}
+
+.first {
+    text-align: center;
+    height: auto;
+}
+
+.first img{
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.first h3{
+    font-size: 1.5em !important;
+    margin: 0;
+}
+.first p {
+    font-size: 10px !important;
+    color:rgb(125, 125, 125, 0.8);
+}
+
+.first a {
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.8rem;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+    position: relative;
+    top: 10px;
+}
+.first a:hover {
+    color: black;
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.5s ease !important;
+}
+
+
+
+.second h3{
+    font-size: 1.5rem !important;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.second p{
+    font-size: 10px !important;
+   color:rgb(125, 125, 125, 0.8);
+   padding-right: 25px;
+   padding-left:25px;
+   margin-bottom: 0;
+   
+}
+
+.third h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    padding-right: 20px;
+    padding-left:20px;
+
+}
+.third img{
+    max-width: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+}
+
+
+.third a {
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.8rem;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+    position: relative;
+    top: 5px;
+}
+.third a:hover {
+    color: black;
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.5s ease !important;
+}
+
+
+
+
+
+.forth h3{
+    font-size: 1.5rem !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.forth a {
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.8rem;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+    position: relative;
+    top: 7px;
+}
+.forth a:hover {
+    color: black;
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.5s ease !important;
+}
+
+/* --- Layout for “150+ Volunteers” card --- */
+/* --- Layout for “150+ Volunteers” card --- */
+.item-parent{
+    display:flex;
+    flex-direction:row !important;   /* leaf – text – leaf */
+    align-items:stretch;             /* stretch images to card height */
+    justify-content:center;          /* keep everything centred */
+    gap:1rem;                        /* space between leaves and text */
+}
+
+.item-parent h3{
+    margin:0;
+    display:flex;
+    align-items:center;      /* vertical centring within stretched row */
+    justify-content:center;  /* horizontal centring */
+    text-align:center;
+    font-size: 1.5rem !important;
+}
+
+.item-parent .leaf{
+
+    width:auto;
+    object-fit:contain;
+    margin:0;
+}
+
+
+.fifth img{
+    max-width: 35px;
+}
+
+
+
+
+
+.header2 {
+  background-color: rgb(233, 233, 233, 0.5);
+  padding-top: 100px;
+  padding-bottom: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media (min-width: 768px) {
+  .header2 {
+    height: 100vh;              /* fill the viewport only on desktop */
+    box-sizing: border-box;      /* include padding in the 100vh calculation */
+    overflow-y: auto;           /* let only the second page scroll on desktop */
+    scrollbar-width: none;      /* hide Firefox scrollbar */
+    -ms-overflow-style: none;   /* hide IE/Edge scrollbar */
+  }
+
+  .header2::-webkit-scrollbar {
+    display: none;              /* hide Chrome/Safari scrollbar */
+  }
+}
+
+
+
+.sixth img{
+    max-width: 180px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+}
+
+.sixth a {
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+    margin-bottom: 1rem;
+}
+.sixth a:hover {
+    color: black;
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.5s ease !important;
+}
+
+.seventh h3{
+    font-size: 1.5rem !important;
+}
+.seventh .display {
+    font-size: 3.5rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.seventh p{
+    font-size: 10px !important;
+   color:rgb(125, 125, 125, 0.8);
+   padding-right: 25px;
+   padding-left:25px;
+   margin-bottom: 0;
+
+}
+.eight h3{
+    font-size: 1.5rem !important;
+}
+
+.eight p{
+    font-size: 10px !important;
+   color:rgb(125, 125, 125, 0.8);
+   padding-right: 10px;
+   padding-left:10px;
+   margin-bottom: 0;
+   margin-top: 5px;
+}
+
+
+
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.01);
+  padding: 0.75rem 0.75rem;
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.stat-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+
+
+
+.item-x{
+    padding:10px 20px;                
+}
+
+.item-x .gender-table{
+    list-style:none;
+    margin:0;
+    padding:0.25rem 0;
+}
+
+.item-x .gender-table li{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    padding:0.35rem 0;
+    border-bottom:1px solid rgba(0,0,0,0.12);
+}
+
+.item-x .gender-table li:last-child{
+    border-bottom:none;
+}
+
+.item-x .icons{
+    display:flex;
+    gap:0.15rem;
+}
+
+.item-x .person{
+    height:2.5rem;    
+    width:auto;
+    object-fit:contain;
+    opacity: 40%;
+}
+
+.item-x .label{
+    font-weight:700;
+    font-size:1.35rem;
+    white-space:nowrap;
+    position: relative;
+    top: -10px;
+}
+
+
+
+
+/* --- Age‑distribution table inside “Re‑Established” card --- */
+.item-reestablished{
+    padding-left:20px; 
+    padding-right:20px;
+}
+
+.item-reestablished .age-table{
+    list-style:none;
+    margin:0;
+    padding:0.25rem 0;                 /* vertical breathing room */
+}
+
+.item-reestablished .age-table li{
+    display:flex;
+    align-items:baseline;         /* align text on the cap‑height */
+    column-gap:0.5rem;            /* space between flex items */
+    padding:0.1rem 0;             /* keep the same vertical rhythm */
+    border-bottom:1px solid rgba(0,0,0,0.12);
+}
+
+.item-reestablished .age-table li:last-child{
+    border-bottom:none;                /* no line after the last row */
+}
+
+.item-reestablished .percent,
+.item-reestablished .age-range{
+    font-weight:700;
+    font-size:1.4rem;                 /* match other stat emphasis */
+}
+
+.item-reestablished .percent{
+    min-width:3.5rem;             /* keep the column width consistent */
+}
+
+.item-reestablished .age-range{
+    margin-left:auto;    /* push age‑range (and Years Old) to the far right */
+}
+
+.item-reestablished .years{
+    font-size:0.63rem;
+    white-space:nowrap;
+}
+
+.ninth h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+.ninth .display {
+    font-size: 3rem !important;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ------- NEW CSS-GRID LAYOUT FOR “STATS” ------- */
+.stats-grid2{
+    display:grid;
+    gap:1rem; /* standardize gap between cards */
+    position: relative;
+    top: 2rem;
+    padding-bottom: 1rem;
+    grid-template-columns:repeat(12,1fr);
+    grid-auto-rows:minmax(20px,auto);        /* equal row height */
+  }
+  
+  /* top block */
+  .item-endorsed      {grid-column:1 / span 3;  grid-row:1 /span 2;}
+  .item-projects      {grid-column:4 / span 3;  grid-row:1;}   /* single‑row card */
+  .item-sdg           {grid-column:4 / span 1;  grid-row:2;}   /* bottom‑left */
+  .item-sdg2          {grid-column:5 / span 2;  grid-row:2;}   /* bottom‑right */
+  .item-photo         {grid-column:7 / span 6;  grid-row:1 / span 2;}
+  
+  /* bottom row – 3rd grid row */
+  .item-parent        {grid-column:1  / span 3; grid-row:3/span 1;}
+  .item-legal         {grid-column:1  / span 3; grid-row:4 /span 1;}
+  .item-established   {grid-column:4  / span 2; grid-row:3 / span 2;}
+  .item-member        {grid-column:6  / span 2; grid-row:3 / span 2;}
+  .item-represent     {grid-column:8  / span 2; grid-row:3 /span 1;}
+  .item-reestablished {grid-column:10 / span 4; grid-row:3;}
+  .item-x {grid-column:8 / span 6; grid-row:4;}
+  
+
+
+
+
+
+
+@media (min-width: 768px) {
+    .cta-scroll{
+        display:inline-flex;
+        flex-direction: column;     /* ⬅️  stack icon + label  */
+        row-gap:0.25rem;            /* vertical spacing        */
+        align-items:center;
+        font-size:30px;
+        color:rgb(125, 125, 125);
+        background-color: transparent;
+        border:none;
+        cursor:pointer;
+        position: relative;
+        margin-bottom: 30px;
+        top: -5px;               /* lift up to overlap the bottom of the header */
+        left: 45%;
+        transform: translateY(0);
+        transition: color 0.5s ease,
+                    background 0.5s ease,
+                    transform 0.4s ease;
+    }
+    .cta-scroll:hover{
+        color: black;
+        transform: translateY(8px);                          /* slide down on hover */
+    }
+.cta-scroll::after{
+    content: "Scroll down";
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgb(125, 125, 125);
+    opacity: 0;
+    transform: translateY(-2px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    position: relative;
+    bottom: 15px;
+}
+    
+.cta-scroll:hover::after{
+    opacity: 1;
+    transform: translateY(0px);  /* was translateY(0) – lifts the text ~2 px */
+}
+
+
+  .header2 {
+    padding-top: 80px !important;   /* was 70px */
+  }
+  }
+  
+
+
+
+@media (max-width: 1220px) {
+    .first h3, .second h3, .third h3, .fifth h3, .sixth h3, .eighth h3, .ninth h3,.tenth h3 {
+        font-size: 1rem !important;
+    }
+    .seventh h3 {
+        font-size: 1rem !important;
+        text-align: center;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-top: 0.3rem !important;
+    }
+
+    
+
+    .first img{
+        max-width: 70% !important;
+    }
+    .third img{
+        max-width: 90% !important;
+    }
+    .fifth img{
+        max-width: 80% !important;
+    }
+    .sixth img{
+        max-width: 100% !important;
+    }
+    .eighth img{
+        max-width: 80% !important;
+    }
+
+    .ninth img{
+        max-width: 95% !important;
+    }
+    .item-x img{
+        max-width: 35% !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1075px) {
     .page-content .paragaph {
@@ -433,6 +972,230 @@ body {
   }
 
 
+  
+  
+   
+    .header2 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      padding-bottom: 2rem;
+      padding-top: 0;        
+    }
+  
+    .stats-grid2{
+        display:grid;
+        gap:1rem;
+        grid-template-columns:repeat(12,1fr);   /* 12‑col grid so 6+6 fits neatly */
+        grid-auto-rows:minmax(20px,auto);
+    }
+  
+    /* Stack all cards full‑width on small screens by default */
+    .stats-grid2 > *{
+        grid-column:1 / span 12;
+    }
+  
+  
+    /* Mobile layout: “sixth” (item‑legal) spans two rows on the left;
+       “seventh” (item‑established) top‑right; “tenth” (item‑reestablished) bottom‑right */
+  
+    /* Ensure the rest of the cards stack in their own rows */
+    .item-endorsed      { grid-row: 1;}
+    .item-projects      { grid-row: 2; }
+    .item-sdg           { grid-column:1 / span 6 ; grid-row:3; }
+    .item-sdg2 {grid-column:7 / span 6 ; grid-row:3;}
+    .item-photo         { grid-row:4; }
+    
+    
+    .item-legal         { grid-row:5; }
+    
+    .item-parent        { grid-row: 6; }
+
+    
+    .item-represent     { grid-column:8 / span 5; grid-row:7; }
+    
+    .item-x             {grid-row:10;}
+    .item-member        {grid-row:8;}
+    .item-reestablished { grid-row:9;}
+  
+  
+    
+    .item-established   { grid-column:1 / span 7; grid-row:7; }
+    
+  
+    .stat-card {
+      width: 100%;
+      border-radius: 20px;
+      padding: 1rem;
+    }
+  
+    .first h3, .second h3, .third h3, .sixth h3, .eighth h3, .ninth h3,.tenth h3 {
+      font-size: 1.4rem !important;
+  }
+  .seventh h3 {
+      font-size: 1.5rem !important;
+      text-align: center;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-top: 0.3rem !important;
+  }
+  
+  .first h3{
+      margin-bottom: 5px;
+  }
+  .first img{
+      max-width: 100% !important;}
+  
+  .first p{
+      margin-bottom: 0;
+      font-size: 9px !important;
+  }
+  .first a{
+      margin-bottom: 20px;
+      margin-top: 0 !important;
+  }
+  
+  .second h3{
+    margin-bottom: 10px;
+  }
+  .second a{
+      margin-bottom: 5px !important;
+      margin-top: 15px;;
+  }
+  .second p{
+      padding-left: 5px;
+      padding-right: 5px;
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+  
+  
+  .third h3{
+      margin-bottom: 0;
+  }
+  .third a{
+    margin-top: 5px !important;
+  }
+  
+
+
+
+  
+  .item-parent{
+      justify-content: space-between !important;   
+      gap: 0 !important;                           
+  }
+
+  .item-parent h3{
+      flex: 1 1 auto;           
+      text-align: center;  
+      font-size: 1.5rem !important;      
+  }
+
+  .item-parent .leaf{
+      height: 70px;              
+      width:  auto;
+  }
+  
+  .sixth img{
+      max-width: 90% !important;
+      padding: 0;
+      margin-top: 0;
+  }
+  .sixth a{
+      margin-bottom: 8px;
+  }
+  
+  
+  
+  .seventh .display{
+    font-size: 2.5rem !important;
+    margin-top:0 !important;
+
+}
+
+  .seventh h3{
+      margin-bottom: 10px;
+      font-size: 1.3rem !important;
+      margin-top:0 !important;
+      position: relative;
+      top:-5px;
+  
+  }
+
+  .seventh p{
+    padding:0px 5px;
+    position: relative;
+      top:-5px;
+  }
+  
+
+
+
+  .photo-grid {
+      gap: 2px !important;  
+      margin: 0;        /* remove the little white gap */
+    }
+  
+    .flag-item{
+        min-width:34px;
+    }
+  
+    .flag-item img{
+        width:34px;
+        height:24px;      /* keep a uniform 24‑pixel height for phones */
+        object-fit:cover;
+        border-radius:4px;
+    }
+  
+  .flag-item p{
+      font-size: 9px !important;
+      margin-bottom: 0 !important;
+  }
+  
+  
+  .ninth .display{
+      font-size: 2.5rem !important;
+  }
+  .ninth h3{
+      font-size: 1.1rem !important;
+      padding: 0;
+      position: relative;
+      top: 5px;
+  }
+
+  .tenth .display{
+      font-size: 2rem !important;
+  }
+
+    .item-x {
+      flex-direction: column;
+    }
+    .item-x img {
+  margin: 0;
+      max-width: 50px !important;      /* logo beneath button */
+    }
+    .item-x a {
+      margin: 0;
+    }
+  
+    /* 7. Tighten tiny font-sizes to remain readable on phone */
+    .stat-card p,
+    .stat-card a {
+      font-size: 12px;           /* was 9px */
+    }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
 }
 
 
@@ -498,10 +1261,9 @@ body {
         display: none;
     }
 
-    /* Frosted‑glass effect for the phone off‑canvas menu */
+
     .offcanvas.sidebar {
         background: rgba(255, 255, 255, 0.73) !important;
-        /* translucent dark */
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
         border-left: 1px solid rgba(255, 255, 255, 0.15);
@@ -511,19 +1273,19 @@ body {
         background: transparent !important;
         border-bottom: 0;
     }
-    /* Let the list start flush; we'll push everything down via padding instead */
+   
     .offcanvas .navbar-nav {
         margin-top: 0;
         
     }
 
-    /* Push all items down a bit for breathing room */
+    
     .offcanvas-body {
-        padding-top: 2rem;   /* adjust as desired */
+        padding-top: 2rem;   
     }
 
     .offcanvas .navbar-nav .nav-link {
-        top: 100;              /* prevents jitter when the off‑canvas opens */
+        top: 100;             
     }
 
     /* Decrease vertical padding/margin on individual links */
