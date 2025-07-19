@@ -73,7 +73,7 @@
                                         <hr class="dropdown-divider border-secondary">
                                     </li>
                                     <li>
-                                        <strong class="pub dropdown-header"> <a
+                                        <strong class="dropdown-header pub"> <a
                                                 href="#">Published
                                                 Work</a></strong>
                                     </li>
@@ -322,7 +322,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        <script>
+
+
+          <script>
             /* scroll.js */
 const page = document.querySelector('.page-content');
 const nav  = document.querySelector('.navs');
@@ -415,6 +417,26 @@ window.addEventListener('resize', wireScroll);
   </script>
   
 </body>
+<script>
+    /* Toggle a solid‑black navbar when the desktop scroll reaches Page 2 */
+    document.addEventListener('DOMContentLoaded', () => {
+      const nav        = document.querySelector('.navs');
+      const secondPage = document.getElementById('secondPage');
+    
+      function setNavColor() {
+        if (window.innerWidth >= 768) {
+          const threshold = secondPage.offsetTop;
+          nav.classList.toggle('black-nav', window.scrollY >= threshold);
+        } else {
+          nav.classList.remove('black-nav');
+        }
+      }
+    
+      window.addEventListener('scroll', setNavColor, { passive: true });
+      window.addEventListener('resize', setNavColor, { passive: true });
+      setNavColor();             /* run once on load */
+    });
+    </script>
 <script>
   window.addEventListener('scroll', () => {
     const firstPage = document.getElementById('firstPage');

@@ -97,6 +97,9 @@
       position:absolute;
       inset:0;
       pointer-events:none;
+
+
+
       z-index:0;                  /* sits *above* the links but keeps clicks working */
       opacity:0;                  /* hidden until scrolled */
       backdrop-filter: blur(0px);         /* start with no blur */
@@ -114,6 +117,11 @@
     opacity:1;
    
   }
+
+
+
+
+ 
 
 
 
@@ -164,6 +172,11 @@
 .navbar-nav .nav-link {
     font-size: 15px;
 }
+
+
+
+
+
 
 /* underline on nav links */
 .navbar-nav .nav-link::after {
@@ -547,6 +560,16 @@ h3{
 
 
 
+/* Ensure the “Published Work” link (strong.pub > a) also turns white */
+.navs.black-nav .dropdown-header,
+.navs.black-nav .pub,
+.navs.black-nav .pub a{
+    color:rgba(230, 230, 230, 0.703) !important;
+}
+
+.navs.black-nav .dropdown-item{
+    color: rgba(255, 255, 255, 0.672) !important;
+}
 
 
 @media (min-width: 768px) {
@@ -1185,10 +1208,3 @@ body {
     
 }
 
-
-  /* Prevent text spillover inside the 6‑column half cards */
-  .item-established .display,
-  .item-reestablished .display {
-      font-size: 2.5rem;     /* was 3rem */
-      line-height: 1.1;
-  }
