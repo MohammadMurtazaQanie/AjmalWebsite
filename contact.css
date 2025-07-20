@@ -192,6 +192,14 @@
     transition: all 0.5s ease;
 }
 
+@media (min-width: 992px) {                     /* desktop only */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+      left: 50% !important;                       /* anchor midpoint */
+      transform: translateX(-50%) !important;     /* pull back half width */
+      right: auto !important;                     /* override Bootstrap */
+    }
+  }
+
 @media (max-width: 1200px) {
 
     html,

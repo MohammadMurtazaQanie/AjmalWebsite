@@ -212,6 +212,15 @@ padding-bottom: 3rem;
 }
 /*--Page2--*/
 
+
+@media (min-width: 992px) {                     /* desktop only */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+      left: 50% !important;                       /* anchor midpoint */
+      transform: translateX(-50%) !important;     /* pull back half width */
+      right: auto !important;                     /* override Bootstrap */
+    }
+  }
+
 @media (max-width: 1075px) {
     .page-content .paragaph {
         overflow: visible !important;

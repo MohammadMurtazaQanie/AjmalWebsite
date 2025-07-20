@@ -129,6 +129,11 @@
 .navs.black-nav .nav-link:focus{
     color:#000 !important;
 }
+.navs.black-nav .dropdown-header, 
+.navs.black-nav .pub a,
+.navs.black-nav .dropdown-item{
+    color: black !important;
+}
 
 /* underline animation switches to black */
 .navs.black-nav .nav-link::after {
@@ -384,6 +389,13 @@ margin-bottom: 5px;
   padding-right: 70px;
 }
 
+@media (min-width: 992px) {                     /* desktop only */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+      left: 50% !important;                       /* anchor midpoint */
+      transform: translateX(-50%) !important;     /* pull back half width */
+      right: auto !important;                     /* override Bootstrap */
+    }
+  }
 @media (min-width: 768px) {
   .header2 {
     height: 100vh;              /* fill the viewport only on desktop */

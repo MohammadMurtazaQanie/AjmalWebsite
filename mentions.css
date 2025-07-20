@@ -1,0 +1,731 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Avenir'
+}
+
+
+
+
+.first_page {
+    width: 100%;
+    
+
+}
+.page-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 0;
+    max-width: 680px;
+    margin-inline: auto;
+    height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;          /* Firefox */
+    -ms-overflow-style: none;       /* IE and Edge */
+}
+
+.page-content::-webkit-scrollbar {
+    display: none;                  /* Chrome, Safari, Opera */
+}
+.social_media p{
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 1.8rem !important;
+    font-style: italic;
+    font-size: 15px;
+    
+}
+.social_media a{
+    text-decoration: none;
+    color: rgb(125, 125,125);}
+
+
+.page-content .paragaph{
+    color: rgb(125, 125,125);
+    font-size: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: auto;
+    max-height: 100vh;
+
+    
+}
+.paragaph {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+.all_text{
+
+    margin-top: -2rem;
+    text-align: justify;
+}
+
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link.show,
+.navbar-nav .dropdown-toggle.show {
+    color:  rgb(125, 125, 125) !important;
+    background-color: transparent !important;
+    outline: none;
+    box-shadow: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+.nav-item .something .dropdown-header{
+    color: rgb(125, 125, 125) !important;
+}
+.navbar{
+    min-height:56px; 
+    transition:opacity 0.5s ease;    
+  }
+.navbar::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+
+
+
+      z-index:0;                  /* sits *above* the links but keeps clicks working */
+      opacity:0;                  /* hidden until scrolled */
+      backdrop-filter: blur(0px);         /* start with no blur */
+      -webkit-backdrop-filter: blur(0px); /* Safari */
+      background: rgba(0,0,0,0);          /* start fully transparent */
+      transition: opacity 0.5s ease,
+                  backdrop-filter 0.5s ease,
+                  -webkit-backdrop-filter 0.5s ease,
+                  background 0.5s ease;
+  }
+  
+  .navs.scrolled::before{
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    opacity:1;
+   
+  }
+
+
+
+
+ 
+
+
+
+.nav-item .something {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.35);
+    /* translucent dark tint  */
+    border: 0.5x solid rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.navbar-nav .dropdown-toggle::after {
+    border: none !important;
+    content: "" !important;
+}
+
+.dropdown-header {
+    font-size: 15px !important;
+}
+
+.dropdown-item {
+    font-weight: 1500 !important;
+    color: rgba(0, 0, 0, 0.477) !important;
+    border-radius: 12px !important;
+    transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(166, 166, 166, 0.199) !important;
+    border-radius: 12px !important;
+}
+
+.nav-item .nav-link {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    margin: 1.5rem;
+    position: relative;
+    top: 10px;
+    color: rgb(125, 125, 125);
+}
+
+.nav-item .nav-link:hover {
+    color: black;
+}
+.navbar-nav .nav-link {
+    font-size: 15px;
+}
+
+
+
+
+
+
+/* underline on nav links */
+.navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: rgb(100, 100, 100);
+    margin: 0.25rem auto 0;
+    transition: width 0.4s ease;
+}
+.nav-item.published-work {
+    display: none !important;
+}
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+    transition: all 0.4s ease;
+}
+
+.navbar-nav .nav-link:focus::after,
+.navbar-nav .nav-link:active::after {
+    width: 0;
+}
+
+.pub a{
+    color:rgb(125, 125, 125) !important;
+     text-decoration: none;
+ }
+ .pub {
+     transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+ }
+ .pub:hover{
+     background-color: rgba(166, 166, 166, 0.199) !important;
+     border-radius: 12px !important;
+     transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+ }
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+
+
+
+.stats-grid   { --bs-gutter-y: 2rem; }    
+
+
+.second{
+    margin: 10px 0;
+}
+.second p{
+    font-size: 16px !important;
+    color: rgb(125, 125, 125, 0.8);
+    text-align: justify;
+    margin: 0 !important;
+    padding-left: 50px;
+
+
+
+}
+
+
+.third{
+    display: flex;
+    flex-direction: row !important;       /* force horizontal layout, overriding .stat-card */
+    flex-wrap: wrap;
+    gap: 1rem;               /* space between logos */
+    justify-content: space-between; /* center logos horizontally */
+    align-items: center;     /* center logos vertically */
+}
+
+
+.forth{
+    display: flex;
+    flex-direction: row !important;       /* force horizontal layout, overriding .stat-card */
+    flex-wrap: wrap;
+    gap: 1rem;               /* space between logos */
+    justify-content: space-between; /* center logos horizontally */
+    align-items: center;     /* center logos vertically */
+}
+
+
+.fifth{
+    display: flex;
+    flex-direction: row !important;       /* force horizontal layout, overriding .stat-card */
+    flex-wrap: wrap;
+    gap: 1rem;               /* space between logos */
+    justify-content: space-between; /* center logos horizontally */
+    align-items: center;     /* center logos vertically */
+}
+
+
+
+
+
+
+.first_page {
+  padding-top: 80px;
+  padding-bottom: 40px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+@media (min-width: 768px) {
+  .first_page {
+    height: 100vh;             
+    box-sizing: border-box;      
+    overflow-y: auto;         
+    scrollbar-width: none;      
+    -ms-overflow-style: none;   
+  }
+
+  .first_page::-webkit-scrollbar {
+    display: none;              
+  }
+}
+
+
+
+.stat-card {
+  border-radius: 30px;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.01);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 20px;
+}
+
+
+
+.stats-grid2{
+    display:grid;
+    flex-direction: row;
+    gap:0.5rem; /* standardize gap between cards */
+    position: relative;
+    top: 1.5rem;
+    padding-bottom: 1rem;
+    grid-template-columns:repeat(12,1fr);
+    grid-auto-rows:minmax(20px,auto);        /* equal row height */
+  }
+  
+  /* top block */
+  .item-endorsed      {grid-column:1 / span 6;  grid-row:1; height: 310px !important; width: 100%; object-fit: cover; }
+  .item-projects      {grid-column:7 / span 6;  grid-row:1;}
+
+
+
+/* --- Logo grid positioning --- */
+.item-logos1 { grid-column: 1 / span 12; grid-row: 2; }
+.item-logos2 { grid-column: 1 / span 12; grid-row: 3; }
+.item-logos3 { grid-column: 1 / span 12; grid-row: 4; }
+
+/* --- Logo appearance --- */
+.third img,
+.forth img,
+.fifth img {
+    max-height: var(--logo-height);
+    width: auto;
+    object-fit: contain;
+    margin: 0.5rem 1rem;
+}
+
+.third {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.forth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fifth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Remove outer margins so first and last logos hug the sides */
+.third img:first-child,
+.forth img:first-child,
+.fifth img:first-child { margin-left: 0;
+    margin-right: 0;  }
+
+.third img:last-child,
+.forth img:last-child,
+.fifth img:last-child { margin-left: 0;margin-right: 0; }
+
+
+
+@media (min-width: 992px) {                     /* desktop only */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+      left: 50% !important;                       /* anchor midpoint */
+      transform: translateX(-50%) !important;     /* pull back half width */
+      right: auto !important;                     /* override Bootstrap */
+    }
+  }
+
+
+  
+@media (max-width: 1200px) {
+
+    html,
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .header {
+        padding-top: 10rem;
+    }
+
+    .navbar {
+        position: fixed;
+        z-index: 1050;
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 991px) {
+
+    html,
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+    }
+
+
+
+    .header {
+        padding-top: 0rem;
+        /* space for the fixed navbar */
+    }
+
+
+}
+
+@media (max-width:881px) {
+
+
+
+
+    .nav-item {
+        position: relative;
+        top: 0px;
+
+    }
+
+    .phone-nav {
+        position: static;
+    }
+
+
+}
+@media (max-width:767px ){
+
+
+    .offcanvas .nav-item .nav-link {
+        font-size: 20px !important;
+      }
+
+
+  .nav-item{
+    position: relative;
+    top: 10rem;
+    left: 10%;
+
+  }
+
+    .nav-item.published-work {
+        display: block !important;
+    }
+
+    .offcanvas.show .dropdown-menu {
+        display: block;
+        transform: none !important;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding-left: 0;
+        position: relative;
+    }
+
+
+
+.offcanvas hr.dropdown-divider {
+    display: none !important;
+}
+.offcanvas .nav-item {
+    transition: transform 0.3s ease;
+  }
+  
+  .offcanvas .nav-item.nav-shifted {
+    transform: translateY(-40px);
+  }
+
+
+.navs .phone-nav span {
+    position: relative;
+    left: 1rem;
+
+}
+
+.offcanvas .nav-item + .nav-item {
+    margin-top: 0.25rem !important;  /* tighter vertical gap */
+}
+
+.navbar-nav .nav-link::after {
+    display: none;
+}
+
+/* Frosted‑glass effect for the phone off‑canvas menu */
+.offcanvas.sidebar {
+    background: rgba(255, 255, 255, 0.73) !important;
+    /* translucent dark */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.offcanvas-header {
+    background: transparent !important;
+    border-bottom: 0;
+}
+/* Let the list start flush; we'll push everything down via padding instead */
+.offcanvas .navbar-nav {
+    margin-top: 0;
+    
+}
+
+/* Push all items down a bit for breathing room */
+.offcanvas-body {
+    padding-top: 2rem;   /* adjust as desired */
+}
+
+.offcanvas .navbar-nav .nav-link {
+    top: 100;              /* prevents jitter when the off‑canvas opens */
+}
+
+/* Decrease vertical padding/margin on individual links */
+.offcanvas .nav-link {
+    margin: 0.25rem 0;        /* was inheriting larger margins */
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+.social-links a{
+    font-size: 0.9rem;
+}
+.social-links p{
+    font-size: 0.5rem !important;
+}
+
+.d-flex .navbar-toggler {
+    padding-right: 1rem !important;
+    padding-top: 1,4rem !important;
+   
+}
+
+.social-links{
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-45%);
+    text-align: center;
+}
+
+
+.item-endorsed      {grid-column:1 / span 12;  grid-row:2; height: 310px !important; width: 100%; object-fit: cover;}
+  .item-projects      {grid-column:1 / span 12;  grid-row:3;}
+
+
+
+/* --- Logo grid positioning --- */
+.item-logos1 { grid-column: 1 / span 4; grid-row: 4; }
+.item-logos2 { grid-column: 5 / span 5; grid-row: 4; }
+.item-logos3 { grid-column: 10 / span 4; grid-row: 4; }
+
+
+
+.first_page{
+    padding:0px 10px;
+}
+
+.second p {
+    padding: 0 10px;
+}
+/* Center logo rows and individual images on mobile */
+.third,
+.forth,
+.fifth {
+    justify-content: center;          /* center the collection */
+}
+
+.third img,
+.forth img,
+.fifth img {
+        /* Scale logo heights down on small screens */
+        max-height: calc(var(--logo-height) * 0.7);
+    width: auto;
+    object-fit: contain;
+    margin: 1rem 0rem; 
+    
+    justify-content: center;  
+    align-items: center;      /* tighter spacing on mobile */
+}
+
+}
+
+
+@media (max-width:575px) {
+    p {
+        margin-bottom: 0;
+    }
+    body {
+        background-color: white !important;
+
+    }
+    .header{
+        background-position-x: 49% !important;
+        background-position-y: -30px !important;
+    }
+
+
+
+    .intro {
+        position: relative;
+        top: 40rem !important;
+        width: 100%;
+        text-align: left !important;
+        backdrop-filter: blur(1);
+    }
+
+      .offcanvas .nav-item .nav-link {
+        font-size: 20px !important;
+      }
+      .nav-item{
+        position: relative;
+        top: 10rem;
+        left: 10%;
+
+      }
+
+
+
+    .offset-md-6,
+    .offset-lg-6 {
+        margin-left: 0 !important;
+    }
+
+
+    .offcanvas.show .dropdown-menu {
+        display: block;
+        transform: none !important;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+        padding-left: 0;
+        position: relative;
+    }
+
+
+
+    .all_text{
+        position: relative;
+        top: 7rem !important;
+        padding-bottom: 2rem;
+
+       
+    }
+    .social-links p{
+        font-size: 0.5rem !important;
+    }   
+    
+
+
+    .offcanvas hr.dropdown-divider {
+        display: none !important;
+    }
+
+
+    .navs .phone-nav span {
+        position: relative;
+        left: 1rem;
+
+    }
+    .social-links {
+        position: absolute;
+        bottom: 2rem;
+    }
+
+    /* Reduce vertical gaps between nav items in off‑canvas */
+    .offcanvas .nav-item + .nav-item {
+        margin-top: 0.25rem !important;   /* tighter vertical gap */
+    }
+
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+
+    /* Frosted‑glass effect for the phone off‑canvas menu */
+    .offcanvas.sidebar {
+        background: rgba(255, 255, 255, 0.73) !important;
+        /* translucent dark */
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .offcanvas-header {
+        background: transparent !important;
+        border-bottom: 0;
+    }
+    /* Let the list start flush; we'll push everything down via padding instead */
+    .offcanvas .navbar-nav {
+        margin-top: 0;
+        
+    }
+
+    /* Push all items down a bit for breathing room */
+    .offcanvas-body {
+        padding-top: 2rem;   /* adjust as desired */
+    }
+
+    .offcanvas .navbar-nav .nav-link {
+        top: 100;              /* prevents jitter when the off‑canvas opens */
+    }
+
+    /* Decrease vertical padding/margin on individual links */
+    .offcanvas .nav-link {
+        margin: 0.25rem 0;        /* was inheriting larger margins */
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+    .navbar-toggler {
+        position: absolute;
+        bottom: 0.7rem;
+        
+    }
+
+    
+
+}
+
+
+
+

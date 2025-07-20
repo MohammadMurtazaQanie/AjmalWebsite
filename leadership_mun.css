@@ -414,6 +414,13 @@ h3{
   padding-right: 50px;
 }
 
+@media (min-width: 992px) {                     /* desktop only */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+      left: 50% !important;                       /* anchor midpoint */
+      transform: translateX(-50%) !important;     /* pull back half width */
+      right: auto !important;                     /* override Bootstrap */
+    }
+  }
 @media (min-width: 768px) {
   .header2 {
     height: 100vh;              /* fill the viewport only on desktop */
