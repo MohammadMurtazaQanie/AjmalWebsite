@@ -85,16 +85,14 @@
 .navbar{
     min-height:56px; 
     transition:opacity 0.5s ease;    
+    z-index: 0;
   }
 .navbar::before{
       content:"";
       position:absolute;
       inset:0;
       pointer-events:none;
-
-
-
-      z-index:0;                  /* sits *above* the links but keeps clicks working */
+      z-index: -1;                /* sits behind everything */
       opacity:0;                  /* hidden until scrolled */
       backdrop-filter: blur(0px);         /* start with no blur */
       -webkit-backdrop-filter: blur(0px); /* Safari */
@@ -114,21 +112,22 @@
 
 
 
-
- 
-
-
-
 .nav-item .something {
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     background: rgba(0, 0, 0, 0.35);
     /* translucent dark tint  */
-    border: 0.5x solid rgba(0, 0, 0, 0.2);
+    border: 0.5px solid rgba(200, 200, 200, 0.2);
     border-radius: 30px;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+
+
+
+
+ 
+
 
 .navbar-nav .dropdown-toggle::after {
     border: none !important;
@@ -225,7 +224,6 @@
     font-size: 16px !important;
     color: rgb(125, 125, 125, 0.8);
     text-align: justify;
-    margin: 0 !important;
     padding-left: 50px;
 
 
@@ -367,11 +365,19 @@
 
 
 
+/* --- Center the “Thought Leadership” dropdown menu under its toggle --- */
 @media (min-width: 992px) {                     /* desktop only */
+    /* generic centering (NO fixed width) */
     .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
-      left: 50% !important;                       /* anchor midpoint */
-      transform: translateX(-50%) !important;     /* pull back half width */
-      right: auto !important;                     /* override Bootstrap */
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      right: auto !important;
+    }
+  
+    /* wider menu only for the “Thought Leadership” list (uses .px-4) */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something.px-4 {
+      width: 18rem;     /* ~416 px */
+      max-width: 90vw;  /* safety on very narrow screens */
     }
   }
 
@@ -550,15 +556,14 @@
 }
 
 
-.item-endorsed      {grid-column:1 / span 12;  grid-row:2; height: 310px !important; width: 100%; object-fit: cover;}
+.item-endorsed      {grid-column:1 / span 12;  grid-row:2; height: 210px !important; object-fit :contain; height: auto;}
   .item-projects      {grid-column:1 / span 12;  grid-row:3;}
 
 
-
 /* --- Logo grid positioning --- */
-.item-logos1 { grid-column: 1 / span 4; grid-row: 4; }
-.item-logos2 { grid-column: 5 / span 5; grid-row: 4; }
-.item-logos3 { grid-column: 10 / span 4; grid-row: 4; }
+.item-logos1 { grid-column: 1 / span 3; grid-row: 4; margin-left: 1rem;}
+.item-logos2 { grid-column: 5 / span 4; grid-row: 4; }
+.item-logos3 { grid-column: 10 / span 3; grid-row: 4;margin-right: 1rem;  }
 
 
 
@@ -729,3 +734,21 @@
 
 
 
+
+
+/* ───── Interactive logo links ───── */
+/* ───── Interactive logo links ───── */
+.logo-link {
+  display: inline-block;
+  cursor: pointer;     /* pointer cursor for clarity */
+}
+
+ .logo-link img {
+     /* no colour change – ultra‑minimal */
+     transition: opacity 0.25s ease;
+ }
+
+.logo-link:hover img,
+.logo-link:focus img {
+    opacity: 0.75;          /* subtle visual hint */
+}

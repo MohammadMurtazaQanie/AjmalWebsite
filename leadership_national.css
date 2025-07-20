@@ -132,7 +132,10 @@
 .navs.black-nav .dropdown-header, 
 .navs.black-nav .pub a,
 .navs.black-nav .dropdown-item{
-    color: black !important;
+    color: white !important;
+}
+.navs.black-nav hr.dropdown-divider {
+    border-color: #fff !important;   /* white on Page 2 */
 }
 
 /* underline animation switches to black */
@@ -389,11 +392,19 @@ margin-bottom: 5px;
   padding-right: 70px;
 }
 
+/* --- Center the “Thought Leadership” dropdown menu under its toggle --- */
 @media (min-width: 992px) {                     /* desktop only */
+    /* generic centering (NO fixed width) */
     .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
-      left: 50% !important;                       /* anchor midpoint */
-      transform: translateX(-50%) !important;     /* pull back half width */
-      right: auto !important;                     /* override Bootstrap */
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      right: auto !important;
+    }
+  
+    /* wider menu only for the “Thought Leadership” list (uses .px-4) */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something.px-4 {
+      width: 18rem;     /* ~416 px */
+      max-width: 90vw;  /* safety on very narrow screens */
     }
   }
 @media (min-width: 768px) {

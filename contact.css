@@ -192,11 +192,19 @@
     transition: all 0.5s ease;
 }
 
+/* --- Center the “Thought Leadership” dropdown menu under its toggle --- */
 @media (min-width: 992px) {                     /* desktop only */
+    /* generic centering (NO fixed width) */
     .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
-      left: 50% !important;                       /* anchor midpoint */
-      transform: translateX(-50%) !important;     /* pull back half width */
-      right: auto !important;                     /* override Bootstrap */
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      right: auto !important;
+    }
+  
+    /* wider menu only for the “Thought Leadership” list (uses .px-4) */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something.px-4 {
+      width: 18rem !important;     /* ~416 px */
+      max-width: 90vw !important;  /* safety on very narrow screens */
     }
   }
 
