@@ -148,47 +148,137 @@
 
 
 
-<!-- ═══════════ Search + Filters ═══════════ -->
-<div class="search-wrapper">
-<div class="search-filters d-flex flex-nowrap align-items-center gap-2 mb-4">
+    <section class="header2" id="secondPage">
 
-    <!-- search box -->
-    <div class="input-group search-pill flex-grow-1 flex-md-grow-0">
-      <span class="input-group-text bg-transparent border-0 ps-3">
-        <i class="bi bi-search"></i>
-      </span>
-      <input type="search"
-             class="form-control border-0"
-             placeholder="Search…"
-             aria-label="Search">
-    </div>
-  
-    <!-- dropdown pills -->
-    <!-- <select class="form-select filter-pill" aria-label="Issues">
-      <option selected hidden>Issues</option>
-      <option value="conflict">Conflict</option>
-      <option value="governance">Governance</option>
-    </select>
-  
-    <select class="form-select filter-pill" aria-label="Category">
-      <option selected hidden>Category</option>
-      <option value="oped">Op-Ed</option>
-      <option value="analysis">Analysis</option>
-    </select>
-  
-    <select class="form-select filter-pill" aria-label="Language">
-      <option selected hidden>Language</option>
-      <option value="en">English</option>
-      <option value="fa">Farsi</option>
-    </select>
-  
-    <select class="form-select filter-pill" aria-label="Organize">
-      <option selected hidden>Organize</option>
-      <option value="newest">Newest</option>
-      <option value="oldest">Oldest</option>
-    </select> -->
-  </div>
-  </div>
+
+      <div class="stats-grid2">
+
+          <article class="first stat-card item-endorsed">
+
+                <div class="search-bar input-group">
+                  <button class="input-group-text border-0 bg-transparent" id="search-button" type="button">
+                    <i class="bi bi-search"></i>
+                  </button>
+                  <input type="search" placeholder="Search..." class="form-control" />
+                </div>
+
+          </article>
+
+          <article class="second stat-card item-projects">
+            <select class="form-select filter-pill" aria-label="Issues">
+              <option selected hidden>Issues</option>
+              <option value="conflict">Conflict</option>
+              <option value="governance">Governance</option>
+            </select>
+          
+            <select class="form-select filter-pill" aria-label="Category">
+              <option selected hidden>Category</option>
+              <option value="oped">Op-Ed</option>
+              <option value="analysis">Analysis</option>
+            </select>
+          
+            <select class="form-select filter-pill" aria-label="Language">
+              <option selected hidden>Language</option>
+              <option value="en">English</option>
+              <option value="fa">Farsi</option>
+            </select>
+
+            <select class="form-select filter-pill" aria-label="Organize">
+              <option selected hidden>Organize</option>
+              <option value="newest">Newest</option>
+              <option value="oldest">Oldest</option>
+            </select>
+          </article>
+
+
+
+
+          
+          <article class="third stat-card item-sdg">
+              <h3>Youth Representatives</h3>
+              <p>At the High Council for National Reconciliation</p>
+          </article>
+
+
+          <div class="stat-card p-0 item-photo overflow-hidden">
+              <img src="Images/7-min.jpg" class="w-100 h-100 object-fit-cover" alt="Diplomatic round-table">
+          </div>
+
+          
+          <article class="fifth stat-card item-parent">
+              <h3>Afghanistan's First-Ever National Youth Resolution</h3>
+              <p>Unified 27 provincial resolutions into a single
+                  National Youth Resolution.</p>
+              <a href="#">Learn More</a>
+          </article>
+          <div class="stat-card p-0 item-photo2 overflow-hidden">
+              <img src="Images/8-min.jpg" class="w-100 h-100 object-fit-cover" alt="Diplomatic round-table">
+          </div>
+
+      
+         <article class="seventh stat-card item-established">
+              <h3>Policies Influenced</h3>
+              <div class="photo-grid">
+                  <div class="flag-item">
+                      <img src="Images/118.png" alt="NATO">
+                      <p clas>NATO</p>
+                  </div>
+                  <div class="flag-item">
+                      <img src="Images/19.png" alt="EU">
+                      <p>EU</p>
+                  </div>
+                  <div class="flag-item">
+                      <img src="Images/16.png" alt="USA">
+                      <p>USA</p>
+                  </div>
+                  <div class="flag-item">
+                      <img src="Images/17.png" alt="UK">
+                      <p>UK</p>
+                  </div>
+                  <div class="flag-item">
+                      <img src="Images/18.png" alt="France">
+                      <p>France</p>
+                  </div>
+                  <div class="flag-item">
+                      <img src="Images/Germany.png" alt="Germany">
+                      <p>Germany</p>
+                  </div>
+                  <div class="flag-item">
+                      <img src="Images/20.png" alt="Sweden">
+                      <p>Sweden</p>
+                  </div>
+                  <div class="flag-item">
+                      <img src="Images/21.png" alt="Turkey">
+                      <p>Turkey</p>
+                  </div>
+                  <div class="flag-item">
+                      <img src="Images/22.png" alt="Canada">
+                      <p>Canada</p>
+                  </div>
+              </div>
+          </article>
+
+
+          <article class="ninth stat-card item-member">
+              <div class="display fw-bold">5000+</div>
+              <h3>Individuals</h3>
+              <p>Surveyed in 34 Provinces</p>
+              
+          </article>
+
+          <article class="tenth stat-card item-reestablished">
+              <h3>Established</h3>
+              <div class="display fw-bold">2020</div>
+          </article>
+
+          <article class="eleven stat-card item-x">
+              <img src="Images/7.png" class="img-fluid" alt="X logo">
+              <a href="#">Learn More</a>
+          </article>
+
+      </div>
+  </section>
+
 
 
 
@@ -206,6 +296,15 @@
 
   scrollBox.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', scrollBox.scrollTop > 0);
+  });
+</script>
+<script>
+  document.getElementById('search-button').addEventListener('click', function () {
+    const query = document.querySelector('.form-control').value.trim();
+    if (query) {
+      // For now, we'll just redirect to Google Search with the query
+      window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    }
   });
 </script>
 <script>

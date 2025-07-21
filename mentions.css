@@ -231,6 +231,10 @@
 }
 
 
+.logo-grid-mobile{
+    display: none;
+}
+
 .third{
     display: flex;
     flex-direction: row !important;       /* force horizontal layout, overriding .stat-card */
@@ -556,8 +560,8 @@
 }
 
 
-.item-endorsed      {grid-column:1 / span 12;  grid-row:2; height: 210px !important; object-fit :contain; height: auto;}
-  .item-projects      {grid-column:1 / span 12;  grid-row:3;}
+.item-endorsed      {grid-column:1 / span 12;  grid-row:1; height: 210px !important; object-fit :contain; height: auto;}
+  .item-projects      {grid-column:1 / span 12;  grid-row:2;}
 
 
 /* --- Logo grid positioning --- */
@@ -595,6 +599,48 @@
 }
 
 }
+
+/* ================= PHONE-ONLY LOGO LAYOUT (≤ 767 px) ================= */
+@media (max-width: 767px) {
+
+    /* Hide the three desktop rows */
+    .third,
+    .forth,
+    .fifth { display: none !important; }
+  
+    /* Mobile flex-grid container */
+    .logo-grid-mobile {
+      grid-column: 1 / span 12;
+      grid-row: 3;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:space-between;
+      padding-top: 1rem;
+      align-items: center;
+      gap: 10px;
+      margin-top: 1.5rem;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  
+    /* Each anchor (logo cell) */
+    .logo-grid-mobile .logo-link {
+        flex: 0 0 30%;
+        order: var(--order-m, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px; /* you can increase this for more vertical space */
+        text-align: center;
+    }
+  
+    /* Image sizing */
+    .logo-grid-mobile .logo-link img {
+      max-height: var(--logo-h-m, var(--logo-h)); /* phone-height → else desktop height */
+      width: auto;
+      object-fit: contain;
+    }
+  }
 
 
 @media (max-width:575px) {

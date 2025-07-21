@@ -177,166 +177,440 @@
 
 
 
-/* ══ Pills look/feel ───────────────────────────────── */
-/* ═══ Position the whole bar like the mock-up ══════════════════════ */
-.search-wrapper {
-    max-width: 100%;               /* keeps it lined‑up with the cards  */
-    position: absolute;              /* lift it off the normal flow      */
-    left: 50%;
-    top: 20%;
-    transform: translate(-50%, -50%);/* perfectly centre in the viewport */
-}
+/* --- Stats grid cards --- */
+.stats-grid   { --bs-gutter-y: 2rem; }    
 
-.search-pill,
-.filter-pill {
-  border: 1px solid #e0e0e0;
-  border-radius: 28px;
-  background: #fff;
-  min-height: 44px;
-  margin-right: 1rem;        /* NEW – space after the search box */
-}
-
-.filter-pill{
-    border-radius: 28px !important;
-
+h3{
+    font-weight: 1000;
 }
 
 
-.search-pill .form-control {
-  background: transparent;
-  padding-left: 0;                
+.first {
+    text-align: center;
+    height: auto;
+    
+}
+.first .input-group-text, .first .form-control{
+    background-color: transparent !important;
+    border:none;
+   
 }
 
-.filter-pill {
-  padding-right: 2.5rem;          
-  padding-left: 1rem;
-  width: 100%;         
+.first .input-group-text{
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 0.2rem;
+}
+.item-endorsed{
+    border: 1px solid rgb(125, 125, 125,0.6);
+    border-radius: 15px;
 }
 
-.filter-pill::-ms-expand { display:none; }
-.filter-pill {
-  appearance: none;
+.form-control:focus, .form-select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+
+.item-endorsed {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-/* keep the pills tidy */
-.search-pill {
-    margin-right: 0cqb;     /* space after the search box only */
+
+.item-endorsed:focus-within {
+    box-shadow: 0 0 10px rgba(125, 125, 125, 0.4) !important;
+}
+
+
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3E%3Cpath d='M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7a1 1 0 1 0-1.41 1.42L10.59 12l-4.89 4.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z'/%3E%3C/svg%3E")
+      no-repeat center center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: all;
   }
   
-  /* remove the margin you previously added to EVERY pill  */
-  .filter-pill {
-    margin-right: 0;        /* or just delete the rule if you added one */
+
+  input[type="search"]:not(:placeholder-shown)::-webkit-search-cancel-button {
+    opacity: 1;
   }
 
-/* ── Keep the search + filter pills in one row on tablets / desktop ── */
-@media (min-width: 768px) {
-  .search-filters {
-    flex-wrap: nowrap;        
-  }
-
-  .search-pill {                  /* search stays flexible but not full‑width */
-    flex: 1 1 430px;              /* grows, but never shrinks below 260 px */
-  }
-
-  .filter-pill {                  /* filters keep natural width */
-    width: auto !important;       /* override Bootstrap's width:100% */
-    flex: 0 0 auto;               /* don’t grow, don’t shrink */
-  }
-
-  /* === spacing after the SEARCH box === */
-
+input::placeholder{
+    color: rgb(198, 198, 198) !important;
 }
 
-/* ══ Layout tweaks ────────────────────────── */
-@media (max-width: 767px) {
-  .search-pill   { flex: 1 1 100%; }      /* search full-width on phones */
+.first .item-endorsed:hover {
+    box-shadow: 0 0 5px red !important;
+    transition: box-shadow 0.3s ease !important;
 }
 
-@media (min-width: 768px) {
-    .search-filters {
-      flex-wrap: nowrap;
-      column-gap: 2rem;        /* default was 0.5 rem via .gap-2 */
-    }
-  }
+
+
+
+.second .form-select{
+    border: 1px solid rgb(125, 125, 125,0.6) !important;
+    border-radius: 15px !important;
+    background-color: transparent !important;
+}
+
+.aria-label{
+    color:red;
+}
 
 
 
 
 
 
+.second h3{
+    font-size: 1.5rem !important;
+    text-align: center;
+    margin-bottom: 0.4rem !important;
+    margin-top: 1rem !important;
+}
+.second p{
+    font-size:11px !important;
+   color:rgb(125, 125, 125, 0.8);
+   padding-right: 20px;
+   padding-left:20px;
+}
+.second a {
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+    margin-bottom: 1rem;
+}
+.second a:hover {
+    color: black;
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.5s ease !important;
+}
+
+.third h3{
+    font-size: 1.3rem !important;
+    text-align: center;
+margin-bottom: 5px;
+
+}
+.third p{
+    font-size: 11px !important;
+    color:rgb(125, 125, 125, 0.8);
+    padding-right: 20px;
+    padding-left:20px;
+    margin-bottom: 5px;
+}
+
+
+
+.fifth p{
+    font-size:11px !important;
+    color:rgb(125, 125, 125, 0.8);
+    padding-right: 20px;
+    padding-left:20px;
+}
+
+.fifth a {
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+    margin-bottom: 0.3rem;
+}
+.fifth a:hover {
+    color: black;
+    background-color: rgb(230, 230, 230);
+    transition: background-color 0.5s ease !important;
+}
+
+.header2 {
+  padding-top: 100px;
+  padding-bottom: 40px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+/* --- Center the “Thought Leadership” dropdown menu under its toggle --- */
 @media (min-width: 992px) {                     /* desktop only */
+    /* generic centering (NO fixed width) */
     .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
-      left: 50% !important;                       /* anchor midpoint */
-      transform: translateX(-50%) !important;     /* pull back half width */
-      right: auto !important;                     /* override Bootstrap */
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      right: auto !important;
+    }
+  
+    /* wider menu only for the “Thought Leadership” list (uses .px-4) */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something.px-4 {
+      width: 18rem;     /* ~416 px */
+      max-width: 90vw;  /* safety on very narrow screens */
     }
   }
+@media (min-width: 768px) {
+  .header2 {
+    height: 100vh;              /* fill the viewport only on desktop */
+    box-sizing: border-box;      /* include padding in the 100vh calculation */
+    overflow-y: auto;           /* let only the second page scroll on desktop */
+    scrollbar-width: none;      /* hide Firefox scrollbar */
+    -ms-overflow-style: none;   /* hide IE/Edge scrollbar */
+  }
 
-@media (max-width: 1200px) {
+  .header2::-webkit-scrollbar {
+    display: none;              /* hide Chrome/Safari scrollbar */
+  }
+}
 
-    html,
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
+.seventh h3{
+    margin-bottom: 0.5rem;
+}
 
+.seventh .display {
+    font-size: 3rem !important;
+    margin: 0;
+    padding: 0;
+}
+.photo-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    overflow-x: auto;
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE/Edge */
+}
 
-    .header {
-        padding-top: 10rem;
-    }
+.photo-grid::-webkit-scrollbar {
+    display: none;               /* hide Chrome/Safari scrollbar */
+}
+.flag-item{
+    display:flex;               /* stack flag + label */
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start; /* prevent stretching */
+    flex:0 0 auto;
+    text-align:center;
+    min-width:60px;             /* reserve horizontal space so labels align */
+}
+.flag-item img{
+    width:60px;
+    height:40px;        /* 🔹 uniform height so all labels sit on same baseline */
+    object-fit:cover;   /* crop if necessary to fill 60×40 */
+    border-radius:6px;
+}
+.flag-item p {
+    font-size:11px;
+    margin-top: 0.2rem;
+    margin-bottom: 0.5rem;
+    color: rgb(125, 125, 125);
+}
 
-    .navbar {
-        position: fixed;
-        z-index: 1050;
-        width: 100%;
-    }
+.stat-card {
+
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.item-x{
+    flex-direction: row;       
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;                      
+    padding: 0.75rem 1rem;             
+}
+.item-x img{
+    max-width: 60px;                   
+    height: auto;
+}
+.item-x a{
+    margin-top: 1rem;
+    text-decoration: none;
+    color: rgb(125, 125, 125);
+    font-size: 9px !important;
+    border: 1px solid rgb(125, 125, 125);
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    width: max-content;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.5s ease !important;
+}
+.item-x a:hover {
+    color: black;
+    background-color: rgb(198, 198, 198);
+    transition: background-color 0.5s ease !important;
+}
+.eighth h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.eight img{
+    max-width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0.7rem;
 
 }
 
-
-@media (max-width: 991px) {
-
-    html,
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-
-
-    .header {
-        padding-top: 0rem;
-        /* space for the fixed navbar */
-    }
-
-
+.ninth .display {
+    font-size: 3rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.ninth h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 0.2rem;
+}
+.ninth p{
+    font-size:11px !important;
+    margin-bottom: 1rem;
+    color:rgb(125, 125, 125, 0.8);
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
-@media (max-width:881px) {
-    body {
-        background-color: black !important;
+.tenth h3{
+    font-size: 1.3em !important;
+    text-align: center;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin: 0;
+}
+.tenth .display {
+    font-size: 3rem !important;
+    margin: 0;
+    padding: 0;
+}
+
+.eleven img{
+    max-width: 50px;
+    display: block;
+    margin-left: 1.5rem;
+    margin-right: auto;
+}
+.eleven{
+    background-color: black;
+}
+
+.stats-grid2{
+    display:grid;
+    gap:1rem; 
+    position: relative;
+    top: 2rem;
+    padding-bottom: 1rem;
+    grid-template-columns:repeat(12,1fr);
+    grid-auto-rows:minmax(20px,auto);        
+  }
+
+  .item-projects{
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
 
 
-    }
+  .item-endorsed      {grid-column:1 / span 6;  grid-row:1;}
+  .item-projects      {grid-column:8 / span 5;  grid-row:1;}
+  .item-sdg           {grid-column:4 / span 3;  grid-row:4;}
+  .item-photo         {grid-column:7 / span 6;  grid-row:4 / span 2;}
+  
+  .item-parent        {grid-column:1  / span 2; grid-row:4/span 2;}
+  .item-photo2         {grid-column:3  / span 4; grid-row:4 /span 2;}
+  .item-established   {grid-column:7  / span 6; grid-row:4;}
+  .item-member         {grid-column:7  / span 2; grid-row:4 ;}
+  .item-reestablished {grid-column:9 / span 2; grid-row:4;}
+  .item-x {grid-column:11 / span 2; grid-row:4;}
+  
 
 
-
-    .nav-item {
+@media (min-width: 768px) {
+    .cta-scroll{
+        display:inline-flex;
+        flex-direction: column;     /* ⬅️  stack icon + label  */
+        row-gap:0.25rem;            /* vertical spacing        */
+        align-items:center;
+        font-size:30px;
+        color:rgb(125, 125, 125);
+        background-color: transparent;
+        border:none;
+        cursor:pointer;
         position: relative;
-        top: 0px;
-
+        margin-bottom: 0;
+        top: -5px;               /* lift up to overlap the bottom of the header */
+        left: 45%;
+        transform: translateY(0);
+        transition: color 0.5s ease,
+                    background 0.5s ease,
+                    transform 0.4s ease;
     }
-
-    .phone-nav {
-        position: static;
+    .cta-scroll:hover{
+        color: black;
+        transform: translateY(8px);                          /* slide down on hover */
     }
-
-
+.cta-scroll::after{
+    content: "Scroll down";
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgb(125, 125, 125);
+    opacity: 0;
+    transform: translateY(-2px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    position: relative;
+    bottom: 15px;
 }
+    
+.cta-scroll:hover::after{
+    opacity: 1;
+    transform: translateY(0px);  /* was translateY(0) – lifts the text ~2 px */
+}
+
+
+  .header2 {
+    padding-top: 80px !important;   /* was 70px */
+  }
+  }
+  
+
 @media (max-width:767px ){
     body {
         background-color: black !important;
@@ -585,7 +859,3 @@
     
 
 }
-
-
-
-
