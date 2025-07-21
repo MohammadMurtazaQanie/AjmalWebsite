@@ -577,6 +577,8 @@
 
 .second p {
     padding: 0 10px;
+    text-align: left;
+    color: rgb(125, 125,125);
 }
 /* Center logo rows and individual images on mobile */
 .third,
