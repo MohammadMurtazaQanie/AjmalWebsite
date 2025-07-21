@@ -262,11 +262,10 @@ input::placeholder{
       right: auto !important;
     }
   
-    /* wider menu only for the “Thought Leadership” list (uses .px-4) */
-    .navbar-nav .nav-item.dropdown > .dropdown-menu.something.px-4 {
-      width: 18rem;     /* ~416 px */
-      max-width: 90vw;  /* safety on very narrow screens */
-    }
+    /* wider menu only for the “Thought Leadership” list (applies to all .something dropdowns) */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+        width: 18rem;
+        max-width: 90vw;
   }
 @media (min-width: 768px) {
   .header2 {
@@ -961,4 +960,4 @@ body {
   height: 230px;
   object-fit: cover;   /* fill the box without distortion */
   border-radius: 25px;
-}
+}}

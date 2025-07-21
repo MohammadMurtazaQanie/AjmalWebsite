@@ -117,7 +117,7 @@
     -webkit-backdrop-filter: blur(6px);
     background: rgba(0, 0, 0, 0.35);
     /* translucent dark tint  */
-    border: 0.5px solid rgba(200, 200, 200, 0.2);
+    border: 0.5px solid rgb(125,125,125);
     border-radius: 30px;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -378,10 +378,10 @@
       right: auto !important;
     }
   
-    /* wider menu only for the “Thought Leadership” list (uses .px-4) */
-    .navbar-nav .nav-item.dropdown > .dropdown-menu.something.px-4 {
-      width: 18rem;     /* ~416 px */
-      max-width: 90vw;  /* safety on very narrow screens */
+    /* wider menu only for the “Thought Leadership” list (applies to all .something dropdowns) */
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+      width: 18rem;
+      max-width: 90vw;
     }
   }
 
