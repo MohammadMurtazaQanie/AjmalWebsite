@@ -560,7 +560,7 @@
 }
 
 
-.item-endorsed      {grid-column:1 / span 12;  grid-row:1; height: 210px !important; object-fit :contain; height: auto;}
+.item-endorsed      {grid-column:1 / span 12;  grid-row:1; height: 210px !important; object-fit :contain; height: auto; margin-top: 1rem;}
   .item-projects      {grid-column:1 / span 12;  grid-row:2;}
 
 
