@@ -166,25 +166,40 @@
 
           <article class="second stat-card item-projects">
             <select class="form-select filter-pill" aria-label="Issues">
-              <option value="" selected hidden>Issues</option>
-              <option value="conflict">Conflict</option>
-              <option value="governance">Governance</option>
+              <option value="" selected>Issues</option>
+              <option value="national">Nationalism</option>
+              <option value="political">Political Reform</option>
+              <option value="terrorism">Terrorism</option>
+              <option value="geopolitics">GeoPolitics</option>
+              <option value="inclusive">Inclusive Governance</option>
+              <option value="peacebuilding">Peacebuilding</option>
+              <option value="civil">Civil Society</option>
+              <option value="youth">Youth and Women</option>
+              <option value="forign">Forign Policy</option>
+              <option value="extremism">Extremism</option>
+              <option value="emerge">Emerging Threats</option>
+
+              
+
+
             </select>
           
             <select class="form-select filter-pill" aria-label="Category">
-              <option value="" selected hidden>Category</option>
+              <option value="" selected>Category</option>
               <option value="oped">Op-Ed</option>
-              <option value="analysis">Analysis</option>
+              <option value="research">Research</option>
+              <option value="contribution">Contribution</option>
+              <option value="translation">Translation</option>
             </select>
           
             <select class="form-select filter-pill" aria-label="Language">
-              <option value="" selected hidden>Language</option>
+              <option value="" selected>Language</option>
               <option value="en">English</option>
               <option value="fa">Farsi</option>
             </select>
 
             <select class="form-select filter-pill" aria-label="Organize">
-              <option value="" selected hidden>Organize</option>
+              <option value="" selected>Organize</option>
               <option value="newest">Newest</option>
               <option value="oldest">Oldest</option>
             </select>
@@ -193,8 +208,8 @@
 
 
 
-          
-<article class="third stat-card item-sdg page-article">
+         
+<article class="third stat-card item-sdg page-article" data-href="article1.html">
   <div class="inner-grid">
     <div class="item-image">
       <img src="Images/Chopper 2.jpg" alt="Chopper">
@@ -311,105 +326,223 @@ const articlePages = [
   /* Page 0 */
   [
     {
-      img:'Images/Chopper 2.jpg',
-      subtitle:'OpEd | Jan 6, 2026',
-      title:'Afghan History Repeats Itself; This Time Jeopardizes US Interests',
+      img:'Images/Articles/Future.jpg',
+      subtitle:'OpEd | July 7, 2021',
+      title:'Afghanistan’s Future: The Next Proxy War?',
       author:'Yahya Qanie',
       sourceName:'ToloNews',
       sourceLink:'https://tolonews.com/opinion-173367',
-      desc:`If we look back to the past, we find that this is not the first time a foreign
-country has attempted to end the war in Afghanistan through negotiation with
-insurgents. In early 1985, when Mikhail Gorbachev came to power, he decided
-to negotiate with the Mujahidin (freedom fighters against the Soviet Union
-occupation) to facilitate an orderly withdrawal and ensure the stability of its
-supported government in Kabul, and ultimately end the war which he called
-"the bleeding wound."`,
-      issues:['conflict'],
+      desc:`Afghanistan’s tumultuous peace process came to a halt after President Biden’s announcement of a delayed withdrawal plan for US troops from the country. Indeed, this served as a good excuse for the Taliban to boycott any peace talks, assuming that if they do not negotiate power today, they will have it all after the unconditional withdrawal of the U.S. forces.`,
+      issues:['terrorism', 'geopolitics'],
       category:'oped',
       language:'en',
       organization:'tolonews',
-      date:'2026-01-06'
+      date:'2021-07-07'
     },
     {
-      img:'Images/Chopper 2.jpg',
-      subtitle:'OpEd | Jan 6, 2026',
-      title:'Afghan History Repeats Itself; This Time Jeopardizes US Interests',
+      img:'Images/Articles/Voice.JPG',
+      subtitle:'OpEd | March 7, 2021',
+      title:'Afghan Youth Reclaiming Their Voices and Reimaging a Better Future',
       author:'Yahya Qanie',
-      sourceName:'ToloNews',
-      sourceLink:'https://tolonews.com/opinion-173367',
-      desc:`If we look back to the past, we find that this is not the first time a foreign
-country has attempted to end the war in Afghanistan through negotiation with
-insurgents. In early 1985, when Mikhail Gorbachev came to power, he decided
-to negotiate with the Mujahidin (freedom fighters against the Soviet Union
-occupation) to facilitate an orderly withdrawal and ensure the stability of its
-supported government in Kabul, and ultimately end the war which he called
-"the bleeding wound."`,
-      issues:['conflict'],
+      sourceName:'One Young World',
+      sourceLink:'https://www.oneyoungworld.com/blog/afghan-youth-reclaiming-their-voice-and-reimagining-better-future',
+      desc:`The National Youth Consensus for Peace (NYCP) is a movement of youth-led organizations and young leaders from all the 34 provinces of Afghanistan, advancing the role of youth in the Afghan Peace Process.
+`,
+      issues:['inclsive', 'peacebuilding', 'civil', 'youth'],
       category:'oped',
       language:'en',
-      organization:'tolonews',
-      date:'2026-01-06'
+      organization:'oneyoungworld',
+      date:'2021-03-07'
     }
   ],
   /* Page 1 */
   [
     {
       img:'Images/Chopper.jpg',
-      subtitle:'Analysis | Feb 12, 2025',
-      title:'Afghan Peace Talks: Lessons from History',
+      subtitle:'OpEd | November 22, 2020',
+      title:'Afghan History Repeats Itself; This Time Jeopardizes US Interests',
       author:'Yahya Qanie',
-      sourceName:'Foreign Policy',
-      sourceLink:'https://example.com/afghan-peace-talks',
-      desc:'From the Soviet withdrawal to today’s Doha process, the same patterns—and mistakes—keep re-emerging.',
-      issues:['governance'],
-      category:'analysis',
+      sourceName:'ToloNews',
+      sourceLink:'https://tolonews.com/opinion-167945',
+      desc:'If we look back to the past, we find that this is not the first time a foreign country has attempted to end the war in Afghanistan through negotiation with insurgents. In early 1985, when Mikhail Gorbachev came to power, he decided to negotiate with the Mujahidin (freedom fighters against the Soviet Union occupation) to facilitate an orderly withdrawal and ensure the stability of its supported government in Kabul, and ultimately end the war which he called “the bleeding wound.”',
+      issues:['geopolitics','forign','peacebuilding', 'terrorism'],
+      category:'oped',
       language:'en',
-      organization:'foreign-policy',
-      date:'2025-02-12'
+      organization:'tolonews',
+      date:'2020-11-22'
     },
     {
-      img:'Images/Chopper.jpg',
-      subtitle:'Analysis | Feb 12, 2025',
-      title:'Charting a Viable Road-Map Toward Stability in Afghanistan',
+      img:'Images/Articles/Peace.jpg',
+      subtitle:'OpEd | August 19, 2020',
+      title:'The Illusion of Inclusivity in Afghan Peace Process',
       author:'Yahya Qanie',
-      sourceName:'Atlantic Council',
-      sourceLink:'https://example.com/afghan-roadmap',
-      desc:'A blueprint for international actors seeking a sustainable end-state rather than another fragile ceasefire.',
-      issues:['governance'],
-      category:'analysis',
+      sourceName:'Khaama Press',
+      sourceLink:'https://www.khaama.com/the-illusion-of-inclusivity-in-afghan-peace-process-0898786/',
+      desc:'When it comes to the peace process, young Afghans are frequently seen as less experienced, less educated, somehow emotional, and trouble-makers. This is both unfair and dangerous. The Afghan youth can play a positive role in the country’s peace process; both in the impeding intra-Afghan talks and in supporting Afghanistan’s perilous journey to reconciliation.',
+      issues:['political', 'peacebuilding', 'inclsive', 'civil', 'youth'],
+      category:'oped',
       language:'en',
-      organization:'atlantic-council',
-      date:'2025-02-12'
+      organization:'khaama',
+      date:'2020-08-19'
     }
   ],
   /* Page 2 – keep empty or add more later */
-  []
+  [
+    {
+      img:'Images/Articles/SFCG.jpg',
+      subtitle:'Research | March 14, 2025',
+      title:'Harnessing Youth Leadership in Peacebuilding to Counter Extremism',
+      author:'Yahya Qanie',
+      sourceName:'ConnexUs',
+      sourceLink:'https://cnxus.org/resource/harnessing-youth-leadership-in-peacebuilding-to-counter-extremism/',
+      desc:'This policy brief is the outcome of a collaborative conversation conducted using Pol.is, an Al-powered deliberative technology tool, to get a pulse of youth perceptions about the peace and security issues in South Asia, the Middle East, Africa, Latin America, North America, and Europe. This policy brief addresses youth perceptions of youth-led initiatives vs military actions, youth engagement in policy and action, and the shared challenges youth groups face in peace and security efforts in different regions around the world. The policy brief also makes recommendations to the U.S. government, specifically the USAID, Department of State, Department of Defense, and U.S. Congress on enhancing youth engagement in peace and security efforts, aligned with U.S. foreign policy and national interests, to ensure sustainable peace globally.',
+      issues:['forign', 'peacebuilding', 'civil', 'youth','extremism'],
+      category:'research',
+      language:'en',
+      organization:'connectus',
+      date:'2025-03-14'
+    },
+    {
+      img:'Images/Articles/Counter.jpg',
+      subtitle:'Research | January 15, 2024',
+      title:'Counter-Terrorism in Post-U.S. Withdrawal Afghanistan: Assessing the Threat Landscape and Mitigation Measures',
+      author:'Yahya Qanie',
+      sourceName:'N/A',
+      sourceLink:'N/A',
+      desc:'This thesis studies the terrorism dynamics in Afghanistan following the U.S. military withdrawal, focusing on the resurgence of transnational terrorist organizations, particularly Islamic State- Khorasan and Al-Qaeda, and the extent to which the Taliban’s rule plays a role. The research study employs a multi-faceted approach, including a comprehensive literature review, a detailed analysis of historical and current events, and a series of targeted interviews. The findings indicate that the U.S. withdrawal has created a vacuum, exacerbating the risk of growth and competition between IS-K and Al-Qaeda within the region and abroad.',
+      issues:['forign', 'geopolitics', 'political', 'extremism', 'terrorism', 'emerge', 'national'],
+      category:'research',
+      language:'en',
+      organization:'n/a',
+      date:'2024-01-15'
+    }
+  ],
+  
+  /* Page 3 – keep empty or add more later */
+  [
+    {
+      img:'Images/Articles/together.png',
+      subtitle:'Contribution | January 19, 2022',
+      title:'We Are in This Together',
+      author:['Irena Grizeli', 'Ali Saleem','Yahya Qanie'],
+      sourceName:'United Nations',
+      sourceLink:'https://unoy.org/download/yps-5-year-strategic-plan/',
+      desc:'Operationalizing a 5-Year Strategy for Youth-Inclusive Peace Processes',
+      issues:['inclsive', 'peacebuilding', 'civil', 'youth','political'],
+      category:'contribution',
+      language:'en',
+      organization:'unitednations',
+      date:'2022-01-19'
+    },
+    {
+      img:'Images/Articles/peacet.jpg',
+      subtitle:'Translation | March 31, 2021',
+      title:'مذاکرات صلح به شیوه قدیمی موثر نیست، اما بدیل چیست؟',
+      author:'Yahya Qanie',
+      sourceName:'8AM',
+      sourceLink:'https://8am.media/fa/peace-talks-are-not-as-effective-as-they-used-to-be/',
+      desc:'',
+      issues:['civil', 'peacebuilding', 'inclsive'],
+      category:'translation',
+      language:'fa',
+      organization:'8am',
+      date:'2021-03-31'
+    }
+  ],
+
+  /* Page 4 – keep empty or add more later */
+  [
+    {
+      img:'Images/Articles/compt.jpg',
+      subtitle:'Translation | 2015',
+      title:'رقابت شوم بین القاعده و دولت خلافت اسلامی (داعش)',
+      author:['Yahya Qanie'],
+      sourceName:'Le Monde Diplomatique',
+      sourceLink:'https://ir.mondediplo.com/article2300.html',
+      desc:'خواست مطرح شده در کشتار «جارلی ابدو» به وسیله شاخه القاعده در شبه جزیره عربستان، جنبشی را به رسانه ها نشان میدهد که قبلا به خاطر موفقیت های نظامی داعش به عقب رانده شده بود. با این حال، این دو گروه با وجود هدف ها و رفتار بیرحمانه مشابه، راهبردهایی متفاوت دارند',
+      issues:['geopolitics', 'terrorism'],
+      category:'translation',
+      language:'fa',
+      organization:'lemonde',
+      date:'2015-01-01'
+    },
+    {
+      img:'Images/Articles/crise.jpg',
+      subtitle:'Translation | 2015',
+      title:'هشدار برای بحران اقتصادی روسیه',
+      author:'Yahya Qanie',
+      sourceName:'Le Monde Diplomatique',
+      sourceLink:'https://ir.mondediplo.com/article2301.html',
+      desc:'هر رژیم شوک خود را دارد. اقتصاد روسیه بعد از الحاق کریمه در بهار گذشته، ازدیاد تحریم ها در تابستان و کاهش شدید قیمت نفت در خزان، سبب سقوط ارزش روبل در ماه نوامبر شد. با تازه شدن زخم های سال های دهه ۱۹۹۰، این بحران پولی آثار خود را به جا خواهد گذاشت زیرا بحران ساختاری ای که قدرت حاکم طولانی مدت آنرا دست کم گرفته بود نمایان می گردد',
+      issues:['geopolitics'],
+      category:'translation',
+      language:'fa',
+      organization:'lemonde',
+      date:'2015-01-01'
+    }
+  ],
+  /* Page 5 – keep empty or add more later */
+  [
+    {
+      img:'Images/Articles/free.jpg',
+      subtitle:'Translation | 2015',
+      title:'آزاد باشید! این یک دستور است',
+      author:['Yahya Qanie'],
+      sourceName:'Le Monde Diplomatique',
+      sourceLink:'https://ir.mondediplo.com/article2302.html',
+      desc:'گرچه همه ترس آنرا در دل داشتند، اما کسی گمان نمی کرد که نمایش به اینجا کشیده خواهد شد: روز جمعه ۹ جنوری ”عبدالحمید الکوثری“، بازیکن فوتبال ساکن ”مونت پلیه“، هنگام نرمش بدنی پیش از بازی در برابر تیم ”المپیک“ مرسی (یک شهر فرانسه) لباس تمرین که روی آن جمله «من چارلی هستم» نوشته بود را نپوشید. سر و صدای شبکه های اجتماعی خیلی زود بلند شد. روز یکشنبه از ”رولان کوربی“، مربی تیم که در شبکه تلویزیونی ”کانال پلوس“ دعوت شده بود در این مورد توضیحات خواستند. فردای آنروز این موضوع قویتر شد: سه بازیکن ”والانسین“ فقط به شرطی حاضر شدند آن لباس (مربوط به حادثه چارلی ابدو) را به تن کنند که عبارت «من ... هستم» را با نوار چسبی پنهان کنند. در میزگرد ”افتر فوت“ برنامه پر بیننده شبکه تلویزونی ”RMC“، بحث تند و خشونت آمیز بر پا شد. ”ژیلبر بریسبوا“ مجری برنامه شرح می داد که «یک هفته است که برای آزادی بیان میجنگیم، بگذاریم آنها هم حرف های خود را بزنند و صبر کنیم تا توضیحات شان را بشنویم.» ”دانیل ریولو“، روزنامه نگار ورزشی این شبکه، خیلی خشمگین دنباله گفتگو را گرفت که: «… آزادی بیانی که استدلال همه ابله ها خواهد بود تا هر نوع یاوه را با هم ببافند',
+      issues:['geopolitics', 'terrorism', 'extremism'],
+      category:'translation',
+      language:'fa',
+      organization:'lemonde',
+      date:'2015-01-01'
+    }
+  ]
 ];
 
 /* -- utility to build one article card (auto‑flow layout) -- */
-function buildArticleHTML(data, idx){
-  const typeClass = (idx % 2) ? 'item-photo' : 'item-sdg';   /* keep alternate styling */
-
+function buildArticleHTML(data, id){
+  const typeClass = (id % 2) ? 'item-photo' : 'item-sdg';   /* keep alternate styling */
   return `
-<article class="stat-card ${typeClass} page-article"
-         style="grid-column:1 / -1; grid-row:auto"
-         data-issues="${data.issues.join(',')}"
-         data-category="${data.category}"
-         data-language="${data.language}"
-         data-organization="${data.organization}"
-         data-date="${data.date}">
-  <div class="inner-grid">
-    <div class="item-image">
-      <img src="${data.img}" alt="article image">
-    </div>
-    <h5 class="item-subtitle">${data.subtitle}</h5>
-    <h3 class="item-title">${data.title}</h3>
-    <p class="item-desc1">By: ${data.author}</p>
-    <p class="item-desc2">Published: <a href="${data.sourceLink}" target="_blank" rel="noopener">${data.sourceName}</a></p>
-    <p class="item-desc3">${data.desc}</p>
-  </div>
-</article>`;
+    <article class="stat-card ${typeClass} page-article"
+             data-id="${id}"
+             style="grid-column:1 / -1; grid-row:auto; padding: 1rem"
+             data-issues="${data.issues.join(',')}"
+             data-category="${data.category}"
+             data-language="${data.language}"
+             data-organization="${data.organization}"
+             data-date="${data.date}">
+      <div class="inner-grid">
+        <div class="item-image">
+          <img src="${data.img}" alt="article image">
+        </div>
+        <h5 class="item-subtitle">${data.subtitle}</h5>
+        <h3 class="item-title">${data.title}</h3>
+        <p class="item-desc1">By: ${data.author}</p>
+        <p class="item-desc2">Published: <a href="${data.sourceLink}" target="_blank" rel="noopener">${data.sourceName}</a></p>
+        <p class="item-desc3">${data.desc}</p>
+      </div>
+    </article>
+  `;
 }
+/* --- Persist chosen article & jump to single‑article template --- */
+/* --- Navigate to dedicated article pages (article1.html, article2.html, …) --- */
+document.addEventListener('click', e => {
+  const card = e.target.closest('.page-article');
+  if (!card || e.target.closest('a')) return;   // let inner links behave normally
+  const id = +card.dataset.id;                  // 0-based global index
+  if (Number.isNaN(id)) return;
+
+  /* each article lives on its own static page: article1.html, article2.html, … */
+  window.location.href = `article${id + 1}.html`;
+});
+/* 
+  ------------------------------------------------------------
+  The companion file “article.html” should read the object via:
+      const art = JSON.parse(localStorage.getItem('currentArticle'));
+  and then inject its fields (img, title, desc, etc.) into the DOM.
+  ------------------------------------------------------------
+*/
 
 /* -- render the requested page (0‑based) -- */
 function loadPage(idx){
@@ -420,8 +553,9 @@ function loadPage(idx){
   grid.querySelectorAll('.page-article').forEach(el => el.remove());
 
   /* Insert new ones (keep search + filters untouched) */
-  articlePages[idx].forEach((art, i) => {
-    grid.insertAdjacentHTML('beforeend', buildArticleHTML(art, i));
+  articlePages[idx].forEach(art => {
+    const id = MASTER_ARTICLES.indexOf(art);   // global index in the flat list
+    grid.insertAdjacentHTML('beforeend', buildArticleHTML(art, id));
   });
 }
 
@@ -447,6 +581,7 @@ document.querySelectorAll('.page-btn').forEach(btn => {
   const categorySelectEl = document.querySelector('select[aria-label="Category"]');
   const languageSelectEl = document.querySelector('select[aria-label="Language"]');
   const organizeSelectEl = document.querySelector('select[aria-label="Organize"]');
+  const ISSUE_ALIASES = { inclusive: 'inclsive', inclsive: 'inclusive' };
   
   const MASTER_ARTICLES  = articlePages.flat();
   const PER_PAGE         = 4;
@@ -490,7 +625,15 @@ document.querySelectorAll('.page-btn').forEach(btn => {
     const lng  = languageSelectEl.value;
     const ord  = organizeSelectEl.value;
 
-    const anyFilter = term || iss || cat || lng;
+    const issKey    = ISSUE_ALIASES[iss] || iss;     /* normalise spelling */
+    const anyFilter = term || issKey || cat || lng;
+
+
+    
+
+    /* tidy up any previous “no results” banner */
+    const grid = document.querySelector('.stats-grid2');
+    grid.querySelectorAll('.no-results').forEach(el => el.remove());
 
     if (!anyFilter) {
       /* --------  No search / filters: restore original paged layout  -------- */
@@ -500,14 +643,26 @@ document.querySelectorAll('.page-btn').forEach(btn => {
       return;
     }
 
+
+    
     /* --------  At least one condition entered: run filtering engine  -------- */
     let filtered = MASTER_ARTICLES.filter(a => {
-      if (term && ![a.title, a.desc, a.author].some(t => t.toLowerCase().includes(term))) return false;
-      if (iss && !a.issues.includes(iss)) return false;
+      /* search only within the article title */
+      if (term && !a.title.toLowerCase().includes(term)) return false;
+      if (issKey && !a.issues.includes(issKey)) return false;
       if (cat && a.category !== cat)      return false;
       if (lng && a.language !== lng)      return false;
       return true;
     });
+
+    /* show message + short‑circuit when nothing matches */
+    if (filtered.length === 0) {
+      injectPages([]);          // clear paged data
+      rebuildPager(0);          // remove pager buttons
+      grid.insertAdjacentHTML('beforeend',
+        `<p class="no-results text-center w-100" style="grid-column:1 / -1;">No results found.</p>`);
+      return;
+    }
 
     if (ord === 'newest') filtered.sort((b, a) => new Date(a.date) - new Date(b.date));
     if (ord === 'oldest') filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
@@ -520,6 +675,8 @@ document.querySelectorAll('.page-btn').forEach(btn => {
   
   /* events */
   searchInputEl.addEventListener('input',run);
+  /* also run search when the user presses Enter inside the box */
+searchInputEl.addEventListener('keyup', e => { if (e.key === 'Enter') run(); });
   [issueSelectEl,categorySelectEl,languageSelectEl,organizeSelectEl]
     .forEach(s=>s.addEventListener('change',run));
   document.getElementById('search-button').addEventListener('click',e=>{

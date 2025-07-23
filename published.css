@@ -243,6 +243,7 @@ input::placeholder{
     background-color: transparent !important;
     color: rgb(125, 125, 125);
     font-size: 15px;
+
 }
 
 
@@ -252,6 +253,12 @@ input::placeholder{
   padding-left: 70px;
   padding-right: 70px;
 }
+
+
+
+
+
+
 
 /* --- Center the “Thought Leadership” dropdown menu under its toggle --- */
 @media (min-width: 992px) {                     /* desktop only */
@@ -266,7 +273,8 @@ input::placeholder{
     .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
         width: 18rem;
         max-width: 90vw;
-  }
+    }
+}
 @media (min-width: 768px) {
   .header2 {
     height: 100vh;              /* fill the viewport only on desktop */
@@ -288,6 +296,8 @@ input::placeholder{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  p-bottom: 1rem;
+
 }
 
 .stat-card h3 {
@@ -316,12 +326,14 @@ input::placeholder{
     border-radius: 30px;
     padding: 15px;
     padding-bottom: 0;
+    cursor: pointer;
+
   }
   
 
 
   .item-endorsed      {grid-column:1 / span 6;  grid-row:1;}
-  .item-projects      {grid-column:8 / span 5;  grid-row:1;}
+  .item-projects      {grid-column:7 / span 6;  grid-row:1;}
   .item-sdg           {grid-column:1 / span 12;  grid-row:3;}
   .item-photo         {grid-column:1 / span 12;  grid-row:4;}
   
@@ -485,22 +497,19 @@ input::placeholder{
 
 }
 
-.page-btn.active{
-    background:rgba(0,0,0,0.35);
-    color:#fff;
-    border-color:transparent;
-}
-
-
-
-
-
 
 @media (min-width: 768px) {
 
 
   .header2 {
     padding-top: 80px !important;   /* was 70px */
+  }
+  @media (min-width: 768px) {
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something.px-4,
+    .offcanvas      .nav-item      > .dropdown-menu.something.px-3 {
+      width: 18rem !important;
+      max-width: 90vw !important;
+    }
   }
   }
   
@@ -577,6 +586,8 @@ input::placeholder{
   .offcanvas .nav-item.nav-shifted {
     transform: translateY(-40px);
   }
+
+
 
 
 
@@ -703,12 +714,7 @@ body {
   .item-sdg .item-desc2   { grid-column:6 / span 6; grid-row:4; margin:0; }
   .item-sdg .item-desc3   { grid-column:1 / span 12; grid-row:5; margin:0; }
   
-  
-  .item-sdg{
-    padding: 0;
-  }
-
-
+ 
 
   .item-photo .item-image  { grid-column:1 / span 12; grid-row:1;; }
   .item-photo .item-subtitle  { grid-column:1 / span 12; grid-row:2;}
@@ -960,4 +966,17 @@ body {
   height: 230px;
   object-fit: cover;   /* fill the box without distortion */
   border-radius: 25px;
-}}
+}
+/* Make full stat‑card links keep existing hover/focus styles */
+.article-link:hover,
+.article-link:focus {
+  text-decoration: none;
+}
+/* Card behaves like a big link */
+.page-article { cursor: pointer;
+    transition: all 0.5s ease; }
+.page-article:hover { 
+
+    background-color: rgb(231, 228, 228);
+    transition:all 0.5s ease;
+}
