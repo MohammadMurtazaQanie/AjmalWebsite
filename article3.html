@@ -137,6 +137,35 @@
       </div>
     </nav>
 
+    <div class="preloader">
+      <div class="loading">
+          <div class="loading-text">
+              <span class="loading-text-words">L</span>
+              <span class="loading-text-words">O</span>
+              <span class="loading-text-words">A</span>
+              <span class="loading-text-words">D</span>
+              <span class="loading-text-words">I</span>
+              <span class="loading-text-words">N</span>
+              <span class="loading-text-words">G</span>
+          </div>
+      </div>
+  </div>
+
+<script>
+  window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  if (!preloader) return;
+
+  const MIN_TIME = 700;           // ms
+  const elapsed  = performance.now();   // ≈ time since navigationStart
+
+  setTimeout(() => {
+    preloader.classList.add('hide');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+  }, Math.max(0, MIN_TIME - elapsed));
+});
+</script>
+
 
     <!---- MAIN GRID -->
     <section class="first_page" id="firstPage">
@@ -149,7 +178,7 @@
           <article class="second stat-card item-projects">
             <div class="inner-stat-grid">
               <div class="inner-stat-row item1">
-                <p>GeoPolitics/ Foreign Policy/ Peacebuilding/ Terrorism</p>
+                <p>GeoPolitics / Foreign Policy / Peacebuilding/ Terrorism</p>
               </div>
               <div class="inner-stat-row item2">
                 <p>OpEd | November 22, 2020</p>
@@ -167,11 +196,30 @@
               </div>
 
               <div class="inner-stat-row item6">
-                
+                <p>If we look back to the past, we find that this is not the first time a foreign country has attempted
+                  to end the war in Afghanistan through negotiation with insurgents. In early 1985, when Mikhail
+                  Gorbachev came to power, he decided to negotiate with the Mujahidin (freedom fighters against the
+                  Soviet Union occupation) to facilitate an orderly withdrawal and ensure the stability of its supported
+                  government in Kabul, and ultimately end the war which he called “the bleeding wound.”</p>
+
               </div>
             </div>
           </article>
         </div>
+        <script>
+          ScrollReveal({
+              reset: true,
+              distance: '60px',
+              duration: 2500,
+              delay: 400
+          });
+          ScrollReveal().reveal('.item1', { delay: 0, origin: 'bottom' });
+          ScrollReveal().reveal('.item2', { delay: 100, origin: 'bottom' });
+          ScrollReveal().reveal('.item3', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.item4', { delay: 400, origin: 'bottom' });
+          ScrollReveal().reveal('.item5', { delay: 600, origin: 'bottom' });
+          ScrollReveal().reveal('.item6', { delay: 800, origin: 'bottom' });
+      </script>
     </section>
 
 
@@ -179,7 +227,7 @@
 
   <section class="secondd" id="secondPage">
     <div class="h-100">
-      <p>
+      <p class="p1">
         In December 1986, following the encouragement of the Soviet Union, Dr. Najibullah, whose survival depended on
         the Soviet military and financial assistance, announced a national reconciliation to negotiate with Mujahidin
         and give them a share in power. To show his seriousness, Dr. Najibullah, announced a six-month ceasefire,
@@ -188,52 +236,70 @@
         until the unconditional withdrawal of the Soviet Union and make their own Islamic Afghanistan.
 
       </p>
-      <p>The main reason that the Mujahidin refused to negotiate with the Kabul government was that the Soviet Union
+      <p class="p1">The main reason that the Mujahidin refused to negotiate with the Kabul government was that the Soviet Union
         announced its withdrawal from Afghanistan and this decision gave the Mujahidin more confidence knowing if they
         do not share the power today, they will have it all tomorrow.
       </p>
-      <p>Later, the Soviet Union directly negotiated with the Mujahidin and the Mujahidin agreed to allow the Red Army
+      <p class="p2">Later, the Soviet Union directly negotiated with the Mujahidin and the Mujahidin agreed to allow the Red Army
         exit from Afghanistan without attacking them during the withdrawal, but they kept fighting the Kabul government.
         Unlike expectations, once the Soviet Union left Afghanistan, the war against the Kabul government escalated and
         finally, in the spring of 1992, General Dostum, Kabul government loyal—who is now promoted to marshal
         rank—joined Mujahidin and overthrew the government.</p>
-      <p>Soon after the fall of the government, the country became a proxy battlefield for regional players. During
+        <p class="p3">Soon after the fall of the government, the country became a proxy battlefield for regional players. During
         fights among Mujahidin, in 1994 Taliban emerged with the assistance of Al Qaeda and Pakistan and could capture
         up to 90% of the country, less through war more through deals and diplomacy.
       </p>
-      <p>Taliban was unable to confront Mujahidin, so they used them against each other. First, they got the support of
+      <p class="p4">Taliban was unable to confront Mujahidin, so they used them against each other. First, they got the support of
         the Kabul government (Jamiat-e-Islami) to disarm Hizb-e-Islami in Kandahar, a common enemy for both the Taliban
         and Jamiat-e-Islami. Once done, the Taliban took control of the province and removed Jamiat-e-Islami too. In
         another deal with General Dostum, the Taliban launched airstrikes against Ismail Khan in Herat. Soon, the
         Taliban separated from Dostum and joined General Malik, another Uzbek Leader, and exiled General Dostum. Once
         Dostum left, the Taliban imprisoned General Malik too. Later in 1995, the Taliban made a deal with Ali Mazari,
         in the Iranian Consulate in Pakistan, to capture Kabul. Once they captured Kabul, they killed Mazari too.</p>
-      <p>After two decades of failed attempts by the former President Karzai and the National Unity Government to bring
+        <p class="p5">After two decades of failed attempts by the former President Karzai and the National Unity Government to bring
         the Taliban at the table of negotiations, in early 2019, President Trump announced his new, yet similar to the
         Soviet Union, strategy for Afghanistan and ordered the US Department of State to hold direct negotiations with
         the Taliban. With a withdrawal plot attached to his new strategy, it was a significant shift in American policy
         in Afghanistan, done in the hope of ending the 19-years war.</p>
-      <p>Eventually in mid-2018, the United States started direct negotiations with the Taliban and tried to take
+        <p class="p6">Eventually in mid-2018, the United States started direct negotiations with the Taliban and tried to take
         practical measures, through an agreement, to ensure the stability of the Afghan government in post-withdrawal
         and pave the way for Intra-Afghan Peace Talks. But the Taliban always had a different agenda and used
         negotiations to get more legitimacy and international recognition with a focus on their goal to get the power.
       </p>
-      <p>With Trump’s exit strategy from Afghanistan, the Taliban are waiting until the US and NATO forces leave and
+      <p class="p7">With Trump’s exit strategy from Afghanistan, the Taliban are waiting until the US and NATO forces leave and
         overthrow the Afghan government. Until then, they continue their attacks to undermine the Afghan government,
         make excuses to delay the Intra-Afghan Peace Talks and encourage the US to withdraw their forces by not
         attacking them during the withdrawal.
       </p>
-      <p>With the Taliban clearly not seeking peace and not ready to cut ties with Al Qaeda, the US, under
+      <p class="p8">With the Taliban clearly not seeking peace and not ready to cut ties with Al Qaeda, the US, under
         President-elect Biden, and its allies shall equip Afghan security forces with modern intelligence equipment,
         weapons, and fighters to give a win chance for Afghan forces in the battlefield. The international community
         must, as well, draw a comprehensive strategy to target the Taliban’s financial assets and its support networks
         in Pakistan and the Middle East.</p>
-      <p>Above all, the US, under President-elect Joe Biden, must realize that an inclusive political solution to end
+        <p class="p9">Above all, the US, under President-elect Joe Biden, must realize that an inclusive political solution to end
         America’s longest war is desirable, but a shortsighted deal with the Taliban could jeopardize the hard-won gains
         of the last decades, inflame ethnic tension, and can even take the country to new chaos of civil war, and
         ultimately endangers the US interests. At this stage, pursuing negotiations with the Taliban as an exit
         strategy, as the Soviet experience shows, is both unrealistic and dangerous.</p>
     </div>
+
+    <script>
+      ScrollReveal({
+          reset: true,
+          distance: '60px',
+          duration: 2500,
+          delay: 400
+      });
+      ScrollReveal().reveal('.p1', { delay: 0, origin: 'bottom' });
+      ScrollReveal().reveal('.p2', { delay: 100, origin: 'bottom' });
+      ScrollReveal().reveal('.p3', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p4', { delay: 400, origin: 'bottom' });
+      ScrollReveal().reveal('.p5', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p6', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p7', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p8', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p9', { delay: 200, origin: 'bottom' });
+  </script>
 
 
 

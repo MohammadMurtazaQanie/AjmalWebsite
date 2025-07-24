@@ -11,6 +11,7 @@
     <script src="https://kit.fontawesome.com/b6e45f63fd.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -143,6 +144,36 @@
         </nav>
 
 
+        <div class="preloader">
+          <div class="loading">
+            <div class="loading-text">
+              <span class="loading-text-words">L</span>
+              <span class="loading-text-words">O</span>
+              <span class="loading-text-words">A</span>
+              <span class="loading-text-words">D</span>
+              <span class="loading-text-words">I</span>
+              <span class="loading-text-words">N</span>
+              <span class="loading-text-words">G</span>
+            </div>
+          </div>
+        </div>
+    
+        <script>
+          window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            if (!preloader) return;
+    
+            const MIN_TIME = 700;           // ms
+            const elapsed = performance.now();   // ≈ time since navigationStart
+    
+            setTimeout(() => {
+              preloader.classList.add('hide');
+              preloader.addEventListener('transitionend', () => preloader.remove(), { once: true });
+            }, Math.max(0, MIN_TIME - elapsed));
+          });
+        </script>
+    
+
         <section class="first_page" id="firstPage">
             <div class="h-100">
                 <div class="row g-0 h-100 flex-md-row flex-column">
@@ -155,7 +186,7 @@
                             <div>
                                 <div class="row align-items-start align-items-sm-center mb-2">
                                     <!-- Logo Column -->
-                                    <div class="col-12 col-sm-auto">
+                                    <div class="col-12 col-sm-auto logo">
                                         <img src="Images/uih.png" loading="lazy"
                                             alt="United Nations Association of Afghanistan logo" class="img-fluid"
                                             style="max-width: 280px;">
@@ -170,7 +201,7 @@
                                     </div>
                                 </div>
                                 <div class="all_text">
-                                    <p class="paragaph">
+                                    <p class="paragaph p1">
                                         In 2020, amidst a pivotal moment in Afghanistan’s history and fragile peace
                                         process, Yahya Qanie initiated and co-founded the National Youth Consensus for
                                         Peace (NYCP)—a first-of-its-kind youth-led coalition uniting over 244
@@ -179,14 +210,14 @@
                                         Afghan population—NYCP emerged as a national mechanism to represent their voice,
                                         agency, and vision, and to advocate for inclusive and sustainable peace.
                                     </p>
-                                    <p class="paragaph">
+                                    <p class="paragaph p2">
                                         NYCP transcended ethnic, sectarian, and geographic divides, pioneering a hybrid
                                         model of civic mobilization and policy advocacy. Its aim was not mere
                                         visibility, but influence—shaping the structure, substance, and legitimacy of
                                         peace efforts, and positioning youth not just as peace advocates, but as
                                         critical thinkers in post-conflict governance and reconciliation agendas.
                                     </p>
-                                    <p class="paragaph">
+                                    <p class="paragaph p3">
                                         Under Mr. Qanie’s leadership, NYCP distinguished itself by its scale,
                                         independence, and data-driven approach. Merging 27 provincial resolutions, the
                                         coalition issued Afghanistan’s first unified National Youth Resolution on
@@ -198,7 +229,7 @@
                                         Germany, Canada, and the Nordic countries—Netherlands, Norway, Finland, and
                                         Sweden.
                                     </p>
-                                    <p class="paragaph">
+                                    <p class="paragaph p4">
                                         Through targeted campaigns, public statements, and mass consultations, NYCP
                                         became a civic force for accountability, inclusion, and generational ownership
                                         of peace—challenging tokenism and advocating for youth to be recognized as
@@ -206,7 +237,7 @@
                                         sustainable or legitimate without the participation of the generation that will
                                         inherit it.
                                     </p>
-                                    <p class="paragaph">
+                                    <p class="paragaph p5">
                                         Though NYCP suspended its activities after the collapse of the Afghan government
                                         in 2021, it left behind a blueprint for youth-led civic mobilization and policy
                                         engagement. It demonstrated that when young people are strategically organized,
@@ -375,6 +406,57 @@
             </div>
         </section>
 
+        <script>
+          ScrollReveal({
+            reset: true,
+            distance: '60px',
+            duration: 2500,
+            delay: 400
+          });
+          ScrollReveal().reveal('.logo', { delay: 400, origin: 'left' });
+          ScrollReveal().reveal('.social_media', { delay: 400, origin: 'right' });
+          ScrollReveal().reveal('.left-image', { delay: 200, origin: 'right' });
+
+        </script>
+
+        <script>
+          ScrollReveal({
+            reset: true,
+            distance: '60px',
+            duration: 2500,
+            delay: 400
+          });
+          ScrollReveal().reveal('.p1', { delay: 0, origin: 'bottom' });
+          ScrollReveal().reveal('.p2', { delay: 200, origin: 'bottom' })
+          ScrollReveal().reveal('.p3', { delay: 400, origin: 'bottom' })
+          ScrollReveal().reveal('.p4', { delay: 800, origin: 'bottom' })
+          ScrollReveal().reveal('.p5', { delay: 1200, origin: 'bottom' })
+
+        </script>
+
+
+<script>
+  ScrollReveal({
+      reset: true,
+      distance: '60px',
+      duration: 2500,
+      delay: 400
+  });
+  ScrollReveal().reveal('.first', { delay: 0, origin: 'top' });
+  ScrollReveal().reveal('.second', { delay: 200, origin: 'top' })
+  ScrollReveal().reveal('.third', { delay: 400, origin: 'bottom' })
+  ScrollReveal().reveal('.forth', { delay: 800, origin: 'bottom' })
+  ScrollReveal().reveal('.fifth', {delay: 1200, origin: 'left' })
+  ScrollReveal().reveal('.sixth', {delay: 800, origin: 'left' })
+  ScrollReveal().reveal('.seventh', {delay: 800, origin: 'bottom' })
+  ScrollReveal().reveal('.eight', {delay: 1300, origin: 'bottom' })
+  ScrollReveal().reveal('.ninth', {delay: 800, origin: 'bottom' })
+  ScrollReveal().reveal('.tenth', {delay: 800, origin: 'right' })
+  ScrollReveal().reveal('.eleven', {delay: 1300, origin: 'right' })
+  ScrollReveal().reveal('.item-photo', {delay: 800, origin: 'right' })
+  ScrollReveal().reveal('.item-photo2', {delay: 800, origin: 'bottom' })
+
+</script>
 
         <script>
             /* scroll.js */

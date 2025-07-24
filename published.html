@@ -11,6 +11,7 @@
   <script src="https://kit.fontawesome.com/b6e45f63fd.js" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -24,7 +25,8 @@
     <nav class="navbar navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top justify-content-end">
       <div class="d-flex justify-content-end pe-lg-4 pe-md-4 pe-3 mt-lg-0 mt-md-0 mt-4">
         <!--Phone Navbar-->
-        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-list" viewBox="0 0 13 13">
             <path fill-rule="evenodd"
               d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z" />
@@ -35,18 +37,18 @@
           aria-labelledby="offcanvasNavbarLabel">
           <!--s head-->
           <div class="offcanvas-header">
-            <button type="button" class="btn-close btn-close-black mt-1 mt-lg-3 ms-auto ps-5" data-bs-dismiss="offcanvas"
-              aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-black mt-1 mt-lg-3 ms-auto ps-5"
+              data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <!--s body-->
-<div class="offcanvas-body d-flex flex-column flex-md-row justify-content-start justify-content-md-end">
-    
+          <div class="offcanvas-body d-flex flex-column flex-md-row justify-content-start justify-content-md-end">
+
             <ul class="navbar-nav flex-column-sm pe-3 gap-1">
               <li class="nav-item">
                 <a class="nav-link font-size-5" href="index.html">Home</a>
               </li>
 
-               
+
               <li class="nav-item dropdown d-none d-lg-block d-md-block ">
                 <a class="nav-link dropdown-toggle" href="page2.html" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false">
@@ -72,12 +74,12 @@
               <!-- Phone‑only collapsible sections -->
               <li class="nav-item social d-lg-none d-md-none ">
                 <button class="nav-link btn w-100 text-start justify-content-between align-items-center"
-                  data-bs-toggle="collapse" data-bs-target="#collapseSocial" aria-expanded="false"   aria-expanded="false"
+                  data-bs-toggle="collapse" data-bs-target="#collapseSocial" aria-expanded="false" aria-expanded="false"
                   aria-controls="collapseSocial">
                   Social Entrepreneurship
                   <i class="bi bi-chevron-down small"></i>
                 </button>
-                
+
                 <div class="collapse ps-3" id="collapseSocial">
                   <a class="nav-link" href="leadership_1.html">UN Association of Afghanistan</a>
                   <a class="nav-link" href="leadership_mun.html">Kabul Model United Nations</a>
@@ -110,28 +112,26 @@
                   Thought Leadership <i class="fas fa-chevron-down ms-1"></i>
                 </a>
                 <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-3">
-                  
+
                   <li>
-                    <strong class="pub dropdown-header"> <a
-                        href="published.html">Publications</a></strong>
+                    <strong class="pub dropdown-header"> <a href="published.html">Publications</a></strong>
                   </li>
                   <li>
                     <hr class="dropdown-divider border-secondary">
                   </li>
-        
+
                   <li>
-                    <strong class="pub dropdown-header"> <a
-                        href="mentions.html">Media Mentions</a></strong>
+                    <strong class="pub dropdown-header"> <a href="mentions.html">Media Mentions</a></strong>
                   </li>
-                 
-                  
+
+
                 </ul>
               </li>
 
 
 
 
-              
+
 
               <li class="nav-item connect">
                 <a class="nav-link" href="contact.html">Connect</a>
@@ -143,6 +143,34 @@
       </div>
     </nav>
 
+    <div class="preloader">
+      <div class="loading">
+          <div class="loading-text">
+              <span class="loading-text-words">L</span>
+              <span class="loading-text-words">O</span>
+              <span class="loading-text-words">A</span>
+              <span class="loading-text-words">D</span>
+              <span class="loading-text-words">I</span>
+              <span class="loading-text-words">N</span>
+              <span class="loading-text-words">G</span>
+          </div>
+      </div>
+  </div>
+
+<script>
+  window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  if (!preloader) return;
+
+  const MIN_TIME = 700;           // ms
+  const elapsed  = performance.now();   // ≈ time since navigationStart
+
+  setTimeout(() => {
+    preloader.classList.add('hide');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+  }, Math.max(0, MIN_TIME - elapsed));
+});
+</script>
 
 
 
@@ -153,91 +181,105 @@
 
       <div class="stats-grid2">
 
-          <article class="first stat-card item-endorsed">
+        <article class="first stat-card item-endorsed">
 
-                <div class="search-bar input-group">
-                  <button class="input-group-text border-0 bg-transparent" id="search-button" type="button">
-                    <i class="bi bi-search"></i>
-                  </button>
-                  <input type="search" placeholder="Search..." class="form-control" />
-                </div>
+          <div class="search-bar input-group">
+            <button class="input-group-text border-0 bg-transparent" id="search-button" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+            <input type="search" placeholder="Search..." class="form-control" />
+          </div>
 
-          </article>
+        </article>
 
-          <article class="second stat-card item-projects">
-            <select class="form-select filter-pill" aria-label="Issues">
-              <option value="" selected>Issues</option>
-              <option value="national">Nationalism</option>
-              <option value="political">Political Reform</option>
-              <option value="terrorism">Terrorism</option>
-              <option value="geopolitics">GeoPolitics</option>
-              <option value="inclusive">Inclusive Governance</option>
-              <option value="peacebuilding">Peacebuilding</option>
-              <option value="civil">Civil Society</option>
-              <option value="youth">Youth and Women</option>
-              <option value="forign">Forign Policy</option>
-              <option value="extremism">Extremism</option>
-              <option value="emerge">Emerging Threats</option>
+        <article class="search stat-card item-search">
+          <img src="Images/searchfilter.png" width="33px">
 
-              
+        </article>
 
 
-            </select>
-          
-            <select class="form-select filter-pill" aria-label="Category">
-              <option value="" selected>Category</option>
-              <option value="oped">Op-Ed</option>
-              <option value="research">Research</option>
-              <option value="contribution">Contribution</option>
-              <option value="translation">Translation</option>
-            </select>
-          
-            <select class="form-select filter-pill" aria-label="Language">
-              <option value="" selected>Language</option>
-              <option value="en">English</option>
-              <option value="fa">Farsi</option>
-            </select>
-
-            <select class="form-select filter-pill" aria-label="Organize">
-              <option value="" selected>Organize</option>
-              <option value="newest">Newest</option>
-              <option value="oldest">Oldest</option>
-            </select>
-          </article>
+        <article class="second stat-card item-projects">
+          <select class="form-select filter-pill f1" aria-label="Issues">
+            <option value="" selected>Issues</option>
+            <option value="national">Nationalism</option>
+            <option value="political">Political Reform</option>
+            <option value="terrorism">Terrorism</option>
+            <option value="geopolitics">GeoPolitics</option>
+            <option value="inclusive">Inclusive Governance</option>
+            <option value="peacebuilding">Peacebuilding</option>
+            <option value="civil">Civil Society</option>
+            <option value="youth">Youth and Women</option>
+            <option value="forign">Forign Policy</option>
+            <option value="extremism">Extremism</option>
+            <option value="emerge">Emerging Threats</option>
 
 
 
 
-         
-<article class="third stat-card item-sdg page-article" data-href="article1.html">
-  <div class="inner-grid">
-    <div class="item-image">
-      <img src="Images/Chopper 2.jpg" alt="Chopper">
-    </div>
-    <h5 class="item-subtitle">OpEd | Jan 6, 2026</h5>
-    <h3 class="item-title">Afghan History Repeats Itself; This Time Jeopardizes US Interests</h3>
-    <p class="item-desc1">By: Yahya Qanie</p>
-    <p class="item-desc2">Published: <a href="https://tolonews.com/opinion-173367">ToloNews</a></p>
-    <p class="item-desc3">If we look back to the past, we find that this is not the first time a foreign country has attempted to end the war in Afghanistan through negotiation with insurgents. In early 1985, when Mikhail Gorbachev came to power, he decided to negotiate with the Mujahidin (freedom fighters against the Soviet Union occupation) to facilitate an orderly withdrawal and ensure the stability of its supported government in Kabul, and ultimately end the war which he called "the bleeding wound."</p>
-  </div>
-</article>
+          </select>
+
+          <select class="form-select filter-pill f2" aria-label="Category">
+            <option value="" selected>Category</option>
+            <option value="oped">Op-Ed</option>
+            <option value="research">Research</option>
+            <option value="contribution">Contribution</option>
+            <option value="translation">Translation</option>
+          </select>
+
+          <select class="form-select filter-pill f3" aria-label="Language">
+            <option value="" selected>Language</option>
+            <option value="en">English</option>
+            <option value="fa">Farsi</option>
+          </select>
+
+          <select class="form-select filter-pill f4" aria-label="Organize">
+            <option value="" selected>Organize</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </article>
 
 
-<article class="forth stat-card item-photo page-article">
-  <div class="inner-grid">
-    <div class="item-image">
-      <img src="Images/Chopper 2.jpg" alt="Chopper">
-    </div>
-    <h5 class="item-subtitle">OpEd | Jan 6, 2026</h5>
-    <h3 class="item-title">Afghan History Repeats Itself; This Time Jeopardizes US Interests</h3>
-    <p class="item-desc1">By: Yahya Qanie</p>
-    <p class="item-desc2">Published: <a href="https://tolonews.com/opinion-173367">ToloNews</a></p>
-    <p class="item-desc3">If we look back to the past, we find that this is not the first time a foreign country has attempted to end the war in Afghanistan through negotiation with insurgents. In early 1985, when Mikhail Gorbachev came to power, he decided to negotiate with the Mujahidin (freedom fighters against the Soviet Union occupation) to facilitate an orderly withdrawal and ensure the stability of its supported government in Kabul, and ultimately end the war which he called "the bleeding wound."</p>
-  </div>
-</article>
 
 
-        
+
+        <article class="third stat-card item-sdg page-article" data-href="article1.html">
+          <div class="inner-grid">
+            <div class="item-image">
+              <img src="Images/Chopper 2.jpg" alt="Chopper">
+            </div>
+            <h5 class="item-subtitle">OpEd | Jan 6, 2026</h5>
+            <h3 class="item-title">Afghan History Repeats Itself; This Time Jeopardizes US Interests</h3>
+            <p class="item-desc1">By: Yahya Qanie</p>
+            <p class="item-desc2">Published: <a href="https://tolonews.com/opinion-173367">ToloNews</a></p>
+            <p class="item-desc3">If we look back to the past, we find that this is not the first time a foreign country
+              has attempted to end the war in Afghanistan through negotiation with insurgents. In early 1985, when
+              Mikhail Gorbachev came to power, he decided to negotiate with the Mujahidin (freedom fighters against the
+              Soviet Union occupation) to facilitate an orderly withdrawal and ensure the stability of its supported
+              government in Kabul, and ultimately end the war which he called "the bleeding wound."</p>
+          </div>
+        </article>
+
+
+        <article class="forth stat-card item-photo page-article">
+          <div class="inner-grid">
+            <div class="item-image">
+              <img src="Images/Chopper 2.jpg" alt="Chopper">
+            </div>
+            <h5 class="item-subtitle">OpEd | Jan 6, 2026</h5>
+            <h3 class="item-title">Afghan History Repeats Itself; This Time Jeopardizes US Interests</h3>
+            <p class="item-desc1">By: Yahya Qanie</p>
+            <p class="item-desc2">Published: <a href="https://tolonews.com/opinion-173367">ToloNews</a></p>
+            <p class="item-desc3">If we look back to the past, we find that this is not the first time a foreign country
+              has attempted to end the war in Afghanistan through negotiation with insurgents. In early 1985, when
+              Mikhail Gorbachev came to power, he decided to negotiate with the Mujahidin (freedom fighters against the
+              Soviet Union occupation) to facilitate an orderly withdrawal and ensure the stability of its supported
+              government in Kabul, and ultimately end the war which he called "the bleeding wound."</p>
+          </div>
+        </article>
+
+
+
       </div>
       <!-- Pagination -->
       <nav aria-label="Page navigation" class="pagination-container">
@@ -245,12 +287,13 @@
         <a href="#" class="page-btn" data-page="1">2</a>
         <a href="#" class="page-btn" data-page="2">3</a>
       </nav>
-  </section>
+
+    </section>
 
 
 
 
-  
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"></script>
@@ -258,255 +301,347 @@
       AOS.init();
     </script>
 
-<script>
-  /* ---- Navbar blur on ANY scroll (page, hero, or article pane) ---- */
-  const navbar      = document.querySelector('.navs');
-  const heroScroll  = document.querySelector('.header');   /* hero in Pg‑1  */
-  const paneScroll  = document.querySelector('.header2');  /* article pane  */
+    <script>
+      /* ---- Navbar blur on ANY scroll (page, hero, or article pane) ---- */
+      const navbar = document.querySelector('.navs');
+      const heroScroll = document.querySelector('.header');   /* hero in Pg‑1  */
+      const paneScroll = document.querySelector('.header2');  /* article pane  */
 
-  function toggleBlur() {
-    const posPage  = window.scrollY || document.documentElement.scrollTop;
-    const posHero  = heroScroll  ? heroScroll.scrollTop  : 0;
-    const posPane  = paneScroll  ? paneScroll.scrollTop  : 0;
+      function toggleBlur() {
+        const posPage = window.scrollY || document.documentElement.scrollTop;
+        const posHero = heroScroll ? heroScroll.scrollTop : 0;
+        const posPane = paneScroll ? paneScroll.scrollTop : 0;
 
-    navbar.classList.toggle('scrolled', (posPage > 0) || (posHero > 0) || (posPane > 0));
-  }
+        navbar.classList.toggle('scrolled', (posPage > 0) || (posHero > 0) || (posPane > 0));
+      }
 
-  /* listen to whichever element(s) can scroll in this layout */
-  window.addEventListener('scroll',  toggleBlur, { passive:true });
-  if (heroScroll)  heroScroll.addEventListener('scroll',  toggleBlur, { passive:true });
-  if (paneScroll)  paneScroll.addEventListener('scroll',  toggleBlur, { passive:true });
+      /* listen to whichever element(s) can scroll in this layout */
+      window.addEventListener('scroll', toggleBlur, { passive: true });
+      if (heroScroll) heroScroll.addEventListener('scroll', toggleBlur, { passive: true });
+      if (paneScroll) paneScroll.addEventListener('scroll', toggleBlur, { passive: true });
 
-  /* run once on load */
-  toggleBlur();
-</script>
+      /* run once on load */
+      toggleBlur();
+    </script>
+
+    <script>
+      /* --- Toggle filter selects on mobile (with slide animation) --- */
+      const searchIcon = document.querySelector('.item-search');
+      const filtersPanel = document.querySelector('.item-projects');
+
+      /* ----- Small slide‑up / slide‑down helpers ----- */
+      function slideDown(el, duration = 350) {
+        el.style.removeProperty('display');            // reset any prior inline display
+        let display = getComputedStyle(el).display;
+        if (display === 'none') display = 'flex';      // force flex layout for our filter bar
+        el.style.display = display;
+
+        const h = el.scrollHeight;
+        el.style.overflow = 'hidden';
+        el.style.maxHeight = '0px';
+
+        requestAnimationFrame(() => {
+          el.style.transition = `max-height ${duration}ms ease`;
+          el.style.maxHeight = h + 'px';
+        });
+
+        el.addEventListener('transitionend', function end() {
+          el.style.removeProperty('overflow');
+          el.style.removeProperty('max-height');
+          el.style.removeProperty('transition');
+          el.removeEventListener('transitionend', end);
+        });
+      }
+
+      function slideUp(el, duration = 350) {
+        el.style.overflow = 'hidden';
+        el.style.maxHeight = el.scrollHeight + 'px';
+
+        requestAnimationFrame(() => {
+          el.style.transition = `max-height ${duration}ms ease`;
+          el.style.maxHeight = '0px';
+        });
+
+        el.addEventListener('transitionend', function end() {
+          el.style.display = 'none';
+          el.style.removeProperty('overflow');
+          el.style.removeProperty('max-height');
+          el.style.removeProperty('transition');
+          el.removeEventListener('transitionend', end);
+        });
+      }
+
+      if (searchIcon && filtersPanel) {
+        /* Hide filters on load for phones (≤ 767 px) */
+        if (window.innerWidth <= 767) {
+          filtersPanel.style.display = 'none';
+        }
+
+        /* Tap icon to toggle */
+        searchIcon.addEventListener('click', () => {
+          if (filtersPanel.style.display === 'none' || getComputedStyle(filtersPanel).display === 'none') {
+            slideDown(filtersPanel);
+          } else {
+            slideUp(filtersPanel);
+          }
+        });
+
+        /* When resizing back to desktop, keep filters visible */
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 767) {
+            filtersPanel.style.removeProperty('display');
+            filtersPanel.style.removeProperty('max-height');
+            filtersPanel.style.removeProperty('overflow');
+          } else if (getComputedStyle(filtersPanel).display !== 'none' && !filtersPanel.classList.contains('animating')) {
+            // ensure collapsed on phones unless the user already opened it
+            slideUp(filtersPanel, 0);
+          }
+        }, { passive: true });
+      }
+    </script>
 
 
-<script>
-  const collapseSocial = document.getElementById('collapseSocial');
-  const collapsePolicy = document.getElementById('collapsePolicy');
-  const navItems       = document.querySelectorAll('.offcanvas .nav-item');
+    <script>
+      const collapseSocial = document.getElementById('collapseSocial');
+      const collapsePolicy = document.getElementById('collapsePolicy');
+      const navItems = document.querySelectorAll('.offcanvas .nav-item');
 
 
-  function updateShift() {
-    const openCount =
-      (collapseSocial.classList.contains('show') ? 1 : 0) +
-      (collapsePolicy.classList.contains('show') ? 1 : 0);
+      function updateShift() {
+        const openCount =
+          (collapseSocial.classList.contains('show') ? 1 : 0) +
+          (collapsePolicy.classList.contains('show') ? 1 : 0);
 
-    navItems.forEach(item => {
-      item.style.transform = openCount
-        ? `translateY(-${openCount * 40}px)`
-        : '';
-    });
-  }
+        navItems.forEach(item => {
+          item.style.transform = openCount
+            ? `translateY(-${openCount * 40}px)`
+            : '';
+        });
+      }
 
-  // Keep the shift in sync whenever either section toggles
-  ['shown.bs.collapse', 'hidden.bs.collapse'].forEach(evt => {
-    collapseSocial.addEventListener(evt, updateShift);
-    collapsePolicy.addEventListener(evt, updateShift);
-  });
+      // Keep the shift in sync whenever either section toggles
+      ['shown.bs.collapse', 'hidden.bs.collapse'].forEach(evt => {
+        collapseSocial.addEventListener(evt, updateShift);
+        collapsePolicy.addEventListener(evt, updateShift);
+      });
 
-  // Initialise on page load
-  updateShift();
-</script>
+      // Initialise on page load
+      updateShift();
+    </script>
 
-<script>
-  const offcanvas = document.getElementById('offcanvasNavbar');
-  offcanvas.addEventListener('show.bs.offcanvas', () => {
-    document.body.classList.add('menu-open');
-  });
-  offcanvas.addEventListener('hidden.bs.offcanvas', () => {
-    document.body.classList.remove('menu-open');
-  });
-</script>
+    <script>
+      const offcanvas = document.getElementById('offcanvasNavbar');
+      offcanvas.addEventListener('show.bs.offcanvas', () => {
+        document.body.classList.add('menu-open');
+      });
+      offcanvas.addEventListener('hidden.bs.offcanvas', () => {
+        document.body.classList.remove('menu-open');
+      });
+    </script>
 
-<script>
-/* ------- Client‑side pagination (no page reload) ------- */
-const articlePages = [
-  /* Page 0 */
-  [
-    {
-      img:'Images/Articles/Future.jpg',
-      subtitle:'OpEd | July 7, 2021',
-      title:'Afghanistan’s Future: The Next Proxy War?',
-      author:'Yahya Qanie',
-      sourceName:'ToloNews',
-      sourceLink:'https://tolonews.com/opinion-173367',
-      desc:`Afghanistan’s tumultuous peace process came to a halt after President Biden’s announcement of a delayed withdrawal plan for US troops from the country. Indeed, this served as a good excuse for the Taliban to boycott any peace talks, assuming that if they do not negotiate power today, they will have it all after the unconditional withdrawal of the U.S. forces.`,
-      issues:['terrorism', 'geopolitics'],
-      category:'oped',
-      language:'en',
-      organization:'tolonews',
-      date:'2021-07-07'
-    },
-    {
-      img:'Images/Articles/Voice.JPG',
-      subtitle:'OpEd | March 7, 2021',
-      title:'Afghan Youth Reclaiming Their Voices and Reimaging a Better Future',
-      author:'Yahya Qanie',
-      sourceName:'One Young World',
-      sourceLink:'https://www.oneyoungworld.com/blog/afghan-youth-reclaiming-their-voice-and-reimagining-better-future',
-      desc:`The National Youth Consensus for Peace (NYCP) is a movement of youth-led organizations and young leaders from all the 34 provinces of Afghanistan, advancing the role of youth in the Afghan Peace Process.
+    <script>
+      /* key for remembering the user’s last‑viewed pagination page */
+      const PAGE_KEY = 'publishedCurrentPage';
+      /* ------- Client‑side pagination (no page reload) ------- */
+      const articlePages = [
+        /* Page 0 */
+        [
+          {
+            img: 'Images/Articles/Future.jpg',
+            subtitle: 'OpEd | July 7, 2021',
+            title: 'Afghanistan’s Future: The Next Proxy War?',
+            author: 'Yahya Qanie',
+            sourceName: 'ToloNews',
+            sourceLink: 'https://tolonews.com/opinion-173367',
+            desc: `Afghanistan’s tumultuous peace process came to a halt after President Biden’s announcement of a delayed withdrawal plan for US troops from the country. Indeed, this served as a good excuse for the Taliban to boycott any peace talks, assuming that if they do not negotiate power today, they will have it all after the unconditional withdrawal of the U.S. forces.`,
+            issues: ['terrorism', 'geopolitics'],
+            category: 'oped',
+            language: 'en',
+            organization: 'tolonews',
+            date: '2021-07-07'
+          },
+          {
+            img: 'Images/Articles/Voice.JPG',
+            subtitle: 'OpEd | March 7, 2021',
+            title: 'Afghan Youth Reclaiming Their Voices and Reimaging a Better Future',
+            author: 'Yahya Qanie',
+            sourceName: 'One Young World',
+            sourceLink: 'https://www.oneyoungworld.com/blog/afghan-youth-reclaiming-their-voice-and-reimagining-better-future',
+            desc: `The National Youth Consensus for Peace (NYCP) is a movement of youth-led organizations and young leaders from all the 34 provinces of Afghanistan, advancing the role of youth in the Afghan Peace Process.
 `,
-      issues:['inclsive', 'peacebuilding', 'civil', 'youth'],
-      category:'oped',
-      language:'en',
-      organization:'oneyoungworld',
-      date:'2021-03-07'
-    }
-  ],
-  /* Page 1 */
-  [
-    {
-      img:'Images/Chopper.jpg',
-      subtitle:'OpEd | November 22, 2020',
-      title:'Afghan History Repeats Itself; This Time Jeopardizes US Interests',
-      author:'Yahya Qanie',
-      sourceName:'ToloNews',
-      sourceLink:'https://tolonews.com/opinion-167945',
-      desc:'If we look back to the past, we find that this is not the first time a foreign country has attempted to end the war in Afghanistan through negotiation with insurgents. In early 1985, when Mikhail Gorbachev came to power, he decided to negotiate with the Mujahidin (freedom fighters against the Soviet Union occupation) to facilitate an orderly withdrawal and ensure the stability of its supported government in Kabul, and ultimately end the war which he called “the bleeding wound.”',
-      issues:['geopolitics','forign','peacebuilding', 'terrorism'],
-      category:'oped',
-      language:'en',
-      organization:'tolonews',
-      date:'2020-11-22'
-    },
-    {
-      img:'Images/Articles/Peace.jpg',
-      subtitle:'OpEd | August 19, 2020',
-      title:'The Illusion of Inclusivity in Afghan Peace Process',
-      author:'Yahya Qanie',
-      sourceName:'Khaama Press',
-      sourceLink:'https://www.khaama.com/the-illusion-of-inclusivity-in-afghan-peace-process-0898786/',
-      desc:'When it comes to the peace process, young Afghans are frequently seen as less experienced, less educated, somehow emotional, and trouble-makers. This is both unfair and dangerous. The Afghan youth can play a positive role in the country’s peace process; both in the impeding intra-Afghan talks and in supporting Afghanistan’s perilous journey to reconciliation.',
-      issues:['political', 'peacebuilding', 'inclsive', 'civil', 'youth'],
-      category:'oped',
-      language:'en',
-      organization:'khaama',
-      date:'2020-08-19'
-    }
-  ],
-  /* Page 2 – keep empty or add more later */
-  [
-    {
-      img:'Images/Articles/SFCG.jpg',
-      subtitle:'Research | March 14, 2025',
-      title:'Harnessing Youth Leadership in Peacebuilding to Counter Extremism',
-      author:'Yahya Qanie',
-      sourceName:'ConnexUs',
-      sourceLink:'https://cnxus.org/resource/harnessing-youth-leadership-in-peacebuilding-to-counter-extremism/',
-      desc:'This policy brief is the outcome of a collaborative conversation conducted using Pol.is, an Al-powered deliberative technology tool, to get a pulse of youth perceptions about the peace and security issues in South Asia, the Middle East, Africa, Latin America, North America, and Europe. This policy brief addresses youth perceptions of youth-led initiatives vs military actions, youth engagement in policy and action, and the shared challenges youth groups face in peace and security efforts in different regions around the world. The policy brief also makes recommendations to the U.S. government, specifically the USAID, Department of State, Department of Defense, and U.S. Congress on enhancing youth engagement in peace and security efforts, aligned with U.S. foreign policy and national interests, to ensure sustainable peace globally.',
-      issues:['forign', 'peacebuilding', 'civil', 'youth','extremism'],
-      category:'research',
-      language:'en',
-      organization:'connectus',
-      date:'2025-03-14'
-    },
-    {
-      img:'Images/Articles/Counter.jpg',
-      subtitle:'Research | January 15, 2024',
-      title:'Counter-Terrorism in Post-U.S. Withdrawal Afghanistan: Assessing the Threat Landscape and Mitigation Measures',
-      author:'Yahya Qanie',
-      sourceName:'N/A',
-      sourceLink:'N/A',
-      desc:'This thesis studies the terrorism dynamics in Afghanistan following the U.S. military withdrawal, focusing on the resurgence of transnational terrorist organizations, particularly Islamic State- Khorasan and Al-Qaeda, and the extent to which the Taliban’s rule plays a role. The research study employs a multi-faceted approach, including a comprehensive literature review, a detailed analysis of historical and current events, and a series of targeted interviews. The findings indicate that the U.S. withdrawal has created a vacuum, exacerbating the risk of growth and competition between IS-K and Al-Qaeda within the region and abroad.',
-      issues:['forign', 'geopolitics', 'political', 'extremism', 'terrorism', 'emerge', 'national'],
-      category:'research',
-      language:'en',
-      organization:'n/a',
-      date:'2024-01-15'
-    }
-  ],
-  
-  /* Page 3 – keep empty or add more later */
-  [
-    {
-      img:'Images/Articles/together.png',
-      subtitle:'Contribution | January 19, 2022',
-      title:'We Are in This Together',
-      author:['Irena Grizeli', 'Ali Saleem','Yahya Qanie'],
-      sourceName:'United Nations',
-      sourceLink:'https://unoy.org/download/yps-5-year-strategic-plan/',
-      desc:'Operationalizing a 5-Year Strategy for Youth-Inclusive Peace Processes',
-      issues:['inclsive', 'peacebuilding', 'civil', 'youth','political'],
-      category:'contribution',
-      language:'en',
-      organization:'unitednations',
-      date:'2022-01-19'
-    },
-    {
-      img:'Images/Articles/peacet.jpg',
-      subtitle:'Translation | March 31, 2021',
-      title:'مذاکرات صلح به شیوه قدیمی موثر نیست، اما بدیل چیست؟',
-      author:'Yahya Qanie',
-      sourceName:'8AM',
-      sourceLink:'https://8am.media/fa/peace-talks-are-not-as-effective-as-they-used-to-be/',
-      desc:'',
-      issues:['civil', 'peacebuilding', 'inclsive'],
-      category:'translation',
-      language:'fa',
-      organization:'8am',
-      date:'2021-03-31'
-    }
-  ],
+            issues: ['inclsive', 'peacebuilding', 'civil', 'youth'],
+            category: 'oped',
+            language: 'en',
+            organization: 'oneyoungworld',
+            date: '2021-03-07'
+          }
+        ],
+        /* Page 1 */
+        [
+          {
+            img: 'Images/Chopper.jpg',
+            subtitle: 'OpEd | November 22, 2020',
+            title: 'Afghan History Repeats Itself; This Time Jeopardizes US Interests',
+            author: 'Yahya Qanie',
+            sourceName: 'ToloNews',
+            sourceLink: 'https://tolonews.com/opinion-167945',
+            desc: 'If we look back to the past, we find that this is not the first time a foreign country has attempted to end the war in Afghanistan through negotiation with insurgents. In early 1985, when Mikhail Gorbachev came to power, he decided to negotiate with the Mujahidin (freedom fighters against the Soviet Union occupation) to facilitate an orderly withdrawal and ensure the stability [...]',
+            issues: ['geopolitics', 'forign', 'peacebuilding', 'terrorism'],
+            category: 'oped',
+            language: 'en',
+            organization: 'tolonews',
+            date: '2020-11-22'
+          },
+          {
+            img: 'Images/Articles/Peace.jpg',
+            subtitle: 'OpEd | August 19, 2020',
+            title: 'The Illusion of Inclusivity in Afghan Peace Process',
+            author: 'Yahya Qanie',
+            sourceName: 'Khaama Press',
+            sourceLink: 'https://www.khaama.com/the-illusion-of-inclusivity-in-afghan-peace-process-0898786/',
+            desc: 'When it comes to the peace process, young Afghans are frequently seen as less experienced, less educated, somehow emotional, and trouble-makers. This is both unfair and dangerous. The Afghan youth can play a positive role in the country’s peace process; both in the impeding intra-Afghan talks and in supporting Afghanistan’s perilous journey to reconciliation.',
+            issues: ['political', 'peacebuilding', 'inclsive', 'civil', 'youth'],
+            category: 'oped',
+            language: 'en',
+            organization: 'khaama',
+            date: '2020-08-19'
+          }
+        ],
+        /* Page 2 – keep empty or add more later */
+        [
+          {
+            img: 'Images/Articles/SFCG.jpg',
+            subtitle: 'Research | March 14, 2025',
+            title: 'Harnessing Youth Leadership in Peacebuilding to Counter Extremism',
+            author: 'Yahya Qanie',
+            sourceName: 'ConnexUs',
+            sourceLink: 'https://cnxus.org/resource/harnessing-youth-leadership-in-peacebuilding-to-counter-extremism/',
+            desc: 'This policy brief is the outcome of a collaborative conversation conducted using Pol.is, an Al-powered deliberative technology tool, to get a pulse of youth perceptions about the peace and security issues in South Asia, the Middle East, Africa, Latin America, North America, and Europe. This policy brief addresses youth perceptions of youth-led initiatives vs military actions, youth [...] ',
+            issues: ['forign', 'peacebuilding', 'civil', 'youth', 'extremism'],
+            category: 'research',
+            language: 'en',
+            organization: 'connectus',
+            date: '2025-03-14'
+          },
+          {
+            img: 'Images/Articles/Counter.jpg',
+            subtitle: 'Research | January 15, 2024',
+            title: 'Counter-Terrorism in Post-U.S. Withdrawal Afghanistan: Assessing the Threat Landscape and Mitigation Measures',
+            author: 'Yahya Qanie',
+            sourceName: 'N/A',
+            sourceLink: 'N/A',
+            desc: 'This thesis studies the terrorism dynamics in Afghanistan following the U.S. military withdrawal, focusing onerrorist organizations, particularly Islamic State- Khorasan and Al-Qaeda, and the extent to which the Taliban’s rule plays a role. The research study [...]',
+            issues: ['forign', 'geopolitics', 'political', 'extremism', 'terrorism', 'emerge', 'national'],
+            category: 'research',
+            language: 'en',
+            organization: 'n/a',
+            date: '2024-01-15'
+          }
+        ],
 
-  /* Page 4 – keep empty or add more later */
-  [
-    {
-      img:'Images/Articles/compt.jpg',
-      subtitle:'Translation | 2015',
-      title:'رقابت شوم بین القاعده و دولت خلافت اسلامی (داعش)',
-      author:['Yahya Qanie'],
-      sourceName:'Le Monde Diplomatique',
-      sourceLink:'https://ir.mondediplo.com/article2300.html',
-      desc:'خواست مطرح شده در کشتار «جارلی ابدو» به وسیله شاخه القاعده در شبه جزیره عربستان، جنبشی را به رسانه ها نشان میدهد که قبلا به خاطر موفقیت های نظامی داعش به عقب رانده شده بود. با این حال، این دو گروه با وجود هدف ها و رفتار بیرحمانه مشابه، راهبردهایی متفاوت دارند',
-      issues:['geopolitics', 'terrorism'],
-      category:'translation',
-      language:'fa',
-      organization:'lemonde',
-      date:'2015-01-01'
-    },
-    {
-      img:'Images/Articles/crise.jpg',
-      subtitle:'Translation | 2015',
-      title:'هشدار برای بحران اقتصادی روسیه',
-      author:'Yahya Qanie',
-      sourceName:'Le Monde Diplomatique',
-      sourceLink:'https://ir.mondediplo.com/article2301.html',
-      desc:'هر رژیم شوک خود را دارد. اقتصاد روسیه بعد از الحاق کریمه در بهار گذشته، ازدیاد تحریم ها در تابستان و کاهش شدید قیمت نفت در خزان، سبب سقوط ارزش روبل در ماه نوامبر شد. با تازه شدن زخم های سال های دهه ۱۹۹۰، این بحران پولی آثار خود را به جا خواهد گذاشت زیرا بحران ساختاری ای که قدرت حاکم طولانی مدت آنرا دست کم گرفته بود نمایان می گردد',
-      issues:['geopolitics'],
-      category:'translation',
-      language:'fa',
-      organization:'lemonde',
-      date:'2015-01-01'
-    }
-  ],
-  /* Page 5 – keep empty or add more later */
-  [
-    {
-      img:'Images/Articles/free.jpg',
-      subtitle:'Translation | 2015',
-      title:'آزاد باشید! این یک دستور است',
-      author:['Yahya Qanie'],
-      sourceName:'Le Monde Diplomatique',
-      sourceLink:'https://ir.mondediplo.com/article2302.html',
-      desc:'گرچه همه ترس آنرا در دل داشتند، اما کسی گمان نمی کرد که نمایش به اینجا کشیده خواهد شد: روز جمعه ۹ جنوری ”عبدالحمید الکوثری“، بازیکن فوتبال ساکن ”مونت پلیه“، هنگام نرمش بدنی پیش از بازی در برابر تیم ”المپیک“ مرسی (یک شهر فرانسه) لباس تمرین که روی آن جمله «من چارلی هستم» نوشته بود را نپوشید. سر و صدای شبکه های اجتماعی خیلی زود بلند شد. روز یکشنبه از ”رولان کوربی“، مربی تیم که در شبکه تلویزیونی ”کانال پلوس“ دعوت شده بود در این مورد توضیحات خواستند. فردای آنروز این موضوع قویتر شد: سه بازیکن ”والانسین“ فقط به شرطی حاضر شدند آن لباس (مربوط به حادثه چارلی ابدو) را به تن کنند که عبارت «من ... هستم» را با نوار چسبی پنهان کنند. در میزگرد ”افتر فوت“ برنامه پر بیننده شبکه تلویزونی ”RMC“، بحث تند و خشونت آمیز بر پا شد. ”ژیلبر بریسبوا“ مجری برنامه شرح می داد که «یک هفته است که برای آزادی بیان میجنگیم، بگذاریم آنها هم حرف های خود را بزنند و صبر کنیم تا توضیحات شان را بشنویم.» ”دانیل ریولو“، روزنامه نگار ورزشی این شبکه، خیلی خشمگین دنباله گفتگو را گرفت که: «… آزادی بیانی که استدلال همه ابله ها خواهد بود تا هر نوع یاوه را با هم ببافند',
-      issues:['geopolitics', 'terrorism', 'extremism'],
-      category:'translation',
-      language:'fa',
-      organization:'lemonde',
-      date:'2015-01-01'
-    }
-  ]
-];
+        /* Page 3 – keep empty or add more later */
+        [
+          {
+            img: 'Images/Articles/together.png',
+            subtitle: 'Contribution | January 19, 2022',
+            title: 'We Are in This Together',
+            author: ['Irena Grizeli', 'Ali Saleem', 'Yahya Qanie'],
+            sourceName: 'United Nations',
+            sourceLink: 'https://unoy.org/download/yps-5-year-strategic-plan/',
+            desc: 'Operationalizing a 5-Year Strategy for Youth-Inclusive Peace Processes',
+            issues: ['inclsive', 'peacebuilding', 'civil', 'youth', 'political'],
+            category: 'contribution',
+            language: 'en',
+            organization: 'unitednations',
+            date: '2022-01-19'
+          },
+          {
+            img: 'Images/Articles/peacet.jpg',
+            subtitle: 'Translation | March 31, 2021',
+            title: 'مذاکرات صلح به شیوه قدیمی موثر نیست، اما بدیل چیست؟',
+            author: 'Yahya Qanie',
+            sourceName: '8AM',
+            sourceLink: 'https://8am.media/fa/peace-talks-are-not-as-effective-as-they-used-to-be/',
+            desc: '',
+            issues: ['civil', 'peacebuilding', 'inclsive'],
+            category: 'translation',
+            language: 'fa',
+            organization: '8am',
+            date: '2021-03-31'
+          }
+        ],
 
-/* -- utility to build one article card (auto‑flow layout) -- */
-function buildArticleHTML(data, id){
-  const typeClass = (id % 2) ? 'item-photo' : 'item-sdg';   /* keep alternate styling */
-  return `
+        /* Page 4 – keep empty or add more later */
+        [
+          {
+            img: 'Images/Articles/compt.jpg',
+            subtitle: 'Translation | 2015',
+            title: 'رقابت شوم بین القاعده و دولت خلافت اسلامی (داعش)',
+            author: ['Yahya Qanie'],
+            sourceName: 'Le Monde Diplomatique',
+            sourceLink: 'https://ir.mondediplo.com/article2300.html',
+            desc: 'خواست مطرح شده در کشتار «جارلی ابدو» به وسیله شاخه القاعده در شبه جزیره عربستان، جنبشی را به رسانه ها نشان میدهد که قبلا به خاطر موفقیت های نظامی داعش به عقب رانده شده بود. با این حال، این دو گروه با وجود هدف ها و رفتار بیرحمانه مشابه، راهبردهایی متفاوت دارند',
+            issues: ['geopolitics', 'terrorism'],
+            category: 'translation',
+            language: 'fa',
+            organization: 'lemonde',
+            date: '2015-01-01'
+          },
+          {
+            img: 'Images/Articles/crise.jpg',
+            subtitle: 'Translation | 2015',
+            title: 'هشدار برای بحران اقتصادی روسیه',
+            author: 'Yahya Qanie',
+            sourceName: 'Le Monde Diplomatique',
+            sourceLink: 'https://ir.mondediplo.com/article2301.html',
+            desc: 'هر رژیم شوک خود را دارد. اقتصاد روسیه بعد از الحاق کریمه در بهار گذشته، ازدیاد تحریم ها در تابستان و کاهش شدید قیمت نفت در خزان، سبب سقوط ارزش روبل در ماه نوامبر شد. با تازه شدن زخم های سال های دهه ۱۹۹۰، این بحران پولی آثار خود را به جا خواهد گذاشت زیرا بحران ساختاری ای که قدرت حاکم طولانی مدت آنرا دست کم گرفته بود نمایان می گردد',
+            issues: ['geopolitics'],
+            category: 'translation',
+            language: 'fa',
+            organization: 'lemonde',
+            date: '2015-01-01'
+          }
+        ],
+        /* Page 5 – keep empty or add more later */
+        [
+          {
+            img: 'Images/Articles/free.jpg',
+            subtitle: 'Translation | 2015',
+            title: 'آزاد باشید! این یک دستور است',
+            author: ['Yahya Qanie'],
+            sourceName: 'Le Monde Diplomatique',
+            sourceLink: 'https://ir.mondediplo.com/article2302.html',
+            desc: 'گرچه همه ترس آنرا در دل داشتند، اما کسی گمان نمی کرد که نمایش به اینجا کشیده خواهد شد: روز “[] ” ”RMC“، بحث تند و خشونت آمیز بر پا شد. ”ژیلبر بریسبوا“ مجری برنامه شرح می داد که «یک هفته است که برای آزادی بیان میجنگیم، بگذاریم آنها هم حرف های خود را بزنند و صبر کنیم تا توضیحات شان را بشنویم.» ”دانیل ریولو“، روزنامه نگار ورزشی این شبکه، خیلی خشمگین دنباله گفتگو را گرفت که: «… آزادی بیانی که استدلال همه ابله ها خواهد بود تا هر نوع یاوه را با هم ببافند',
+            issues: ['geopolitics', 'terrorism', 'extremism'],
+            category: 'translation',
+            language: 'fa',
+            organization: 'lemonde',
+            date: '2015-01-01'
+          },
+          {
+            img: 'Images/Articles/afg.jpeg',
+            subtitle: 'Research | January 17, 2022',
+            title: 'Making Noise and Getting Things Done',
+            author: 'Helen Berents et al.',
+            sourceName: 'QUT Center for Justice',
+            sourceLink: 'https://eprints.qut.edu.au/227089/1/Making_Noise_and_Getting_Things_Done_Report_QUTC4J_2021_FINAL.pdf',
+            desc: 'To coincide with the High-Level Global Conference on Youth Inclusive Peace Processes, the QUT Centre for Justice hosted an event to present key insights from the report Making Noise and Getting Things Done: Youth Inclusion and Advocacy for Peace. This report drew on stories of young people’s peace work and their proposals for substantive engagement in Afghanistan [...]',
+            issues: ['peacebuilding', 'inclsive', 'civil', 'youth'],
+            category: 'research',
+            language: 'en',
+            organization: 'qut',
+            date: '2022-01-17'
+          }
+        ]
+      ];
+
+      /* -- utility to build one article card (auto‑flow layout) -- */
+      function buildArticleHTML(data, id) {
+        const typeClass = (id % 2) ? 'item-photo' : 'item-sdg';   /* keep alternate styling */
+        return `
     <article class="stat-card ${typeClass} page-article"
-             data-id="${id}"
-             style="grid-column:1 / -1; grid-row:auto; padding: 1rem"
+             data-id="${id}"s
+             style="grid-column:1 / -1; grid-row:auto;"
              data-issues="${data.issues.join(',')}"
              data-category="${data.category}"
              data-language="${data.language}"
@@ -518,175 +653,242 @@ function buildArticleHTML(data, id){
         </div>
         <h5 class="item-subtitle">${data.subtitle}</h5>
         <h3 class="item-title">${data.title}</h3>
-        <p class="item-desc1">By: ${data.author}</p>
+        <p class="item-desc1">
+          By: ${
+            Array.isArray(data.author)
+              ? data.author.join(', ')
+              : data.author
+          }
+        </p>
         <p class="item-desc2">Published: <a href="${data.sourceLink}" target="_blank" rel="noopener">${data.sourceName}</a></p>
         <p class="item-desc3">${data.desc}</p>
       </div>
     </article>
   `;
-}
-/* --- Persist chosen article & jump to single‑article template --- */
-/* --- Navigate to dedicated article pages (article1.html, article2.html, …) --- */
-document.addEventListener('click', e => {
-  const card = e.target.closest('.page-article');
-  if (!card || e.target.closest('a')) return;   // let inner links behave normally
-  const id = +card.dataset.id;                  // 0-based global index
-  if (Number.isNaN(id)) return;
-
-  /* each article lives on its own static page: article1.html, article2.html, … */
-  window.location.href = `article${id + 1}.html`;
-});
-/* 
-  ------------------------------------------------------------
-  The companion file “article.html” should read the object via:
-      const art = JSON.parse(localStorage.getItem('currentArticle'));
-  and then inject its fields (img, title, desc, etc.) into the DOM.
-  ------------------------------------------------------------
-*/
-
-/* -- render the requested page (0‑based) -- */
-function loadPage(idx){
-  const grid = document.querySelector('.stats-grid2');
-  if(!grid) return;
-
-  /* Remove current page articles */
-  grid.querySelectorAll('.page-article').forEach(el => el.remove());
-
-  /* Insert new ones (keep search + filters untouched) */
-  articlePages[idx].forEach(art => {
-    const id = MASTER_ARTICLES.indexOf(art);   // global index in the flat list
-    grid.insertAdjacentHTML('beforeend', buildArticleHTML(art, id));
-  });
-}
-
-/* -- pager click handlers -- */
-document.querySelectorAll('.page-btn').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault();
-    const page = parseInt(btn.dataset.page, 10);
-    if(Number.isNaN(page)) return;
-
-    /* visual active state */
-    document.querySelectorAll('.page-btn').forEach(b => b.classList.toggle('active', b === btn));
-
-    loadPage(page);
-  });
-});
-</script>
-
-<script>
-  /* ---------- Search + Filter Engine ---------- */
-  const searchInputEl    = document.querySelector('.first .form-control');
-  const issueSelectEl    = document.querySelector('select[aria-label="Issues"]');
-  const categorySelectEl = document.querySelector('select[aria-label="Category"]');
-  const languageSelectEl = document.querySelector('select[aria-label="Language"]');
-  const organizeSelectEl = document.querySelector('select[aria-label="Organize"]');
-  const ISSUE_ALIASES = { inclusive: 'inclsive', inclsive: 'inclusive' };
-  
-  const MASTER_ARTICLES  = articlePages.flat();
-  const PER_PAGE         = 4;
-  /* keep an untouched copy of the original pagination */
-  const ORIGINAL_PAGES = articlePages.map(p => [...p]);   // shallow clone
-  const ORIGINAL_LEN   = ORIGINAL_PAGES.length;
-  
-  /* chunk helper */
-  const chunk = (a,n)=>a.reduce((r,_,i)=>i%n? r:(r.push(a.slice(i,i+n)),r),[]);
-  
-  /* rebuild pager buttons */
-  function rebuildPager(total){
-    const pager=document.querySelector('.pagination-container');
-    pager.innerHTML='';
-    for(let i=0;i<total;i++){
-      pager.insertAdjacentHTML('beforeend',
-        `<a href="#" class="page-btn${!i?' active':''}" data-page="${i}">${i+1}</a>`);
-    }
-    pager.querySelectorAll('.page-btn').forEach(btn=>{
-      btn.addEventListener('click',e=>{
-        e.preventDefault();
-        const p=+btn.dataset.page;
-        pager.querySelectorAll('.page-btn').forEach(b=>b.classList.toggle('active',b===btn));
-        loadPage(p);
-        document.querySelector('#secondPage').scrollIntoView({behavior:'smooth'});
+      }
+      /* --- Persist chosen article & jump to single‑article template --- */
+      /* --- Navigate to dedicated article pages (article1.html, article2.html, …) --- */
+      document.addEventListener('click', e => {
+        const card = e.target.closest('.page-article');
+        if (!card || e.target.closest('a')) return;   // let inner links behave normally
+        const id = +card.dataset.id;                  // 0-based global index
+        if (Number.isNaN(id)) return;
+/* store the current page before leaving */
+const activeBtn = document.querySelector('.page-btn.active');
+if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
+        /* each article lives on its own static page: article1.html, article2.html, … */
+        window.location.href = `article${id + 1}.html`;
       });
-    });
-  }
-  
-  /* overwrite articlePages (safe because we mutate, not reassign) */
-  function injectPages(pages){
-    articlePages.length=0;
-    pages.forEach(p=>articlePages.push(p));
-  }
-  
-  /* render everything */
-  function run() {
-    const term = searchInputEl.value.trim().toLowerCase();
-    const iss  = issueSelectEl.value;
-    const cat  = categorySelectEl.value;
-    const lng  = languageSelectEl.value;
-    const ord  = organizeSelectEl.value;
+      /* 
+        ------------------------------------------------------------
+        The companion file “article.html” should read the object via:
+            const art = JSON.parse(localStorage.getItem('currentArticle'));
+        and then inject its fields (img, title, desc, etc.) into the DOM.
+        ------------------------------------------------------------
+      */
 
-    const issKey    = ISSUE_ALIASES[iss] || iss;     /* normalise spelling */
-    const anyFilter = term || issKey || cat || lng;
+      /* -- render the requested page (0‑based) -- */
+      function loadPage(idx) {
+        /* ----- Mini page‑loader overlay ----- */
+        const loader = document.createElement('div');
+        loader.className = 'preloader page-loader';       // reuse existing styles
+        loader.innerHTML =
+          `<div class="loading">
+             <div class="loading-text">
+               ${'LOADING'.split('').map(ch => `<span>${ch}</span>`).join('')}
+             </div>
+           </div>`;
+        document.body.appendChild(loader);                // show instantly
+
+        const grid = document.querySelector('.stats-grid2');
+        if (!grid) return;
+
+        /* Remove current page articles */
+        grid.querySelectorAll('.page-article').forEach(el => el.remove());
+
+        /* Insert new ones (keep search + filters untouched) */
+        articlePages[idx].forEach(art => {
+          const id = MASTER_ARTICLES.indexOf(art);   // global index in the flat list
+          grid.insertAdjacentHTML('beforeend', buildArticleHTML(art, id));
+        });
+
+        /* refresh ScrollReveal so newly inserted cards animate */
+        if (typeof srPane !== 'undefined') srPane.sync();
+
+        /* Fade‑out + remove the temporary loader */
+        setTimeout(() => {
+          loader.classList.add('hide');
+          loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+        }, 300);     // keep it visible at least a short beat
+      }
+
+      /* -- pager click handlers -- */
+      document.querySelectorAll('.page-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+          e.preventDefault();
+          const page = parseInt(btn.dataset.page, 10);
+          if (Number.isNaN(page)) return;
+
+          /* visual active state */
+          document.querySelectorAll('.page-btn').forEach(b => b.classList.toggle('active', b === btn));
+
+          loadPage(page);
+          sessionStorage.setItem(PAGE_KEY, page);   // remember page for back-nav
+        });
+      });
 
 
-    
+    </script>
 
-    /* tidy up any previous “no results” banner */
-    const grid = document.querySelector('.stats-grid2');
-    grid.querySelectorAll('.no-results').forEach(el => el.remove());
+    <script>
+      /* ---------- Search + Filter Engine ---------- */
+      const searchInputEl = document.querySelector('.first .form-control');
+      const issueSelectEl = document.querySelector('select[aria-label="Issues"]');
+      const categorySelectEl = document.querySelector('select[aria-label="Category"]');
+      const languageSelectEl = document.querySelector('select[aria-label="Language"]');
+      const organizeSelectEl = document.querySelector('select[aria-label="Organize"]');
+      /* --- helper: split an array into N‑sized chunks --- */
+      function chunk(arr, size) {
+        const result = [];
+        for (let i = 0; i < arr.length; i += size) {
+          result.push(arr.slice(i, i + size));
+        }
+        return result;
+      }
+      const ISSUE_ALIASES = { inclusive: 'inclsive', inclsive: 'inclusive' };
 
-    if (!anyFilter) {
-      /* --------  No search / filters: restore original paged layout  -------- */
-      injectPages(ORIGINAL_PAGES.map(p => [...p]));  // fresh clone each time
-      rebuildPager(ORIGINAL_LEN);
-      loadPage(0);
-      return;
-    }
+      const MASTER_ARTICLES = articlePages.flat();
+      /* Show more cards on phones (≤ 767 px) */
+      let PER_PAGE = (window.innerWidth <= 767 ? 5 : 2);
+
+      /* --- Rebuild the initial articlePages if it doesn't match PER_PAGE --- */
+      if (articlePages.length && articlePages[0].length !== PER_PAGE) {
+        const rebuilt = chunk(MASTER_ARTICLES, PER_PAGE);   // chunk into 5‑sized pages on phone
+        articlePages.length = 0;                            // mutate the existing array in‑place
+        rebuilt.forEach(p => articlePages.push(p));
+      }
+
+      /* keep an untouched copy of the (now device‑specific) pagination */
+      const ORIGINAL_PAGES = articlePages.map(p => [...p]);   // shallow clone
+      const ORIGINAL_LEN = ORIGINAL_PAGES.length;
+
+      /* -------- Re‑chunk pages when the device width crosses the 767 px threshold -------- */
+      window.addEventListener('resize', () => {
+        const newPP = (window.innerWidth <= 767 ? 5 : 2);
+        if (newPP !== PER_PAGE) {
+          PER_PAGE = newPP;
+
+          /* rebuild pagination arrays */
+          const rebuilt = chunk(MASTER_ARTICLES, PER_PAGE);
+          injectPages(rebuilt);              // overwrite global articlePages
+          rebuildPager(rebuilt.length);      // refresh pager buttons
+          loadPage(0);                       // draw first page
+        }
+      }, { passive: true });
 
 
-    
-    /* --------  At least one condition entered: run filtering engine  -------- */
-    let filtered = MASTER_ARTICLES.filter(a => {
-      /* search only within the article title */
-      if (term && !a.title.toLowerCase().includes(term)) return false;
-      if (issKey && !a.issues.includes(issKey)) return false;
-      if (cat && a.category !== cat)      return false;
-      if (lng && a.language !== lng)      return false;
-      return true;
-    });
+      /* rebuild pager buttons */
+      function rebuildPager(total) {
+        const pager = document.querySelector('.pagination-container');
+        pager.innerHTML = '';
+        for (let i = 0; i < total; i++) {
+          pager.insertAdjacentHTML('beforeend',
+            `<a href="#" class="page-btn${!i ? ' active' : ''}" data-page="${i}">${i + 1}</a>`);
+        }
+        pager.querySelectorAll('.page-btn').forEach(btn => {
+          btn.addEventListener('click', e => {
+            e.preventDefault();
+            const p = +btn.dataset.page;
+            pager.querySelectorAll('.page-btn').forEach(b => b.classList.toggle('active', b === btn));
+            loadPage(p);
+            sessionStorage.setItem(PAGE_KEY, p);      // remember via rebuilt pager
+            document.querySelector('#secondPage').scrollIntoView({ behavior: 'smooth' });
+          });
+        });
+      }
 
-    /* show message + short‑circuit when nothing matches */
-    if (filtered.length === 0) {
-      injectPages([]);          // clear paged data
-      rebuildPager(0);          // remove pager buttons
-      grid.insertAdjacentHTML('beforeend',
-        `<p class="no-results text-center w-100" style="grid-column:1 / -1;">No results found.</p>`);
-      return;
-    }
+      /* overwrite articlePages (safe because we mutate, not reassign) */
+      function injectPages(pages) {
+        articlePages.length = 0;
+        pages.forEach(p => articlePages.push(p));
+      }
 
-    if (ord === 'newest') filtered.sort((b, a) => new Date(a.date) - new Date(b.date));
-    if (ord === 'oldest') filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+      /* render everything */
+      function run() {
+        const term = searchInputEl.value.trim().toLowerCase();
+        const iss = issueSelectEl.value;
+        const cat = categorySelectEl.value;
+        const lng = languageSelectEl.value;
+        const ord = organizeSelectEl.value;
 
-    const pages = chunk(filtered, PER_PAGE);
-    injectPages(pages);
-    rebuildPager(pages.length);
-    loadPage(0);
-  }
-  
-  /* events */
-  searchInputEl.addEventListener('input',run);
-  /* also run search when the user presses Enter inside the box */
-searchInputEl.addEventListener('keyup', e => { if (e.key === 'Enter') run(); });
-  [issueSelectEl,categorySelectEl,languageSelectEl,organizeSelectEl]
-    .forEach(s=>s.addEventListener('change',run));
-  document.getElementById('search-button').addEventListener('click',e=>{
-    e.preventDefault();
-    run();
-  });
-  
-  /* initial draw */
-  run();
-</script>
+        const issKey = ISSUE_ALIASES[iss] || iss;     /* normalise spelling */
+        const anyFilter = term || issKey || cat || lng;
+
+
+
+
+        /* tidy up any previous “no results” banner */
+        const grid = document.querySelector('.stats-grid2');
+        grid.querySelectorAll('.no-results').forEach(el => el.remove());
+
+        if (!anyFilter) {
+          /* --------  No search / filters: restore original paged layout  -------- */
+          injectPages(ORIGINAL_PAGES.map(p => [...p]));  // fresh clone each time
+          rebuildPager(ORIGINAL_LEN);
+          loadPage(0);
+          return;
+        }
+
+
+
+        /* --------  At least one condition entered: run filtering engine  -------- */
+        let filtered = MASTER_ARTICLES.filter(a => {
+          /* search only within the article title */
+          if (term && !a.title.toLowerCase().includes(term)) return false;
+          if (issKey && !a.issues.includes(issKey)) return false;
+          if (cat && a.category !== cat) return false;
+          if (lng && a.language !== lng) return false;
+          return true;
+        });
+
+        /* show message + short‑circuit when nothing matches */
+        if (filtered.length === 0) {
+          injectPages([]);          // clear paged data
+          rebuildPager(0);          // remove pager buttons
+          grid.insertAdjacentHTML('beforeend',
+            `<p class="no-results text-center w-100" style="grid-column:1 / -1;">No results found.</p>`);
+          return;
+        }
+
+        if (ord === 'newest') filtered.sort((b, a) => new Date(a.date) - new Date(b.date));
+        if (ord === 'oldest') filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+        const pages = chunk(filtered, PER_PAGE);
+        injectPages(pages);
+        rebuildPager(pages.length);
+        loadPage(0);
+      }
+
+      /* events */
+      searchInputEl.addEventListener('input', run);
+      /* also run search when the user presses Enter inside the box */
+      searchInputEl.addEventListener('keyup', e => { if (e.key === 'Enter') run(); });
+      [issueSelectEl, categorySelectEl, languageSelectEl, organizeSelectEl]
+        .forEach(s => s.addEventListener('change', run));
+      document.getElementById('search-button').addEventListener('click', e => {
+        e.preventDefault();
+        run();
+      });
+
+      /* initial draw */
+      run();
+      /* ---- Restore previously viewed page (if any) ---- */
+      const savedPage = parseInt(sessionStorage.getItem(PAGE_KEY), 10);
+      if (!Number.isNaN(savedPage) && savedPage > 0) {
+        const savedBtn = document.querySelector(`.page-btn[data-page="${savedPage}"]`);
+        if (savedBtn) savedBtn.click();   // jumps to saved page & marks button active
+      }
+    </script>
 
 
 

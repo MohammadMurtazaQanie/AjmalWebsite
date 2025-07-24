@@ -12,6 +12,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
@@ -19,9 +20,15 @@
 </head>
 
 <body>
+
+
+
+
+
+
   <section class="header" id="Pg1">
     <!--Navbar-->
-    <nav class="navbar navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top justify-content-end">
+    <nav class="navbar navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top justify-content-end" id="navL">
       <div class="d-flex justify-content-end pe-lg-4 pe-md-4 pe-3 mt-lg-0 mt-md-0 mt-4">
         <!--Phone Navbar-->
         <button class="navbar-toggler border-0 shadow-none m-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
@@ -125,12 +132,7 @@
                   
                 </ul>
               </li>
-
-
-
-
               
-
               <li class="nav-item connect">
                 <a class="nav-link" href="contact.html">Connect</a>
               </li>
@@ -142,12 +144,42 @@
     </nav>
 
 
+     <div class="preloader">
+      <div class="loading">
+          <div class="loading-text">
+              <span class="loading-text-words">L</span>
+              <span class="loading-text-words">O</span>
+              <span class="loading-text-words">A</span>
+              <span class="loading-text-words">D</span>
+              <span class="loading-text-words">I</span>
+              <span class="loading-text-words">N</span>
+              <span class="loading-text-words">G</span>
+          </div>
+      </div>
+  </div>
+
+<script>
+  window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  if (!preloader) return;
+
+  const MIN_TIME = 700;           // ms
+  const elapsed  = performance.now();   // ≈ time since navigationStart
+
+  setTimeout(() => {
+    preloader.classList.add('hide');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+  }, Math.max(0, MIN_TIME - elapsed));
+});
+</script>
+
+
     <!--Main Text-->
     <div class="d-flex align-items-center h-100">
       <div class="container">
         <div class="row g-0 align-items-center">
           <div class="all_text col-12 col-lg-6 col-md-6  offset-lg-6 offset-md-6 ">
-            <p class="intro">
+            <p class="intro p1">
               Yahya Qanie is an Afghan-born social entrepreneur, policy advocate, and New York University graduate with
               over a decade of experience in the intersection of international security, peacebuilding, and inclusive
               governance. He is the Founder and former Acting President of the United Nations Association of
@@ -156,13 +188,13 @@
               decision-making, and held roles as an Advocacy Fellow at Search for Common Ground, Research Associate at
               The Soufan Center, and Advisor to the NYU School of Professional Studies Dean.
             </p>
-            <p class="intro"> Among recognitions for his work, Mr. Qanie has received the Honorary Medal twice, in 2017
+            <p class="intro p2"> Among recognitions for his work, Mr. Qanie has received the Honorary Medal twice, in 2017
               and 2019,
               from the National Olympic Committee of Afghanistan, an appreciation letter from the former First Lady of
               Afghanistan, and an official letter of appreciation from the Permanent Mission of Sweden to the United
               Nations and the Office of Secretary-General’s Envoy on Youth. He was nominated for the Asia 21 Young
               Leaders Award 2018.
-            <p class="intro"> In 2020, he was invited by the UN Secretary General’s Envoy on Youth to speak at the 5th
+            <p class="intro p3"> In 2020, he was invited by the UN Secretary General’s Envoy on Youth to speak at the 5th
               Anniversary
               of UNSC Resolution 2250, and in 2021, he was invited to speak at the opening ceremony of the “High-Level
               Global Conference on Youth-Inclusive Peace Process” alongside the UN Secretary-General, the Deputy Prime
@@ -173,7 +205,7 @@
               prestigious Sunday Supper—an iconic gathering attended by former Secretary of Homeland Security Jeh
               Johnson, former Secretary of State Frank Wisner, Daisy Soros, Board of Trustees of I-House, and over 300
               international graduate students. </p>
-            <p class="intro">Mr. Qanie has authored numerous policy briefs, op-eds, and strategic recommendations
+            <p class="intro p4" >Mr. Qanie has authored numerous policy briefs, op-eds, and strategic recommendations
               presented to the
               U.S. Congress, the Department of State, the European Union, and the United Nations. He also served as a
               member of an international Steering Group that developed a five-year global strategic roadmap on the
@@ -184,7 +216,19 @@
       </div>
     </div>
 
-
+    <script>
+      ScrollReveal({
+          reset: true,
+          distance: '60px',
+          duration: 2500,
+          delay: 400
+      });
+      ScrollReveal().reveal('.p1', { delay: 0, origin: 'bottom' });
+      ScrollReveal().reveal('.p2', { delay: 200, origin: 'bottom' })
+      ScrollReveal().reveal('.p3', { delay: 400, origin: 'bottom' })
+      ScrollReveal().reveal('.p4', { delay: 800, origin: 'bottom' })
+    
+  </script>
 
 
 
@@ -252,7 +296,6 @@
   // Initialise on page load
   updateShift();
 </script>
-
 
 
 </body>

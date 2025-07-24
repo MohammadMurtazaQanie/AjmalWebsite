@@ -140,6 +140,36 @@
     </nav>
 
 
+    <div class="preloader">
+      <div class="loading">
+          <div class="loading-text">
+              <span class="loading-text-words">L</span>
+              <span class="loading-text-words">O</span>
+              <span class="loading-text-words">A</span>
+              <span class="loading-text-words">D</span>
+              <span class="loading-text-words">I</span>
+              <span class="loading-text-words">N</span>
+              <span class="loading-text-words">G</span>
+          </div>
+      </div>
+  </div>
+
+<script>
+  window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  if (!preloader) return;
+
+  const MIN_TIME = 700;           // ms
+  const elapsed  = performance.now();   // ≈ time since navigationStart
+
+  setTimeout(() => {
+    preloader.classList.add('hide');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+  }, Math.max(0, MIN_TIME - elapsed));
+});
+</script>
+
+
   <!-- Social Links at the bottom center -->
   <div class="social-links">
     <a href=" https://x.com/YahyaQanie" target="_blank" rel="noopener" aria-label="X (Twitter)">X</a>

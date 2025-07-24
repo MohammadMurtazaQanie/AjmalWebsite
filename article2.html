@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="article1.css">
   <link rel="icon" href="Images/Profile Logo.jpg" type="image/jpeg">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://kit.fontawesome.com/b6e45f63fd.js" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
@@ -135,6 +136,34 @@
           </div>
         </nav>
     
+        <div class="preloader">
+          <div class="loading">
+              <div class="loading-text">
+                  <span class="loading-text-words">L</span>
+                  <span class="loading-text-words">O</span>
+                  <span class="loading-text-words">A</span>
+                  <span class="loading-text-words">D</span>
+                  <span class="loading-text-words">I</span>
+                  <span class="loading-text-words">N</span>
+                  <span class="loading-text-words">G</span>
+              </div>
+          </div>
+      </div>
+    
+    <script>
+      window.addEventListener('load', () => {
+      const preloader = document.querySelector('.preloader');
+      if (!preloader) return;
+    
+      const MIN_TIME = 700;           // ms
+      const elapsed  = performance.now();   // ≈ time since navigationStart
+    
+      setTimeout(() => {
+        preloader.classList.add('hide');
+        preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+      }, Math.max(0, MIN_TIME - elapsed));
+    });
+    </script>
     
         <!---- MAIN GRID -->
         <section class="first_page" id="firstPage">
@@ -147,7 +176,7 @@
               <article class="second stat-card item-projects">
                 <div class="inner-stat-grid">
                   <div class="inner-stat-row item1">
-                    <p>Inclusive Governance/ Peacebuilding/ Civil Society/ Youth and Women</p>
+                    <p>Inclusive Governance / Peacebuilding/ Civil Society / Youth and Women</p>
                   </div>
                   <div class="inner-stat-row item2">
                     <p>OpEd | March 7, 2021</p>
@@ -172,25 +201,55 @@
             </div>
         </section>
 
+        <script>
+          ScrollReveal({
+              reset: true,
+              distance: '60px',
+              duration: 2500,
+              delay: 400
+          });
+          ScrollReveal().reveal('.item1', { delay: 0, origin: 'bottom' });
+          ScrollReveal().reveal('.item2', { delay: 100, origin: 'bottom' });
+          ScrollReveal().reveal('.item3', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.item4', { delay: 400, origin: 'bottom' });
+          ScrollReveal().reveal('.item5', { delay: 600, origin: 'bottom' });
+          ScrollReveal().reveal('.item6', { delay: 800, origin: 'bottom' });
+      </script>
+
         
       </section>
 
       <section class="secondd" id="secondPage">
         <div class="h-100">
-            <p>
+            <p class="p1">
               In spite of Afghan youth’s major role to strengthen Afghanistan’s delicate democracy, young Afghans, the country’s today’s leaders and future’s shapers, have been largely excluded from this peace process. This is not only contrary to common expectations; it also goes against the U.N. Security Council resolution 2513 in March 2020 when it stresses on the “importance of the effective and meaningful participation of youth in the peace process” and states that “any political settlement must respond to the strong desire of Afghans to sustain gains achieved since 2001.”            </p>
-            <p>In Afghanistan, this lack of inclusion matters even more than in most countries. The Afghan youth, defined as aged 18–35 years old by the country’s National Youth Policy, constitutes more than 67% of the population, with a national average age of 18.4 years old, making Afghanistan the youngest country in the world outside the continent of Africa.
+              <p class="p1">In Afghanistan, this lack of inclusion matters even more than in most countries. The Afghan youth, defined as aged 18–35 years old by the country’s National Youth Policy, constitutes more than 67% of the population, with a national average age of 18.4 years old, making Afghanistan the youngest country in the world outside the continent of Africa.
             </p>
-            <p>The young Afghans consist of the most educated populace the country has ever seen. However, they still face serious hurdles and prolonged lack of space for meaningful engagement in the country’s peace process, and decision makings in general.</p>
-            <p>“The government is just telling the world that they are engaging with the voices of the youth but in reality, it’s just for show, they’re not really listening to us.” Said Breshna Musazai, Peace Ambassador of One Young World and Member of National Youth Consensus for Peace, to Natasha Phillips at The Independent.</p>
-            <p>Considering the absence of Afghan youth’s meaningful participation in the peace process, a group of around 240 youth organizations and peace activists from all the 34 provinces of Afghanistan formed the “National Youth Consensus for Peace”; a two-fold mechanism aiming to: 1) raise awareness about the barriers to bring about peace in Afghanistan while voicing the demands of young Afghans in the run-up to the intra-Afghan peace talks; and to 2) present a mechanism, containing a set of constructive guidelines, to the government of Afghanistan and the international community for engagement of youth in the Afghan peace process.</p>
-            <p>The reality is that the generation of Afghan youth has only ever known war and violence, yet have long been on the front lines of peacebuilding - from mediating local disputes, to advocating for democratic processes, to creating their own space for supporting their fellows - pushing for an end to the country’s nearly four decades of war.</p>
-            <p>Young Afghans are innovative, optimistic, and resourceful. With the right tools and space, they - whom again, form the vast majority of the population - would have the ability to transform the country by affecting positive change into their communities, and by extension, into Afghanistan as a whole.
+            <p class="p1">The young Afghans consist of the most educated populace the country has ever seen. However, they still face serious hurdles and prolonged lack of space for meaningful engagement in the country’s peace process, and decision makings in general.</p>
+            <p class="p2">“The government is just telling the world that they are engaging with the voices of the youth but in reality, it’s just for show, they’re not really listening to us.” Said Breshna Musazai, Peace Ambassador of One Young World and Member of National Youth Consensus for Peace, to Natasha Phillips at The Independent.</p>
+            <p class="p3">Considering the absence of Afghan youth’s meaningful participation in the peace process, a group of around 240 youth organizations and peace activists from all the 34 provinces of Afghanistan formed the “National Youth Consensus for Peace”; a two-fold mechanism aiming to: 1) raise awareness about the barriers to bring about peace in Afghanistan while voicing the demands of young Afghans in the run-up to the intra-Afghan peace talks; and to 2) present a mechanism, containing a set of constructive guidelines, to the government of Afghanistan and the international community for engagement of youth in the Afghan peace process.</p>
+            <p class="p4">The reality is that the generation of Afghan youth has only ever known war and violence, yet have long been on the front lines of peacebuilding - from mediating local disputes, to advocating for democratic processes, to creating their own space for supporting their fellows - pushing for an end to the country’s nearly four decades of war.</p>
+            <p class="p5">Young Afghans are innovative, optimistic, and resourceful. With the right tools and space, they - whom again, form the vast majority of the population - would have the ability to transform the country by affecting positive change into their communities, and by extension, into Afghanistan as a whole.
             </p>
-            <p>Above all and in spite of these challenges, young people are continuing to make a positive difference. They are active part and raining their voices, caring for their country and their future, supporting their peers and reaching out to help their country – and they have more to offer. The government of Afghanistan and International Community must support, recognize and respect their contribution.
+            <p class="p6">Above all and in spite of these challenges, young people are continuing to make a positive difference. They are active part and raining their voices, caring for their country and their future, supporting their peers and reaching out to help their country – and they have more to offer. The government of Afghanistan and International Community must support, recognize and respect their contribution.
 
             </p>
         </div>
+
+        <script>
+          ScrollReveal({
+              reset: true,
+              distance: '60px',
+              duration: 2500,
+              delay: 400
+          });
+          ScrollReveal().reveal('.p1', { delay: 0, origin: 'bottom' });
+          ScrollReveal().reveal('.p2', { delay: 100, origin: 'bottom' });
+          ScrollReveal().reveal('.p3', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.p4', { delay: 400, origin: 'bottom' });
+          ScrollReveal().reveal('.p5', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.p6', { delay: 200, origin: 'bottom' });
+      </script>
 
 
 

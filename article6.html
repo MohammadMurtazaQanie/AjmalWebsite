@@ -7,6 +7,7 @@
   <title>Yahya Qanie</title>
   <link rel="stylesheet" href="article1.css">
   <link rel="icon" href="Images/Profile Logo.jpg" type="image/jpeg">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/b6e45f63fd.js" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -137,7 +138,34 @@
       </div>
     </nav>
 
+    <div class="preloader">
+      <div class="loading">
+          <div class="loading-text">
+              <span class="loading-text-words">L</span>
+              <span class="loading-text-words">O</span>
+              <span class="loading-text-words">A</span>
+              <span class="loading-text-words">D</span>
+              <span class="loading-text-words">I</span>
+              <span class="loading-text-words">N</span>
+              <span class="loading-text-words">G</span>
+          </div>
+      </div>
+  </div>
 
+<script>
+  window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  if (!preloader) return;
+
+  const MIN_TIME = 700;           // ms
+  const elapsed  = performance.now();   // ≈ time since navigationStart
+
+  setTimeout(() => {
+    preloader.classList.add('hide');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+  }, Math.max(0, MIN_TIME - elapsed));
+});
+</script>
     <!---- MAIN GRID -->
     <section class="first_page" id="firstPage">
       <div class="h-100">
@@ -149,7 +177,7 @@
           <article class="second stat-card item-projects">
             <div class="inner-stat-grid">
               <div class="inner-stat-row item1">
-                <p>GeoPolitics/ Foreign Policy/ Nationalism/ Terrorism/ Extremism/ Emerging Threats </p>
+                <p>GeoPolitics / Foreign Policy / Nationalism / Terrorism / Extremism / Emerging Threats </p>
               </div>
               <div class="inner-stat-row item2">
                 <p>Research | January 15, 2024</p>
@@ -167,9 +195,25 @@
               </div>
 
               <div class="inner-stat-row item6">
+                <p>This thesis studies the terrorism dynamics in Afghanistan following the U.S. military withdrawal, focusing on the resurgence of transnational terrorist organizations, particularly Islamic State- Khorasan and Al-Qaeda, and the extent to which the Taliban’s rule plays a role. The research study employs a multi-faceted approach, including a comprehensive literature review, a detailed analysis of historical and current events, and a series of targeted interviews. The findings indicate that the U.S. withdrawal has created a vacuum, exacerbating the risk of growth and competition between IS-K and Al-Qaeda within the region and abroad.
+                </p>
               </div>
           </article>
         </div>
+        <script>
+          ScrollReveal({
+              reset: true,
+              distance: '60px',
+              duration: 2500,
+              delay: 400
+          });
+          ScrollReveal().reveal('.item1', { delay: 0, origin: 'bottom' });
+          ScrollReveal().reveal('.item2', { delay: 100, origin: 'bottom' });
+          ScrollReveal().reveal('.item3', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.item4', { delay: 400, origin: 'bottom' });
+          ScrollReveal().reveal('.item5', { delay: 600, origin: 'bottom' });
+          ScrollReveal().reveal('.item6', { delay: 800, origin: 'bottom' });
+      </script>
     </section>
 
 

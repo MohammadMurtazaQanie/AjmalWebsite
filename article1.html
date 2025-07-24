@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="article1.css">
   <link rel="icon" href="Images/Profile Logo.jpg" type="image/jpeg">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://kit.fontawesome.com/b6e45f63fd.js" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
@@ -134,7 +135,34 @@
             </div>
           </div>
         </nav>
+        <div class="preloader">
+          <div class="loading">
+              <div class="loading-text">
+                  <span class="loading-text-words">L</span>
+                  <span class="loading-text-words">O</span>
+                  <span class="loading-text-words">A</span>
+                  <span class="loading-text-words">D</span>
+                  <span class="loading-text-words">I</span>
+                  <span class="loading-text-words">N</span>
+                  <span class="loading-text-words">G</span>
+              </div>
+          </div>
+      </div>
     
+    <script>
+      window.addEventListener('load', () => {
+      const preloader = document.querySelector('.preloader');
+      if (!preloader) return;
+    
+      const MIN_TIME = 700;           // ms
+      const elapsed  = performance.now();   // ≈ time since navigationStart
+    
+      setTimeout(() => {
+        preloader.classList.add('hide');
+        preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+      }, Math.max(0, MIN_TIME - elapsed));
+    });
+    </script>
     
         <!---- MAIN GRID -->
         <section class="first_page" id="firstPage">
@@ -171,27 +199,60 @@
             </div>
         </section>
 
+        <script>
+          ScrollReveal({
+              reset: true,
+              distance: '60px',
+              duration: 2500,
+              delay: 400
+          });
+          ScrollReveal().reveal('.item1', { delay: 0, origin: 'bottom' });
+          ScrollReveal().reveal('.item2', { delay: 100, origin: 'bottom' });
+          ScrollReveal().reveal('.item3', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.item4', { delay: 400, origin: 'bottom' });
+          ScrollReveal().reveal('.item5', { delay: 600, origin: 'bottom' });
+          ScrollReveal().reveal('.item6', { delay: 800, origin: 'bottom' });
+      </script>
+
         
       </section>
 
       <section class="secondd" id="secondPage">
         <div class="h-100">
-            <p>
+            <p class="p1">
                 The escalation of attacks by the Taliban has significantly heightened fears of a total collapse of the governance and security organs of the state – leading up to the possible loss of functional control of the capital, Kabul. Aside from the concerns of Afghans, the region fears something bigger: the Taliban’s ambition to be “regional heroes” for Islamic extremists, as evidenced by the Taliban’s recent warning to the region about hosting US military bases. This fear stems from profound concerns about the increase of Islamic extremism within their own nations.
 
             </p>
-            <p>In China, as soon as the authorities caught a whiff of Islamic extremism in the breeze, they went into full force against them, detaining over one million Muslims, including many innocent Uyghur minorities who have lived peacefully in the Xinjiang region near the Afghan border for generations. China has considered establishing a military base in Afghanistan, fearing strong ties between some Uyghur groups and the Taliban and Al-Qaeda. However, Chinese military forces have been active for a while in Afghanistan’s Badakhshan province from a military base in Tajikistan near the Afghan border.
+            <p class="p2">In China, as soon as the authorities caught a whiff of Islamic extremism in the breeze, they went into full force against them, detaining over one million Muslims, including many innocent Uyghur minorities who have lived peacefully in the Xinjiang region near the Afghan border for generations. China has considered establishing a military base in Afghanistan, fearing strong ties between some Uyghur groups and the Taliban and Al-Qaeda. However, Chinese military forces have been active for a while in Afghanistan’s Badakhshan province from a military base in Tajikistan near the Afghan border.
             </p>
-            <p>Central Asia and Russia confront similar threats from the Islamic Movement of Uzbekistan (IMU) and Eastern Turkistan Islamic Movement (ETIM), both of which have connections with the Taliban, ISIS, and Al-Qaeda. Safe havens of these groups in Afghanistan, in the areas under the control of the Taliban, have caused these countries to fortify their borders with Afghanistan and even conduct a number of maneuvers along the Afghan border, involving 50,000 troops and 700 military tanks.</p>
-            <p>Iran, a Shi’ite majority country, which views itself as the number one target of ISIS and the Taliban, does not want the Taliban, Sunni hardliners, to return to power; instead, Tehran seeks to deepen its relations with the group as a precautionary measure in case the Taliban becomes a political player in Afghanistan. In terms of protecting its borders with Afghanistan, Iran has been supplying weaponry to some Taliban factions, and has offered the Afghan government to leverage “Fatemiyoun” in Afghanistan to counter the Taliban and ISIS attacks.</p>
-            <p>In Pakistan, the reformation of Tahrik-i-Taliban Pakistan (TTP), an umbrella organization for many extremist groups, including ISIS, and linked to Al-Qaeda, has frightened Pakistan; which has called on the Afghan Taliban for support and reminded them of their old relationship. Pakistan has also stated its desire to help the Afghan peace process, although it’s difficult to believe Pakistan’s assertion given the country’s long-term objectives. But if Pakistan wants to play a positive role in the Afghan peace process, it must stop supporting the Taliban and instead perhaps emulate Indonesia and Malaysia’s role in the Philippines and become an active guarantor of the Afghan peace process.</p>
-            <p>The good news for the Afghan leaders is that there is already a regional and global consensus on an Afghan-owned peace process as Plan A, since the world views the Taliban alone as a direct threat to their security, and possibly not a viable peace partner, believing the Taliban will turn the country into the headquarters of global terrorism. All that the region wants and seeks, as clearly stated in the Troika-Plus statement, is a stable and impartial administration in Afghanistan, not an Islamic emirate.</p>
-            <p>The Afghan government and political leaders must put their differences aside and work toward an Afghan-owned, Afghan-led, and Afghan-managed peace process. At this point, a practical--attainable and forward-looking--strategic peace plan is desired to lead to a negotiated agreement. Most importantly, for the peace process to be effective, the Afghan government must develop a good and honest relationship with Pakistan. With meddling in Pakistan’s internal affairs by backing its opposition groups, one can’t expect good faith in return. Thus, we must accept that honesty in a relationship is a two-way process.</p>
-            <p>Above all, the Taliban, as Afghans, must realize that Afghanistan has paid a tremendous price for its past isolation during their regime, and it cannot afford it in the 21st century. If the Taliban want to be accepted by the international community and want to end the conflict peacefully, they must alter their strategic approach and articulate peace policies. Delaying the peace negotiations to test the waters is not a smart idea.
+            <p class="p3">Central Asia and Russia confront similar threats from the Islamic Movement of Uzbekistan (IMU) and Eastern Turkistan Islamic Movement (ETIM), both of which have connections with the Taliban, ISIS, and Al-Qaeda. Safe havens of these groups in Afghanistan, in the areas under the control of the Taliban, have caused these countries to fortify their borders with Afghanistan and even conduct a number of maneuvers along the Afghan border, involving 50,000 troops and 700 military tanks.</p>
+            <p class="p4">Iran, a Shi’ite majority country, which views itself as the number one target of ISIS and the Taliban, does not want the Taliban, Sunni hardliners, to return to power; instead, Tehran seeks to deepen its relations with the group as a precautionary measure in case the Taliban becomes a political player in Afghanistan. In terms of protecting its borders with Afghanistan, Iran has been supplying weaponry to some Taliban factions, and has offered the Afghan government to leverage “Fatemiyoun” in Afghanistan to counter the Taliban and ISIS attacks.</p>
+            <p class="p5">In Pakistan, the reformation of Tahrik-i-Taliban Pakistan (TTP), an umbrella organization for many extremist groups, including ISIS, and linked to Al-Qaeda, has frightened Pakistan; which has called on the Afghan Taliban for support and reminded them of their old relationship. Pakistan has also stated its desire to help the Afghan peace process, although it’s difficult to believe Pakistan’s assertion given the country’s long-term objectives. But if Pakistan wants to play a positive role in the Afghan peace process, it must stop supporting the Taliban and instead perhaps emulate Indonesia and Malaysia’s role in the Philippines and become an active guarantor of the Afghan peace process.</p>
+            <p class="p6">The good news for the Afghan leaders is that there is already a regional and global consensus on an Afghan-owned peace process as Plan A, since the world views the Taliban alone as a direct threat to their security, and possibly not a viable peace partner, believing the Taliban will turn the country into the headquarters of global terrorism. All that the region wants and seeks, as clearly stated in the Troika-Plus statement, is a stable and impartial administration in Afghanistan, not an Islamic emirate.</p>
+            <p class="p7">The Afghan government and political leaders must put their differences aside and work toward an Afghan-owned, Afghan-led, and Afghan-managed peace process. At this point, a practical--attainable and forward-looking--strategic peace plan is desired to lead to a negotiated agreement. Most importantly, for the peace process to be effective, the Afghan government must develop a good and honest relationship with Pakistan. With meddling in Pakistan’s internal affairs by backing its opposition groups, one can’t expect good faith in return. Thus, we must accept that honesty in a relationship is a two-way process.</p>
+            <p class="p8">Above all, the Taliban, as Afghans, must realize that Afghanistan has paid a tremendous price for its past isolation during their regime, and it cannot afford it in the 21st century. If the Taliban want to be accepted by the international community and want to end the conflict peacefully, they must alter their strategic approach and articulate peace policies. Delaying the peace negotiations to test the waters is not a smart idea.
             </p>
-            <p>While all of the regional states have declared that a negotiated peace settlement is their preferred option, they all maintain ties to various militias and other armed groups, including the Taliban, in Afghanistan as a Plan B. The longer the peace negotiations remain stalled, the greater the danger of regional countries defaulting to their Plan B -- potentially turning Afghanistan into a battlefield of proxy wars that history has never seen before.</p>
+            <p class="p9">While all of the regional states have declared that a negotiated peace settlement is their preferred option, they all maintain ties to various militias and other armed groups, including the Taliban, in Afghanistan as a Plan B. The longer the peace negotiations remain stalled, the greater the danger of regional countries defaulting to their Plan B -- potentially turning Afghanistan into a battlefield of proxy wars that history has never seen before.</p>
 
         </div>
+
+        <script>
+          ScrollReveal({
+              reset: true,
+              distance: '60px',
+              duration: 2500,
+              delay: 400
+          });
+          ScrollReveal().reveal('.p1', { delay: 0, origin: 'bottom' });
+          ScrollReveal().reveal('.p2', { delay: 100, origin: 'bottom' });
+          ScrollReveal().reveal('.p3', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.p4', { delay: 400, origin: 'bottom' });
+          ScrollReveal().reveal('.p5', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.p6', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.p7', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.p8', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.p9', { delay: 200, origin: 'bottom' });
+      </script>
 
 
 

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="article1.css">
   <link rel="icon" href="Images/Profile Logo.jpg" type="image/jpeg">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://kit.fontawesome.com/b6e45f63fd.js" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
@@ -20,237 +21,357 @@
 
 <body>
 
-    <section class="header" id="Pg1">
-        <!--Navbar-->
-        <nav class="navbar navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top justify-content-end">
-          <div class="d-flex justify-content-end pe-lg-4 pe-md-4 pe-2 mt-lg-0 mt-md-0 mt-4">
-            <!--Phone Navbar-->
-            <button class="navbar-toggler border-0 shadow-none " type="button" data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasNavbar">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list"
-                viewBox="0 0 13 13">
-                <path fill-rule="evenodd"
-                  d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z" />
-              </svg>
-            </button>
-            <!--sidebar-->
-            <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-              aria-labelledby="offcanvasNavbarLabel">
-              <!--s head-->
-              <div class="offcanvas-header">
-                <button type="button" class="btn-close btn-close-secondary mt-lg-3 mt-1 ms-auto ps-5"
-                  data-bs-dismiss="offcanvas" aria-label="Close"></button>
-              </div>
-              <!--s body-->
-              <div class="offcanvas-body d-flex flex-column flex-md-row justify-content-start justify-content-md-end">
-    
-                <ul class="navbar-nav flex-column-sm pe-3 gap-1">
-                  <li class="nav-item">
-                    <a class="nav-link font-size-5" href="index.html">Home</a>
+  <section class="header" id="Pg1">
+    <!--Navbar-->
+    <nav class="navbar navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top justify-content-end">
+      <div class="d-flex justify-content-end pe-lg-4 pe-md-4 pe-2 mt-lg-0 mt-md-0 mt-4">
+        <!--Phone Navbar-->
+        <button class="navbar-toggler border-0 shadow-none " type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list"
+            viewBox="0 0 13 13">
+            <path fill-rule="evenodd"
+              d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z" />
+          </svg>
+        </button>
+        <!--sidebar-->
+        <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <!--s head-->
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close btn-close-secondary mt-lg-3 mt-1 ms-auto ps-5"
+              data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <!--s body-->
+          <div class="offcanvas-body d-flex flex-column flex-md-row justify-content-start justify-content-md-end">
+
+            <ul class="navbar-nav flex-column-sm pe-3 gap-1">
+              <li class="nav-item">
+                <a class="nav-link font-size-5" href="index.html">Home</a>
+              </li>
+
+
+              <li class="nav-item dropdown d-none d-lg-block d-md-block ">
+                <a class="nav-link dropdown-toggle" href="page2.html" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Leadership <i class="fas fa-chevron-down ms-1"></i>
+                </a>
+                <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-3">
+                  <li>
+                    <strong class="dropdown-header text-white">Social Entrepreneurship</strong>
+                    <a class="dropdown-item ps-4" href="leadership_1.html">UN Association of Afghanistan</a>
+                    <a class="dropdown-item ps-4" href="leadership_mun.html">Kabul Model United Nations</a>
                   </li>
-    
-    
-                  <li class="nav-item dropdown d-none d-lg-block d-md-block ">
-                    <a class="nav-link dropdown-toggle" href="page2.html" role="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Leadership <i class="fas fa-chevron-down ms-1"></i>
-                    </a>
-                    <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-3">
-                      <li>
-                        <strong class="dropdown-header text-white">Social Entrepreneurship</strong>
-                        <a class="dropdown-item ps-4" href="leadership_1.html">UN Association of Afghanistan</a>
-                        <a class="dropdown-item ps-4" href="leadership_mun.html">Kabul Model United Nations</a>
-                      </li>
-                      <li>
-                        <hr class="dropdown-divider border-secondary">
-                      </li>
-                      <li>
-                        <strong class="dropdown-header text-white">Policy Advocacy</strong>
-                        <a class="dropdown-item ps-4" href="leadership_national.html">Youth Consensus for Peace</a>
-                        <a class="dropdown-item ps-4" href="leadership_youth.html">Youth, Peace, and Security</a>
-                      </li>
-                    </ul>
+                  <li>
+                    <hr class="dropdown-divider border-secondary">
                   </li>
-    
-                  <!-- Phone‑only collapsible sections -->
-                  <li class="nav-item social d-lg-none d-md-none ">
-                    <button class="nav-link btn w-100 text-start justify-content-between align-items-center"
-                      data-bs-toggle="collapse" data-bs-target="#collapseSocial" aria-expanded="false" aria-expanded="false"
-                      aria-controls="collapseSocial">
-                      Social Entrepreneurship
-                      <i class="bi bi-chevron-down small"></i>
-                    </button>
-    
-                    <div class="collapse ps-3" id="collapseSocial">
-                      <a class="nav-link" href="leadership_1.html">UN Association of Afghanistan</a>
-                      <a class="nav-link" href="leadership_mun.html">Kabul Model United Nations</a>
-                    </div>
-                  </li>
-    
-                  <li class="nav-item policy d-lg-none d-md-none">
-                    <button class="nav-link btn w-100 text-start justify-content-between align-items-center"
-                      data-bs-toggle="collapse" data-bs-target="#collapsePolicy" aria-expanded="false">
-                      Policy Advocacy
-                      <i class="bi bi-chevron-down small"></i>
-                    </button>
-                    <div class="collapse connect ps-3" id="collapsePolicy">
-                      <a class="nav-link" href="leadership_national.html">Youth Consensus for Peace</a>
-                      <a class="nav-link" href="leadership_youth.html">Youth, Peace, and Security</a>
-                    </div>
-                  </li>
-    
-                  <li class="nav-item published-work">
-                    <a class="nav-link mentions" href="published.html">Published Works</a>
-                  </li>
-    
-                  <li class="nav-item published-work">
-                    <a class="nav-link mentions" href="mentions.html">Mentions</a>
-                  </li>
-    
-                  <li class="nav-item dropdown d-none d-lg-block d-md-block ">
-                    <a class="nav-link dropdown-toggle" href="page2.html" role="button" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                      Thought Leadership <i class="fas fa-chevron-down ms-1"></i>
-                    </a>
-                    <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-4">
-                      
-                      <li>
-                        <a href="published.html" class="pub dropdown-header text-white text-decoration-none d-block">Publications</a>
-                      </li>
-                      <li>
-                        <hr class="dropdown-divider border-secondary">
-          
-                        <a href="mentions.html" class="pub dropdown-header text-white text-decoration-none d-block">Media Mentions</a>
-                      </li>
-                      
-                    </ul>
-                  </li>
-    
-                  <li class="nav-item connect">
-                    <a class="nav-link" href="contact.html">Connect</a>
+                  <li>
+                    <strong class="dropdown-header text-white">Policy Advocacy</strong>
+                    <a class="dropdown-item ps-4" href="leadership_national.html">Youth Consensus for Peace</a>
+                    <a class="dropdown-item ps-4" href="leadership_youth.html">Youth, Peace, and Security</a>
                   </li>
                 </ul>
+              </li>
+
+              <!-- Phone‑only collapsible sections -->
+              <li class="nav-item social d-lg-none d-md-none ">
+                <button class="nav-link btn w-100 text-start justify-content-between align-items-center"
+                  data-bs-toggle="collapse" data-bs-target="#collapseSocial" aria-expanded="false" aria-expanded="false"
+                  aria-controls="collapseSocial">
+                  Social Entrepreneurship
+                  <i class="bi bi-chevron-down small"></i>
+                </button>
+
+                <div class="collapse ps-3" id="collapseSocial">
+                  <a class="nav-link" href="leadership_1.html">UN Association of Afghanistan</a>
+                  <a class="nav-link" href="leadership_mun.html">Kabul Model United Nations</a>
+                </div>
+              </li>
+
+              <li class="nav-item policy d-lg-none d-md-none">
+                <button class="nav-link btn w-100 text-start justify-content-between align-items-center"
+                  data-bs-toggle="collapse" data-bs-target="#collapsePolicy" aria-expanded="false">
+                  Policy Advocacy
+                  <i class="bi bi-chevron-down small"></i>
+                </button>
+                <div class="collapse connect ps-3" id="collapsePolicy">
+                  <a class="nav-link" href="leadership_national.html">Youth Consensus for Peace</a>
+                  <a class="nav-link" href="leadership_youth.html">Youth, Peace, and Security</a>
+                </div>
+              </li>
+
+              <li class="nav-item published-work">
+                <a class="nav-link mentions" href="published.html">Published Works</a>
+              </li>
+
+              <li class="nav-item published-work">
+                <a class="nav-link mentions" href="mentions.html">Mentions</a>
+              </li>
+
+              <li class="nav-item dropdown d-none d-lg-block d-md-block ">
+                <a class="nav-link dropdown-toggle" href="page2.html" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Thought Leadership <i class="fas fa-chevron-down ms-1"></i>
+                </a>
+                <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-4">
+
+                  <li>
+                    <a href="published.html"
+                      class="pub dropdown-header text-white text-decoration-none d-block">Publications</a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider border-secondary">
+
+                    <a href="mentions.html" class="pub dropdown-header text-white text-decoration-none d-block">Media
+                      Mentions</a>
+                  </li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item connect">
+                <a class="nav-link" href="contact.html">Connect</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="preloader">
+      <div class="loading">
+          <div class="loading-text">
+              <span class="loading-text-words">L</span>
+              <span class="loading-text-words">O</span>
+              <span class="loading-text-words">A</span>
+              <span class="loading-text-words">D</span>
+              <span class="loading-text-words">I</span>
+              <span class="loading-text-words">N</span>
+              <span class="loading-text-words">G</span>
+          </div>
+      </div>
+  </div>
+
+<script>
+  window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  if (!preloader) return;
+
+  const MIN_TIME = 700;           // ms
+  const elapsed  = performance.now();   // ≈ time since navigationStart
+
+  setTimeout(() => {
+    preloader.classList.add('hide');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+  }, Math.max(0, MIN_TIME - elapsed));
+});
+</script>
+    <!---- MAIN GRID -->
+    <section class="first_page" id="firstPage">
+      <div class="h-100">
+        <div class="stats-grid2">
+
+
+          <img src="Images/25.png" class="first stat-card item-endorsed img-fluid">
+
+          <article class="second stat-card item-projects">
+            <div class="inner-stat-grid">
+              <div class="inner-stat-row item1">
+                <p>Civil Society / Peacebuilding / Inclusive Governances</p>
+              </div>
+              <div class="inner-stat-row item2">
+                <p>Translation | March 31, 2021</p>
+              </div>
+              <div class="inner-stat-row item3">
+                <h3>مذاکرات صلح به شیوه قدیمی موثر نیست، اما بدیل چیست؟</h3>
+              </div>
+
+              <div class="inner-stat-row item4">
+                <p>By: Yahya Qanie</p>
+              </div>
+              <div class="inner-stat-row item5">
+                <p>Published: <a
+                    href="https://8am.media/fa/peace-talks-are-not-as-effective-as-they-used-to-be/">8AM</a></p>
+              </div>
+
+              <div class="inner-stat-row item6">
               </div>
             </div>
-          </div>
-        </nav>
-    
-    
-        <!---- MAIN GRID -->
-        <section class="first_page" id="firstPage">
-          <div class="h-100">
-            <div class="stats-grid2">
-    
-
-                <img src="Images/25.png" class="first stat-card item-endorsed img-fluid">
-    
-              <article class="second stat-card item-projects">
-                <div class="inner-stat-grid">
-                  <div class="inner-stat-row item1">
-                    <p>Youth and Women/ Civil Society/ Peacebuilding/ Political Reform/ Inclusive Governances</p>
-                  </div>
-                  <div class="inner-stat-row item2">
-                    <p>Contribution| January 19, 2022</p>
-                  </div>
-                  <div class="inner-stat-row item3">
-                    <h3>We Are in This Together</h3>
-                  </div>
-
-                  <div class="inner-stat-row item4">
-                    <p>By: Irena Grizeli & Ali Saleem</p>
-                  </div>
-                  <div class="inner-stat-row item5">
-                    <p>Published: <a href="https://unoy.org/download/yps-5-year-strategic-plan/">United Nations</a></p>
-                  </div>
-
-                  <div class="inner-stat-row item6">
-                    <p>Operationalizing a 5-Year Strategy for Youth-Inclusive Peace Processes
-                    </p>
-                  </div>
-                </div>
-              </article>    
-            </div>
-        </section>
-
-        
-      </section>
-
-      <section class="secondd" id="secondPage">
-        <div class="h-100">
-          <a href="https://unoy.org/download/yps-5-year-strategic-plan/"><h4>Download</h4></a>
-
+          </article>
         </div>
-
-
-
+        <script>
+          ScrollReveal({
+              reset: true,
+              distance: '60px',
+              duration: 2500,
+              delay: 400
+          });
+          ScrollReveal().reveal('.item1', { delay: 0, origin: 'bottom' });
+          ScrollReveal().reveal('.item2', { delay: 100, origin: 'bottom' });
+          ScrollReveal().reveal('.item3', { delay: 200, origin: 'bottom' });
+          ScrollReveal().reveal('.item4', { delay: 400, origin: 'bottom' });
+          ScrollReveal().reveal('.item5', { delay: 600, origin: 'bottom' });
+          ScrollReveal().reveal('.item6', { delay: 800, origin: 'bottom' });
+      </script>
     </section>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"></script>
+  </section>
+
+  <section class="secondd" id="secondPage">
+    <div class="h-100" style="direction: rtl; text-align: justify;">
+      <p class="p1">
+        .مذاکرات صلح افغانستان به اولویت جدید اداره بایدن تبدیل شده است تا از این طریق، نیروهای ایالات متحده امریکا را
+        تا قبل از ماه می سال جاری به گونه کامل از افغانستان خارج کند؛ توافقی که تا حدی بعید به نظر می‌رسد. به همین
+        ترتیب، پیشبرد روند صلح یمن، کشوری که میزان خشونت در آن افزایش یافته و بحران انسانی در آن تشدید شده، اولویت دیگر
+        اداره بایدن است
+
+      </p>
+      <p class="p1">.اما حتا اگر این مذاکرات صلح سرانجام منتج به توافقاتی هم شود، بعید است که به خشونت و بحران ناشی از جنگ خاتمه
+        دهد؛ همان‌گونه که در توافقات صلح اخیر در کلمبیا، عراق و سودان جنوبی شاهد بودیم. دلیل آن هم، طوری که تحقیقات من
+        نشان می‌دهد، رویکرد غلط ما در قبال صلح و روند اعمار صلح است
+      </p>
+      <p class="p2">در این مقاله، سه یافته حیرت‌آوری را که هنگام تحقیق برای کتاب جدید خود «خط مقدم صلح» دریافتم، ارایه خواهم کرد.
+        این یافته‌ها نتیجه بیش از ۲۰ سال تحقیق در زمینه جنگ و صلح است که شامل تحقیقات میدانی در ۱۲ منطقه جنگی در سراسر
+        جهان است</p>
+
+
+      <h5 class="p3">۱– حتا در خطرناک‌ترین مناطق جنگی، روزنه‌های صلح را خواهید یافت</h5>
+      <p class="p4">در جریان همین ماه، ساکنان پنجوایی، منطقه‌ دورافتاده در ولایت قندهار افغانستان، برای آتش‌بس میان اردوی این کشور
+        و طالبان مذاکره کردند. این آتش‌بس اگرچه فقط از ساعت ۹ صبح تا ۵ بعدازظهر برای ۱۰ روز بود؛ اما شروع خوبی بود
+      </p>
+      <p class="p5">در کنگو در جزیره «ایدجو» بیش از ۲۰ سال است که یک منطقه امن باقی مانده است، با وصف این‌که یکی از مرگ‌بارترین
+        درگیری‌های جنگ جهانی دوم که جان چندین میلیون انسان را گرفت، در حوالی همین منطقه رخ داد. به همین ترتیب، می‌توان
+        این تقابل حیرت‌آور را در سومالی دید؛ جایی که هر هفته شاهد بمب‌گذاری‌ها و حملات تروریستی مهیب است، ولی منطقه
+        خودمختار شمالی آن به نام «سومالی لند» در طی دو دهه گذشته شاهد کم‌ترین میزان خشونت و ترور بوده است</p>
+      <p class="p6">در جوامع مختلف کلمبیا مانند «سان خوزه د آپارتادو»، شهروندان بدون هیچ نوع خشونتی، از خود در برابر قتل‌ها،
+        آدم‌ربایی‌ها و زورگیری‌ها که مناطق همجوارشان اغلب با آن روبه‌رو است، محافظت می‌کنند</p>
+      <p class="p7">چنین الگوهایی در نقاط مختلف دنیا موجود است. حتا در اسرائیل دهکده‌ای به نام «وهات السلام – نوه شالوم» وجود دارد
+        که اساس آن بر مبنای امکان هم‌زیستی صلح‌آمیز فلسطینی‌ها و اسرائیلی‌های یهودی گذاشته شده و این امکان در این دهکده
+        به حقیقت مبدل شده است</p>
+      <h5 class="p8">۲– مردم عادی قدرتی فراتر از تصور ما در کاهش خشونت دارند</h5>
+
+      <p class="p9">این روزنه‌ها ناشی از مذاکرات صلح در سطوح بالا که اداره بایدن از آن برای پایان دادن به جنگ‌های افغانستان و یمن
+        استفاده می‌کند، نیست. چون آن‌ها رویکردهای معمول است که بر تشریفات بین روسای جمهور، توافق‌نامه‌های صلح انتزاعی و
+        مذاکرات بین دولت و رهبران شورشی متمرکز است
+      </p>
+      <p class="p10">در کتاب «خط مقدم صلح»، من بیان می‌کنم که جزیره «ایدجو» در کنگو به دلیل مراودات و ارتباطات همه‌روزه ساکنانش،
+        منجمله فقیرترین و کم قدرت‌ترین افراد آن، یک منطقه صلح‌آمیز است. آن‌ها با ترویج آن‌چه «فرهنگ صلح» می‌نامند، خشونت
+        را دور نگه می‌دارند. مردم این منطقه نهادهایی با ساختارهای ابتدایی محلی را تنظیم کرده‌اند که به حل اختلافات و
+        منازعات‌شان کمک می‌کنند. هم‌چنان، رسوم کهن هم‌چون «تعهد خونی» (معاهده سنتی که در آن دو جناح با تبادل خون خود
+        تعهد می‌دهند به یک‌دیگر صدمه نزنند)، به از میان بردن خشونت از سوی خود و بیگانه کمک کرده است</p>
+
+
+<p class="p11">به همین ترتیب، تفاوت‌های زیادی بین ساکنان سومالی و «سومالی لند» وجود دارد. اما آن‌چه مهم است، این است که در سومالی لند، خود شهروندان ابتکارات پایدار محلی را برای ایجاد و تامین صلح دنبال کردند؛ در حالی که بقیه مناطق این کشور به روش معمول حل منازعات در سطوح رهبری و به رهبری خارجی‌ها متکی بود</p>
+<p class="p12">در هر کشوری که تحقیقاتم را انجام دادم، نمونه‌هایی را یافتم که در آن شهروندان عادی و فعالان محلی با استفاده از ارتباطات شخصی خود، رهبران گروه‌های مسلح اطراف را متقاعد کرده‌اند که بیایند و مذاکره کنند. نه فقط من، بلکه محققان دیگری نیز به این نمونه‌ها برخورده‌اند. این ابتکارات تنها مختصر به ساکنان منطقه پنجوایی در افغانستان، ایدجو در کنگو، سومالی لند در سومالی یا «سان خوزه د آپارتادو» در کلمبیا نمی‌شود. بلکه ساکنان بسیاری از مناطق امن، از بوسنی گرفته تا اندونیزیا و عراق عین کار را کرده‌اند. حتا در جریان جنگ جهانی دوم، شهروندان عادی تلاش‌های بی‌شماری برای تامین امنیت در مناطق خود انجام دادند که بعضی از آن‌ها در کاهش درگیری‌ها موفق بود</p>
+<h5 class="p13">۳– بدیلی برای شیوه تامین صلح وجود دارد که بهتر هم عمل می‌کند</h5>
+<p class="p14">خبر خوب این است که میانجی‌های خارجی مانند دیپلمات‌های امریکایی می‌توانند از این نوع تلاش‌ها بدون این‌که درگیر روابط خسته‌کن و قدیمی میان جناح‌های بیرونی و داخلی شوند و تلاش‌های مردم محلی برای ایجاد صلح را طوری که مرسوم است به مخاطره بیندازند، پشتیبانی کنند. یقیناً می‌شود از این‌گونه الگوهای محلی درس گرفت</p>
+<p class="p15">در کتاب «خط مقدم صلح»، من بسیاری از رویکردهای ناب و غیرمرسومی که از سوی میانجی‌های خارجی به گونه موثر در حمایت از مردمان محلی پیاده شده است را بیان کرده‌ام. از این دسته روش‌های میانجی‌گری در تمام نقاط جهان وجود دارد که توسط نهادهای گوناگون در کشورهای مختلف به کار گرفته می‌شود و چند اصل بین‌شان مشترک است</p>
+<p class="p16">این میانجی‌ها به ساکنان محلی احترام می‌گذارند، به آن‌ها گوش می‌دهند و درک می‌کنند که دیگران ممکن است اولویت‌های مختلفی داشته باشند و یا درک متفاوتی از صلح، دموکراسی و توسعه داشته باشند. این میانجی‌ها به خوبی از شرایط و فرهنگ‌های محلی آگاه‌اند و حتا به زبان‌های محلی صحبت می‌کنند و شبکه‌های محلی گسترده‌ای دارند و برای سال‌ها، گاهی دهه‌ها در آن منطقه می‌مانند و تلاش می‌کنند</p>
+
+<p class="p17">البته اهمیت حمایت از دولت‌ها و مذاکرات رسمی هم‌چنان پابرجا است؛ زیرا صلح واقعی تنها زمانی پایدار است که هم در سطوح بالا و هم در سطوح محلی ساخته شود. اما یک امر کاملاً واضح است: برای کاهش خشونت، ما باید اساساً نوع نگرش و هم‌چنین نوع برخورد خود را در قسمت تامین صلح تغییر دهیم</p>
+<p class="p18">در میان همه این یافته‌ها، متعجب کننده‌ترین بخش تحقیق این بود که این ابتکارات محلی می‌توانند به ما کمک کنند تا نه تنها تنش‌ها را در کشورهای جنگ‌زده‌ای مانند افغانستان، کنگو و یمن حل کنیم؛ بلکه با استفاده از این فرمول قادر به حل اختلافات نژادی، قومی، مذهبی و سیاسی در ایالات متحده نیز خواهیم بود</p>
+
+    </div>
+
     <script>
-      AOS.init();
-    </script>
-    
-    <script>
-      const navbar = document.querySelector('.navs');
-      const scrollBox = document.querySelector('.header');
+      ScrollReveal({
+          reset: true,
+          distance: '60px',
+          duration: 2500,
+          delay: 400
+      });
+      ScrollReveal().reveal('.p1', { delay: 0, origin: 'bottom' });
+      ScrollReveal().reveal('.p2', { delay: 100, origin: 'bottom' });
+      ScrollReveal().reveal('.p3', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p4', { delay: 400, origin: 'bottom' });
+      ScrollReveal().reveal('.p5', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p6', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p7', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p8', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p9', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p10', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p11', { delay: 0, origin: 'bottom' });
+      ScrollReveal().reveal('.p12', { delay: 100, origin: 'bottom' });
+      ScrollReveal().reveal('.p13', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p14', { delay: 400, origin: 'bottom' });
+      ScrollReveal().reveal('.p15', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p16', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p17', { delay: 200, origin: 'bottom' });
+      ScrollReveal().reveal('.p18', { delay: 200, origin: 'bottom' });
 
-      function toggleBlur() {
-        const pos = window.scrollY || document.documentElement.scrollTop;
-        const fromPage = pos > 0;
-        const fromHeader = scrollBox ? scrollBox.scrollTop > 0 : false;
-        navbar.classList.toggle('scrolled', fromPage || fromHeader);
-      }
-
-       window.addEventListener('scroll', toggleBlur, { passive: true });
- if (scrollBox) {
-  scrollBox.addEventListener('scroll', toggleBlur, { passive: true });
- }
-
-      toggleBlur();
-    </script>
-<script>
-  const offcanvas = document.getElementById('offcanvasNavbar');
-
-  offcanvas.addEventListener('show.bs.offcanvas', () => {
-    document.body.classList.add('menu-open');
-  });
-
-  offcanvas.addEventListener('hidden.bs.offcanvas', () => {
-    document.body.classList.remove('menu-open');
-  });
-</script>
-
-<script>
-  const collapseSocial = document.getElementById('collapseSocial');
-  const collapsePolicy = document.getElementById('collapsePolicy');
-  const navItems       = document.querySelectorAll('.offcanvas .nav-item');
+  </script>
 
 
-  function updateShift() {
-    const openCount =
-      (collapseSocial.classList.contains('show') ? 1 : 0) +
-      (collapsePolicy.classList.contains('show') ? 1 : 0);
+  </section>
 
-    navItems.forEach(item => {
-      item.style.transform = openCount
-        ? `translateY(-${openCount * 40}px)`
-        : '';
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  <script>
+    const navbar = document.querySelector('.navs');
+    const scrollBox = document.querySelector('.header');
+
+    function toggleBlur() {
+      const pos = window.scrollY || document.documentElement.scrollTop;
+      const fromPage = pos > 0;
+      const fromHeader = scrollBox ? scrollBox.scrollTop > 0 : false;
+      navbar.classList.toggle('scrolled', fromPage || fromHeader);
+    }
+
+    window.addEventListener('scroll', toggleBlur, { passive: true });
+    if (scrollBox) {
+      scrollBox.addEventListener('scroll', toggleBlur, { passive: true });
+    }
+
+    toggleBlur();
+  </script>
+  <script>
+    const offcanvas = document.getElementById('offcanvasNavbar');
+
+    offcanvas.addEventListener('show.bs.offcanvas', () => {
+      document.body.classList.add('menu-open');
     });
-  }
 
-  // Keep the shift in sync whenever either section toggles
-  ['shown.bs.collapse', 'hidden.bs.collapse'].forEach(evt => {
-    collapseSocial.addEventListener(evt, updateShift);
-    collapsePolicy.addEventListener(evt, updateShift);
-  });
+    offcanvas.addEventListener('hidden.bs.offcanvas', () => {
+      document.body.classList.remove('menu-open');
+    });
+  </script>
 
-  // Initialise on page load
-  updateShift();
-</script>
+  <script>
+    const collapseSocial = document.getElementById('collapseSocial');
+    const collapsePolicy = document.getElementById('collapsePolicy');
+    const navItems = document.querySelectorAll('.offcanvas .nav-item');
+
+
+    function updateShift() {
+      const openCount =
+        (collapseSocial.classList.contains('show') ? 1 : 0) +
+        (collapsePolicy.classList.contains('show') ? 1 : 0);
+
+      navItems.forEach(item => {
+        item.style.transform = openCount
+          ? `translateY(-${openCount * 40}px)`
+          : '';
+      });
+    }
+
+    // Keep the shift in sync whenever either section toggles
+    ['shown.bs.collapse', 'hidden.bs.collapse'].forEach(evt => {
+      collapseSocial.addEventListener(evt, updateShift);
+      collapsePolicy.addEventListener(evt, updateShift);
+    });
+
+    // Initialise on page load
+    updateShift();
+  </script>
 
 
 </body>
+
 </html>

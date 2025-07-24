@@ -7,6 +7,7 @@
   <title>Yahya Qanie</title>
   <link rel="stylesheet" href="mentions.css">
   <link rel="icon" href="Images/Profile Logo.jpg" type="image/jpeg">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://kit.fontawesome.com/b6e45f63fd.js" crossorigin="anonymous"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -139,6 +140,35 @@
     </nav>
 
 
+    <div class="preloader">
+      <div class="loading">
+          <div class="loading-text">
+              <span class="loading-text-words">L</span>
+              <span class="loading-text-words">O</span>
+              <span class="loading-text-words">A</span>
+              <span class="loading-text-words">D</span>
+              <span class="loading-text-words">I</span>
+              <span class="loading-text-words">N</span>
+              <span class="loading-text-words">G</span>
+          </div>
+      </div>
+  </div>
+
+<script>
+  window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  if (!preloader) return;
+
+  const MIN_TIME = 700;           // ms
+  const elapsed  = performance.now();   // ≈ time since navigationStart
+
+  setTimeout(() => {
+    preloader.classList.add('hide');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+  }, Math.max(0, MIN_TIME - elapsed));
+});
+</script>
+
     <!---- MAIN GRID -->
     <section class="first_page" id="firstPage">
       <div class="h-100">
@@ -259,6 +289,22 @@
             </a>
           </article>
 
+
+          <script>
+            ScrollReveal({
+                reset: true,
+                distance: '60px',
+                duration: 2500,
+                delay: 400
+            });
+    
+            ScrollReveal().reveal('.second', { delay: 200, origin: 'bottom' })
+            ScrollReveal().reveal('.third', { delay: 400, origin: 'bottom' })
+            ScrollReveal().reveal('.forth', { delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.fifth', {delay: 800, origin: 'bottom' })
+
+        </script>
+
           <!-- ─────────── Mobile logo grid (phones ≤ 767 px) ─────────── -->
           <article class="logo-grid-mobile">
 
@@ -269,111 +315,138 @@
             </a>
 
             <!-- 1 -->
-            <a class="logo-link"
+            <a class="logo-link p1"
               href="https://www.independent.co.uk/independentpremium/long-reads/young-afghanistan-fighting-taliban-peace-process-b1760331.html"
               target="_blank" rel="noopener noreferrer" style="--logo-h:50px; --logo-h-m:20px; --order-m:1">
               <img src="Images/Independent.jpeg" alt="Independent logo">
             </a>
 
 
-            <a class="logo-link"
+            <a class="logo-link p2"
               href="https://www.educationaboveall.org/media-centre/news/world-leaders-renew-commitment-youth-peace-and-security-agenda"
               target="_blank" rel="noopener noreferrer" style="--logo-h:30px; --order-m:1">
               <img src="Images/Education Above All.jpeg" alt="Education Above All logo">
             </a>
 
 
-            <a class="logo-link"
+            <a class="logo-link p3"
               href="https://tolonews.com/index.php/mehwar/28162-mehwar-un-eus-commitments-for-peace-in-afghanistan-discussed"
               target="_blank" rel="noopener noreferrer" style="--logo-h:55px; --order-m:2">
               <img src="Images/ToloNews.png" alt="TOLO News logo">
             </a>
 
-            <a class="logo-link"
+            <a class="logo-link p4"
               href="https://www.ariananews.af/afghan-youth-urged-to-work-toward-positive-change-in-kabul-model-un/"
               target="_blank" rel="noopener noreferrer" style="--logo-h:35px; --order-m:2">
               <img src="Images/Ariana.jpeg" alt="Ariana News logo">
             </a>
 
-            <a class="logo-link"
+            <a class="logo-link p5"
               href="https://www.unitedambassadors.com/single-post/2016/09/10/interview-with-kabulmun-model-united-nations-in-afghanistan"
               target="_blank" rel="noopener noreferrer" style="--logo-h:55px; --order-m:2">
               <img src="Images/UA.png" alt="United Ambassadors logo">
             </a>
 
-            <a class="logo-link"
+            <a class="logo-link p6"
               href="https://www.oneyoungworld.com/blog/afghan-youth-reclaiming-their-voice-and-reimagining-better-future"
               target="_blank" rel="noopener noreferrer" style="--logo-h:30px; --order-m:3">
               <img src="Images/OYW.jpeg" alt="One Young World logo">
             </a>
 
-            <a class="logo-link" href="https://drive.google.com/file/d/1AhjljOiUAPa0dTGr8fXawFMOUtj48Nah/view" target="_blank" rel="noopener noreferrer"
+            <a class="logo-link p7" href="https://drive.google.com/file/d/1AhjljOiUAPa0dTGr8fXawFMOUtj48Nah/view" target="_blank" rel="noopener noreferrer"
               style="--logo-h:55px; --order-m:3">
               <img src="Images/Gulf Times.png" alt="Gulf Times logo">
             </a>
 
 
-            <a class="logo-link" href="https://www.nyu.edu" target="_blank" rel="noopener noreferrer"
+            <a class="logo-link p8" href="https://www.nyu.edu" target="_blank" rel="noopener noreferrer"
               style="--logo-h:35px; --order-m:3">
               <img src="Images/NYU.png" alt="NYU logo">
             </a>
 
 
-            <a class="logo-link"
+            <a class="logo-link p9"
               href="https://unama.unmissions.org/kabul-model-un-afghan-youth-urged-work-toward-positive-change"
               target="_blank" rel="noopener noreferrer" style="--logo-h:50px; --order-m:4">
               <img src="Images/UNAMA.png" alt="UNAMA logo">
             </a>
 
-            <a class="logo-link" href="https://open.spotify.com/episode/49XfvcwYO6seyMPUHiXaAD" target="_blank"
+            <a class="logo-link p10" href="https://open.spotify.com/episode/49XfvcwYO6seyMPUHiXaAD" target="_blank"
               rel="noopener noreferrer" style="--logo-h:60px; --order-m:4">
               <img src="Images/BEW.png" alt="Lead Next logo">
             </a>
 
 
-            <a class="logo-link" href="https://webtv.un.org/en/asset/k1l/k1lov8j7h8" target="_blank"
+            <a class="logo-link p11" href="https://webtv.un.org/en/asset/k1l/k1lov8j7h8" target="_blank"
               rel="noopener noreferrer" style="--logo-h:30px; --order-m:4">
               <img src="Images/UN.png" alt="United Nations logo">
             </a>
 
 
-            <a class="logo-link" href="https://www.asiaglobalonline.hku.hk/asia-global-voices?location=afghanistan"
+            <a class="logo-link p12" href="https://www.asiaglobalonline.hku.hk/asia-global-voices?location=afghanistan"
               target="_blank" rel="noopener noreferrer" style="--logo-h:45px; --order-m:5">
               <img src="Images/AGI.jpeg" alt="Asia Global Institute logo">
             </a>
 
-            <a class="logo-link" href="https://da.azadiradio.com/a/28093034.html" target="_blank"
+            <a class="logo-link p13" href="https://da.azadiradio.com/a/28093034.html" target="_blank"
               rel="noopener noreferrer" style="--logo-h:55px; --order-m:5">
               <img src="Images/RFI.png" alt="RFI logo">
             </a>
 
 
 
-            <a class="logo-link" href="https://x.com/bbcpersian/status/1292461854661521413?s=46" target="_blank" rel="noopener noreferrer"
+            <a class="logo-link p14" href="https://x.com/bbcpersian/status/1292461854661521413?s=46" target="_blank" rel="noopener noreferrer"
               style="--logo-h:30px; --order-m:5">
               <img src="Images/BBC-logo.jpeg" alt="BBC logo">
             </a>
 
 
-            <a class="logo-link"
+            <a class="logo-link p15"
               href="https://mofa.gov.qa/en/latest-articles/prime-minister-speeches/opening-speech-of-he-prime-minister-and-minister-of-foreign-affairs--at-the-high-level-global-conference-on-youth-inclusive-peace-processes"
               target="_blank" rel="noopener noreferrer" style="--logo-h:40px; --order-m:6">
               <img src="Images/Qatar.png" alt="Qatar MoFA logo">
             </a>
 
-            <a class="logo-link"
+            <a class="logo-link p16"
               href="https://thepeninsulaqatar.com/article/22/01/2022/world-leaders-renew-commitment-to-youth-peace-and-security-agenda"
               target="_blank" rel="noopener noreferrer" style="--logo-h:25px; --order-m:6">
               <img src="Images/Peninsula.png" alt="The Peninsula logo">
             </a>
 
 
-            <a class="logo-link" href="https://www.facebook.com/watch/?v=319614488630998" target="_blank"
+            <a class="logo-link p17" href="https://www.facebook.com/watch/?v=319614488630998" target="_blank"
               rel="noopener noreferrer" style="--logo-h:40px; --order-m:6">
               <img src="Images/VOA.png" alt="Voice of America logo">
             </a>
 
           </article>
+
+          <script>
+            ScrollReveal({
+                reset: true,
+                distance: '60px',
+                duration: 2500,
+                delay: 400
+            });
+            ScrollReveal().reveal('.p1', { delay: 0, origin: 'bottom' });
+            ScrollReveal().reveal('.p2', { delay: 200, origin: 'bottom' })
+            ScrollReveal().reveal('.p3', { delay: 400, origin: 'bottom' })
+            ScrollReveal().reveal('.p4', { delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p5', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p6', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p7', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p8', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p9', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p10', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p11', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p12', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p13', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p14', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p15', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p16', {delay: 800, origin: 'bottom' })
+            ScrollReveal().reveal('.p17', {delay: 800, origin: 'bottom' })
+
+        </script>
 
 
 
