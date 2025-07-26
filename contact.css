@@ -304,9 +304,10 @@
     }
   
     /* wider menu only for the “Thought Leadership” list (uses .px-4) */
-    .navbar-nav .nav-item.dropdown > .dropdown-menu.something.px-4 {
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
       width: 18rem !important;     /* ~416 px */
-      max-width: 90vw !important;  /* safety on very narrow screens */
+      max-width: 90vw !important;
+      padding: 1rem;  /* safety on very narrow screens */
     }
   }
 

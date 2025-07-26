@@ -279,6 +279,7 @@ h5{
   .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
     width: 18rem !important;
     max-width: 90vw !important;
+    padding: 1rem;
   }
 
 }

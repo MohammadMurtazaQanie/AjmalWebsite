@@ -485,6 +485,7 @@
     .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
       width: 18rem;
       max-width: 90vw;
+      padding: 1rem;
     }
   }
 

@@ -23,18 +23,19 @@
   <section class="header" id="Pg1">
     <!--Navbar-->
     <nav class="navbar navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top justify-content-end">
-      <div class="d-flex justify-content-end pe-lg-4 pe-md-4 pe-3 mt-lg-0 mt-md-0 mt-4">
+      <div class="d-flex justify-content-end pe-lg-4 pe-md-4 pe-2 mt-lg-0 mt-md-0 mt-4">
         <!--Phone Navbar-->
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar">
-          <img src="Images/menublack.png" width="50" height="50" viewBox="0 0 13 13" style="position: relative; top: -5px; left: 11px;">
+          <img src="Images/menublack.png" width="50" height="50" viewBox="0 0 13 13"
+           >
         </button>
         <!--sidebar-->
         <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
           aria-labelledby="offcanvasNavbarLabel">
           <!--s head-->
           <div class="offcanvas-header">
-            <button type="button" class="btn-close btn-close-black mt-1 mt-lg-3 ms-auto ps-5"
+            <button type="button" class="btn-close btn-close-secondary mt-lg-3 mt-1 ms-auto ps-5"
               data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <!--s body-->
@@ -51,7 +52,7 @@
                   aria-expanded="false">
                   Leadership <i class="fas fa-chevron-down ms-1"></i>
                 </a>
-                <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-4">
+                <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-3">
                   <li>
                     <strong class="dropdown-header text-white">Social Entrepreneurship</strong>
                     <a class="dropdown-item ps-4" href="leadership_1.html">UN Association of Afghanistan</a>
@@ -62,7 +63,7 @@
                   </li>
                   <li>
                     <strong class="dropdown-header text-white">Policy Advocacy</strong>
-                    <a class="dropdown-item ps-4" href="leadership_national.html">Youth Consensus for Peace</a>
+                    <a class="dropdown-item ps-4" href="leadership_national.html">National Youth Consensus</a>
                     <a class="dropdown-item ps-4" href="leadership_youth.html">Youth, Peace, and Security</a>
                   </li>
                 </ul>
@@ -90,7 +91,7 @@
                   <i class="bi bi-chevron-down small"></i>
                 </button>
                 <div class="collapse connect ps-3" id="collapsePolicy">
-                  <a class="nav-link" href="leadership_national.html">Youth Consensus for Peace</a>
+                  <a class="nav-link" href="leadership_national.html">National Youth Consensus</a>
                   <a class="nav-link" href="leadership_youth.html">Youth, Peace, and Security</a>
                 </div>
               </li>
@@ -108,19 +109,18 @@
                   aria-expanded="false">
                   Thought Leadership <i class="fas fa-chevron-down ms-1"></i>
                 </a>
-                <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-3">
+                <ul class="something dropdown-menu dropdown-menu-dark bg-transparent">
 
                   <li>
-                    <strong class="pub dropdown-header"> <a href="published.html">Publications</a></strong>
+                    <a href="published.html"
+                      class="pub dropdown-header text-white text-decoration-none d-block px-4">Publications</a>
                   </li>
                   <li>
                     <hr class="dropdown-divider border-secondary">
-                  </li>
 
-                  <li>
-                    <strong class="pub dropdown-header"> <a href="mentions.html">Press</a></strong>
+                    <a href="mentions.html"
+                      class="pub dropdown-header text-white text-decoration-none d-block px-4">Press</a>
                   </li>
-
 
                 </ul>
               </li>
@@ -690,13 +690,13 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
       */
 
       /* -- render the requested page (0‑based) -- */
-      function loadPage(idx) {
+      function loadPage(idx, withLoader = false) {
         /* ----- Mini page‑loader overlay (skip on initial page load) ----- */
         const preloaderActive =
           document.querySelector('.preloader') &&
           !document.querySelector('.preloader').classList.contains('hide');
         let loader = null;
-        if (!preloaderActive) {
+        if (withLoader && !preloaderActive) {
           loader = document.createElement('div');
           loader.className = 'preloader page-loader';       // reuse existing styles
           loader.innerHTML =
@@ -742,7 +742,7 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
           /* visual active state */
           document.querySelectorAll('.page-btn').forEach(b => b.classList.toggle('active', b === btn));
 
-          loadPage(page);
+          loadPage(page, true);
           sessionStorage.setItem(PAGE_KEY, page);   // remember page for back-nav
         });
       });
@@ -838,7 +838,7 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
             e.preventDefault();
             const p = +btn.dataset.page;
             pager.querySelectorAll('.page-btn').forEach(b => b.classList.toggle('active', b === btn));
-            loadPage(p);
+            loadPage(p, true);
             sessionStorage.setItem(PAGE_KEY, p);      // remember via rebuilt pager
             document.querySelector('#secondPage').scrollIntoView({ behavior: 'smooth' });
           });

@@ -237,9 +237,12 @@
 .pub a{
    color:rgba(250, 250, 250, 0.95);
     text-decoration: none;
+    ;
+
 }
 .pub {
     transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+    
 }
 .pub:hover{
     background-color: rgba(255, 255, 255, 0.199) !important;
@@ -677,8 +680,10 @@ body.menu-open {
   }
 
   /* wider menu only for the “Thought Leadership” list (uses .px-4) */
-  .navbar-nav .nav-item.dropdown > .dropdown-menu.something.px-4 {
+  .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
     width: 18rem;     /* ~416 px */
     max-width: 90vw;  /* safety on very narrow screens */
+    padding:1rem;
+
   }
 }
