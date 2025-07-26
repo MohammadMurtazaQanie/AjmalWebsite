@@ -110,7 +110,6 @@
   }
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -1116,7 +1115,7 @@ body {
   width: 100%;
   height: 230px;
   object-fit: cover;   /* fill the box without distortion */
-  border-radius: 25px;
+  border-radius: 30px;
 }
 /* Make full stat‑card links keep existing hover/focus styles */
 .article-link:hover,

@@ -27,11 +27,7 @@
                 <!--Phone Navbar-->
                 <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-list"
-                        viewBox="0 0 13 13">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z" />
-                    </svg>
+                    <img src="Images/menuwhite.png" width="50" height="50" viewBox="0 0 13 13" style="position: relative; top: 17px; left: 11px;">
                 </button>
                 <!--sidebar-->
                 <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
@@ -67,7 +63,7 @@
                   </li>
                   <li>
                     <strong class="dropdown-header text-white">Policy Advocacy</strong>
-                    <a class="dropdown-item ps-4" href="leadership_national.html">Youth Consensus for Peace</a>
+                    <a class="dropdown-item ps-4" href="leadership_national.html">National Youth Consensus</a>
                     <a class="dropdown-item ps-4" href="leadership_youth.html">Youth, Peace, and Security</a>
                   </li>
                 </ul>
@@ -95,17 +91,17 @@
                   <i class="bi bi-chevron-down small"></i>
                 </button>
                 <div class="collapse connect ps-3" id="collapsePolicy">
-                  <a class="nav-link" href="leadership_national.html">Youth Consensus for Peace</a>
+                  <a class="nav-link" href="leadership_national.html">National Youth Consensus</a>
                   <a class="nav-link" href="leadership_youth.html">Youth, Peace, and Security</a>
                 </div>
               </li>
 
               <li class="nav-item published-work">
-                <a class="nav-link mentions" href="published.html">Published Works</a>
+                <a class="nav-link mentions" href="published.html">Publications</a>
               </li>
 
               <li class="nav-item published-work">
-                <a class="nav-link mentions" href="mentions.html">Mentions</a>
+                <a class="nav-link mentions" href="mentions.html">Press</a>
               </li>
 
               <li class="nav-item dropdown d-none d-lg-block d-md-block ">
@@ -121,7 +117,7 @@
                   <li>
                     <hr class="dropdown-divider border-white">
       
-                    <a href="mentions.html" class="pub dropdown-header text-white text-decoration-none d-block">Media Mentions</a>
+                    <a href="mentions.html" class="pub dropdown-header text-white text-decoration-none d-block">Press</a>
                   </li>
                  
                   
@@ -194,10 +190,9 @@
 
                                     <!-- Social Links Column -->
                                     <div class="social_media col text-sm-end mt-3 mt-sm-0">
-                                        <p><a href="#">x.com/YouthConsensus_</a></p>
-                                        <p><a href="#">facebook.com/YouthConsensus</a></p>
-                                        <p><a href="#">instagram.com/Youth.Consensus</a></p>
-
+          <p><a href="https://x.com/YouthConsensus_"><i class="fab fa-twitter"></i><span class="label">x.com/YouthConsensus_</span></a></p>
+          <p><a href="https://www.facebook.com/YouthConsensus"><i class="fab fa-facebook-f"></i><span class="label">facebook.com/YouthConsensus</span></a></p>
+          <p><a href="https://www.instagram.com/youth.consensus/"><i class="fab fa-instagram"></i><span class="label">instagram.com/Youth.Consensus</span></a></p>
                                     </div>
                                 </div>
                                 <div class="all_text">
@@ -278,6 +273,7 @@
                           /* Override wheel so the outer page never scrolls on desktop.
                              We always consume the event, then manually scroll the text column. */
                           function handleWheel(e) {
+                            if (e.ctrlKey || e.metaKey) return;   // allow browser zoom (Ctrl/Cmd + wheel)
                             if (window.innerWidth < 768) return;   // let phones behave normally
                         
                             e.preventDefault();                    // stop window scrolling
@@ -309,7 +305,7 @@
                     <h3>244 Organizations</h3>
                     <p>From 34 provinces of Afghanistan</p>
                     <img src="Images/15.png" class="img-fluid" alt="Afg logo">
-                    <a href="#">Learn More</a>
+                    <a href="https://drive.google.com/file/d/1sguMuCwD_KEkSMCuZAv_vLp19Ls9egPp/view?usp=sharing">Learn More</a>
                 </article>
 
                 <article class="second stat-card item-projects">
@@ -318,7 +314,7 @@
                         4, Baghlan 2, Faryab 2, Kapisa 2, Khost 2, and Badakhshan, Badghis, Bamyan, Farah, Jowzjan,
                         Kunduz, Laghman, Logar, Nimruz, Nuristan, Paktia, Paktika, Panjshir, Parwan, Samangan,
                         Sar-e-Pol, Takhar, Uruzgan, Wardak, Zabul, Ghazni, Ghor, and Helmand 1 organization at each.</p>
-                    <a href="#">Learn More</a>
+                    <a href="https://www.facebook.com/YouthConsensus">Learn More</a>
                 </article>
 
                 <article class="third stat-card item-sdg">
@@ -336,7 +332,7 @@
                     <h3>Afghanistan's First-Ever National Youth Resolution</h3>
                     <p>Unified 27 provincial resolutions into a single
                         National Youth Resolution.</p>
-                    <a href="#">Learn More</a>
+                    <a href="https://drive.google.com/file/d/1xWHDsAxI1TK2BKXR7czYnFOV7M6pjZRK/view?usp=sharing">Learn More</a>
                 </article>
                 <div class="stat-card p-0 item-photo2 overflow-hidden">
                     <img src="Images/8-min.jpg" class="w-100 h-100 object-fit-cover" alt="Diplomatic round-table">
@@ -408,53 +404,53 @@
 
         <script>
           ScrollReveal({
-            reset: true,
+            reset: false,
             distance: '60px',
-            duration: 2500,
+            duration: 2000,
             delay: 400
           });
-          ScrollReveal().reveal('.logo', { delay: 400, origin: 'left' });
-          ScrollReveal().reveal('.social_media', { delay: 400, origin: 'right' });
-          ScrollReveal().reveal('.left-image', { delay: 200, origin: 'right' });
+          ScrollReveal().reveal('.logo', { delay: 200, origin: 'left' });
+          ScrollReveal().reveal('.social_media', { delay: 200, origin: 'right' });
+          ScrollReveal().reveal('.left-image', { delay: 100, origin: 'right' });
 
         </script>
 
         <script>
           ScrollReveal({
-            reset: true,
+            reset: false,
             distance: '60px',
-            duration: 2500,
+            duration: 2000,
             delay: 400
           });
-          ScrollReveal().reveal('.p1', { delay: 0, origin: 'bottom' });
+          ScrollReveal().reveal('.p1', { delay: 100, origin: 'bottom' });
           ScrollReveal().reveal('.p2', { delay: 200, origin: 'bottom' })
-          ScrollReveal().reveal('.p3', { delay: 400, origin: 'bottom' })
-          ScrollReveal().reveal('.p4', { delay: 800, origin: 'bottom' })
-          ScrollReveal().reveal('.p5', { delay: 1200, origin: 'bottom' })
+          ScrollReveal().reveal('.p3', { delay: 300, origin: 'bottom' })
+          ScrollReveal().reveal('.p4', { delay: 400, origin: 'bottom' })
+          ScrollReveal().reveal('.p5', { delay: 500, origin: 'bottom' })
 
         </script>
 
 
 <script>
   ScrollReveal({
-      reset: true,
+      reset: false,
       distance: '60px',
-      duration: 2500,
+      duration: 2000,
       delay: 400
   });
   ScrollReveal().reveal('.first', { delay: 0, origin: 'top' });
-  ScrollReveal().reveal('.second', { delay: 200, origin: 'top' })
-  ScrollReveal().reveal('.third', { delay: 400, origin: 'bottom' })
-  ScrollReveal().reveal('.forth', { delay: 800, origin: 'bottom' })
-  ScrollReveal().reveal('.fifth', {delay: 1200, origin: 'left' })
-  ScrollReveal().reveal('.sixth', {delay: 800, origin: 'left' })
-  ScrollReveal().reveal('.seventh', {delay: 800, origin: 'bottom' })
-  ScrollReveal().reveal('.eight', {delay: 1300, origin: 'bottom' })
-  ScrollReveal().reveal('.ninth', {delay: 800, origin: 'bottom' })
-  ScrollReveal().reveal('.tenth', {delay: 800, origin: 'right' })
-  ScrollReveal().reveal('.eleven', {delay: 1300, origin: 'right' })
-  ScrollReveal().reveal('.item-photo', {delay: 800, origin: 'right' })
-  ScrollReveal().reveal('.item-photo2', {delay: 800, origin: 'bottom' })
+  ScrollReveal().reveal('.second', { delay: 100, origin: 'top' })
+  ScrollReveal().reveal('.third', { delay: 200, origin: 'bottom' })
+  ScrollReveal().reveal('.forth', { delay: 400, origin: 'bottom' })
+  ScrollReveal().reveal('.fifth', {delay: 800, origin: 'left' })
+  ScrollReveal().reveal('.sixth', {delay: 400, origin: 'left' })
+  ScrollReveal().reveal('.seventh', {delay: 400, origin: 'bottom' })
+  ScrollReveal().reveal('.eight', {delay: 900, origin: 'bottom' })
+  ScrollReveal().reveal('.ninth', {delay: 400, origin: 'bottom' })
+  ScrollReveal().reveal('.tenth', {delay: 400, origin: 'right' })
+  ScrollReveal().reveal('.eleven', {delay: 800, origin: 'right' })
+  ScrollReveal().reveal('.item-photo', {delay: 400, origin: 'right' })
+  ScrollReveal().reveal('.item-photo2', {delay: 400, origin: 'bottom' })
 
 </script>
 
@@ -689,6 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
        – On Page 2:   · if we’re at the very top *and* scrolling up ⇒ snap to Page 1
                       · otherwise keep the scroll inside Page 2                     */
                       function routeWheel(e) {
+                        if (e.ctrlKey || e.metaKey) return;   // allow browser zoom (Ctrl/Cmd + wheel)
     const hold = secondPage.offsetTop;
 
     /* ── Page 1 ─────────────────────────────────────────────────── */

@@ -138,7 +138,7 @@
     scrollbar-width: none;          /* Firefox */
     -ms-overflow-style: none; 
     position: relative;
-    top: 30px;     /* IE and Edge */
+    top: 40px;     /* IE and Edge */
 }
 
 .page-content::-webkit-scrollbar {
@@ -513,7 +513,7 @@ h3{
 .header2 {
   background-color: rgb(233, 233, 233, 0.5);
   padding-top: 100px;
-  padding-bottom: 40px;
+  padding-bottom: 0px;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -765,13 +765,18 @@ h3{
 
 
 
+@media (min-width: 768px) {
+    .social_media i {          
+      display: none !important;
+    }
+  }
 
 
 @media (min-width: 768px) {
     .cta-scroll{
         display:inline-flex;
-        flex-direction: column;     /* ⬅️  stack icon + label  */
-        row-gap:0.25rem;            /* vertical spacing        */
+        flex-direction: column;   
+        row-gap:0.25rem;            
         align-items:center;
         font-size:30px;
         color:rgb(125, 125, 125);
@@ -780,7 +785,7 @@ h3{
         cursor:pointer;
         position: relative;
         margin-bottom: 30px;
-        top: -5px;               /* lift up to overlap the bottom of the header */
+        top: -5px;               
         left: 45%;
         transform: translateY(0);
         transition: color 0.5s ease,
@@ -789,7 +794,7 @@ h3{
     }
     .cta-scroll:hover{
         color: black;
-        transform: translateY(8px);                          /* slide down on hover */
+        transform: translateY(8px);                          
     }
 .cta-scroll::after{
     content: "Scroll down";
@@ -1468,18 +1473,25 @@ body {
         flex: 0 0 auto !important;
         width: auto !important;
       }
-    
-      .social_media {
-        margin-top: 0 !important;
-        text-align: right !important;
 
-      }
-      .social_media p {
-        padding-right: 0 !important;
-        font-size: 11px !important;
-      }
-    .social_media a {
-        font-size: 11px !important;
+      
+
+    /* Icons‑only social links on small screens (≤ 767 px) */
+    .social_media {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .social_media .label {
+        display: none !important;       /* hide the text labels */
+    }
+    .social_media i {
+        font-size: 30px !important;     /* emphasise the icons */
+        color: rgb(125, 125, 125);
+    }
+    .social_media p {
+        margin: 0;                      /* remove extra spacing */
     }
     .page-content img {
         max-width: 140px !important;

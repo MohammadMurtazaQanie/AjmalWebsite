@@ -27,10 +27,7 @@
         <!--Phone Navbar-->
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-list" viewBox="0 0 13 13">
-            <path fill-rule="evenodd"
-              d="M2.5 12.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm0-4a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11z" />
-          </svg>
+          <img src="Images/menublack.png" width="50" height="50" viewBox="0 0 13 13" style="position: relative; top: -5px; left: 11px;">
         </button>
         <!--sidebar-->
         <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
@@ -99,11 +96,11 @@
               </li>
 
               <li class="nav-item published-work">
-                <a class="nav-link mentions" href="published.html">Published Works</a>
+                <a class="nav-link mentions" href="published.html">Publications</a>
               </li>
 
               <li class="nav-item published-work">
-                <a class="nav-link mentions" href="mentions.html">Mentions</a>
+                <a class="nav-link mentions" href="mentions.html">Press</a>
               </li>
 
               <li class="nav-item dropdown d-none d-lg-block d-md-block ">
@@ -121,7 +118,7 @@
                   </li>
 
                   <li>
-                    <strong class="pub dropdown-header"> <a href="mentions.html">Media Mentions</a></strong>
+                    <strong class="pub dropdown-header"> <a href="mentions.html">Press</a></strong>
                   </li>
 
 
@@ -142,6 +139,7 @@
       </div>
       </div>
     </nav>
+
 
     <div class="preloader">
       <div class="loading">
@@ -173,9 +171,6 @@
 </script>
 
 
-
-
-
     <section class="header2" id="secondPage">
 
 
@@ -199,8 +194,10 @@
 
 
         <article class="second stat-card item-projects">
-          <select class="form-select filter-pill f1" aria-label="Issues">
-            <option value="" selected>Issues</option>
+          <select class="form-select filter-pill f1" aria-label="Issues" aria-placeholder="Issues">
+           
+            <option  value="" selected>All</option>
+            <option  value="" selected hidden>Issues</option>
             <option value="national">Nationalism</option>
             <option value="political">Political Reform</option>
             <option value="terrorism">Terrorism</option>
@@ -219,7 +216,8 @@
           </select>
 
           <select class="form-select filter-pill f2" aria-label="Category">
-            <option value="" selected>Category</option>
+            <option  value="" selected>All</option>
+            <option value="" selected hidden>Category</option>
             <option value="oped">Op-Ed</option>
             <option value="research">Research</option>
             <option value="contribution">Contribution</option>
@@ -227,13 +225,15 @@
           </select>
 
           <select class="form-select filter-pill f3" aria-label="Language">
-            <option value="" selected>Language</option>
+            <option  value="" selected>All</option>
+            <option value="" selected hidden>Language</option>
             <option value="en">English</option>
             <option value="fa">Farsi</option>
           </select>
 
           <select class="form-select filter-pill f4" aria-label="Organize">
-            <option value="" selected>Organize</option>
+            <option  value="" selected>All</option>
+            <option value="" selected hidden>Organize</option>
             <option value="newest">Newest</option>
             <option value="oldest">Oldest</option>
           </select>
@@ -334,6 +334,7 @@
         el.style.removeProperty('display');            // reset any prior inline display
         let display = getComputedStyle(el).display;
         if (display === 'none') display = 'flex';      // force flex layout for our filter bar
+        el.classList.add('filters-open');              // mark the panel as user‑opened
         el.style.display = display;
 
         const h = el.scrollHeight;
@@ -354,6 +355,7 @@
       }
 
       function slideUp(el, duration = 350) {
+        el.classList.remove('filters-open');           // no longer open
         el.style.overflow = 'hidden';
         el.style.maxHeight = el.scrollHeight + 'px';
 
@@ -392,8 +394,8 @@
             filtersPanel.style.removeProperty('display');
             filtersPanel.style.removeProperty('max-height');
             filtersPanel.style.removeProperty('overflow');
-          } else if (getComputedStyle(filtersPanel).display !== 'none' && !filtersPanel.classList.contains('animating')) {
-            // ensure collapsed on phones unless the user already opened it
+          } else if (getComputedStyle(filtersPanel).display !== 'none' && !filtersPanel.classList.contains('filters-open')) {
+            /* auto‑collapse only if the user hasn’t opened the panel */
             slideUp(filtersPanel, 0);
           }
         }, { passive: true });
@@ -689,16 +691,22 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
 
       /* -- render the requested page (0‑based) -- */
       function loadPage(idx) {
-        /* ----- Mini page‑loader overlay ----- */
-        const loader = document.createElement('div');
-        loader.className = 'preloader page-loader';       // reuse existing styles
-        loader.innerHTML =
-          `<div class="loading">
-             <div class="loading-text">
-               ${'LOADING'.split('').map(ch => `<span>${ch}</span>`).join('')}
-             </div>
-           </div>`;
-        document.body.appendChild(loader);                // show instantly
+        /* ----- Mini page‑loader overlay (skip on initial page load) ----- */
+        const preloaderActive =
+          document.querySelector('.preloader') &&
+          !document.querySelector('.preloader').classList.contains('hide');
+        let loader = null;
+        if (!preloaderActive) {
+          loader = document.createElement('div');
+          loader.className = 'preloader page-loader';       // reuse existing styles
+          loader.innerHTML =
+            `<div class="loading">
+               <div class="loading-text">
+                 ${'LOADING'.split('').map(ch => `<span>${ch}</span>`).join('')}
+               </div>
+             </div>`;
+          document.body.appendChild(loader);                // show instantly
+        }
 
         const grid = document.querySelector('.stats-grid2');
         if (!grid) return;
@@ -716,10 +724,12 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
         if (typeof srPane !== 'undefined') srPane.sync();
 
         /* Fade‑out + remove the temporary loader */
-        setTimeout(() => {
-          loader.classList.add('hide');
-          loader.addEventListener('transitionend', () => loader.remove(), { once: true });
-        }, 300);     // keep it visible at least a short beat
+        if (loader) {
+          setTimeout(() => {
+            loader.classList.add('hide');
+            loader.addEventListener('transitionend', () => loader.remove(), { once: true });
+          }, 300);   // keep it visible at least a short beat
+        }
       }
 
       /* -- pager click handlers -- */
@@ -747,6 +757,39 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
       const categorySelectEl = document.querySelector('select[aria-label="Category"]');
       const languageSelectEl = document.querySelector('select[aria-label="Language"]');
       const organizeSelectEl = document.querySelector('select[aria-label="Organize"]');
+
+      /* --- Placeholder‑style selects: show “Issues / Category / …” until focus, then toggle “All” <→ placeholder --- */
+      function setupSelectPlaceholder(selectEl, placeholder) {
+        if (!selectEl) return;
+        const firstOpt = selectEl.options[0];
+
+        /* 1️⃣  Initial label */
+        firstOpt.textContent = placeholder;
+
+        /* 2️⃣  When the user taps / focuses the select, show “All” */
+        selectEl.addEventListener('focus', () => {
+          firstOpt.textContent = 'All';
+        });
+
+        /* 3️⃣  On every change, decide which label to keep */
+        selectEl.addEventListener('change', () => {
+          firstOpt.textContent = selectEl.selectedIndex === 0 ? placeholder : 'All';
+        });
+
+        /* 4️⃣  If the user opens the menu but leaves without picking anything */
+        selectEl.addEventListener('blur', () => {
+          if (selectEl.selectedIndex === 0) {
+            firstOpt.textContent = placeholder;
+          }
+        });
+      }
+
+      setupSelectPlaceholder(issueSelectEl, 'Issues');
+      setupSelectPlaceholder(categorySelectEl, 'Category');
+      setupSelectPlaceholder(languageSelectEl, 'Language');
+      setupSelectPlaceholder(organizeSelectEl, 'Organize');
+      
+
       /* --- helper: split an array into N‑sized chunks --- */
       function chunk(arr, size) {
         const result = [];
@@ -758,8 +801,8 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
       const ISSUE_ALIASES = { inclusive: 'inclsive', inclsive: 'inclusive' };
 
       const MASTER_ARTICLES = articlePages.flat();
-      /* Show more cards on phones (≤ 767 px) */
-      let PER_PAGE = (window.innerWidth <= 767 ? 5 : 2);
+      /* Show 5 articles per page on all devices */
+      let PER_PAGE = 4;      // show 5 articles per page on all devices
 
       /* --- Rebuild the initial articlePages if it doesn't match PER_PAGE --- */
       if (articlePages.length && articlePages[0].length !== PER_PAGE) {
@@ -774,7 +817,7 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
 
       /* -------- Re‑chunk pages when the device width crosses the 767 px threshold -------- */
       window.addEventListener('resize', () => {
-        const newPP = (window.innerWidth <= 767 ? 5 : 2);
+        const newPP = 5;
         if (newPP !== PER_PAGE) {
           PER_PAGE = newPP;
 
@@ -822,7 +865,7 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
         const ord = organizeSelectEl.value;
 
         const issKey = ISSUE_ALIASES[iss] || iss;     /* normalise spelling */
-        const anyFilter = term || issKey || cat || lng;
+        const anyFilter = term || issKey || cat || lng || ord;   // include sort order too
 
 
 
@@ -832,10 +875,13 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
         grid.querySelectorAll('.no-results').forEach(el => el.remove());
 
         if (!anyFilter) {
-          /* --------  No search / filters: restore original paged layout  -------- */
-          injectPages(ORIGINAL_PAGES.map(p => [...p]));  // fresh clone each time
-          rebuildPager(ORIGINAL_LEN);
-          loadPage(0);
+          /* --------  No search / filters: show every article newest → oldest  -------- */
+          const sorted = [...MASTER_ARTICLES]
+                          .sort((a, b) => new Date(b.date) - new Date(a.date));   // newest first
+          const pages   = chunk(sorted, PER_PAGE);      // paginate
+          injectPages(pages);                           // overwrite global articlePages
+          rebuildPager(pages.length);                   // rebuild pager buttons
+          loadPage(0);                                  // draw first page
           return;
         }
 

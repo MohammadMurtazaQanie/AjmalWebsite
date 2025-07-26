@@ -269,6 +269,10 @@
     margin-right: auto;
     margin-bottom: 0;
 }
+.all_text{
+    margin-top: 1.2rem !important;
+}
+
 
 @media (max-width: 1400px) {
     .all_text{

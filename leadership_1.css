@@ -652,6 +652,8 @@ h3{
     grid-template-columns:repeat(12,1fr);
     grid-auto-rows:minmax(20px,auto);        /* equal row height */
   }
+
+
   
   /* top block */
   .item-endorsed      {grid-column:1 / span 3;  grid-row:1;}
@@ -687,6 +689,7 @@ h3{
 .navs.black-nav hr.dropdown-divider {
     border-color: #fff !important;   /* white on Page 2 */
 }
+
 /* --- Center the “Thought Leadership” dropdown menu under its toggle --- */
 @media (min-width: 992px) {                     /* desktop only */
     /* generic centering (NO fixed width) */
@@ -702,7 +705,12 @@ h3{
       max-width: 90vw;  /* safety on very narrow screens */
     }
   }
-
+/* place this near your other desktop rules */
+@media (min-width: 768px) {
+    .social_media i {          /* hide icons on desktop */
+      display: none !important;
+    }
+  }
 @media (min-width: 768px) {
     .cta-scroll{
         display:inline-flex;
@@ -1309,7 +1317,6 @@ body {
       .social_media {
         margin-top: 0 !important;
         text-align: right !important;
-
       }
       .social_media p {
         padding-right: 0 !important;
@@ -1317,6 +1324,24 @@ body {
       }
     .social_media a {
         font-size: 11px !important;
+    }
+
+    /* Icons‑only social links on small screens (≤ 767 px) */
+    .social_media {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .social_media .label {
+        display: none !important;       /* hide the text labels */
+    }
+    .social_media i {
+        font-size: 30px !important;     /* emphasise the icons */
+        color: rgb(125, 125, 125);
+    }
+    .social_media p {
+        margin: 0;                      /* remove extra spacing */
     }
 }
 @media (max-width: 397px) {
