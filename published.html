@@ -801,8 +801,8 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
       const ISSUE_ALIASES = { inclusive: 'inclsive', inclsive: 'inclusive' };
 
       const MASTER_ARTICLES = articlePages.flat();
-      /* Show 5 articles per page on all devices */
-      let PER_PAGE = 4;      // show 5 articles per page on all devices
+      // Phones (≤ 767 px) show 4 articles per page; larger screens show 5
+      let PER_PAGE = window.innerWidth <= 767 ? 5 : 4;
 
       /* --- Rebuild the initial articlePages if it doesn't match PER_PAGE --- */
       if (articlePages.length && articlePages[0].length !== PER_PAGE) {
@@ -817,15 +817,10 @@ if (activeBtn) sessionStorage.setItem(PAGE_KEY, activeBtn.dataset.page);
 
       /* -------- Re‑chunk pages when the device width crosses the 767 px threshold -------- */
       window.addEventListener('resize', () => {
-        const newPP = 5;
+        const newPP = window.innerWidth <= 767 ? 4 : 5;
         if (newPP !== PER_PAGE) {
           PER_PAGE = newPP;
-
-          /* rebuild pagination arrays */
-          const rebuilt = chunk(MASTER_ARTICLES, PER_PAGE);
-          injectPages(rebuilt);              // overwrite global articlePages
-          rebuildPager(rebuilt.length);      // refresh pager buttons
-          loadPage(0);                       // draw first page
+          run();                      // rebuild list using current filters & correct sort
         }
       }, { passive: true });
 
