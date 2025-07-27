@@ -28,8 +28,8 @@
             <!--Phone Navbar-->
             <button class="navbar-toggler border-0 shadow-none m-1" type="button" data-bs-toggle="offcanvas"
               data-bs-target="#offcanvasNavbar">
-              <img src="Images/menuwhite.png" width="50" height="50" viewBox="0 0 13 13"
-                style="position: relative; top: 22px; left: 20px;">
+              <img id="menuIcon" src="Images/menuwhite.png" width="50" height="50" viewBox="0 0 13 13"
+                style="position: relative; top: 15px; left: 20px;">
             </button>
             <!--sidebar-->
             <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
@@ -221,7 +221,7 @@
       </section>
 
 
-        <section class="secondd" id="secondPage">
+        <section class="secondd onlywe" id="secondPage">
           <a href="Images//together.pdf " type="application/pdf">Download</a>
       
 
@@ -306,6 +306,30 @@
   updateShift();
 </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar   = document.querySelector('.navs');
+    const header   = document.getElementById('firstPage');
+    const menuIcon = document.getElementById('menuIcon');
+    if (!navbar || !header) return;
 
+    const observer = new IntersectionObserver(([entry]) => {
+      const onHeader = entry.isIntersecting;
+
+      navbar.classList.toggle('second-active', !onHeader);
+
+      if (menuIcon) {
+        menuIcon.src = onHeader
+          ? 'Images/menuwhite.png'
+          : 'Images/menublack.png';
+      }
+    }, {
+      root: null,
+      threshold: 0
+    });
+
+    observer.observe(header);
+  });
+</script>
 </body>
 </html>
