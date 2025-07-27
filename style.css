@@ -426,8 +426,8 @@ margin-top: 5rem !important;
 
     .header {
         background-image: url(Images/1\ Home\ New.jpg);
-        height: 100vh;           /* fallback */
-        height: 100dvh;
+        height: 90vh;           /* fallback */
+        height: 90dvh;
         width: 100%;
         background-position-y: 10%;
         background-position-x: 10%;
@@ -439,7 +439,6 @@ margin-top: 5rem !important;
     }
     .intro {
         position: relative;
-        top: 40rem;
         left: 0%;
         width: 100%;
         text-align: center;
@@ -585,7 +584,7 @@ margin-top: 5rem !important;
 body {                       
     min-height: 245vh;
     min-height: 245dvh;
-overflow-x: hidden;}
+overflow: hidden;}
 
 
 
@@ -608,7 +607,7 @@ body.menu-open {
 
     .intro {
         position: relative;
-        top: 42rem !important;
+        top: 45rem !important;
         width: 100%;
         text-align: left !important;
         backdrop-filter: blur(1);
@@ -654,7 +653,7 @@ body.menu-open {
         padding-bottom: 2rem;
        
     }
-.intro{        overflow: auto;}    
+.intro{        overflow: hidden;}    
 
 
     .offcanvas hr.dropdown-divider {
