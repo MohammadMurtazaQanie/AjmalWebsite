@@ -154,7 +154,7 @@
 .header {
     background-image: url(Images/1\ Home\ New.jpg);
     height: 100vh;           /* fallback for older browsers */
-    height: 100dvh;          /* use dynamic viewport height to avoid iOS 100 vh scroll lock */
+   
     width: 100%;
     background-position: center;
     background-size: cover;
@@ -380,7 +380,6 @@ margin-top: 5rem !important;
     .header {
         background-image: url(Images/1\ Home\ New.jpg);
         height: 100vh;           /* fallback */
-        height: 100dvh;
         width: 100%;
         background-position-y: 10%;
         background-position-x: 10%;
@@ -631,9 +630,7 @@ body.menu-open {
         margin-left: 0 !important;
     }
 
-    html, body {
-        -webkit-overflow-scrolling: touch;   /* smooth inertial scroll on iOS */
-    }
+
 
     .offcanvas.show .dropdown-menu {
         display: block;
