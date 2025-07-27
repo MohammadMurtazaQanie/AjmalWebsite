@@ -209,7 +209,7 @@
       inset:0;
       pointer-events:none;
 
-      border-radius: 25px !important;        /* rounded corners */
+      border-radius: 20px !important;        /* rounded corners */
       border: 0.5px solid rgb(125, 125, 125,0.3);
       z-index:0;                  /* sits *above* the links but keeps clicks working */
       opacity:0;                  /* hidden until scrolled */
