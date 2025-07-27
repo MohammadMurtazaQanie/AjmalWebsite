@@ -581,7 +581,8 @@ margin-top: 5rem !important;
     }
    
 body {                       
-    min-height: 235vh;
+    min-height: 230vh;
+    min-height: 230dvh;
 overflow-x: hidden;}
 
 
