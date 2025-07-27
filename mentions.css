@@ -185,26 +185,7 @@
 .nav-item .something .dropdown-header{
     color: rgb(125, 125, 125) !important;
 }
-.navbar{
-    min-height:56px; 
-    transition:opacity 0.5s ease;    
-    z-index: 0;
-  }
-.navbar::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      z-index: -1;                /* sits behind everything */
-      opacity:0;                  /* hidden until scrolled */
-      backdrop-filter: blur(0px);         /* start with no blur */
-      -webkit-backdrop-filter: blur(0px); /* Safari */
-      background: rgba(0,0,0,0);          /* start fully transparent */
-      transition: opacity 0.5s ease,
-                  backdrop-filter 0.5s ease,
-                  -webkit-backdrop-filter 0.5s ease,
-                  background 0.5s ease;
-  }
+
   
   .navs.scrolled::before{
     backdrop-filter:blur(8px);
@@ -253,14 +234,59 @@
     border-radius: 12px !important;
 }
 
-.nav-item .nav-link {
+
+.navbar{
+    min-height:50px !important;            /* slimmer bar */
+    transition:opacity 0.5s ease;
+    padding-top:0.5rem;        /* trim the built‑in Bootstrap padding */
+    padding-bottom:0.5rem;
+    position: fixed;           /* ensure fixed regardless of utility class order */
+   margin-top: 13px !important;
+    left: 13px !important; right: 13px !important;     /* 8‑px gap on both sides */
+    width: auto;               /* shrink to the available space between left & right */
+    /* Compact “pill” look like Nexo navbar */
+    
+    overflow: hidden;           /* clip children inside the radius */
+    z-index: 0;
+   
+  }
+  .nav-item .nav-link {
     font-size: 15px;
     letter-spacing: 0.5px;
-    margin: 1.5rem;
+    margin: 1rem 1.5rem;     /* wider horizontal gap between links */
     position: relative;
-    top: 10px;
+    top: 5px;  
+    left: 26px;
     color: rgb(125, 125, 125);
 }
+/* --- Let dropdown menus escape the pill on desktop --- */
+@media (min-width: 992px) {
+    .navbar {
+        overflow: visible;   /* dropdowns can extend outside rounded bar */
+        z-index: 1050;       /* sit above page content */
+    }
+}
+
+.navbar::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+
+      border-radius: 25px !important;        /* rounded corners */
+      border: 0.5px solid rgb(125, 125, 125,0.3);
+      z-index:0;                  /* sits *above* the links but keeps clicks working */
+      opacity:0;                  /* hidden until scrolled */
+      backdrop-filter: blur(0px);         /* start with no blur */
+      -webkit-backdrop-filter: blur(0px); /* Safari */
+      background: rgba(0,0,0,0);          /* start fully transparent */
+      transition: opacity 0.5s ease,
+                  backdrop-filter 0.5s ease,
+                  -webkit-backdrop-filter 0.5s ease,
+                  background 0.5s ease;
+  }
+  
+
 
 .nav-item .nav-link:hover {
     color: black;
@@ -300,13 +326,15 @@
 .pub a{
     color:rgb(125, 125, 125) !important;
      text-decoration: none;
+     
  }
  .pub {
      transition: background-color 0.5s ease, border-radius 0.5s ease !important;
+     border-radius: 12px !important;
  }
  .pub:hover{
      background-color: rgba(166, 166, 166, 0.199) !important;
-     border-radius: 12px !important;
+    
      transition: background-color 0.5s ease, border-radius 0.5s ease !important;
  }
 
@@ -553,107 +581,142 @@
 }
 @media (max-width:767px ){
 
-
-    .offcanvas .nav-item .nav-link {
-        font-size: 20px !important;
+    .nav-item{
+        position: relative;
+        top: 10rem;
+        left: 10%;
+    
       }
-
-
-  .nav-item{
-    position: relative;
-    top: 10rem;
-    left: 10%;
-
-  }
-
-    .nav-item.published-work {
+    
+      .navbar{
+        min-height:50px;            /* slimmer bar */
+        transition:opacity 0.5s ease;
+        padding-top:0.25rem;        /* trim the built‑in Bootstrap padding */
+        padding-bottom:0.25rem;
+        position: fixed;           /* ensure fixed regardless of utility class order */
+        top: 5px !important;                  /* 8‑px gap at the very top */
+        left: 12px !important; right: 12px !important;     /* 8‑px gap on both sides */
+        width: auto;               /* shrink to the available space between left & right */
+        /* Compact “pill” look like Nexo navbar */
+        border-radius: 10px;        /* rounded corners */
+        overflow: hidden;           /* clip children inside the radius */
+        z-index: 0;
+    }
+    
+    .nav-item .nav-link {
+        left: 0px;
+       
+    }
+    
+      .nav-item.published-work {
         display: block !important;
     }
-
-    .offcanvas.show .dropdown-menu {
-        display: block;
-        transform: none !important;
-        background: transparent;
-        border: 0;
-        box-shadow: none;
-        padding-left: 0;
-        position: relative;
-    }
-
-
-
-.offcanvas hr.dropdown-divider {
-    display: none !important;
-}
-.offcanvas .nav-item {
-    transition: transform 0.3s ease;
-  }
-  
-  .offcanvas .nav-item.nav-shifted {
-    transform: translateY(-40px);
-  }
-
-
-.navs .phone-nav span {
-    position: relative;
-    left: 1rem;
-
-}
-
-.offcanvas .nav-item + .nav-item {
-    margin-top: 0.25rem !important;  /* tighter vertical gap */
-}
-
-.navbar-nav .nav-link::after {
-    display: none;
-}
-
-/* Frosted‑glass effect for the phone off‑canvas menu */
-.offcanvas.sidebar {
-    background: rgba(255, 255, 255, 0.73) !important;
-    /* translucent dark */
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.offcanvas-header {
-    background: transparent !important;
-    border-bottom: 0;
-}
-/* Let the list start flush; we'll push everything down via padding instead */
-.offcanvas .navbar-nav {
-    margin-top: 0;
+      .offcanvas .nav-item {
+        transition: transform 0.3s ease;
+      }
     
-}
+      .offcanvas .nav-item.nav-shifted {
+        transform: translateY(-40px);
+      }
+    
+    
+    
+        .offset-md-6,
+        .offset-lg-6 {
+            margin-left: 0 !important;
+        }
+    
+        .offcanvas.show .dropdown-menu {
+            display: block;
+            transform: none !important;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            padding-left: 0;
+            position: relative;
+        }
+    
+    .offcanvas hr.dropdown-divider {
+        display: none !important;
+    }
+    
+    
+    .navs .phone-nav span {
+        position: relative;
+        left: 1rem;
+    
+    }
+    
+    .offcanvas .nav-item + .nav-item {
+        margin-top: 0.25rem !important;   /* tighter vertical gap */
+    }
+    
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+    
+    /* Frosted‑glass effect for the phone off‑canvas menu */
+    .offcanvas.sidebar {
+        background: rgba(0, 0, 0, 0.35) !important;
+        /* translucent dark */
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .offcanvas-header {
+        background: transparent !important;
+        border-bottom: 0;
+    }
+    /* Let the list start flush; we'll push everything down via padding instead */
+    .offcanvas .navbar-nav {
+        margin-top: 0;
+        
+    }
+    
+    /* Push all items down a bit for breathing room */
+    .offcanvas-body {
+        padding-top: 2rem;   /* adjust as desired */
+    }
+    
+    .offcanvas .navbar-nav .nav-link {
+        top: 100;              /* prevents jitter when the off‑canvas opens */
+    }
+    
+    /* Decrease vertical padding/margin on individual links */
+    .offcanvas .nav-link {
+        margin: 0.25rem 0;        /* was inheriting larger margins */
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+    
+    
+    .social-links a{
+        font-size: 0.9rem;
+    }
+    .d-flex .navbar-toggler {
+        padding-right: 1.5rem !important;
+        padding-top: 1.4rem !important;
+        color:  black !important;
+    }
+    
 
-/* Push all items down a bit for breathing room */
-.offcanvas-body {
-    padding-top: 2rem;   /* adjust as desired */
-}
 
-.offcanvas .navbar-nav .nav-link {
-    top: 100;              /* prevents jitter when the off‑canvas opens */
-}
 
-/* Decrease vertical padding/margin on individual links */
-.offcanvas .nav-link {
-    margin: 0.25rem 0;        /* was inheriting larger margins */
-    padding-top: 0.25rem;
-    padding-bottom: 0.25rem;
-}
-.social-links a{
-    font-size: 0.9rem;
-}
-.social-links p{
-    font-size: 0.5rem !important;
-}
-
-.d-flex .navbar-toggler {
-    padding-right: 1rem !important;
-    padding-top: 1,4rem !important;
-   
-}
+    
+    .paragaph{
+    margin-bottom: 1rem;
+    }
+    
+    
+    
+    /* Global frosted-glass effect for .navs.scrolled */
+    .navs.scrolled {
+      background-color: rgb(125, 125, 125,0.15);
+    }
+    body {
+        min-height: auto;
+      }
 
 .social-links{
     position: absolute;

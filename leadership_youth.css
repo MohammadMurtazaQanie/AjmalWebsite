@@ -153,11 +153,12 @@
      text-decoration: none;
  }
  .pub {
+    border-radius: 12px !important;
      transition: background-color 0.5s ease, border-radius 0.5s ease !important;
  }
  .pub:hover{
      background-color: rgba(255, 252, 252, 0.206)!important;
-     border-radius: 12px !important;
+     
      transition: background-color 0.5s ease, border-radius 0.5s ease !important;
  }
 .youth{
@@ -221,15 +222,47 @@ padding-bottom: 3rem;
 .nav-item .something .dropdown-header{
     color: rgb(221, 221, 221) !important;
 }
+
 .navbar{
-    min-height:56px; 
-    transition:opacity 0.5s ease;    
+    min-height:50px !important;            /* slimmer bar */
+    transition:opacity 0.5s ease;
+    padding-top:0.5rem;        /* trim the built‑in Bootstrap padding */
+    padding-bottom:0.5rem;
+    position: fixed;           /* ensure fixed regardless of utility class order */
+   margin-top: 13px !important;
+    left: 13px !important; right: 13px !important;     /* 8‑px gap on both sides */
+    width: auto;               /* shrink to the available space between left & right */
+    /* Compact “pill” look like Nexo navbar */
+    
+    overflow: hidden;           /* clip children inside the radius */
+    z-index: 0;
+   
   }
+  .nav-item .nav-link {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    margin: 1rem 1.5rem;     /* wider horizontal gap between links */
+    position: relative;
+    top: 5px;  
+    left: 26px;
+    color: rgb(255, 255, 255,0.7);
+}
+/* --- Let dropdown menus escape the pill on desktop --- */
+@media (min-width: 992px) {
+    .navbar {
+        overflow: visible;   /* dropdowns can extend outside rounded bar */
+        z-index: 1050;       /* sit above page content */
+    }
+}
+
 .navbar::before{
       content:"";
       position:absolute;
       inset:0;
       pointer-events:none;
+
+      border-radius: 25px !important;        /* rounded corners */
+      border: 0.5px solid rgb(125, 125, 125,0.3);
       z-index:0;                  /* sits *above* the links but keeps clicks working */
       opacity:0;                  /* hidden until scrolled */
       backdrop-filter: blur(0px);         /* start with no blur */
@@ -241,6 +274,9 @@ padding-bottom: 3rem;
                   background 0.5s ease;
   }
   
+
+
+
   .navs.scrolled::before{
     backdrop-filter:blur(8px);
     -webkit-backdrop-filter:blur(8px);
@@ -281,14 +317,8 @@ padding-bottom: 3rem;
     border-radius: 12px !important;
 }
 
-.nav-item .nav-link {
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    margin: 1.5rem;
-    position: relative;
-    top: 10px;
-    color: rgb(255, 255, 255,0.7);
-}
+
+
 
 .nav-item .nav-link:hover {
     color: white;
@@ -464,6 +494,27 @@ padding-bottom: 3rem;
     left: 10%;
 
   }
+
+  .navbar{
+    min-height:50px;            /* slimmer bar */
+    transition:opacity 0.5s ease;
+    padding-top:0.25rem;        /* trim the built‑in Bootstrap padding */
+    padding-bottom:0.25rem;
+    position: fixed;           /* ensure fixed regardless of utility class order */
+    top: 5px !important;                  /* 8‑px gap at the very top */
+    left: 12px !important; right: 12px !important;     /* 8‑px gap on both sides */
+    width: auto;               /* shrink to the available space between left & right */
+    /* Compact “pill” look like Nexo navbar */
+    border-radius: 10px;        /* rounded corners */
+    overflow: hidden;           /* clip children inside the radius */
+    z-index: 0;
+}
+
+.nav-item .nav-link {
+    left: 0px;
+   
+}
+
   .nav-item.published-work {
     display: block !important;
 }
