@@ -584,7 +584,7 @@ margin-top: 5rem !important;
 body {                       
     min-height: 245vh;
     min-height: 245dvh;
-overflow: hidden;}
+overflow: visible;}
 
 
 
@@ -653,7 +653,7 @@ body.menu-open {
         padding-bottom: 2rem;
        
     }
-.intro{        overflow: hidden;}    
+.intro{        overflow: visible;}    
 
 
     .offcanvas hr.dropdown-divider {
