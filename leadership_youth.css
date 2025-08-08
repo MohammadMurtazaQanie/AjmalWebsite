@@ -319,8 +319,61 @@ padding-bottom: 3rem;
 }
 
 
+.cookie{ 
+    position:fixed;
+    bottom:0;
+    background:rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    border: 0.5px solid rgb(125, 125, 125,0.3);
+    color:#fff;
+    padding-top:0.5rem;        /* trim the built‑in Bootstrap padding */
+    padding-bottom:0.5rem;
 
+    margin-top: 13px !important;
+    margin-bottom: 1rem;
+    z-index:1000;
+    /* left: 13px !important; right: 13px !important;     8‑px gap on both sides */
+    left: 50% !important;
+    transform: translateX(-50%);
+    width: auto; /* Adjust width to fit content */
+    max-width: 90%; /* Prevent overflow on small screens */
+    transition:opacity 0.5s ease;
+    border-radius: 25px;
+    overflow: hidden;   
+    display: none;
+    text-align: center; 
+  
+}
+.cookie p{
+    padding-top: 0.5rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgb(224, 224, 224);
+}
+.cookie button{
 
+    padding: 0.3rem 0.7rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 14px;
+    border-radius: 13px;
+    margin-bottom: 10px;
+    border:0.5px solid rgba(200, 200, 200, 0.7);
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    color: rgba(92, 92, 92, 0.7);
+    background-color:transparent;
+    color: rgb(224, 224, 224);
+}
+.cookie button:hover{
+    border: 0.5px solid rgb(255, 255, 255);
+} 
+.cookie.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
 .nav-item .nav-link:hover {
     color: white;
 }
@@ -532,6 +585,29 @@ padding-bottom: 3rem;
   }
 
 
+  .cookie{ 
+    width: 100%; 
+    transition:opacity 0.5s ease;
+    text-align: center; 
+  
+}
+
+.cookie p{
+    padding-top: 0.5rem;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+.cookie button{
+    position: relative;
+    left: 0px;
+    padding: 0.3rem 0.7rem;
+    font-size: 13px;
+    border-radius: 13px;
+    margin-bottom: 10px;
+
+}
 
     .offset-md-6,
     .offset-lg-6 {

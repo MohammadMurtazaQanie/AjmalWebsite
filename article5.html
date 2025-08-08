@@ -45,7 +45,7 @@
 
             <ul class="navbar-nav flex-column-sm pe-3 gap-1">
               <li class="nav-item">
-                <a class="nav-link font-size-5" href="index.html">Home</a>
+                <a class="nav-link font-size-5" href="home">Home</a>
               </li>
 
 
@@ -58,16 +58,16 @@
                 <ul class="something dropdown-menu dropdown-menu-dark bg-transparent px-3">
                   <li>
                     <strong class="dropdown-header text-white">Social Entrepreneurship</strong>
-                    <a class="dropdown-item ps-4" href="leadership_1.html">UN Association of Afghanistan</a>
-                    <a class="dropdown-item ps-4" href="leadership_mun.html">Kabul Model United Nations</a>
+                    <a class="dropdown-item ps-4" href="una">UN Association of Afghanistan</a>
+                    <a class="dropdown-item ps-4" href="kabulmun">Kabul Model United Nations</a>
                   </li>
                   <li>
                     <hr class="dropdown-divider border-secondary">
                   </li>
                   <li>
                     <strong class="dropdown-header text-white">Policy Advocacy</strong>
-                    <a class="dropdown-item ps-4" href="leadership_national.html">National Youth Consensus</a>
-                    <a class="dropdown-item ps-4" href="leadership_youth.html">Youth, Peace, and Security</a>
+                    <a class="dropdown-item ps-4" href="nycp">National Youth Consensus</a>
+                    <a class="dropdown-item ps-4" href="yps">Youth, Peace, and Security</a>
                   </li>
                 </ul>
               </li>
@@ -82,8 +82,8 @@
                 </button>
 
                 <div class="collapse ps-3" id="collapseSocial">
-                  <a class="nav-link" href="leadership_1.html">UN Association of Afghanistan</a>
-                  <a class="nav-link" href="leadership_mun.html">Kabul Model United Nations</a>
+                  <a class="nav-link" href="una">UN Association of Afghanistan</a>
+                  <a class="nav-link" href="kabulmun">Kabul Model United Nations</a>
                 </div>
               </li>
 
@@ -94,17 +94,17 @@
                   <i class="bi bi-chevron-down small"></i>
                 </button>
                 <div class="collapse connect ps-3" id="collapsePolicy">
-                  <a class="nav-link" href="leadership_national.html">National Youth Consensus</a>
-                  <a class="nav-link" href="leadership_youth.html">Youth, Peace, and Security</a>
+                  <a class="nav-link" href="nycp">National Youth Consensus</a>
+                  <a class="nav-link" href="yps">Youth, Peace, and Security</a>
                 </div>
               </li>
 
               <li class="nav-item published-work">
-                <a class="nav-link mentions" href="published.html">Publications</a>
+                <a class="nav-link mentions" href="publications">Publications</a>
               </li>
 
               <li class="nav-item published-work">
-                <a class="nav-link mentions" href="mentions.html">Press</a>
+                <a class="nav-link mentions" href="press">Press</a>
               </li>
 
               <li class="nav-item dropdown d-none d-lg-block d-md-block ">
@@ -115,13 +115,13 @@
                 <ul class="something dropdown-menu dropdown-menu-dark bg-transparent">
 
                   <li>
-                    <a href="published.html"
+                    <a href="publications"
                       class="pub dropdown-header text-white text-decoration-none d-block px-4">Publications</a>
                   </li>
                   <li>
                     <hr class="dropdown-divider border-secondary">
 
-                    <a href="mentions.html"
+                    <a href="press"
                       class="pub dropdown-header text-white text-decoration-none d-block px-4">Press</a>
                   </li>
 
@@ -130,7 +130,7 @@
               </li>
 
               <li class="nav-item connect">
-                <a class="nav-link" href="contact.html">Connect</a>
+                <a class="nav-link" href="connect">Connect</a>
               </li>
             </ul>
           </div>
@@ -542,5 +542,42 @@
 </script>
 
 </body>
+<div class="cookie" id="cookie-banner">
+  <p>We use cookies to analyze website traffic.  By clicking “Accept,” you consent to the use of cookies.</p>
+ 
+  <button id="reject-cookies">Decline</button>
+  <button id="accept-cookies">Accept</button>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  if (!localStorage.getItem('cookieConsent')) {
+      document.getElementById('cookie-banner').style.display = 'block';
+  }
+
+  document.getElementById('accept-cookies').onclick = function () {
+      localStorage.setItem('cookieConsent', 'accepted');
+      const banner = document.getElementById('cookie-banner');
+      banner.classList.add('fade-out');
+      setTimeout(() => { banner.style.display = 'none'; }, 500);  // wait for fade
+      loadAnalyticsScripts();
+  };
+
+  document.getElementById('reject-cookies').onclick = function () {
+      localStorage.setItem('cookieConsent', 'declined');
+      const banner = document.getElementById('cookie-banner');
+      banner.classList.add('fade-out');
+      setTimeout(() => { banner.style.display = 'none'; }, 500);  // wait for fade
+  };
+
+  function loadAnalyticsScripts() {
+      var s = document.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-T2KYLQ0RBK';
+      s.async = true;
+      document.head.appendChild(s);
+      // Initialize gtag here as in your existing code
+  }
+});
+</script>
+
 
 </html>
