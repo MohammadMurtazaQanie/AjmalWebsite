@@ -56,7 +56,7 @@
   margin: 0 5px;
   color: black;
   font-family: "Quattrocento Sans", sans-serif;
-}
+} 
 .loading-text span:nth-child(1) {
   filter: blur(0px);
   -webkit-animation: blur-text 1s 0s infinite linear alternate;
@@ -292,6 +292,19 @@
     transform: translateX(-50%);
     text-align: center;
 }
+
+.murtaza{
+    color:  rgb(125, 125, 125); 
+    text-decoration: none;
+    font-size: 12px !important;
+    transition: all 0.5s ease;
+}
+
+/* keep “Developed by Murtaza Qanie” on the same line */
+.social-links .murtaza {
+    display: inline-block;  /* override block so it stays inline */
+}
+
 
 .navbar-nav .nav-link:focus,
 .navbar-nav .nav-link:active,

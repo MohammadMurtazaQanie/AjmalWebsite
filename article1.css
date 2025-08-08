@@ -539,7 +539,7 @@ h5{
     
       .onlywe {
         padding: 10px 1rem;
-        text-align: center;   /* center “Download” link on phones */
+        text-align: center !important;   /* center “Download” link on phones */
       }
 
 
