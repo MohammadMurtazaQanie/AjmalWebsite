@@ -531,7 +531,7 @@ h3{
   padding-right: 70px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .header2 {
     height: 100vh;              /* fill the viewport only on desktop */
     box-sizing: border-box;      /* include padding in the 100vh calculation */
@@ -600,13 +600,18 @@ h3{
 .stat-card {
   background: #ffffff;
   border-radius: 30px;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.01);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* deeper shadow */
   padding: 0.75rem 0.75rem;
   height: auto;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); /* stronger on hover */
 }
 
 .stat-card h3 {
@@ -778,6 +783,86 @@ h3{
     border-color: #fff !important;   /* white on Page 2 */
 }
 
+
+/* ===== Quick flash when snapping back to Page 1 ===== */
+@keyframes page-flash {
+    0% { opacity: 0; }
+    40% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  body.page-flash::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: #000;      /* change to #fff for a white flash */
+    pointer-events: none;
+    opacity: 0;
+    animation: page-flash 450ms ease-in-out forwards;
+    z-index: 2000;
+  }
+  
+  /* Desktop-only floating “Back” button */
+  @media (min-width: 992px){
+    .cta-back{
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .25rem;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 30px;
+      color: rgb(125,125,125);
+      z-index: 1200;
+      transition: color .3s ease, transform .3s ease;
+    }
+    .cta-back:hover{ color:#000; transform: translate(-50%, 3px); }
+    .cta-back::after{
+      content: 'Back to top';
+      font-size: 10px; letter-spacing: .5px; text-transform: uppercase;
+    }
+  }
+
+
+@media (max-width: 2560px) {
+    .page-content {
+      max-width: 90%;       /* let the text spread wider */
+      padding-left: 0.5rem; /* trim the inner gap */
+      padding-right: 0.5rem;
+      margin-inline: auto;  /* keep it centered */
+    }
+  }
+
+ @media (max-width: 1350px) {
+
+    .nav-item .nav-link {
+      margin: 1rem 0.75rem; /* was 1rem 1.5rem */
+      left: 10px;             /* was 26px; reduce extra offset */
+    }
+    /* Optionally shrink text a touch to help fit */
+    .navbar-nav .nav-link { 
+      font-size: 14px;        /* was 15px */
+    }
+  }
+  
+  @media (max-width: 1170px) {
+      
+      .nav-item .nav-link {
+        margin: 1rem 0.5rem; /* was 1rem 1.5rem */
+        left: 10px;             /* was 26px; reduce extra offset */
+      }
+      /* Optionally shrink text a touch to help fit */
+      .navbar-nav .nav-link { 
+        font-size: 13px;        /* was 15px */
+      }
+    }
+    
+
+
 /* --- Center the “Thought Leadership” dropdown menu under its toggle --- */
 @media (min-width: 992px) {                     /* desktop only */
     /* generic centering (NO fixed width) */
@@ -799,7 +884,22 @@ h3{
     .social_media i {          /* hide icons on desktop */
       display: none !important;
     }
+}
+
+/* 576–767 px: show TEXT ONLY (hide icons) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .social_media i {           /* hide icons in this range */
+    display: none !important;
   }
+  .social_media .label {      /* keep labels visible */
+    display: inline !important;
+  }
+  .social_media {             /* reset any flex tweaks from phone styles */
+    display: block !important;
+    text-align: end;
+    gap: 0 !important;
+  }
+}
 @media (min-width: 768px) {
     .cta-scroll{
         display:inline-flex;
@@ -813,41 +913,44 @@ h3{
         cursor:pointer;
         position: relative;
         margin-bottom: 0;
-        top: -5px;               /* lift up to overlap the bottom of the header */
+        top: -20px;               /* lift up to overlap the bottom of the header */
         left: 45%;
         transform: translateY(0);
         transition: color 0.5s ease,
                     background 0.5s ease,
-                    transform 0.4s ease;
+                    transform 0.4s ease;       
     }
     .cta-scroll:hover{
         color: black;
         transform: translateY(8px);                          /* slide down on hover */
     }
-.cta-scroll::after{
-    content: "Scroll down";
-    display: block;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: rgb(125, 125, 125);
-    opacity: 0;
-    transform: translateY(-2px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    position: relative;
-    bottom: 15px;
-}
-    
-.cta-scroll:hover::after{
-    opacity: 1;
-    transform: translateY(0px);  /* was translateY(0) – lifts the text ~2 px */
+    .cta-scroll::after{
+        content: "SCROLL DOWN";
+        position: absolute;       /* take it out of flow so only icon shows by default */
+        top: 80%;                /* place just below the button */
+        left: 50%;
+        transform: translate(-50%, -4px);  /* slight lift for the fade-in */
+        white-space: nowrap;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: rgb(125, 125, 125);
+        opacity: 0;               /* hidden by default */
+        pointer-events: none;     /* ignore mouse */
+        transition: opacity .3s ease, transform .3s ease;
+    }
+    .cta-scroll:hover::after{
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+
+    .header2 {
+        padding-top: 80px !important;   /* was 70px */
+    }
 }
 
 
-  .header2 {
-    padding-top: 80px !important;   /* was 70px */
-  }
-  }
+
   
 
 
@@ -867,7 +970,6 @@ h3{
         margin-top: 0.3rem !important;
     }
 
-    
 
     .first img{
         max-width: 70% !important;
@@ -890,6 +992,9 @@ h3{
     }
     .item-x img{
         max-width: 35% !important;
+    }
+    .social_media p{
+        font-size: 12px !important;
     }
 }
 
@@ -915,6 +1020,8 @@ h3{
     .row.align-items-start.align-items-sm-center {
         align-items: center !important;
     }
+
+
 }
 
 
@@ -953,11 +1060,16 @@ h3{
             margin-bottom: 2rem !important;
             margin-top: 1rem !important;
         }
+        .social_media p{
+            font-size: 12px !important;
+        }
+
+
 }
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 992px) {
     .left-image {
         overflow: visible !important;
         height: 60vh !important;
@@ -982,14 +1094,19 @@ h3{
     .first_page,
     .page-content {
         height: auto !important;
-        overflow-y: auto !important;
+        overflow: hidden !important;
+
+    }
+    .page-content .all_text{
+        overflow-x: hidden;
     }
     main{
         margin: 0 !important;
-        padding-right:1rem !important;
+        padding-right: 0 !important;
         padding-left: 0 !important;
         padding-top: 0 !important;
         padding-bottom: 0  !important;
+        overflow: hidden;
     }
     .page-content img {
         max-width: 150px !important;
@@ -1158,13 +1275,27 @@ h3{
     padding-right: 1.5rem !important;
     padding-top: 1.4rem !important;
     color:  black !important;
+
+}
+
+.navbar-toggler {
+    position: absolute;
+    bottom: 0.7rem;
 }
 
 .paragaph{
 margin-bottom: 1rem;
 }
 
-
+  .page-content{
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-inline: 0 !important;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+      height: auto !important;
+      overflow-y: visible !important;
+  }
 
 
 .navs.scrolled {
@@ -1502,3 +1633,11 @@ body {
     
 }
 
+
+/* Ensure full scrolling on < 992px – no panel locking */
+@media (max-width: 991.98px) {
+  html, body { height: auto; overflow-y: auto !important; }
+  .first_page { overflow: visible !important; }
+  .page-content { overflow-y: visible !important; height: auto !important; }
+  .header2 { height: auto !important; overflow: visible !important; }
+}

@@ -76,8 +76,8 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 <body>
   <section class="header" id="Pg1">
     <!--Navbar-->
-    <nav class="navbar navs navbar-expand-lg navbar-expand-md navbar-dark fixed-top justify-content-end">
-      <div class="d-flex justify-content-end pe-lg-4 pe-md-4 pe-2 mt-lg-0 mt-md-0 mt-4">
+    <nav class="navbar navs navbar-expand-lg  navbar-dark fixed-top justify-content-end">
+      <div class="d-flex justify-content-end pe-lg-4  pe-2 mt-lg-0  mt-4">
         <!--Phone Navbar-->
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
           data-bs-target="#offcanvasNavbar">
@@ -89,11 +89,11 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
           aria-labelledby="offcanvasNavbarLabel">
           <!--s head-->
           <div class="offcanvas-header">
-            <button type="button" class="btn-close btn-close-secondary mt-lg-3 mt-4 ms-auto ps-5"
+            <button type="button" class="btn-close btn-close-white mt-lg-3 mt-4 ms-auto ps-5"
               data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <!--s body-->
-          <div class="offcanvas-body d-flex flex-column flex-md-row justify-content-start justify-content-md-end">
+          <div class="offcanvas-body d-flex flex-column  justify-content-start justify-content-lg-end">
 
             <ul class="navbar-nav flex-column-sm pe-3 gap-1">
               <li class="nav-item">
@@ -101,7 +101,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
               </li>
 
 
-              <li class="nav-item dropdown d-none d-lg-block d-md-block ">
+              <li class="nav-item dropdown d-none d-lg-block ">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false"  aria-label="Toggle Leadership menu">
                   Leadership <i class="fas fa-chevron-down ms-1"></i>
@@ -124,7 +124,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
               </li>
 
               <!-- Phone‑only collapsible sections -->
-              <li class="nav-item social d-lg-none d-md-none ">
+              <li class="nav-item social d-lg-none ">
                 <button class="nav-link btn w-100 text-start justify-content-between align-items-center"
                   data-bs-toggle="collapse" data-bs-target="#collapseSocial" aria-expanded="false" aria-expanded="false"
                   aria-controls="collapseSocial"  aria-label="Toggle Social Entrepreneurship section">
@@ -138,7 +138,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
                 </div>
               </li>
 
-              <li class="nav-item policy d-lg-none d-md-none">
+              <li class="nav-item policy d-lg-none ">
                 <button class="nav-link btn w-100 text-start justify-content-between align-items-center"
                   data-bs-toggle="collapse" data-bs-target="#collapsePolicy" aria-expanded="false" aria-label="Toggle Policy Advocacy section">
                   Policy Advocacy
@@ -158,7 +158,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
                 <a class="nav-link mentions" href="press">Press</a>
               </li>
 
-              <li class="nav-item dropdown d-none d-lg-block d-md-block ">
+              <li class="nav-item dropdown d-none d-lg-block ">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                   aria-expanded="false" aria-label="Toggle Thought Leadership menu">
                   Thought Leadership <i class="fas fa-chevron-down ms-1"></i>
@@ -228,12 +228,12 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
     <!---- MAIN GRID -->
     <section class="first_page" id="firstPage">
       <div class="h-100">
-        <div class="row g-0 h-100 flex-md-row flex-column">
+        <div class="row g-0 h-100 flex-lg-row flex-column">
           <!---- LEFT HALF : PHOTO -->
-          <div class="col-md-6 left-image order-md-1"></div>
+          <div class="col-lg-6 left-image order-lg-1"></div>
 
           <!---- RIGHT HALF : TEXT -->
-          <div class="col-md-6 d-flex align-items-start align-items-md-center order-md-2">
+          <div class="col-lg-6 d-flex align-items-start align-items-lg-center order-lg-2">
             <main class="page-content">
               <div>
                 <div class="row align-items-start align-items-sm-center mb-2">
@@ -306,7 +306,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 
 
                 <!-- desktop‑only inline “Next” button -->
-                <button class="cta-scroll d-none d-md-inline-flex align-items-center mx-auto mt-4"
+                <button class="cta-scroll d-none d-lg-inline-flex align-items-center mx-auto mt-4"
                   aria-label="Next section"><i class="bi bi-chevron-compact-down"></i>
                 </button>
 
@@ -324,30 +324,103 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
                   });
                 </script>
                 <script>
-                  /* Lock desktop users to page 1 unless they click the “Next” button */
+                  /* jump to the second page when the button is clicked (desktop only) */
                   document.addEventListener('DOMContentLoaded', () => {
+                    const ctaScrollBtn = document.querySelector('.cta-scroll');
+                    const secondPage = document.getElementById('secondPage');
 
-                    if (window.innerWidth < 768) return;          // mobile stays unchanged
+                    if (ctaScrollBtn && secondPage) {
+                      ctaScrollBtn.addEventListener('click', () =>
+                        secondPage.scrollIntoView({ behavior: 'smooth' })
+                      );
+                    }
+                  });
+                </script>
+                <script>
+                  /* jump to the second page when the button is clicked (desktop only) */
+                  document.addEventListener('DOMContentLoaded', () => {
+                    const ctaScrollBtn = document.querySelector('.cta-scroll');
+                    const secondPage = document.getElementById('secondPage');
 
+                    if (ctaScrollBtn && secondPage) {
+                      ctaScrollBtn.addEventListener('click', () =>
+                        secondPage.scrollIntoView({ behavior: 'smooth' })
+                      );
+                    }
+                  });
+                </script>
+                <script>
+                  // Desktop guard (≥992px): prevent scrolling from Page 1 → Page 2
+                  // Users must click the Next button to advance. Below 992px, do nothing.
+                  document.addEventListener('DOMContentLoaded', () => {
                     const pageContent = document.querySelector('.page-content');
-                    const leftImage = document.querySelector('.left-image');
+                    const firstPage   = document.getElementById('firstPage');
+                    const secondPage  = document.getElementById('secondPage');
+                    const nextBtn     = document.querySelector('.cta-scroll');
 
-                    /* Override wheel so the outer page never scrolls on desktop.
-                       We always consume the event, then manually scroll the text column. */
-                    function handleWheel(e) {
-                      if (e.ctrlKey || e.metaKey) return;   // allow browser zoom (Ctrl/Cmd + wheel)
-                      if (window.innerWidth < 768) return;   // let phones behave normally
+                    if (!pageContent || !firstPage || !secondPage) return;
 
-                      e.preventDefault();                    // stop window scrolling
-                      e.stopPropagation();
+                    let enabled = false;                // whether the guard is active (desktop only)
+                    let manualNavToSecond = false;      // set true once the user clicks Next
+                    let secondTop = 0;
+                    const SCROLL_KEYS = new Set(['Space','PageDown','PageUp','ArrowDown','ArrowUp','Home','End']);
 
-                      /* Always route the delta to the text column */
-                      pageContent.scrollBy({ top: e.deltaY, behavior: 'auto' });
+                    function recalc(){ secondTop = secondPage.offsetTop || window.innerHeight; }
+
+                    function clampWindowScroll(){
+                      if (!enabled || manualNavToSecond) return;
+                      if (window.scrollY >= secondTop - 1) {
+                        window.scrollTo({ top: 0, behavior: 'auto' });
+                      }
                     }
 
-                    /* Attach the guard */
-                    pageContent.addEventListener('wheel', handleWheel, { passive: false });
-                    leftImage.addEventListener('wheel', handleWheel, { passive: false });
+                    function blockToSecond(e){
+                      if (!enabled || manualNavToSecond) return;
+                      if (e.ctrlKey || e.metaKey) return; // allow browser zoom
+                      // keep the window at Page 1 and route wheel into the text column
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (e.type === 'wheel') {
+                        pageContent.scrollBy({ top: e.deltaY, behavior: 'auto' });
+                      }
+                    }
+
+                    function onKey(e){
+                      if (!enabled || manualNavToSecond) return;
+                      if (SCROLL_KEYS.has(e.code)) e.preventDefault();
+                    }
+
+                    function onNext(){
+                      manualNavToSecond = true;                     // allow Page 2
+                      secondPage.scrollIntoView({ behavior: 'smooth' });
+                    }
+
+                    function enable(){
+                      if (enabled) return; enabled = true; recalc();
+                      window.addEventListener('scroll', clampWindowScroll, { passive: true });
+                      window.addEventListener('wheel',  blockToSecond,     { passive: false });
+                      window.addEventListener('keydown', onKey,            { passive: false });
+                      nextBtn && nextBtn.addEventListener('click', onNext);
+                      clampWindowScroll();
+                    }
+
+                    function disable(){
+                      if (!enabled) return; enabled = false;
+                      window.removeEventListener('scroll', clampWindowScroll);
+                      window.removeEventListener('wheel',  blockToSecond);
+                      window.removeEventListener('keydown', onKey);
+                      nextBtn && nextBtn.removeEventListener('click', onNext);
+                      manualNavToSecond = false; // reset
+                    }
+
+                    function handleMode(){
+                      if (window.innerWidth >= 992) enable(); else disable();
+                      recalc();
+                    }
+
+                    handleMode();
+                    window.addEventListener('resize', handleMode);
+                    window.addEventListener('load', recalc);
                   });
                 </script>
                 <!-- add the rest of your text here -->
@@ -450,18 +523,42 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
       ScrollReveal().reveal('.second', { delay: 200, origin: 'left' })
       ScrollReveal().reveal('.third', { delay: 400, origin: 'left' })
       ScrollReveal().reveal('.forth', { delay: 800, origin: 'left' })
-      ScrollReveal().reveal('.fifth', { delay: 1200, origin: 'left' })
+      ScrollReveal().reveal('.fifth', { delay: 1000, origin: 'left' })
       ScrollReveal().reveal('.sixth', { delay: 800, origin: 'left' })
       ScrollReveal().reveal('.seventh', { delay: 800, origin: 'bottom' })
-      ScrollReveal().reveal('.eight', { delay: 1300, origin: 'bottom' })
+      ScrollReveal().reveal('.eight', { delay: 1000, origin: 'bottom' })
       ScrollReveal().reveal('.ninth', { delay: 800, origin: 'bottom' })
       ScrollReveal().reveal('.tenth', { delay: 800, origin: 'right' })
-      ScrollReveal().reveal('.eleven', { delay: 1300, origin: 'right' })
+      ScrollReveal().reveal('.eleven', { delay: 1000, origin: 'right' })
       ScrollReveal().reveal('.item-photo', { delay: 800, origin: 'right' })
 
     </script>
 
+<script>
+  function parallaxFadeEffect() {
+    const firstPage = document.getElementById('firstPage');
+    const secondPage = document.getElementById('secondPage');
+    const scrollY = window.scrollY;
 
+    firstPage.style.opacity = 1 - scrollY / window.innerHeight;
+    secondPage.style.opacity = scrollY / window.innerHeight;
+  }
+
+  function updateParallaxEffect() {
+    window.removeEventListener('scroll', parallaxFadeEffect);
+    if (window.innerWidth >= 992) {
+      window.addEventListener('scroll', parallaxFadeEffect);
+    } else {
+      document.getElementById('firstPage').style.opacity = '';
+      document.getElementById('secondPage').style.opacity = '';
+      document.getElementById('firstPage').style.transform = '';
+      document.getElementById('secondPage').style.transform = '';
+    }
+  }
+
+  window.addEventListener('resize', updateParallaxEffect);
+  updateParallaxEffect();
+</script>
 
     <script>
       /* scroll.js */
@@ -469,7 +566,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
       const nav = document.querySelector('.navs');
 
       function handleScroll() {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 992) {
           nav.classList.toggle('scrolled', window.scrollY > 0);
         } else {
           nav.classList.toggle('scrolled', page.scrollTop > 0);
@@ -481,7 +578,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
         page.removeEventListener('scroll', handleScroll);
         window.removeEventListener('scroll', handleScroll);
 
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 992) {
           window.addEventListener('scroll', handleScroll, { passive: true });
         } else {
           page.addEventListener('scroll', handleScroll, { passive: true });
@@ -503,7 +600,7 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
       // Handle scroll for both desktop (scrolling inside .page-content)
       // and mobile (scrolling the whole window)
       function handleScroll() {
-        if (window.innerWidth < 768) {
+        if (window.innerWidth < 992) {
           // Mobile: use window scroll position
           const pos = window.scrollY || document.documentElement.scrollTop;
           navbar.classList.toggle('scrolled', pos > 0);
@@ -595,68 +692,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 <script>
-  /* Toggle a solid‑black navbar when the desktop scroll reaches Page 2 */
-  document.addEventListener('DOMContentLoaded', () => {
-    const nav = document.querySelector('.navs');
-    const secondPage = document.getElementById('secondPage');
-
-    function setNavColor() {
-      if (window.innerWidth >= 768) {
-        const threshold = secondPage.offsetTop;
-        nav.classList.toggle('black-nav', window.scrollY >= threshold);
-      } else {
-        nav.classList.remove('black-nav');
-      }
-    }
-
-    window.addEventListener('scroll', setNavColor, { passive: true });
-    window.addEventListener('resize', setNavColor, { passive: true });
-    setNavColor();             /* run once on load */
-  });
-</script>
-<script>
-  window.addEventListener('scroll', () => {
-    const firstPage = document.getElementById('firstPage');
-    const secondPage = document.getElementById('secondPage');
-    const scrollY = window.scrollY;
-
-    if (window.innerWidth >= 768) {
-      firstPage.style.opacity = 1 - scrollY / window.innerHeight;
-      secondPage.style.opacity = scrollY / window.innerHeight;
-    }
-  });
-</script>
-<script>
-  function parallaxFadeEffect() {
-    const firstPage = document.getElementById('firstPage');
-    const secondPage = document.getElementById('secondPage');
-    const scrollY = window.scrollY;
-
-    firstPage.style.opacity = 1 - scrollY / window.innerHeight;
-    secondPage.style.opacity = scrollY / window.innerHeight;
-  }
-
-  function updateParallaxEffect() {
-    window.removeEventListener('scroll', parallaxFadeEffect);
-    if (window.innerWidth >= 768) {
-      window.addEventListener('scroll', parallaxFadeEffect);
-    } else {
-      document.getElementById('firstPage').style.opacity = '';
-      document.getElementById('secondPage').style.opacity = '';
-      document.getElementById('firstPage').style.transform = '';
-      document.getElementById('secondPage').style.transform = '';
-    }
-  }
-
-  window.addEventListener('resize', updateParallaxEffect);
-  updateParallaxEffect();
-</script>
-
-</html>
-</body>
-
-</html>
-<script>
   /* jump back to the first page when the “Back” button is clicked (desktop only) */
   document.addEventListener('DOMContentLoaded', () => {
     const backBtn = document.querySelector('.cta-back');
@@ -707,7 +742,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* 🖥️  Desktop guard — Page 1 → Page 2 requires the button;
      Page 2 → Page 1 is allowed via normal upward scrolling. */
   document.addEventListener('DOMContentLoaded', () => {
-    if (window.innerWidth < 768) return;       // mobiles handled elsewhere
+    if (window.innerWidth < 992) return;       // mobiles handled elsewhere
 
     const firstPage = document.getElementById('firstPage');
     const secondPage = document.getElementById('secondPage');
