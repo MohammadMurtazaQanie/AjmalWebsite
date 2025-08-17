@@ -16,6 +16,13 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://fonts.cdnfonts.com/css/avenir" rel="stylesheet">
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yahya Qanie">
+    <meta name="twitter:description"
+      content="Yahya Qanie is an Afghan-born social entrepreneur, policy advocate, and New York University graduate with over a decade of experience in the intersection of international security, peacebuilding, and inclusive governance.">
+    <meta name="twitter:image" content="https://yahyaqanie.com/twitter/a13.jpg">
+
 </head>
 
 <body>
@@ -135,6 +142,35 @@
         </div>
       </div>
     </nav>
+
+    <div class="preloader">
+      <div class="loading">
+          <div class="loading-text">
+              <span class="loading-text-words">L</span>
+              <span class="loading-text-words">O</span>
+              <span class="loading-text-words">A</span>
+              <span class="loading-text-words">D</span>
+              <span class="loading-text-words">I</span>
+              <span class="loading-text-words">N</span>
+              <span class="loading-text-words">G</span>
+          </div>
+      </div>
+  </div>
+
+<script>
+  window.addEventListener('load', () => {
+  const preloader = document.querySelector('.preloader');
+  if (!preloader) return;
+
+  const MIN_TIME = 700;           // ms
+  const elapsed  = performance.now();   // ≈ time since navigationStart
+
+  setTimeout(() => {
+    preloader.classList.add('hide');
+    preloader.addEventListener('transitionend', () => preloader.remove(), { once:true });
+  }, Math.max(0, MIN_TIME - elapsed));
+});
+</script>
 
 
     <!---- MAIN GRID -->

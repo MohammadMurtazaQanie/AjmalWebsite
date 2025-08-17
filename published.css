@@ -437,7 +437,7 @@ input::placeholder{
 }
 
 .stat-card h3 {
-  font-size: 1.35rem;
+  font-size: clamp(1.25rem, 0.9vw + 0.75rem, 2rem);
   font-weight: 700;
 }
 
@@ -504,8 +504,11 @@ input::placeholder{
     top: 2rem;
     padding-bottom: 1rem;
     grid-template-columns:repeat(12,1fr);
-    grid-auto-rows:minmax(20px,auto);        
-  }
+    grid-auto-rows:minmax(20px,auto);
+    max-width: min(92vw, 1800px);
+    margin-left: auto;
+    margin-right: auto;
+}
 
   .item-projects{
     flex-direction: row;
@@ -590,7 +593,7 @@ input::placeholder{
 .item-sdg .item-subtitle  { grid-column:5 / span 6; grid-row:1;}
 .item-sdg .item-title  { grid-column:5 / span 8; grid-row:2; margin:0; }
 .item-sdg .item-desc1   { grid-column:5 / span 3; grid-row:3; margin:0; }
-.item-sdg .item-desc2   { grid-column:6 / span 6; grid-row:3; margin:0; }
+.item-sdg .item-desc2   { grid-column:7 / span 6; grid-row:3; margin:0; }
 .item-sdg .item-desc3   { grid-column:5 / span 8; grid-row:4; margin:0; }
 
 /* Shift publisher line further right for that one specific card */
@@ -626,11 +629,25 @@ input::placeholder{
     color: rgba(0, 0, 0, 0.7);
 }
 
+/* --- .item-photo --- */
 .item-photo h3.item-title {
     padding-left: 20px;
     font-size: 25px !important;
     text-align: left !important;
+}
 
+/* Responsive typography overrides (desktop & 4K) */
+.item-photo h3.item-title, .item-sdg h3.item-title {
+  font-size: clamp(1.25rem, 1.2vw + 0.5rem, 2.25rem) !important;
+}
+
+.item-photo p.item-desc1,.item-photo p.item-desc2,
+.item-sdg p.item-desc1,.item-sdg p.item-desc2{
+  font-size: clamp(0.7rem, 0.35vw + 0.55rem, 0.95rem) !important;
+}
+
+.item-photo p.item-desc3, .item-sdg p.item-desc3{
+  font-size: clamp(0.8rem, 0.45vw + 0.6rem, 1.05rem) !important;
 }
 
 .item-photo p.item-desc1,.item-photo p.item-desc2{
@@ -668,44 +685,72 @@ input::placeholder{
 .item-photo .item-subtitle  { grid-column:5 / span 6; grid-row:1;}
 .item-photo .item-title  { grid-column:5 / span 8; grid-row:2; margin:0; }
 .item-photo .item-desc1   { grid-column:5 / span 3; grid-row:3; margin:0; }
-.item-photo .item-desc2   { grid-column:6 / span 6; grid-row:3; margin:0; }
+.item-photo .item-desc2   { grid-column:7 / span 6; grid-row:3; margin:0; }
 .item-photo .item-desc3   { grid-column:5 / span 8; grid-row:4; margin:0; }
 
 
 .pagination-container{
-    display:flex;
-    justify-content:center;
-    gap:0.5rem;
-    margin-top:2rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:2rem;
+  margin-top:2rem;
 }
 
-.page-btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:40px;
-    height:40px;
-    border:1px solid rgb(191, 190, 190);
-    border-radius:10px;
-    background:transparent;
-    color:rgba(0,0,0,0.7);
-    text-decoration:none;
-    font-size:1rem;
-    transition:background-color 0.5s ease, color 0.5s ease, border 0.8s ease;
+/* Circular arrow buttons */
+.pager-arrow{
+  width:56px;
+  height:56px;
+  border:2px solid rgb(191, 190, 190);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  color:rgba(0,0,0,0.6);
+  line-height:1;
+  transition:background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+.pager-arrow:hover{ background:rgb(226,226,226); color:#000; }
+.pager-arrow.disabled{ opacity:0.45; pointer-events:none; }
+.pager-arrow .chev{ font-size:1.5rem; transform: translateY(-1px); }
 
-.page-btn:hover{
-    background:rgb(226, 226, 226);
-    color: black;
+/* Number pill */
+.pager-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:0.75rem;
+  padding:0.4rem 1rem;
+  border:2px solid rgb(191, 190, 190);
+  border-radius:999px;
 }
-
-/* Highlight the page the user is on */
-.page-btn.active{
-    background: rgb(125, 125, 125);   /* dark‑grey fill */
-    color: #fff;                      /* white text */
-    border-color: rgb(125, 125, 125);
+.pager-pill .page-btn{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  color:rgba(0,0,0,0.6);
+  text-decoration:none;
+  font-size:1.1rem;
+  overflow:visible;
 }
-
+.pager-pill .page-btn::before{
+  content:"";
+  position:absolute;
+  inset:0px;                 /* inner padding so the circle sits inside */
+  border-radius:50%;
+  transform:scale(0);
+  background: rgb(125, 125, 125);
+  transition: transform 0.25s ease;
+  z-index:-1;                /* stays behind the number */
+}
+.pager-pill .page-btn.active{ color:#fff; }
+.pager-pill .page-btn.active::before{ transform:scale(1.5); }
 
 @media (min-width: 768px) {
 
@@ -719,7 +764,7 @@ input::placeholder{
   }
   }
   
-  @media (max-width: 767px) {
+  @media (max-width: 992px) {
     .left-image {
         overflow: visible !important;
         height: 60vh !important;
@@ -734,6 +779,11 @@ input::placeholder{
         overflow-y: auto;
     }
 
+    .navbar-toggler {
+      position: absolute;
+      bottom: 0.7rem;
+  }
+  
     body.menu-open {
         overflow: hidden !important;
         position: fixed !important;
@@ -782,6 +832,8 @@ input::placeholder{
         left: 10%;
     
       }
+
+      .pager-pill .page-btn.active::before{ transform:scale(1.2); }
     
       .navbar::before{
     
@@ -887,7 +939,7 @@ input::placeholder{
     
     /* Frosted‑glass effect for the phone off‑canvas menu */
     .offcanvas.sidebar {
-        background: rgba(0, 0, 0, 0.35) !important;
+      background: rgba(255, 255, 255, 0.73) !important;
         /* translucent dark */
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
@@ -1154,11 +1206,14 @@ body {
 
     /* Frosted‑glass effect for the phone off‑canvas menu */
     .offcanvas.sidebar {
-        background: rgba(255, 255, 255, 0.73) !important;
-        /* translucent dark */
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
-        border-left: 1px solid rgba(255, 255, 255, 0.15);
+      --bs-offcanvas-width: 100vw;  /* full screen width */
+      inset: 0;                     /* fills entire screen */
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.73) !important;
+      /* translucent dark */
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .offcanvas-header {
@@ -1291,4 +1346,97 @@ body {
     text-align: justify !important;
     text-align-last: right;
     padding-right: 20px;
+}
+
+
+@media (min-width: 1440px) {
+  .item-photo .item-image img,
+  .item-sdg   .item-image img,
+  .third img, .forth img {
+    height: 280px;
+  }
+  .header2 { padding-left: 90px; padding-right: 90px; }
+
+
+
+}
+
+@media (min-width: 1920px) {
+  .stats-grid2 { max-width: min(88vw, 2000px); }
+  .item-photo .item-image img,
+  .item-sdg   .item-image img,
+  .third img, .forth img {
+    height: 320px;
+    
+  }
+  .pager-arrow{ width:64px; height:64px; }
+.pager-arrow .chev{ font-size:1.75rem; }
+.pager-pill{ padding:0.5rem 1.25rem; }
+.pager-pill .page-btn{ width:52px; height:52px; font-size:1.2rem; }
+}
+
+@media (min-width: 2560px) {
+  .stats-grid2 { max-width: min(84vw, 2200px); }
+  .item-photo .item-image img,
+  .item-sdg   .item-image img,
+  .third img, .forth img {
+    height: 360px;
+  }
+  .header2 { padding-left: 120px; padding-right: 120px; }
+  .navbar-nav .nav-link { font-size: 16px; }
+  .nav-item .nav-link {
+    font-size: 25px;
+    margin: 2rem 3rem;
+  }
+  .dropdown-header {
+    font-size: 25px !important;
+  }
+  .pager-arrow{ width:72px; height:72px; }
+.pager-arrow .chev{ font-size:2rem; }
+.pager-pill .page-btn{ width:60px; height:60px; font-size:1.35rem; }
+  .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+    width: 26rem !important;   /* was 18rem */
+    max-width: 90vw;           /* safety on very narrow ultra‑wide windows */
+    padding: 1.25rem 1.5rem !important;
+    border-radius: 50px; /* roomier look */
+  }
+  /* Bigger item links inside the dropdown */
+  .dropdown-item {
+    font-size: 23px !important;   /* increase readability on 4K/5K */
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+  }
+
+  /* Make the search button and icon larger on ultra-wide screens */
+  .first .input-group-text {
+    padding: 1rem 2rem;
+    font-size: 1.75rem;
+  }
+  .first .input-group-text i {
+    font-size: 1.75rem;
+  }
+  .first .form-control::placeholder {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .pager-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .pager-arrow .chev {
+    font-size: 1.6rem;
+  }
+
+  .pager-pill {
+    padding: 0.45rem 1rem;
+  }
+
+  .pager-pill .page-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 1.15rem;
+  }
 }

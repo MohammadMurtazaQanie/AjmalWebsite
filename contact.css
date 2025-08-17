@@ -474,12 +474,16 @@
 
 
 }
-@media (max-width:767px ){
+@media (max-width:992px ){
     body {
         background-color: black !important;
     }
 
 
+    .navbar-toggler {
+        position: absolute;
+        bottom: 0.7rem;
+    }
     .offcanvas .nav-item .nav-link {
         font-size: 20px !important;
       }
@@ -643,6 +647,44 @@
 
 }
 
+@media (min-width: 2000px){
+    .nav-item .nav-link {
+        font-size: 25px;
+        margin: 2rem 3rem;}
+    
+    .dropdown-header {
+        font-size: 25px !important;
+    }
+
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+        width: 26rem !important;   /* was 18rem */
+        max-width: 90vw;           /* safety on very narrow ultra‑wide windows */
+        padding: 1.25rem 1.5rem !important;
+        border-radius: 50px; /* roomier look */
+    }
+
+    /* Bigger item links inside the dropdown */
+    .dropdown-item {
+        font-size: 23px !important;   /* increase readability on 4K/5K */
+        padding-top: 0.6rem !important;
+        padding-bottom: 0.6rem !important;
+    }
+
+    /* Bigger social links & footer text on ≥2000px */
+    .social-links a { 
+        font-size: 30px !important;   /* was 16px */
+
+    }
+    .social-links p { 
+        font-size: 23px !important;   /* was 0.7rem base */
+
+    }
+    .social-links .murtaza { 
+        font-size: 23px !important;   /* ensure the inline credit scales too */
+    }
+}
+
+
 
 @media (max-width:575px) {
     p {
@@ -736,6 +778,9 @@
 
     /* Frosted‑glass effect for the phone off‑canvas menu */
     .offcanvas.sidebar {
+        --bs-offcanvas-width: 100vw;  /* full screen width */
+        inset: 0;                     /* fills entire screen */
+        border-radius: 0;
         background: rgba(255, 255, 255, 0.73) !important;
         /* translucent dark */
         backdrop-filter: blur(6px);

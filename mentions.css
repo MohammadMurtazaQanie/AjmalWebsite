@@ -362,8 +362,19 @@
 }
 
 
-.logo-grid-mobile{
-    display: none;
+/* Mobile logo grid is visible by default; hide it on ≥992px */
+.logo-grid-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    grid-column: 1 / span 12;
+    grid-row: 3;
+}
+
+@media (min-width: 992px) {
+  .logo-grid-mobile { display: none !important; }
 }
 
 .third{
@@ -473,6 +484,13 @@
   .first_page::-webkit-scrollbar {
     display: none;              
   }
+
+  /* Add extra scrollable space so the navbar blur can be observed on desktop */
+  .first_page .stats-grid2::after {
+    content: "";
+    display: block;
+    height: auto; /* adds one more viewport height worth of scroll */
+  }
 }
 
 
@@ -552,8 +570,6 @@
 .forth img:last-child,
 .fifth img:last-child { margin-left: 0;margin-right: 0; }
 
-
-
 /* --- Center the “Thought Leadership” dropdown menu under its toggle --- */
 @media (min-width: 992px) {                     /* desktop only */
     /* generic centering (NO fixed width) */
@@ -569,7 +585,80 @@
       max-width: 90vw;
       padding: 1rem;
     }
+}
+
+/* 2K / WQHD (≥1600px) */
+@media (min-width: 1600px) {
+  :root { --desktop-container-max: 1440px; }
+  .first_page { padding-left: 120px; padding-right: 120px; }
+  .item-endorsed { height: 420px !important; }
+  .item-endorsed > video,
+  .item-endorsed > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    display: block;
   }
+  body { font-size: 17px; }
+  .second p { font-size: 18px !important; }
+  .third img, .forth img, .fifth img { max-height: calc(var(--logo-height) * 1.15); }
+}
+
+/* Medium desktops and large tablets (1000px–1199px) */
+@media (max-width: 1199px) and (min-width: 1000px) {
+  .third img,
+  .forth img,
+  .fifth img {
+    max-height: calc(var(--logo-height) * 0.7);
+    margin: 0.3rem 0.55rem;
+  }
+  body { font-size: 14px; }
+  .second p { font-size: 14px !important; }
+  
+}
+
+@media (min-width: 2000px) {
+  .first_page { padding-left: 150px; padding-right: 150px; }
+  .item-endorsed { height: 580px !important; }
+  .item-endorsed > video,
+  .item-endorsed > img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover; 
+    display: block;
+  }
+
+  body { font-size: 25px; }
+  .second p { font-size: 25px !important; }
+
+  .third img, .forth img, .fifth img { 
+    max-height: calc(var(--logo-height) * 1.32);
+    margin: 0.75rem 1.25rem;
+  }
+
+  .nav-item .nav-link {
+    font-size: 25px;
+    margin: 2rem 3rem;}
+
+    .dropdown-header {
+        font-size: 25px !important;
+    }
+
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+        width: 26rem !important;   /* was 18rem */
+        max-width: 90vw;           /* safety on very narrow ultra‑wide windows */
+        padding: 1.25rem 1.5rem !important;
+        border-radius: 50px; /* roomier look */
+      }
+
+      /* Bigger item links inside the dropdown */
+      .dropdown-item {
+        font-size: 23px !important;   /* increase readability on 4K/5K */
+        padding-top: 0.6rem !important;
+        padding-bottom: 0.6rem !important;
+      }
+
+}
 
 
   
@@ -580,11 +669,6 @@
         width: 100%;
         margin: 0;
         padding: 0;
-    }
-
-
-    .header {
-        padding-top: 10rem;
     }
 
     .navbar {
@@ -633,7 +717,7 @@
 
 
 }
-@media (max-width:767px ){
+@media (max-width:992px ){
 
     .nav-item{
         position: relative;
@@ -727,7 +811,9 @@
     
     /* Frosted‑glass effect for the phone off‑canvas menu */
     .offcanvas.sidebar {
-        background: rgba(0, 0, 0, 0.35) !important;
+       
+        
+        background: rgba(255, 255, 255, 0.73) !important;
         /* translucent dark */
         backdrop-filter: blur(6px);
         -webkit-backdrop-filter: blur(6px);
@@ -796,7 +882,10 @@
     text-align: center;
 }
 
-
+.navbar-toggler {
+    position: absolute;
+    bottom: 0.7rem;
+}
 .cookie{ 
     width: 100%; 
     transition:opacity 0.5s ease;
@@ -823,7 +912,22 @@
 
 
 
-.item-endorsed      {grid-column:1 / span 12;  grid-row:1; height: 210px !important; object-fit :contain; height: auto; margin-top: 1rem;}
+  .item-endorsed {
+      grid-column: 1 / span 12;
+      grid-row: 1;
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 16 / 9;
+      margin-top: 20px !important;
+      display: block;
+  }
+  .item-endorsed video,
+  .item-endorsed img {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: cover;
+      display: block;
+  }
   .item-projects      {grid-column:1 / span 12;  grid-row:2;}
 
 
@@ -866,7 +970,7 @@
 }
 
 /* ================= PHONE-ONLY LOGO LAYOUT (≤ 767 px) ================= */
-@media (max-width: 767px) {
+@media (max-width: 991.98px) {
 
     /* Hide the three desktop rows */
     .third,
@@ -877,7 +981,7 @@
     .logo-grid-mobile {
       grid-column: 1 / span 12;
       grid-row: 3;
-      display: flex;
+      display: flex !important;
       flex-wrap: wrap;
       justify-content:space-between;
       padding-top: 1rem;
@@ -887,16 +991,21 @@
       margin-left: 5px;
       margin-right: 5px;
       padding-top: 0;
+      width: 100%;
     }
-  
+
+    .logo-grid-mobile img { max-width: 100%; height: auto; display: block; }
+
     /* Each anchor (logo cell) */
     .logo-grid-mobile .logo-link {
-        flex: 0 0 30%;
+        flex: 0 0 calc(33.333% - 10px);
+        max-width: calc(33.333% - 10px);
+        box-sizing: border-box;
         order: var(--order-m, 0);
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 60px; /* you can increase this for more vertical space */
+        height: 60px;
         text-align: center;
     }
   
@@ -905,6 +1014,10 @@
       max-height: var(--logo-h-m, var(--logo-h)); /* phone-height → else desktop height */
       width: auto;
       object-fit: contain;
+      min-height: 1px; /* ensures images occupy flow even before load */
+      max-width: 100%;
+      height: auto;
+      display: block;
     }
   }
 
@@ -1001,6 +1114,9 @@
 
     /* Frosted‑glass effect for the phone off‑canvas menu */
     .offcanvas.sidebar {
+        --bs-offcanvas-width: 100vw;  /* full screen width */
+        inset: 0;                     /* fills entire screen */
+        border-radius: 0;
         background: rgba(255, 255, 255, 0.73) !important;
         /* translucent dark */
         backdrop-filter: blur(6px);
@@ -1043,13 +1159,6 @@
 
 }
 
-
-
-
-
-
-/* ───── Interactive logo links ───── */
-/* ───── Interactive logo links ───── */
 .logo-link {
   display: inline-block;
   cursor: pointer;     /* pointer cursor for clarity */

@@ -698,16 +698,21 @@ h3{
 
 
 .stat-card {
-  background: #ffffff;
-  border-radius: 30px;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.01);
-  padding: 0.75rem 0.75rem;
-  height: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* deeper shadow */
+    padding: 0.75rem 0.75rem;
+    height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25); /* stronger on hover */
+  }
 
 
 .stat-card h3 {
@@ -1415,19 +1420,6 @@ body {
     .stat-card a {
       font-size: 12px;           /* was 9px */
     }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
-
-
 }
 
 

@@ -526,7 +526,7 @@ h5{
 
 
 
-@media (max-width: 767px) {
+@media (max-width: 992px) {
 
 
     body{
@@ -661,10 +661,14 @@ h5{
 /* Frosted‑glass effect for the phone off‑canvas menu */
 .offcanvas.sidebar {
     background: rgba(0, 0, 0, 0.35) !important;
-    /* translucent dark */
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    --bs-offcanvas-width: 100vw;  /* full screen width */
+        inset: 0;                     /* fills entire screen */
+        border-radius: 0;
+        
+        /* translucent dark */
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .offcanvas-header {
@@ -752,8 +756,8 @@ h5{
 
 
 .secondd {
-  padding: 15px 15px;
-  text-align: justify;
+  padding: 10%;
+  text-align: left;
 }
 .navs.second-active .nav-link,
 .navs.second-active .nav-link:hover,
@@ -766,6 +770,66 @@ h5{
     color: rgb(206, 206, 206) !important;
 }
 
+.secondd p{
+  font-size: 13px !important;
+}
 
 
+
+}
+
+
+
+
+@media (min-width: 1920px) {
+  
+  .nav-item .nav-link {
+    font-size: 25px !important;
+    margin: 2rem 3rem !important;}
+
+    .dropdown-header {
+        font-size: 25px !important;
+    }
+
+    .navbar-nav .nav-item.dropdown > .dropdown-menu.something {
+        width: 26rem !important;   /* was 18rem */
+        max-width: 90vw !important;           /* safety on very narrow ultra‑wide windows */
+        padding: 1.25rem 1.5rem !important;
+        border-radius: 50px !important; /* roomier look */
+      }
+
+      /* Bigger item links inside the dropdown */
+      .dropdown-item {
+        font-size: 23px !important;   /* increase readability on 4K/5K */
+        padding-top: 0.6rem !important;
+        padding-bottom: 0.6rem !important;
+      }
+
+
+  .secondd {
+    max-width: 1200px;  
+    margin: 0 auto;
+    padding: 40px 0;     
+  }
+  .secondd p { font-size: 23px !important;  }
+
+  /* Hero/stat area tweaks */
+  .stats-grid2 { gap: 1rem; top: 2rem; }
+  .item-endorsed { height: 480px !important; }
+  .inner-stat-row p { font-size: 18px; }
+  .item2 p { font-size: 22px !important; }
+  .item3 h3 { font-size: 3rem !important; }
+  .item6 p { font-size: 19px !important; }
+
+  /* Navbar sizing & spacing */
+  .navbar { left: 24px !important; right: 24px !important; }
+  .nav-item .nav-link { font-size: 17px; letter-spacing: 0.6px; }
+  .dropdown-header { font-size: 17px !important; }
+  .dropdown-item { font-size: 16px; }
+
+
+
+  /* Preloader text a bit larger on 4k */
+  .loading-text { height: 120px; line-height: 120px; }
+  .loading-text span { font-size: 22px; }
 }
