@@ -237,7 +237,8 @@ body::-webkit-scrollbar {
 }
 .all_text{
 
-    margin-top: -2rem;
+    margin-bottom: 1rem;
+    margin-top: -3.5rem;
     text-align: justify;
 }
 
@@ -318,7 +319,38 @@ body::-webkit-scrollbar {
 
 
 
- 
+ /* === Force dropdown menus to use white text (headers + items) === */
+.navs .dropdown-menu.something {
+    background: rgba(0, 0, 0, 0.35) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+  
+  .navs .dropdown-menu.something .dropdown-header,
+  .navs .dropdown-menu.something .dropdown-item,
+  .navs .dropdown-menu.something .pub,
+  .navs .dropdown-menu.something .pub a {
+    color: #fff !important;
+  }
+  
+  .navs .dropdown-menu.something .dropdown-item:hover,
+  .navs .dropdown-menu.something .pub:hover {
+    color: #fff !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+  }
+  
+  .navs .dropdown-menu.something .dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+  }
+  
+  /* If .black-nav is applied on Page 2, keep text white there too */
+  .navs.black-nav .dropdown-menu.something .dropdown-header,
+  .navs.black-nav .dropdown-menu.something .dropdown-item,
+  .navs.black-nav .dropdown-menu.something .pub,
+  .navs.black-nav .dropdown-menu.something .pub a {
+    color: #fff !important;
+  }
 
 
 
@@ -801,31 +833,7 @@ h3{
     z-index: 2000;
   }
   
-  /* Desktop-only floating “Back” button */
-  @media (min-width: 992px){
-    .cta-back{
-      position: fixed;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: .25rem;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      font-size: 30px;
-      color: rgb(125,125,125);
-      z-index: 1200;
-      transition: color .3s ease, transform .3s ease;
-    }
-    .cta-back:hover{ color:#000; transform: translate(-50%, 3px); }
-    .cta-back::after{
-      content: 'Back to top';
-      font-size: 10px; letter-spacing: .5px; text-transform: uppercase;
-    }
-  }
+
 
 
 @media (max-width: 2560px) {
@@ -901,62 +909,10 @@ h3{
   }
 }
 @media (min-width: 768px) {
-    .cta-scroll{
-        display:inline-flex;
-        flex-direction: column;     /* ⬅️  stack icon + label  */
-        row-gap:0.25rem;            /* vertical spacing        */
-        align-items:center;
-        font-size:30px;
-        color:rgb(125, 125, 125);
-        background-color: transparent;
-        border:none;
-        cursor:pointer;
-        position: relative;
-        margin-bottom: 0;
-        top: -20px;               /* lift up to overlap the bottom of the header */
-        left: 45%;
-        transform: translateY(0);
-        transition: color 0.5s ease,
-                    background 0.5s ease,
-                    transform 0.4s ease;       
-    }
-    .cta-scroll:hover{
-        color: black;
-        transform: translateY(8px);                          /* slide down on hover */
-    }
-    .cta-scroll::after{
-        content: "SCROLL DOWN";
-        position: absolute;       /* take it out of flow so only icon shows by default */
-        top: 80%;                /* place just below the button */
-        left: 50%;
-        transform: translate(-50%, -4px);  /* slight lift for the fade-in */
-        white-space: nowrap;
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: rgb(125, 125, 125);
-        opacity: 0;               /* hidden by default */
-        pointer-events: none;     /* ignore mouse */
-        transition: opacity .3s ease, transform .3s ease;
-    }
-    .cta-scroll:hover::after{
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-
     .header2 {
         padding-top: 80px !important;   /* was 70px */
     }
 }
-
-
-
-  
-
-
-
-
-
 
 @media (max-width: 1220px) {
     .first h3, .second h3, .third h3, .fifth h3, .sixth h3, .eighth h3, .ninth h3,.tenth h3 {
@@ -997,9 +953,6 @@ h3{
         font-size: 12px !important;
     }
 }
-
-
-
 @media (max-width: 1075px) {
     .page-content .paragaph {
         overflow: visible !important;
@@ -1023,8 +976,6 @@ h3{
 
 
 }
-
-
 @media (max-width: 991px) {
 
     html,
@@ -1039,7 +990,6 @@ h3{
         margin: 1rem;
     }
 }
-
 @media (max-width:914px){
     
         .page-content img {
@@ -1066,9 +1016,6 @@ h3{
 
 
 }
-
-
-
 @media (max-width: 992px) {
     .left-image {
         overflow: visible !important;
@@ -1095,7 +1042,6 @@ h3{
     .page-content {
         height: auto !important;
         overflow: hidden !important;
-
     }
     .page-content .all_text{
         overflow-x: hidden;
@@ -1333,18 +1279,6 @@ body {
      “seventh” (item‑established) top‑right; “tenth” (item‑reestablished) bottom‑right */
 
   /* Ensure the rest of the cards stack in their own rows */
-  .item-endorsed      { grid-row:1; }
-  .item-projects      { grid-row:2; }
-  .item-sdg           { grid-row:3; }
-  .item-photo         { grid-row:4; }
-  .item-parent        { grid-row:5; }
-  .item-member        { grid-row:8; }
-  .item-represent     { grid-row:9; }
-  .item-x             { grid-row:10; }
-
-  .item-legal         { grid-column:1 / span 6; grid-row:6 / span 2; }
-  .item-established   { grid-column:7 / span 6; grid-row:6; }
-  .item-reestablished { grid-column:7 / span 6; grid-row:7; }
 
   .stat-card {
     width: 100%;
@@ -1435,17 +1369,38 @@ body {
     font-size: 12px;           /* was 9px */
   }
 
-
-
-
-
-
-
-
-
 }
-
-
+@media (max-width:992px) and (min-width:768px){
+    .item-endorsed      {grid-column:1 / span 6;  grid-row:1;}
+    .item-projects      {grid-column:1 / span 6;  grid-row:2;}
+    .item-sdg           {grid-column:7 / span 6;  grid-row:1 / span 2;}
+    .item-photo         {grid-column:1 / span 12;  grid-row:3 / span 1;}
+    
+    /* bottom row – 3rd grid row */
+    .item-parent        {grid-column:1  / span 4; grid-row:4/span 2;}
+    .item-legal         {grid-column:5  / span 4; grid-row:4 /span 2;}
+    .item-established   {grid-column:5  / span 3; grid-row:6;}
+    .item-member         {grid-column:1  / span 4; grid-row:6 ;}
+    .item-represent     {grid-column:9  / span 4; grid-row:4/span 2;}
+    .item-reestablished {grid-column:8 / span 3; grid-row:6;}
+    .item-x {grid-column:11 / span 2; grid-row:6; margin: 0;}
+    
+}
+@media (max-width:767px){
+    .item-endorsed      { grid-row:1; }
+    .item-projects      { grid-row:2; }
+    .item-sdg           { grid-row:3; }
+    .item-photo         { grid-row:4; }
+    .item-parent        { grid-row:5; }
+    .item-member        { grid-row:8; }
+    .item-represent     { grid-row:9; }
+    .item-x             { grid-row:10; }
+  
+    .item-legal         { grid-column:1 / span 6; grid-row:6 / span 2; }
+    .item-established   { grid-column:7 / span 6; grid-row:6; }
+    .item-reestablished { grid-column:7 / span 6; grid-row:7; }
+  
+}
 @media (max-width: 575px) {
 
     body{
@@ -1515,6 +1470,9 @@ body {
 
     /* Frosted‑glass effect for the phone off‑canvas menu */
     .offcanvas.sidebar {
+        --bs-offcanvas-width: 100vw;  /* full screen width */
+        inset: 0;                     /* fills entire screen */
+        border-radius: 0;
         background: rgba(255, 255, 255, 0.73) !important;
         /* translucent dark */
         backdrop-filter: blur(6px);
@@ -1632,12 +1590,59 @@ body {
 
     
 }
-
-
-/* Ensure full scrolling on < 992px – no panel locking */
 @media (max-width: 991.98px) {
   html, body { height: auto; overflow-y: auto !important; }
   .first_page { overflow: visible !important; }
   .page-content { overflow-y: visible !important; height: auto !important; }
   .header2 { height: auto !important; overflow: visible !important; }
+}
+
+
+/* ===== Ultra‑wide screens (≥ 2000px): scale typography & images up ===== */
+@media (min-width: 2000px) {
+    .stat-card {
+        border-radius: 70px;
+    }
+  /* general text scale for the first page */
+  .page-content { max-width: 100%; padding-top: 3rem; padding-left: 5%; padding-right: 5%; }
+  .page-content .paragaph { font-size: 25px !important;  }
+
+  /* top logo & social links */
+  .logo img { max-width: 300px !important; }
+  .social_media a { font-size: 23px !important; }
+  .social_media i { font-size: 23px !important; }
+
+  /* navbar sizing */
+  .nav-item .nav-link { font-size: 23px !important; margin: 1rem 2rem !important; }
+  .dropdown-header { font-size: 23px !important; }
+  .dropdown-item { font-size: 21px !important; }
+  .pub a { font-size: 21px !important; }
+
+  /* card grid on page 2 */
+  .header2 { padding-left: 80px; padding-right: 100px; }
+  .stats-grid2 { gap: 1.25rem; border-radius: 50px;}
+  .stat-card h3 { font-size: 2.5rem !important; }
+  .stat-card p, .stat-card a { font-size: 20px !important;border-radius: 50px;}
+  .seventh .display, .tenth .display { font-size: 3.6rem !important; }
+
+  /* scale key images on the stat cards */
+  .first img  { max-width: 420px !important; }
+  .third img  { max-width: 460px !important; }
+  .fifth img  { max-width: 420px !important; }
+  .sixth img  { max-width: 350px !important; }
+  .eight img { max-width: 420px !important; }
+  .ninth img  { max-width: 320px !important; }
+  .item-x img { max-width: 110px !important; }
+
+  /* make dropdown menu a touch wider for long labels */
+  .navbar-nav .nav-item.dropdown > .dropdown-menu.something { width: 20rem !important; }
+}
+/* Zoom out hero image between 992px and 552px */
+@media (max-width: 992px) and (min-width: 552px) {
+  .left-image {
+    background-image: url(Images/UNA-min.jpg);
+    background-size: cover !important;      /* show more of the image */
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
 }
